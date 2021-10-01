@@ -1,0 +1,424 @@
+%&presentatie
+%% !TeX program = pdflatex
+
+\def\rootpath{../../..}
+
+\makeatletter
+    \edef\input@path{{\rootpath}}
+\makeatother
+
+\documentclass{cursuspresentatie}
+
+%\input{preamble.tex}
+
+\def\importslide#1#2{%
+	\import{\rootpath/slides/#1}{#2}
+}
+
+\def\conceptText{[Concept]}
+
+\title[LaTeX-cursus 2021 -- Week 2]{%
+	\texorpdfstring{%
+		\LaTeX{}-cursus 2021\\Week 2: Essentieel%
+		\\ \conceptText
+	}{%
+		Week 2 -- LaTeX-cursus 2021%
+	}%
+}
+\author{\TeX niCie}
+\date{4 oktober 2021}
+
+% Door bij te dragen aan de presentatie, stel je je broncode beschikbaar aan de 
+% TeXniCie onder MIT licentie.
+
+\begin{document}
+
+% \lang{
+% 	\section{Introduction}
+% }{
+% 	\section{Introductie}
+% }
+
+\begin{frame}
+	\titlepage
+	\centering
+\end{frame}
+
+%\expandafter\let\csname title\endcsname\origtitle
+
+\begin{frame}
+	\frametitle{\lang,Schedule,Agenda,}
+	
+	\begin{itemize}
+		\item Revisits
+		\begin{itemize}
+			\item Formule typesetting
+			\item Packages
+		\end{itemize}
+		\item Typesetting
+		\begin{itemize}
+			\item Lijsten
+			\item Aanhalingstekens
+		\end{itemize}
+		\item Figuren
+		\item Referenties
+		\item Documentstructuur en pagina-layout
+		\item `Stelling', `Lemma'
+		\item Extra: Tabellen
+		\item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+	\end{itemize}
+\end{frame}
+
+	\clearrecentlist
+	\def\assetdir{assets}
+
+	\section{Revisits}
+
+	\importslide{math}{align-intertext.tex}
+	\importslide{math}{also_in_use.tex}
+
+
+	% Intertext
+	% Andere notaties
+	% Nonumber
+	% Fleqn
+	% Counterwithin?
+
+	% Paragrafen
+	% medskip, bigskip
+	% parskip package
+	
+ 
+
+% ---- SECTIONS ----
+
+% \begin{saveblock}{simpleContents}
+%     \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+%         \section{AA}
+% 		Lorem ipsum dolor sit amet,
+% 		consectetur adipiscing elit.
+        
+%         \section{BB}
+%         \subsection{CC}
+%         \subsubsection{DD}
+%         \subsection{EE}
+%         \textbf{Opdracht:} Nullam
+% 		a risus at arcu lobortis
+% 		\textit{viverra vel}.
+        
+%         \section{FF}
+%         \subsubsection{GG}
+%     \end{highlightblock}
+% \end{saveblock}
+
+% \begin{frame}
+% 	\frametitle{Simpele inhoud}
+
+% 	\begin{columns}
+% 		\begin{column}{0.5\textwidth}
+% 			\useblock{simpleContents}
+% 		\end{column}
+% 		\begin{column}{0.5\textwidth}
+% 			\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/outdir/simpleContents.pdf}
+% 		\end{column}
+% 	\end{columns}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Veelgebruikte packages}
+
+	\begin{tabularx}{\textwidth}{X l}
+		\toprule
+		Package & Verbeteringen voor\\
+		\midrule
+		amsmath & Wiskunde \\
+		amssymb & Wiskunde \\
+		graphicx & Afbeeldingen \\
+		geometry & Pagina marges en grootte (\textbf{a4paper!!!})\\
+		xcolor & Kleuren \\
+		hyperref & Pdf-navigatie \\
+		parskip & Alinea's\\
+		babel & Vertalingen\\
+		\bottomrule
+	\end{tabularx}
+	\medskip
+
+	Template op Vincents website: \href{https://vkuhlmann.com/latex/example}{\ul{\texttt{vkuhlmann.com/latex/example}}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Subscript/superscript: Inzichtsvragen}
+
+	\emph{Wat mist hier?} \hll|\\vec\{F\}_\{tot\}|
+	
+	\pause
+	Antwoord: de `tot' wordt niet als tekst gezien: $ \vec{F}_{tot} $
+
+	Juiste manier: \hll|\\vec\{F\}_\{\\text\{tot\}\}|, geeft $ \vec{F}_{\text{tot}} $
+
+	\medskip
+
+	\pause
+	\emph{Wat gaat hiermee fout?} \hll|\\vec\{F_\{\\text\{tot\}\}\}|
+
+	\pause Hint: \hll|\\vec\{abc\}| = $ \vec{abc} $
+
+	\pause Antwoord: $ \vec{F_{\text{tot}}} $ \uncover<+->{(\hll|\\vec\{F_\{\\text\{tot\}\}\}|)}
+
+	Juiste manier: \uncover<.->{$ \vec{F}_{\text{tot}} $} \uncover<.->{(\hll|\\vec\{F\}_\{\\text\{tot\}\}|)}
+
+	\medskip
+
+	\pause
+	\emph{Wat is het verschil tussen \textnormal{\hll|x_0^2|} en \textnormal{\hll|\{x_0\}^2|}?}
+
+	\pause Hint: \hll|x_0^2| = $ x_0^2 $
+
+	\pause Antwoord: Superscript is nu van hele groep, niet alleen van $ x $: $ {x_0}^2 $.
+
+\end{frame}
+
+\section{Typesetting}
+
+\importslide{text}{text-lists.tex}
+
+\begin{frame}
+	\frametitle{Lijsten}
+
+	TODO
+
+	% TODO Frames about Description
+	
+	\begin{description}
+		\item AA
+		\item[BB] CC
+		\item[DD] EE 
+	\end{description}
+\end{frame}
+
+\importslide{text}{text-quotes.tex}
+
+\section{Figuren}
+
+% \addtorecentlist{\textbackslash includegraphics}
+
+\importslide{images}{includegraphics-asparagraph.tex}
+\importslide{images}{includegraphics-center.tex}
+\importslide{images}{includegraphics-figure.tex}
+
+\importslide{images}{figure-placement.tex}
+\importslide{images}{figure-dimensions.tex}
+
+\importslide{images}{subfigure.tex}
+
+\section{Referenties}
+
+\begin{saveblock}{refWrong}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		Zie pinguin in Figuur 1.
+		\begin{figure} % <-- Figuur 1
+			... % Pinguin
+		\end{figure}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{refWrong2}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		\begin{figure} % <-- Figuur 1
+			... % Man in tuxedo-pak
+		\end{figure}
+		Zie pinguin in Figuur 1.
+		\begin{figure} % <-- Figuur 2
+			... % Pinguin
+		\end{figure}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+	\frametitle{Referenties}
+
+	\unless\ifishandout
+	\only<1>{\useblock{refWrong}}
+	\fi
+
+	\only<2->{\useblock{refWrong2}}
+\end{frame}
+
+\begin{saveblock}{refCorrect}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		\begin{figure} % <-- Figuur 1
+			... % Man in tuxedo-pak
+		\end{figure}
+		Zie pinguin in Figuur \ref{fig:pinguin}.
+		\begin{figure} % <-- Figuur 2
+			... % Pinguin
+			\caption{...}\label{fig:pinguin}
+		\end{figure}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+	\frametitle{Referenties}
+
+	\useblock{refCorrect}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Referenties}
+
+	Equation
+\end{frame}
+
+\begin{frame}
+	\frametitle{Referenties}
+
+	Section
+\end{frame}
+
+\begin{frame}
+	\frametitle{\texorpdfstring{\LaTeX}{LaTeX}'s systeem voor referenties}
+
+
+	
+\end{frame}
+
+\section{Documentstructuur}
+
+\importslide{document}{document-parts.tex}
+
+\importslide{document}{document-margins.tex}
+
+\importslide{document}{document-sections.tex}
+
+\importslide{document}{document-toc.tex}
+
+\importslide{document}{document-secnumdepth.tex}
+
+\importslide{document}{document-section_star.tex}
+
+\importslide{document}{document-hyperref.tex}
+
+
+\begin{frame}
+	Fancyhdr
+\end{frame}
+
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\definecolor{darkpastelred}{rgb}{0.76, 0.23, 0.13}
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+
+\begin{saveblock}{kvlistOverLines}
+	\begin{highlightblock}
+		\includegraphics[
+			width=   0.9 \textwidth
+		]{afbeelding.jpg}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{kvlistOverLinesParBroken}
+	\begin{highlightblock}
+		\includegraphics[
+			width=   0.9 \textwidth
+
+		]{afbeelding.jpg}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+	\frametitle{Spaties en overzichtelijke code: de verkeersregels}
+
+	\textbf{\textcolor{darkpastelred}{Nope}}: \hll|\\includegraphics[width=0.9\\textwidth]\{| \hll| afbeelding.jpg \}|
+	\medskip
+
+	\textbf{\textcolor{darkpastelgreen}{Ok}}
+	\useblock{kvlistOverLines}
+	\medskip
+
+	\textbf{\textcolor{darkpastelred}{Nope}}
+	\useblock{kvlistOverLinesParBroken}
+\end{frame}
+
+\begin{saveblock}{packages}
+	\begin{highlightblock}
+		\usepackage{
+			parskip,
+			hyperref
+		}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{indentation}
+	\begin{highlightblock}
+		\begin{center}
+			AA
+		\end{center}
+		\begin{center}
+		BB
+		\end{center}
+		\begin{center}CC\end{center}
+	\end{highlightblock}
+\end{saveblock}
+
+
+\begin{frame}
+	\frametitle{Spaties en overzichtelijke code: de verkeersregels}
+
+	\textbf{\textcolor{darkpastelgreen}{Ok}}
+	\useblock{packages}
+	\medskip
+
+	\textbf{\textcolor{darkpastelgreen}{Ok}}
+	\useblock{indentation}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Stellingen en lemma's}
+
+	TODO
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tabellen}
+
+	TODO
+\end{frame}
+
+\section{\texorpdfstring{}{Misc}}
+
+\importslide{misc}{misc-contact.tex}
+
+\begin{frame}
+	\frametitle{Volgende keer -- Week 3 (di 12 okt): Verdiepend}
+
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item AA
+			\item BB
+			\item Meer
+		\end{itemize}\par
+		\vfill
+		\leavevmode
+	\end{multicols}
+
+	(Voorbeeld van wat je bereikt is te vinden op)
+	\begin{center}
+		\href{https://a-eskwadraat.nl/latex}{\ul{\texttt{a-eskwadraat.nl/latex}}}
+	\end{center}
+
+	\medskip
+	Inschrijven nog mogelijk!
+\end{frame}
+
+\begin{frame}
+	Oefeningen!
+\end{frame}
+
+\ifishandout
+	\importslide{misc}{misc-license.tex}
+\fi
+	
+\end{document}
