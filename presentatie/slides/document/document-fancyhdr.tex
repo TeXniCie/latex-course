@@ -1,0 +1,64 @@
+\lstset{
+    alsoletter={$@_!|?4$},
+}
+
+% \updatehighlight{
+%     name=accentC,
+%     add={a4paper,geometry,{margin=2.54cm}}
+% }
+
+\begin{saveblock}{fancyhdr}
+    \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
+        \documentclass[~~a4paper~~]{article}
+        \usepackage[utf8]{inputenc}
+        \usepackage[margin=2.54cm]{geometry}
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        
+        \title{My document}
+        \author{Vincent Kuhlmann}
+        \date{1 May 2021}
+        
+        \begin{document}
+            \maketitle
+            \section{Introduction}
+            
+            ~\lang,Hello everyone!,Hallo iedereen!,~
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{fancyhdr}
+\begin{frame}
+    \frametitle{\lang,Fancyhdr,Fancyhdr,}
+    \begin{columns}
+        \begin{column}{0.67\textwidth}
+            \useblock{fancyhdr}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begingroup
+            \setlength\fboxrule{1pt}
+            \setlength\fboxsep{0pt}
+            \fbox{\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio,
+            page=2]
+                {assets/voorbeeldweek2.pdf}%
+            }
+            \endgroup
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \updatehighlight{
+%     name=accentC,
+%     remove={a4paper,geometry,{margin=2.54cm}},
+%     add={{left=-0.5cm}}
+% }
+
+% \lstset{
+%     alsoletter={$@_!|?$},
+% }
+
+% \updatehighlight{
+%     name=accentC,
+%     remove={{left=-0.5cm}}
+% }
