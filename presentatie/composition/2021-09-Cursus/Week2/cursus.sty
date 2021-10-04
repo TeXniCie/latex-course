@@ -1,0 +1,107 @@
+% Copyright (C) 2006-2015 TeXniCie A-Eskwadraat <hektex@a-eskwadraat.nl>
+%
+% This file is part of the A-Eskwadraat LaTeX collection and may be
+% redistributed under the terms of version 2 of the GNU General Public License
+% as published by the Free Software Foundation. See LICENSE file for details.
+%
+%% $Id: cursus.sty 733 2015-02-23 14:38:43Z aldo $
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cursus}[2007/06/15 v0.95 TeXniCie LaTeX-cursus Ondersteuning]
+
+%% Al deze packages zijn ooit eens gebruikt in de collegeslides.
+\RequirePackage{aes}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+\RequirePackage{ifthen}
+\RequirePackage{float}
+\RequirePackage{wrapfig}
+\RequirePackage{xspace}
+\RequirePackage{graphicx}
+\RequirePackage{amsmath}
+\RequirePackage{pifont}
+\RequirePackage{textcomp}
+\RequirePackage{verbatim}
+
+\floatstyle{boxed}
+
+\definecolor{cmdcolor} {rgb}{0.0,0.0,0.9}
+\definecolor{cmdargcolor}{rgb}{0.6,0.1,0.2}
+\definecolor{mcmdcolor}{rgb}{0.1,0.2,0.75}
+\definecolor{envcolor} {rgb}{0.25,0.7,0.25}
+
+%% \cmd te gebruiken als:
+%% \cmd{naam}
+\newcommand{\cmd}[1]{\texttt{\textcolor{cmdcolor}{\textbackslash #1}}}
+\renewcommand{\comment}[1]{\textcolor{gray}{\textit{\%~#1}}}
+
+%% \cmdarg te gebruiken direct na \cmd:
+%% \cmd{usepackage}\cmdarg{pifont}
+%% of met optionele argumenten:
+%% \cmd{usepackage}\cmdarg[watdanookhier]{dutch}\cmdarg{babel}
+\newcommand{\cmdarg}[2][]{%
+\ifthenelse{\equal{#1}{}}{%
+    \textcolor{cmdcolor}{\{}%
+}{%
+    \ifthenelse{\equal{#1}{parens}}{%
+        \textcolor{cmdcolor}{(}%
+    }{\ifthenelse{\equal{#1}{angles}}{%
+        \textcolor{cmdcolor}{\textless}%
+    }{%
+        \textcolor{cmdcolor}{[}%
+    }}%
+}%
+\textcolor{cmdargcolor}{#2}%
+\ifthenelse{\equal{#1}{}}{%
+    \textcolor{cmdcolor}{\}}%
+}{%
+    \ifthenelse{\equal{#1}{parens}}{%
+        \textcolor{cmdcolor}{)}%
+    }{\ifthenelse{\equal{#1}{angles}}{%
+        \textcolor{cmdcolor}{\textgreater}%
+    }{%
+        \textcolor{cmdcolor}{]}%
+    }}%
+}%
+}
+
+\newcommand{\cmdm}[1]{\cmd{\text{#1}}}
+\newcommand{\mcmd}   {\textcolor{mcmdcolor}{\$}}
+\newcommand{\class}[2][]{\cmd{documentclass}\cmdarg[#1]{#2}\xspace}
+
+%% \envbegin te gebruiken als:
+%% \envbegin{document}
+\newcommand{\envbegin}[1]{\texttt{\textcolor{cmdcolor}{\textbackslash begin\{}\textcolor{envcolor}{#1}\textcolor{cmdcolor}{\}}}}
+
+%% \envend te gebruiken als:
+%% \envend{document}
+\newcommand{\envend}[1]{\texttt{\textcolor{cmdcolor}{\textbackslash end\{}\textcolor{envcolor}{#1}\textcolor{cmdcolor}{\}}}}
+
+%% \usepack te gebruiken als:
+%% \usepack{a4wide}
+\newcommand{\usepack}[1]{\cmd{usepackage}\cmdarg{#1}}
+
+%% \errmsg te gebruiken als:
+%% \errmsg{I can't write on file bla.pdf}
+\newcommand{\errmsg}[1]{\textcolor{red}{#1}}
+
+%% \placeholder plaatst zijn optionele argument tussen \langle en \rangle.
+%% Je snapt wel waar dit handig voor kan zijn.
+\newcommand{\placeholder}[1][name]{$\langle$\emph{#1}$\rangle$}
+
+% Zodat de inhoudsopgave beknopt blijft.
+\setcounter{tocdepth}{1}
+
+% Commando's om makkelijk \newcommand{\naam}[narg][opt]{commando def} te maken.
+% Gebruik zoals je zou verwachten.
+\makeatletter
+\newcommand{\new}[2]{%
+  \@ifnextchar[{\new@i{#1}{#2}}{\new@i{#1}{#2}[]}}
+\def\new@i#1#2[#3]{\@ifnextchar[{\new@ii{#1}{#2}[#3]}{\new@ii{#1}{#2}[#3][]}}
+\def\new@ii#1#2[#3][#4]#5{%
+\cmd{#1}\cmdarg{#2}\ifthenelse{\equal{#3}{}}{}{\cmdarg[1]{#3}}%
+\ifthenelse{\equal{#4}{}}{}{\cmdarg[1]{#4}}\cmdarg{#5}}
+\makeatother
+
+\newcommand{\command}[1]{\new{newcommand}{#1}}
+\newcommand{\newenv}[1]{\new{newenvironment}{#1}}
