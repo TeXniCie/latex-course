@@ -153,7 +153,8 @@
 		\tableofcontents, \printbibliography, \fullcite, \parencite,
 		\addbibresource, \DeclareLanguageMapping, \textcite, \intertext,
 		\sum, \dif, \norm, \text, \dod, \dpd, \int, \partial,
-		\DeclareMathOperator, \textfb
+		\DeclareMathOperator, \textfb,
+		\rhead, \lhead,\rfoot,\lfoot,\fancyhf
 	},
 	name = structure,
 	add = {
