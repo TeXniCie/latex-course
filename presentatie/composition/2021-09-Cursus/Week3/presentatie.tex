@@ -15,7 +15,7 @@
 	\import{\rootpath/slides/#1}{#2}
 }
 
-\title[LaTeX-cursus 2021 -- Week3]{%
+\title[LaTeX-cursus 2021 -- Week 3]{%
 	\texorpdfstring{\LaTeX{}-cursus 2021\\Week 3: Getting started}{%
 		Week 3 -- LaTeX-cursus 2021%
 	}%
@@ -31,9 +31,9 @@
 % ---- INTRODUCTIE ----
 
 \lang{
-	\section{Introduction}
+	\section{General}
 }{
-	\section{Introductie}
+	\section{Algemeen}
 }
 
 \begin{frame}
@@ -41,21 +41,193 @@
 	\centering
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{\lang,Schedule,Agenda,}
+\begin{frame}
+	\frametitle{\lang,Schedule,Agenda,}
 	
-% 	\begin{itemize}
-% 		\item \lang,Introduction,Introductie,
-% 		\item \lang,Basic document,Basisdocument,
-% 		\item \lang,Formulas,Formules,
-% 		\item \lang,Image,Afbeelding,
-% 		\item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-% 	\end{itemize}
-% \end{frame}
+	\begin{itemize}
+		\item \lang,Introduction,Introductie,
+		\item \lang,Basic document,Basisdocument,
+		\item \lang,Formulas,Formules,
+		\item \lang,Image,Afbeelding,
+		\item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+	\end{itemize}
+\end{frame}
 
-% 	\clearrecentlist
+	\clearrecentlist
 
-%     \def\assetdir{assets}
+    \def\assetdir{assets}
+
+	\importslide{text}{text-paragraphs.tex}
+
+	\importslide{text}{text-noindent.tex}
+
+	\importslide{text}{text-vspace.tex}
+
+	\importslide{text}{text-parskip.tex}
+
+	\importslide{text}{text-groups.tex}
+
+	\importslide{text}{text-specialchars.tex}
+
+	\importslide{text}{text-comments.tex}
+
+	\importslide{internals}{internals-spaces_in_code.tex}
+
+	\importslide{internals}{internals-newcommand.tex}
+
+	\importslide{internals}{internals-renewcommand.tex}
+
+	\importslide{math}{subscript_superscript-inzicht.tex}
+
+	\begin{frame}
+		Footnote
+	\end{frame}
+
+	\section{Counters}
+
+	\begin{frame}
+		\frametitle{Counters}
+	\end{frame}
+
+	\section{Pagina}
+
+	\begin{frame}
+		\frametitle{Pagina}
+	\end{frame}
+
+	\begin{frametitle}
+		\frametitle{twocolumn}
+	\end{frametitle}
+
+	\section{Class `inleveropgave'}
+
+	\begin{frame}
+		\frametitle{Class `inleveropgave'}
+	\end{frame}
+
+	\section{Boxes}
+	\begin{frame}
+		\frametitle{Boxes}
+	\end{frame}
+
+	\section{Extra's}
+
+	\begin{frame}
+		\frametitle{Aux files}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Referenties en meermaalse compilatie}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Dimexpr}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Conditionals}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Accenten}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tikz}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{csname}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{xkeyval}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{etoolbox}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{show/showthe/the/meaning}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{def/edef/gdef/xdef/let}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{catcodes}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{subfiles}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{bibliography}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{environ}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{LaTeX in pyplot, Mathematica en op websites}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{hyperref}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{LaTeX editor shortcuts}
+
+		In Overleaf
+
+		In VS Code
+
+		In TeXstudio
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{listings}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{beamer}
+	\end{frame}
+
+	\begin{frametitle}
+		\frametitle{Pdf, svg, png}
+	\end{frametitle}
+
+	% boxes
+
+	% dimexpr
+
+	% ifnum
+
+	% counters
+
+	% accents and foreign characters
+
+	% tikz
+
+	% xkeyval
+
+	% etoolbox
+
+	% csname
+
+
+	% show
+
+	% meaning
+
+	% environ
+
+
 	
 %     \importslide{intro}{intro-wordcomp-doc.tex}
 
@@ -230,35 +402,7 @@
 
 % \section{\texorpdfstring{}{Misc}}
 
-% \importslide{misc}{misc-contact.tex}
-
-% \begin{frame}
-% 	\frametitle{Volgende keer -- Week 2 (ma 4 okt): Essentieel}
-
-% 	\begin{multicols}{2}
-% 		\begin{itemize}
-% 			\item Figuren
-% 			\item Lijsten
-% 			\item Referenties
-% 			\item Pagina-layout
-% 			\item Tekstkleuren
-% 			\item Tekstgroottes
-% 			\item Tabellen
-% 			\item `Stelling', `Lemma'
-% 			\item Meer
-% 		\end{itemize}\par
-% 		\vfill
-% 		\leavevmode
-% 	\end{multicols}
-
-% 	Voorbeeld van wat je bereikt is te vinden op
-% 	\begin{center}
-% 		\href{https://a-eskwadraat.nl/latex}{\ul{\texttt{a-eskwadraat.nl/latex}}}
-% 	\end{center}
-
-% 	\medskip
-% 	Inschrijven nog mogelijk!
-% \end{frame}
+\importslide{misc}{misc-contact.tex}
 
 % \begin{frame}
 % 	Oefeningen!

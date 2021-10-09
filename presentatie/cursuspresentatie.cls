@@ -154,7 +154,8 @@
 		\addbibresource, \DeclareLanguageMapping, \textcite, \intertext,
 		\sum, \dif, \norm, \text, \dod, \dpd, \int, \partial,
 		\DeclareMathOperator, \textfb,
-		\rhead, \lhead,\rfoot,\lfoot,\fancyhf
+		\rhead, \lhead,\rfoot,\lfoot,\fancyhf,
+		\co, \term, \genummerd
 	},
 	name = structure,
 	add = {

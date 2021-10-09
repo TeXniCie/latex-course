@@ -1,0 +1,100 @@
+\begin{saveblock}{newcommand}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		\newcommand\co{CO$_2$}
+        \newcommand\term[1]{\textcolor{blue}{\textit{#1}}}
+
+        Lorem ipsum \co{} dolor sit amet \co.
+        Duis \term{iaculis} id orci eu mattis.
+        \term{Suspendisse facilisis.}
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\textbackslash newcommand}
+
+\bgroup
+
+\def\co{CO$_2$}
+\def\term#1{\textcolor{blue}{\textit{#1}}}
+
+\begin{frame}{\hll|\\newcommand|}
+	\useblock{newcommand}
+
+    \medskip
+
+    Lorem ipsum \co{} dolor sit amet \co.
+    Duis \term{iaculis} id orci eu mattis. \term{Suspendisse facilisis.}
+
+	% \centering
+    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+	% 	assets/mathAlignIntertext\langsuffix.pdf}
+\end{frame}
+\egroup
+
+\begin{saveblock}{newcommand}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        \newcommand\genummerd[3][.]{\textbf{#2}\leaders
+        \hbox{#1}\hfill #3}
+    
+        \genummerd{AA}{6}\par    
+        \genummerd{Lorem ipsum}{12}\par    
+        \genummerd{Amet}{20}\par    
+        \genummerd[-]{Vivamus}{20}
+    \end{highlightblock}
+\end{saveblock}
+
+\let\genummerd\somethingUndefined
+\newcommand\genummerd[3][.]{\textbf{#2}\leaders
+\hbox{#1}\hfill #3}
+
+\begin{frame}{\hll|\\newcommand|}
+	\useblock{newcommand}
+
+    \medskip
+
+    \genummerd{AA}{6}\par
+    \genummerd{Lorem ipsum}{12}\par
+    \genummerd{Amet}{20}\par
+    \genummerd[-]{Vivamus}{20}
+
+	% \centering
+    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+	% 	assets/mathAlignIntertext\langsuffix.pdf}
+\end{frame}
+
+
+\begin{saveblock}{newcommand}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        \newcommand\genummerd[3][.]{\par\textbf{#2}\hspace{0.2em}
+        \leaders\hbox{#1}\hfill \hbox to 1.55em{\hfil #3}\par}
+    
+        \genummerd{AA}{6}
+        \genummerd{Lorem ipsum}{12}
+        \genummerd{Amet}{20}
+        \genummerd[-]{Vivamus}{20}
+        \genummerd[Hoi!]{Vivamus}{20}
+    \end{highlightblock}
+\end{saveblock}
+
+\let\genummerd\somethingUndefined
+\newcommand\genummerd[3][.]{\par\textbf{#2}\hspace{0.2em}\leaders
+\hbox{#1}\hfill \hbox to 1.55em{\hfil #3}\par}
+
+\begin{frame}{\hll|\\newcommand|}
+	\useblock{newcommand}
+
+    \medskip
+
+    \genummerd{AA}{6}
+    \genummerd{Lorem ipsum}{12}
+    \genummerd{Amet}{20}
+    \genummerd[-]{Vivamus}{20}
+    \genummerd[Hoi!]{Vivamus}{20}
+
+	% \centering
+    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+	% 	assets/mathAlignIntertext\langsuffix.pdf}
+\end{frame}
+

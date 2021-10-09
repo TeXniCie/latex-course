@@ -1,0 +1,24 @@
+\begin{saveblock}{newcommand}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        \renewcommand\thesection{007}
+        \renewcommand\thesubsection{Yo}
+        \section{AA}
+        \subsection{BB}
+        \subsection{CC}
+        \subsubsection{DD}
+	\end{highlightblock}
+\end{saveblock}
+
+\bgroup
+
+\begin{frame}{\hll|\\renewcommand|}
+	\useblock{newcommand}
+
+    \medskip
+
+    \centering
+    \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+		assets/internals-renewcommand-output.pdf}
+\end{frame}
+\egroup

@@ -1,0 +1,31 @@
+\begin{frame}
+	\frametitle{Subscript/superscript: Inzichtsvragen}
+
+	\emph{Wat mist hier?} \hll|\\vec\{F\}_\{tot\}|
+	
+	\pause
+	Antwoord: de `tot' wordt niet als tekst gezien: $ \vec{F}_{tot} $
+
+	Juiste manier: \hll|\\vec\{F\}_\{\\text\{tot\}\}|, geeft $ \vec{F}_{\text{tot}} $
+
+	\medskip
+
+	\pause
+	\emph{Wat gaat hiermee fout?} \hll|\\vec\{F_\{\\text\{tot\}\}\}|
+
+	\pause Hint: \hll|\\vec\{abc\}| = $ \vec{abc} $
+
+	\pause Antwoord: $ \vec{F_{\text{tot}}} $ \uncover<+->{(\hll|\\vec\{F_\{\\text\{tot\}\}\}|)}
+
+	Juiste manier: \uncover<.->{$ \vec{F}_{\text{tot}} $} \uncover<.->{(\hll|\\vec\{F\}_\{\\text\{tot\}\}|)}
+
+	\medskip
+
+	\pause
+	\emph{Wat is het verschil tussen \textnormal{\hll|x_0^2|} en \textnormal{\hll|\{x_0\}^2|}?}
+
+	\pause Hint: \hll|x_0^2| = $ x_0^2 $
+
+	\pause Antwoord: Superscript is nu van hele groep, niet alleen van $ x $: $ {x_0}^2 $.
+
+\end{frame}
