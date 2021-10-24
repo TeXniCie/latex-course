@@ -1,0 +1,56 @@
+\begin{saveblock}{demo}
+    \begin{highlightblock}[linewidth=\textwidth,gobble=8]
+        \documentclass[~~a4paper~~,twocolumn]{article}
+        \usepackage[margin=2.54cm]{geometry}
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+    \end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{twocolumn}
+% \begin{frame}
+%     \frametitle{twocolumn}
+%     \begin{columns}
+%         \begin{column}{0.5\textwidth}
+%             \includegraphics[width=\linewidth,height=0.9\textheight,
+%             keepaspectratio,page=1]{assets/document-twocolumn_article.pdf}
+%         \end{column}
+%         \begin{column}{0.5\textwidth}
+%             \useblock{demo}
+%         \end{column}
+%     \end{columns}
+
+% %     \begin{columns}
+% %         \begin{column}{0.67\textwidth}
+% %             \useblock{fancyhdr}
+% %         \end{column}
+% %         \begin{column}{0.33\textwidth}
+% %             \begingroup
+% %             \setlength\fboxrule{1pt}
+% %             \setlength\fboxsep{0pt}
+% %             \fbox{\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio,
+% %             page=2]
+% %                 {assets/voorbeeldweek2.pdf}%
+% %             }
+% %             \endgroup
+% %         \end{column}
+% %     \end{columns}
+% \end{frame}
+
+
+\begin{frame}
+    \frametitle{twocolumn}
+
+    \adjustbox{fbox=1pt 5pt}{%
+        \includegraphics[
+        %trim={50pt 655pt 30pt 15pt},clip,
+        trim={50pt 700pt 30pt 15pt},clip,
+        width=\dimexpr\linewidth-12pt\relax,height=0.9\textheight,
+            keepaspectratio,page=2]{assets/document-twocolumn_article.pdf}%
+    }
+
+    \medskip
+
+    \useblock{demo}
+\end{frame}
+

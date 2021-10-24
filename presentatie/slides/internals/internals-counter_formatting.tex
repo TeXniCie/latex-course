@@ -1,0 +1,38 @@
+\begin{saveblock}{demo}
+	\begin{highlightblock}[gobble=8,linewidth=0.6\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        \renewcommand\thesubsection
+        {(\thesection)\alph{subsection}}
+
+        \section{AA}
+        \subsection{BB}
+        \subsection{CC}
+        \subsection{DD}
+        \section{EE}
+        \subsection{FF}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{\lang,Counter formatting,Counter-formattering,}
+	% \useblock{setcounter}
+
+    % \medskip
+
+	% \centering
+    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+	% 	assets/internals-setcounter-output.pdf}
+
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \adjustbox{fbox=1pt 5pt}{\includegraphics[width=\linewidth,height=0.6\textheight,keepaspectratio]{
+	        assets/internals-counter_formatting-with-output.pdf}}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \only<1>{\useblock{demo}}
+            \unless\ifishandout
+                \only<2->{\adjustbox{fbox=1pt 5pt}{\includegraphics[width=0.6667\textwidth,height=0.6\textheight,keepaspectratio]{
+                assets/internals-counter_formatting-without-output.pdf}}}
+            \fi
+        \end{column}
+    \end{columns}
+\end{frame}

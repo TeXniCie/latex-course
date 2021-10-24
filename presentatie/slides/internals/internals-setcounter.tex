@@ -1,0 +1,36 @@
+\begin{saveblock}{setcounter}
+	\begin{highlightblock}[gobble=8,linewidth=0.6\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        \section{AA}
+        \setcounter{section}{4}
+        \section{BB}
+        \setcounter{subsection}{7}
+        \subsection{CC}
+        \section{DD}
+        \subsection{EE}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{\hll|\\setcounter|}
+	% \useblock{setcounter}
+
+    % \medskip
+
+	% \centering
+    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+	% 	assets/internals-setcounter-output.pdf}
+
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \adjustbox{fbox=1pt 5pt}{%
+            \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio,
+            trim=0pt 0pt 50pt 0pt,clip]{
+	        assets/internals-setcounter-output.pdf}%
+            }
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \useblock{setcounter}
+        \end{column}
+    \end{columns}
+\end{frame}
+

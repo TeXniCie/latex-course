@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+
+\geometry{
+    paperwidth=4cm,
+    %paperwidth=7cm,
+    paperheight=3.5cm,
+    margin=0cm
+}
+
+\setlength\parskip{2pt}
+
+
+%\titleclass{\section}[3]{straight}
+\titleclass{\section}{straight}[\paragraph]
+\renewcommand\thesection{\arabic{section}}
+
+\titleformat{\section}[hang]%
+%{\normalfont\Large\bfseries}%
+{\normalfont\large\bfseries}%
+{\thesection}%
+{1em}%
+%{\refstepcounter{section}\thesection\hspace{1em}{}}[]%
+{}[]%
+% \titlespacing{\section}{0pt}{*4}{*1.5}
+\titlespacing{\section}{0pt}{*1.5}{*1.5}
+
+
+\titleclass{\subsection}{straight}[\section]
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+
+\titleformat{\subsection}[hang]%
+%{\normalfont\Large\bfseries}%
+{\normalfont\normalsize\bfseries}%
+{\thesubsection}%
+{1em}%
+%{\refstepcounter{subsection}\thesubsection\hspace{1em}{}}[]%
+{}[]%
+%\titlespacing{\subsection}{0pt}{*4}{*1.5}
+\titlespacing{\subsection}{0pt}{*1.5}{*0.7}
+
+%\renewcommand\thesubsection{(\thesection)\alph{subsection}}
+
+\begin{document}
+    \section{AA}
+    \subsection{BB}
+    \subsection{CC}
+    \subsection{DD}
+    \section{EE}
+    \subsection{FF}
+\end{document}

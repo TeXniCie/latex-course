@@ -1,0 +1,40 @@
+\begin{saveblock}{demo}
+	\begin{highlightblock}[gobble=8,linewidth=0.6\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        \section{AA}
+        Counters: \thesubsection,
+        \arabic{subsection},
+        \roman{subsection}
+
+        \subsection{BB}
+        Counters: \thesubsection,
+        \arabic{subsection},
+        \roman{subsection}
+
+        \subsection{CC}
+        Counters: \thesubsection,
+        \arabic{subsection},
+        \roman{subsection}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Counter-inspectie}
+	% \useblock{setcounter}
+
+    % \medskip
+
+	% \centering
+    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+	% 	assets/internals-setcounter-output.pdf}
+
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \adjustbox{fbox=1pt 5pt}{\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio,
+            trim=0pt 0pt 70pt 0pt,clip]{
+	        assets/internals-counter_inspection-output.pdf}}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \useblock{demo}
+        \end{column}
+    \end{columns}
+\end{frame}
