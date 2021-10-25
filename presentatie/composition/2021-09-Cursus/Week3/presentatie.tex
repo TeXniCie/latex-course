@@ -21,7 +21,7 @@
     }%
 }
 \author{\TeX niCie}
-\date{12 oktober 2021}
+\date{26 oktober 2021}
 
 % Door bij te dragen aan de presentatie, stel je je broncode beschikbaar aan de 
 % TeXniCie onder MIT licentie.
@@ -63,15 +63,15 @@
 
     \importslide{text}{text-comments.tex}
 
+    \importslide{text}{text-quotes.tex}
+
     \importslide{internals}{internals-newcommand.tex}
 
     \importslide{internals}{internals-renewcommand.tex}
 
     \importslide{math}{subscript_superscript-inzicht.tex}
 
-    \begin{frame}
-        Footnotes
-    \end{frame}
+    \importslide{text}{text-footnote.tex}
 
     \section{Whitespace}
 
@@ -85,14 +85,7 @@
 
     \importslide{internals}{internals-spaces_in_code.tex}
 
-    \begin{frame}
-        Page margins
-    \end{frame}
-
-    \begin{frame}
-        Page size
-    \end{frame}
-
+	\importslide{text}{text-whitespace.tex}
 
     \section{Counters}
 
@@ -104,21 +97,23 @@
 
     \section{Pagina}
 
-    \begin{frame}
-        \frametitle{Pagina}
-    \end{frame}
+    \importslide{document}{document-geometry_fancyhdr.tex}
 
     \importslide{document}{document-twocolumn.tex}
 
+    \importslide{document}{document-latex_to_svg.tex}
+
     \section{Class `inleveropgave'}
 
-    \begin{frame}
-        \frametitle{Class `inleveropgave'}
-    \end{frame}
+    \importslide{internals}{internals-providesclass.tex}
 
     \section{Boxes}
     \begin{frame}
         \frametitle{Boxes}
+    \end{frame}
+
+    \begin{frame}
+        \hll|\\phantom|
     \end{frame}
 
     \section{Extra's}
@@ -189,6 +184,10 @@
 
     \begin{frame}
         \frametitle{hyperref}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{.fmt files}
     \end{frame}
 
     \begin{frame}

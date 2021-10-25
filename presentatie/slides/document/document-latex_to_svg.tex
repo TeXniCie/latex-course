@@ -1,0 +1,81 @@
+%\addtorecentlist{secnumdepth}
+
+\begin{saveblock}{standalone}
+    \begin{highlightblock}[linewidth=\textwidth,gobble=8]
+        % Bestand: prachtigeformule.tex
+        \documentclass{standalone}
+        \usepackage{amsmath,amssymb}
+
+        \begin{document}
+            $\displaystyle\sum_{k=0}^{\infty}
+            \frac{x^k}{k!}=e^{x}$
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+    \frametitle{Standalone}
+
+    \centering
+
+    \useblock{standalone}
+
+    \hll|\\includegraphics[...]\{prachtigeformule.pdf\}|
+
+    \medskip
+    \adjustbox{cfbox=black 1pt 0pt}{%
+    \includegraphics[width=\linewidth,height=40pt,keepaspectratio]{assets/document-standalone.pdf}%
+    }
+    
+    % \begin{columns}
+    %     \begin{column}{0.5\textwidth}
+    %         \useblock{standalone}
+    %     \end{column}
+    %     \begin{column}{0.5\textwidth}
+    %         \hll|\\includegraphics[...]\{standalone.pdf\}|
+
+    %         \medskip
+    %         \adjustbox{cfbox=black 1pt 0pt}{%
+    %         \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/document-standalone.pdf}%
+    %         }
+    %     \end{column}
+    % \end{columns}
+\end{frame}
+
+\begin{frame}
+    \centering
+
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/document-loadinscape-aspdf.png}
+    \end{onlyenv}
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/document-loadinscape-assvg.png}
+    \end{onlyenv}
+\end{frame}
+
+\begin{frame}
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/convert_pdf_to_svg.png}
+    \end{onlyenv}
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/convert_pdf_to_svg-small.png}
+    \end{onlyenv}
+
+    Converteren van pdf naar svg met \hll|pdf2svg| of met package \hll|pdftocairo|. Voor laatste
+    is Linux/Mac nodig of Windows Subsystem for Linux.
+\end{frame}
+
+\begin{frame}
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/pacman-before.png}
+    \end{onlyenv}
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/pacman.jpg}
+    \end{onlyenv}
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/document-standalone.pdf}
+    \end{onlyenv}
+    \begin{onlyenv}<+>
+        \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/formulaArt.pdf}
+    \end{onlyenv}
+\end{frame}

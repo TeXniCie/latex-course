@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{pdfpages}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{commath,mathtools}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[dutch]{babel}
+\usepackage[bookmarksnumbered]{hyperref}
+\usepackage{highlightlatex}
+
+\usepackage{fancyhdr}
+
+\geometry{
+    a6paper,
+    %landscape,
+    margin=2cm,
+    left=1cm,
+    right=1cm,
+    paperheight=12cm
+}
+
+\pagestyle{fancy}
+
+\updatehighlight{
+    name=default,
+    add={
+        \fancyhead, \fancyfoot, \geometry
+    }
+}
+
+\fancyhead[L]{\hll|\\fancyhead[L]\{\}|}
+\fancyhead[C]{\hll|\\fancyhead[C]\{\}|}
+\fancyhead[R]{\hll|\\fancyhead[R]\{\}|}
+
+\fancyfoot[L]{\hll|\\fancyfoot[L]\{\}|}
+\fancyfoot[C]{\hll|\\fancyfoot[C]\{\}|}
+\fancyfoot[R]{\hll|\\fancyfoot[R]\{\}|}
+
+\begin{document}
+    \section{Lorem ipsum}
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+    tincidunt eleifend enim, ut pharetra mi.
+    \medskip
+
+    \begin{hllblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        \usepackage{geometry}
+        \usepackage{fancyhdr}
+
+        \geometry{
+            a6paper,
+            %landscape,
+            margin=2cm,
+            left=1cm,
+            right=1cm,
+            paperheight=12cm
+        }
+
+        \pagestyle{fancy}
+        \fancyhead[L]{Linksboven!}
+        \begin{document}
+            ...
+        \end{document}
+    \end{hllblock}
+\end{document}

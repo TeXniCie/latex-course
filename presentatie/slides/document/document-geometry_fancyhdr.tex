@@ -1,0 +1,33 @@
+
+\begin{saveblock}{geometry}
+    \begin{hllblock}[gobble=8,linewidth=0.5\textwidth,
+        framexleftmargin=0.25em,xleftmargin=0.25em]
+        \usepackage{geometry}
+        \usepackage{fancyhdr}
+
+        \geometry{
+            a6paper,
+            landscape,
+            margin=2cm,
+            left=1cm,
+            paperheight=12cm
+        }
+        \pagestyle{fancy}
+        \fancyhead[L]{Linksboven!}
+    \end{hllblock}
+\end{saveblock}
+
+\begin{frame}
+    \frametitle{Pagina lay-out en dimensies}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \adjustbox{cfbox=black 1pt 0pt}{%
+    \includegraphics[height=0.8\textheight]{assets/document-fancyhdr_geometry_compact.pdf}%
+    }
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \useblock{geometry}
+        \end{column}
+    \end{columns}
+\end{frame}

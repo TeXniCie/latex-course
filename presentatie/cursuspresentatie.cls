@@ -155,7 +155,9 @@
 		\sum, \dif, \norm, \text, \dod, \dpd, \int, \partial,
 		\DeclareMathOperator, \textfb,
 		\rhead, \lhead,\rfoot,\lfoot,\fancyhf,
-		\co, \term, \genummerd
+		\co, \term, \genummerd, \bb, \cc, \dd, \ee,
+		\ProvidesClass, \LoadClass, \RequirePackage, \geometry,
+		\fancyhead, \fancyfoot, \sum
 	},
 	name = structure,
 	add = {

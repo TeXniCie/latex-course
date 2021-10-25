@@ -1,6 +1,43 @@
 \begin{saveblock}{newcommand}
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
 		framexleftmargin=0.25em,xleftmargin=0.25em]
+		\newcommand\aa{aa: ()}
+        \newcommand\bb[1]{bb: (#1)}
+        \newcommand\cc[2]{cc: (#1,#2)}
+        \newcommand\dd[3]{dd: (#1,#2,#3)}
+        \newcommand\ee[3][Z]{ee: (#1,#2,#3)}
+
+        Lorem \aa, \bb{A}, \cc{A}{B}, \dd{A}{B}{C},
+        \ee{A}{B}, \ee[A]{B}{C}, \ee ABC.
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\textbackslash newcommand}
+
+\let\aa\somethingUndefined
+\let\bb\somethingUndefined
+\let\cc\somethingUndefined
+\let\dd\somethingUndefined
+\let\ee\somethingUndefined
+
+\newcommand\aa{aa: ()}
+\newcommand\bb[1]{bb: (#1)}
+\newcommand\cc[2]{cc: (#1,#2)}
+\newcommand\dd[3]{dd: (#1,#2,#3)}
+\newcommand\ee[3][Z]{ee: (#1,#2,#3)}
+
+\begin{frame}{\hll|\\newcommand|}
+    \useblock{newcommand}
+
+    \medskip
+
+    Lorem \aa, \bb{A}, \cc{A}{B}, \dd{A}{B}{C}, \ee{A}{B},
+    \ee[A]{B}{C}, \ee ABC.
+\end{frame}
+
+\begin{saveblock}{newcommand}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
 		\newcommand\co{CO$_2$}
         \newcommand\term[1]{\textcolor{blue}{\textit{#1}}}
 
@@ -9,8 +46,6 @@
         \term{Suspendisse facilisis.}
 	\end{highlightblock}
 \end{saveblock}
-
-\addtorecentlist{\textbackslash newcommand}
 
 \bgroup
 

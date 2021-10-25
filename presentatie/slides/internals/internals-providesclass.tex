@@ -1,0 +1,33 @@
+\begin{saveblock}{providesclass}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        % Bestand: inleveropgave.cls
+		\NeedsTeXFormat{LaTeX2e}
+        \ProvidesClass{inleveropgave}
+        [2021/10/26 inleveropgave v1.0]
+
+        \LoadClass[a4paper]{article}
+        \RequirePackage{amsmath,amssymb,amsthm}
+        \RequirePackage[margin=2.54cm]{geometry}
+        ...
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{documentclass}
+    \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+        % Bestand: document.tex
+        \documentclass{inleveropgave}
+        \begin{document}
+            Hey!
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Class}
+    \useblock{providesclass}
+
+    \medskip
+
+    \useblock{documentclass}
+\end{frame}

@@ -1,0 +1,21 @@
+
+\begin{saveblock}{footnote}
+    \begin{highlightblock}[linewidth=\textwidth,gobble=8]
+        Lorem ipsum\footnote{Dit tekstje zie je hier
+        vaak\textellipsis} dolor sit amet. Nunc metus ...
+        erat.\footnote{\emph{Zeer} interessant.}
+        Aenean ...
+    \end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\textbackslash footnote}
+
+\begin{frame}
+    \frametitle{Footnote}
+    \centering
+
+    \useblock{footnote}
+
+    \smallskip
+    \adjustbox{fbox=1pt 0pt}{\includegraphics[width=0.8\textwidth]{assets/text-footnote-demo.pdf}}
+\end{frame}
