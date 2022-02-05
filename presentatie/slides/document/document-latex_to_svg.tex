@@ -42,6 +42,48 @@
     % \end{columns}
 \end{frame}
 
+\definecolor{imagebackground}{RGB}{247,247,247}
+
+
+\begin{frame}
+    \frametitle{Raster vs vector graphics}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \textbf{Raster} (.png, .jpg, .jpeg, .bmp)
+            \medskip
+
+            \includegraphics[width=0.8\textwidth]{assets/vector_vs_raster-vector-rasterized2_scaled.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering 
+            \textbf{Vector} (.pdf, .svg, .dvi, .ps)
+            \medskip
+
+            \adjustbox{bgcolor=imagebackground}{%
+            \includegraphics[width=0.8\textwidth]{assets/vector_vs_raster-vector.pdf}%
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Raster vs vector graphics}
+
+    \centering
+
+    \includegraphics[width=\textwidth]{assets/vector_vs_raster-vector_code.png}
+
+    \adjustbox{fbox=1pt 0pt}{%
+        \includegraphics[height=0.4\textheight]{assets/vector_vs_raster-vector-annotated_grid.pdf}%
+    }\quad
+    \includegraphics[height=0.4\textheight]{assets/vector_vs_raster-vector-annotated.pdf}%
+    \quad
+    \includegraphics[height=0.4\textheight]{assets/vector_vs_raster-vector.pdf}
+
+\end{frame}
+
 \begin{frame}
     \centering
 
@@ -58,13 +100,16 @@
         \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/convert_pdf_to_svg.png}
     \end{onlyenv}
     \begin{onlyenv}<+>
+        \unless\ifishandout
         \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/convert_pdf_to_svg-small.png}
+        \fi
     \end{onlyenv}
 
     Converteren van pdf naar svg met \hll|pdf2svg| of met package \hll|pdftocairo|. Voor laatste
     is Linux/Mac nodig of Windows Subsystem for Linux.
 \end{frame}
 
+\unless\ifishandout
 \begin{frame}
     \begin{onlyenv}<+>
         \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/pacman-before.png}
@@ -79,3 +124,4 @@
         \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/formulaArt.pdf}
     \end{onlyenv}
 \end{frame}
+\fi

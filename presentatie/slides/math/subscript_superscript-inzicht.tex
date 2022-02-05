@@ -1,31 +1,106 @@
+
+% Reveal at
+% Box width
+% Reserve width
+% Content
+\def\uncoverbox#1#2#3#4{%
+	\def\opt{padding=2pt,left=#2}%
+	\unless\ifishandout
+	\only<-\numexpr #1-1\relax>{\edef\opt{\opt,bgcolor=lightgray}}%
+	\fi
+	\adjustbox{left={#3}}{%
+		\expandafter\adjustbox\expandafter{\opt}{%
+			\uncover<#1->{#4}%
+		}%
+	}%
+}
+
+\def\partA#1{\adjustbox{left=5em}{#1}}
+
+% \def\partB#1#2{\adjustbox{left=10em}{%
+% 	\only<-\numexpr #1-1\relax>{\adjustbox{left=8em,bgcolor=lightgray}{\strut}}%
+% 	\uncover<#1->{#2}%
+% }}
+\def\partB#1#2{\uncoverbox{#1}{10em}{12em}{#2}}
+\def\partC#1#2{\uncoverbox{#1}{5em}{5em}{#2}}
+
+% \makeatletter
+% \@ifundefined{c@hideat}{\newcounter{hideat}}{}
+% \makeatother
+
+% \def\partC#1#2{%
+% \def\opt{padding=2pt,left=5em}%
+% \only<-\numexpr #1-1\relax>{\edef\opt{\opt,bgcolor=lightgray}}%
+% \expandafter\adjustbox\expandafter{\opt}{%
+% 	\uncover<#1->{#2}%
+% }%
+% % \only<-\numexpr #1-1\relax>{\adjustbox{left=5em,bgcolor=lightgray}{\strut}}%
+% % \uncover<#1->{#2}
+% }
+
 \begin{frame}
 	\frametitle{Subscript/superscript: Inzichtsvragen}
+	\partA{\textbf{Foutief}}%
+	\partB{1}{\hll|\\vec\{F\}_\{tot\}|}%
+	\partC{2}{$ \vec{F}_{tot} $}
 
-	\emph{Wat mist hier?} \hll|\\vec\{F\}_\{tot\}|
-	
-	\pause
-	Antwoord: de `tot' wordt niet als tekst gezien: $ \vec{F}_{tot} $
+	\partA{\textbf{Correct}}%
+	\partB{3}{\hll|\\vec\{F\}_\{\\text\{tot\}\}|}%
+	\partC{3}{$ \vec{F}_{\text{tot}} $}
 
-	Juiste manier: \hll|\\vec\{F\}_\{\\text\{tot\}\}|, geeft $ \vec{F}_{\text{tot}} $
+	\bigskip
+	\partA{\textbf{Foutief}}%
+	\partB{4}{\hll|\\vec\{F_\{\\text\{tot\}\}\}|}%
+	\partC{6}{$ \vec{F_{\text{tot}}} $ $ \vec{\adjustbox{cfbox=red 1pt 1pt}{\ensuremath{F_{\text{tot}}}}} $}
 
-	\medskip
+	\partA{\textbf{Hint}}%
+	\partB{5}{\hll|\\vec\{abc\}|}%
+	\partC{5}{$ \vec{abc} $ $ \vec{\adjustbox{cfbox=red 1pt 1pt}{\ensuremath{abc}}} $}
 
-	\pause
-	\emph{Wat gaat hiermee fout?} \hll|\\vec\{F_\{\\text\{tot\}\}\}|
+	\partA{\textbf{Correct}}%
+	\partB{7}{\hll|\\vec\{F\}_\{\\text\{tot\}\}|}%
+	\partC{7}{$ \vec{F}_{\text{tot}} $ $ \vec{\adjustbox{cfbox=red 1pt 1pt}{\ensuremath{F}}}_{\text{tot}} $}
 
-	\pause Hint: \hll|\\vec\{abc\}| = $ \vec{abc} $
+	\bigskip
+	%\emph{Wat is het verschil tussen \textnormal{\hll|x_0^2|} en \textnormal{\hll|\{x_0\}^2|}?}
+	\partA{\textbf{Code A}}%
+	\partB{8}{\hll|x_0^2|}%
+	\partC{9}{$ x_0^2 $}
 
-	\pause Antwoord: $ \vec{F_{\text{tot}}} $ \uncover<+->{(\hll|\\vec\{F_\{\\text\{tot\}\}\}|)}
-
-	Juiste manier: \uncover<.->{$ \vec{F}_{\text{tot}} $} \uncover<.->{(\hll|\\vec\{F\}_\{\\text\{tot\}\}|)}
-
-	\medskip
-
-	\pause
-	\emph{Wat is het verschil tussen \textnormal{\hll|x_0^2|} en \textnormal{\hll|\{x_0\}^2|}?}
-
-	\pause Hint: \hll|x_0^2| = $ x_0^2 $
-
-	\pause Antwoord: Superscript is nu van hele groep, niet alleen van $ x $: $ {x_0}^2 $.
-
+	\partA{\textbf{Code B}}%
+	\partB{8}{\hll|\{x_0\}^2|}%
+	\partC{10}{$ {x_0}^2 $}
 \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Subscript/superscript: Inzichtsvragen}
+
+% 	\emph{Wat mist hier?} \hll|\\vec\{F\}_\{tot\}|
+	
+% 	\pause
+% 	Antwoord: de `tot' wordt niet als tekst gezien: $ \vec{F}_{tot} $
+
+% 	Juiste manier: \hll|\\vec\{F\}_\{\\text\{tot\}\}|, geeft $ \vec{F}_{\text{tot}} $
+
+% 	\medskip
+
+% 	\pause
+% 	\emph{Wat gaat hiermee fout?} \hll|\\vec\{F_\{\\text\{tot\}\}\}|
+
+% 	\pause Hint: \hll|\\vec\{abc\}| = $ \vec{abc} $
+
+% 	\pause Antwoord: $ \vec{F_{\text{tot}}} $ \uncover<+->{(\hll|\\vec\{F_\{\\text\{tot\}\}\}|)}
+
+% 	Juiste manier: \uncover<.->{$ \vec{F}_{\text{tot}} $} \uncover<.->{(\hll|\\vec\{F\}_\{\\text\{tot\}\}|)}
+
+% 	\medskip
+
+% 	\pause
+% 	\emph{Wat is het verschil tussen \textnormal{\hll|x_0^2|} en \textnormal{\hll|\{x_0\}^2|}?}
+
+% 	\pause Hint: \hll|x_0^2| = $ x_0^2 $
+
+% 	\pause Antwoord: Superscript is nu van hele groep, niet alleen van $ x $: $ {x_0}^2 $.
+
+% \end{frame}
+

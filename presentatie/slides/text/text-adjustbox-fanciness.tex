@@ -1,0 +1,27 @@
+\begin{saveblock}{code}
+    \begin{highlightblock}[linewidth=0.65\textwidth,gobble=8]
+        \adjustbox{right=\linewidth}{Heeeei!}
+
+        Lorem ipsum
+    
+        \adjustbox{right=0pt}{(4 pt) }%
+        Beschrijf \textellipsis
+    
+        \adjustbox{scale={2.5}{1},rotate=20}
+        {Hallo!}%
+        \adjustbox{scale={-1}{1}}{Hallo!}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+    \frametitle{Adjustbox}
+
+    \begin{columns}
+        \begin{column}{0.65\textwidth}
+            \useblock{code}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \adjustbox{fbox=1pt 0pt}{\includegraphics[width=\dimexpr\textwidth-2pt\relax]{assets/text-adjustbox-fanciness-output.pdf}}
+        \end{column}
+    \end{columns}
+\end{frame}

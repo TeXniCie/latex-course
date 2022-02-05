@@ -157,7 +157,8 @@
 		\rhead, \lhead,\rfoot,\lfoot,\fancyhf,
 		\co, \term, \genummerd, \bb, \cc, \dd, \ee,
 		\ProvidesClass, \LoadClass, \RequirePackage, \geometry,
-		\fancyhead, \fancyfoot, \sum
+		\fancyhead, \fancyfoot, \sum, \adjustbox, \dimexpr, \NewEnviron,
+		\BODY
 	},
 	name = structure,
 	add = {

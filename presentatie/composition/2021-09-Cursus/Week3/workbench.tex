@@ -1,0 +1,25 @@
+%&workbench
+
+\def\rootpath{../../..}
+
+\makeatletter
+    \edef\input@path{{\rootpath}}
+\makeatother
+
+\documentclass{cursuspresentatie}
+
+\def\importslide#1#2{%
+    \import{\rootpath/slides/#1}{#2}
+}
+
+\title{Workbench}
+\author{\TeX niCie}
+\date{26 oktober 2021}
+
+% Door bij te dragen aan de presentatie, stel je je broncode beschikbaar aan de 
+% TeXniCie onder MIT licentie.
+
+\begin{document}
+    \importslide{math}{subscript_superscript-inzicht.tex}
+    
+\end{document}

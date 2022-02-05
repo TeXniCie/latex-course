@@ -16,7 +16,7 @@
 }
 
 \title[LaTeX-cursus 2021 -- Week 3]{%
-    \texorpdfstring{\LaTeX{}-cursus 2021\\Week 3: Getting started}{%
+    \texorpdfstring{\LaTeX{}-cursus 2021\\Week 3: Verdiepend}{%
         Week 3 -- LaTeX-cursus 2021%
     }%
 }
@@ -41,17 +41,17 @@
     \centering
 \end{frame}
 
-\begin{frame}
-    \frametitle{\lang,Schedule,Agenda,}
+% \begin{frame}
+%     \frametitle{\lang,Schedule,Agenda,}
     
-    \begin{itemize}
-        \item \lang,Introduction,Introductie,
-        \item \lang,Basic document,Basisdocument,
-        \item \lang,Formulas,Formules,
-        \item \lang,Image,Afbeelding,
-        \item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-    \end{itemize}
-\end{frame}
+%     \begin{itemize}
+%         \item \lang,Introduction,Introductie,
+%         \item \lang,Basic document,Basisdocument,
+%         \item \lang,Formulas,Formules,
+%         \item \lang,Image,Afbeelding,
+%         \item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+%     \end{itemize}
+% \end{frame}
 
     \clearrecentlist
 
@@ -108,109 +108,139 @@
     \importslide{internals}{internals-providesclass.tex}
 
     \section{Boxes}
-    \begin{frame}
-        \frametitle{Boxes}
-    \end{frame}
+    \importslide{text}{text-adjustbox-frame.tex}
 
-    \begin{frame}
-        \hll|\\phantom|
-    \end{frame}
+    \importslide{text}{text-adjustbox-fanciness.tex}
 
+    \importslide{text}{text-phantom.tex}
+
+    \importslide{internals}{internals-newenviron.tex}
+    
     \section{Extra's}
 
-    \begin{frame}
-        \frametitle{Aux files}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{Aux files}
+    % \end{frame}
+
+    \begin{saveblock}{code}
+        \begin{hllblock}[linewidth=\textwidth,gobble=12]
+            % document.aux gedeeltelijk:
+            \newlabel{eq:wortel2}{{1}{1}{BB}{equation.2.1}{}}
+            \newlabel{eq:wortel3}{{2}{1}{BB}{equation.2.2}{}}
+            \newlabel{eq:wortel4}{{3}{1}{BB}{equation.2.3}{}}
+        \end{hllblock}
+    \end{saveblock}
+
+    \begin{saveblock}{code2}
+        \begin{hllblock}[linewidth=\textwidth,gobble=12]
+            % document.toc
+            \contentsline {section}{\numberline {1}AA}{1}{section.1}%
+            \contentsline {section}{\numberline {2}BB}{1}{section.2}%
+        \end{hllblock}
+    \end{saveblock}
+
+    \begin{saveblock}{code3}
+        \begin{hllblock}[linewidth=\textwidth,gobble=12]
+            \begin{equation}\label{eq:wortel2}
+                \sqrt{2}
+            \end{equation}
+            Kijk in \eqref{eq:wortel2}.
+        \end{hllblock}
+    \end{saveblock}
 
     \begin{frame}
         \frametitle{Referenties en meermaalse compilatie}
+
+        \useblock{code3}
+
+        \useblock{code}
+
+        \useblock{code2}
+
+        \url{https://tex.stackexchange.com/a/597678/242407}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Dimexpr}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{Dimexpr}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{Conditionals}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{Conditionals}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{Accenten}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{Accenten}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{Tikz}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{Tikz}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{csname}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{csname}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{xkeyval}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{xkeyval}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{etoolbox}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{etoolbox}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{show/showthe/the/meaning}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{show/showthe/the/meaning}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{def/edef/gdef/xdef/let}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{def/edef/gdef/xdef/let}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{catcodes}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{catcodes}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{subfiles}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{subfiles}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{bibliography}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{bibliography}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{environ}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{environ}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{LaTeX in pyplot, Mathematica en op websites}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{LaTeX in pyplot, Mathematica en op websites}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{hyperref}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{hyperref}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{.fmt files}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{.fmt files}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{LaTeX editor shortcuts}
+    % \begin{frame}
+    %     \frametitle{LaTeX editor shortcuts}
 
-        In Overleaf
+    %     In Overleaf
 
-        In VS Code
+    %     In VS Code
 
-        In TeXstudio
-    \end{frame}
+    %     In TeXstudio
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{listings}
-    \end{frame}
+    % \begin{frame}
+    %     \frametitle{listings}
+    % \end{frame}
 
-    \begin{frame}
-        \frametitle{beamer}
-    \end{frame}
-
-    \begin{frametitle}
-        \frametitle{Pdf, svg, png}
-    \end{frametitle}
+    % \begin{frame}
+    %     \frametitle{beamer}
+    % \end{frame}
 
     % boxes
 
@@ -411,6 +441,11 @@
 % \importslide{images}{includegraphics-asparagraph.tex}
 
 % \section{\texorpdfstring{}{Misc}}
+
+\begin{frame}
+    \centering\LARGE
+    Kom bij de \TeX niCie! :)
+\end{frame}
 
 \importslide{misc}{misc-contact.tex}
 
