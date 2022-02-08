@@ -5,7 +5,7 @@
 
 \newif\ifishandout
 \ishandoutfalse
-%\ishandouttrue
+\ishandouttrue
 
 \ifishandout
     \LoadClass[handout,aspectratio=32]{beamer}
@@ -18,12 +18,14 @@
 
 \setbeamertemplate{caption}[numbered]
 
-\usecolortheme{rose}
-%\useinnertheme[shadow]{rounded}
-\useinnertheme{rounded}
+\usetheme{aes2}
 
-\usetheme{Dresden}
-\usecolortheme{dolphin}
+% \usecolortheme{rose}
+% %\useinnertheme[shadow]{rounded}
+% \useinnertheme{rounded}
+
+% \usetheme{Dresden}
+% \usecolortheme{dolphin}
 \useoutertheme{miniframes}
 
 \RequirePackage{subfiles}
@@ -42,7 +44,7 @@
 \RequirePackage{yfonts}
 
 \newbool{english}
-%\booltrue{english}
+\booltrue{english}
 
 
 \ifbool{english}{
