@@ -5,7 +5,7 @@
 
 \newif\ifishandout
 \ishandoutfalse
-\ishandouttrue
+%\ishandouttrue
 
 \ifishandout
     \LoadClass[handout,aspectratio=32]{beamer}
