@@ -8,5 +8,5 @@
 *.fmt
 *.bcf
 *.run.xml
-
+oefenboekje/_minted-main/
 .DS_Store
