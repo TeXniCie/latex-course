@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{esc}{\vdots}
+\PYG{esc}{\dots} the general solution of the well\PYGZhy{}known \PYG{k}{\PYGZbs{}emph}\PYG{n+nb}{\PYGZob{}}Polder Problem\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}cite}\PYG{n+nb}{\PYGZob{}}alfonso2010\PYG{n+nb}{\PYGZcb{}}
+\PYG{esc}{\vdots}
+\PYG{k}{\PYGZbs{}bibliographystyle}\PYG{n+nb}{\PYGZob{}}plain\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}bibliography}\PYG{n+nb}{\PYGZob{}}literatuur.bib\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

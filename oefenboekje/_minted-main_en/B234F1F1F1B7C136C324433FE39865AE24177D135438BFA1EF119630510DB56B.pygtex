@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+na}{[a4paper]}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}section}\PYG{n+nb}{\PYGZob{}}the first section\PYG{n+nb}{\PYGZcb{}}
+some text in the first section
+
+\PYG{k}{\PYGZbs{}section}\PYG{n+nb}{\PYGZob{}}the second section\PYG{n+nb}{\PYGZcb{}}
+some text in the second section
+
+\PYG{k}{\PYGZbs{}subsection}\PYG{n+nb}{\PYGZob{}}a subsection\PYG{n+nb}{\PYGZcb{}}
+some text in the first subsection
+
+\PYG{k}{\PYGZbs{}subsection}\PYG{n+nb}{\PYGZob{}}another\PYG{n+nb}{\PYGZcb{}}
+some text in the second subsection
+
+\PYG{k}{\PYGZbs{}paragraph}\PYG{n+nb}{\PYGZob{}}a paragraph header\PYG{n+nb}{\PYGZcb{}}
+some text in a paragraph
+
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+na}{[a4paper]}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}title}\PYG{n+nb}{\PYGZob{}}my article\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}author}\PYG{n+nb}{\PYGZob{}}the author\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}date}\PYG{n+nb}{\PYGZob{}}4 m2022\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}maketitle}
+
+\PYG{esc}{\vdots}
+
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}
