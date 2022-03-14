@@ -18,14 +18,14 @@
 
 \setbeamertemplate{caption}[numbered]
 
-\usetheme{aes2}
+%\usetheme{aes2}
 
 % \usecolortheme{rose}
 % %\useinnertheme[shadow]{rounded}
 % \useinnertheme{rounded}
 
-% \usetheme{Dresden}
-% \usecolortheme{dolphin}
+\usetheme{Dresden}
+\usecolortheme{dolphin}
 \useoutertheme{miniframes}
 
 \RequirePackage{subfiles}
