@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[a6paper,hmargin=1cm,top=1cm]{geometry}
+\usepackage{graphicx}
+
+\begin{document}
+    \lipsum[1-1]
+
+    Zie hiervoor Figuur~\ref{fig:exampleFigurePlacement}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=2cm]{example-image-a}
+        \caption{Voorbeeld van figuurplaatsing.}
+        \label{fig:exampleFigurePlacement}
+    \end{figure}
+
+    \lipsum[5-5]
+
+    \newpage
+
+    \lipsum[1-1]
+
+    Zie hiervoor Figuur~\ref{fig:exampleFigurePlacement2}
+
+    \begin{figure}[t]
+        \centering
+        \includegraphics[height=2cm]{example-image-a}
+        \caption{Voorbeeld van figuurplaatsing.}
+        \label{fig:exampleFigurePlacement2}
+    \end{figure}
+
+    \lipsum[5-5]
+\end{document}
+

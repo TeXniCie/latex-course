@@ -5,7 +5,7 @@
 
 \newif\ifishandout
 \ishandoutfalse
-%\ishandouttrue
+\ishandouttrue
 
 \ifishandout
     \LoadClass[handout,aspectratio=32]{beamer}
@@ -64,6 +64,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{textgreek}
 \RequirePackage{lmodern}
+\RequirePackage{mhchem}
 
 \RequirePackage{ragged2e}
 
@@ -160,7 +161,7 @@
 		\co, \term, \genummerd, \bb, \cc, \dd, \ee,
 		\ProvidesClass, \LoadClass, \RequirePackage, \geometry,
 		\fancyhead, \fancyfoot, \sum, \adjustbox, \dimexpr, \NewEnviron,
-		\BODY
+		\BODY, \ce
 	},
 	name = structure,
 	add = {

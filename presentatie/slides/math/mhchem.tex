@@ -1,0 +1,41 @@
+
+\begin{saveblock}{chem}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		\ce{CO2 + C -> 2 CO}\\
+		$\ce{CO2 + C -> 2 CO}$\\
+		\ce{CH4 + 2 $\left(\ce{O2 + 79/21 N2}\right)$}
+		%$\ce{CH4 + 2 \left(\ce{O2 + 79/21 N2}\right)}$ % Error
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+	{\lang,Chemical formulas,Chemische formules, \hll|\\usepackage\{mhchem\}|}
+	\useblock{chem}
+
+	\medskip
+
+	\ce{CO2 + C -> 2 CO}\\
+	$\ce{CO2 + C -> 2 CO}$\\
+	\ce{CH4 + 2 $\left(\ce{O2 + 79/21 N2}\right)$}
+	%$\ce{CH4 + 2 \left(\ce{O2 + 79/21 N2}\right)}$ % Error
+
+	{\small Some examples are taken from the \hll|mhchem| package documentation (see below)}
+	% (
+	% 	\url{http://mirrors.ctan.org/macros/latex/contrib/mhchem/mhchem.pdf}
+	% )
+
+	%\vspace{1cm}
+
+	\begin{center}
+		\lang{
+			More example can be found in the documentation of \hll|mhchem|, see
+		}{
+			Meer voorbeelden in documentatie van \hll|mhchem|, zie
+		}\par
+		%\url{https://ctan.org/pkg/mhchem}
+		\href{https://ctan.org/pkg/mhchem}{\ul{\texttt{https://ctan.org/pkg/mhchem}}}
+	\end{center}
+
+	%\href{https://vkuhlmann.com/latex/example}{\ul{\texttt{vkuhlmann.com/latex/example}}}
+\end{frame}
