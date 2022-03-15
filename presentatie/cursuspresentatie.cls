@@ -18,14 +18,14 @@
 
 \setbeamertemplate{caption}[numbered]
 
-\usetheme{aes2}
+%\usetheme{aes2}
 
 % \usecolortheme{rose}
 % %\useinnertheme[shadow]{rounded}
 % \useinnertheme{rounded}
 
-% \usetheme{Dresden}
-% \usecolortheme{dolphin}
+\usetheme{Dresden}
+\usecolortheme{dolphin}
 \useoutertheme{miniframes}
 
 \RequirePackage{subfiles}
@@ -64,6 +64,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{textgreek}
 \RequirePackage{lmodern}
+\RequirePackage{mhchem}
 
 \RequirePackage{ragged2e}
 
@@ -160,7 +161,7 @@
 		\co, \term, \genummerd, \bb, \cc, \dd, \ee,
 		\ProvidesClass, \LoadClass, \RequirePackage, \geometry,
 		\fancyhead, \fancyfoot, \sum, \adjustbox, \dimexpr, \NewEnviron,
-		\BODY
+		\BODY, \ce
 	},
 	name = structure,
 	add = {
