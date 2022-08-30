@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cursuspresentatie}[2021/09/27 cursuspresentatie v0.1.0]
 
-%\LoadClass{beamer}
-
+% skipt animaties voor pdf files voor studenten pdf geven, de juiste boolean uncommenten
+% booleans in latex zijn 
 \newif\ifishandout
 \ishandoutfalse
 %\ishandouttrue
@@ -16,7 +16,8 @@
 
 \RequirePackage[tabsize=4]{highlightlatex}
 
-\setbeamertemplate{caption}[numbered]
+
+\setbeamertemplate{caption}[numbered] % voor het nummeren van figuren in beamer
 
 %\usetheme{aes2}
 
@@ -76,6 +77,10 @@
 
 \newcommand{\TeXniCie}{\TeX niCie}
 
+\def\importslide#1#2{%
+	\import{../../slides/#1}{#2}
+}
+
 %\newcommand\lang[2]{%
 
 \makeatletter
@@ -102,6 +107,7 @@
 }
 \makeatother
 
+% voor filenames met langsuffix
 \def\langsuffix{}
 \lang{\gdef\langsuffix{EN}}{}
 
@@ -109,6 +115,7 @@
 
 \DeclareMathOperator{\Image}{Image}
 
+% gekleurde underline werkt niet in beamer
 % Source: https://tex.stackexchange.com/questions/41683/why-is-it-that-coloring-in-soul-in-beamer-is-not-visible
 \let\UL\ul
 \makeatletter
@@ -147,6 +154,7 @@
 %\colorlet{codeBackground}{gray!10!white}
 %\colorlet{comment}{green!40!black}
 
+%TODO op termijn verwijderen bij overstap naar minted
 \updatehighlight{
 	name = default,
 	color = {blue!90!black},
@@ -196,7 +204,10 @@
 	}
 }
 
+%TODO verwijderen, highlight latex gebruikt lst
 \lstset{tabsize=4}
+
+%TODO gobble hoort ook bij highlight
 \def\defaultgobble{8}
 
 %\hllconfigure{
@@ -212,6 +223,7 @@
 	\Zphantomconceal{#1}{#2}%
 }
 
+% toont wel de dollartekens maar de formule nog niet, verbert het wel maar zorgt wel dat het de breedte inneemt.
 \newcommand\hideformula[2][2]{%
 	%\hll|$| \only<2->{\hll|\\sqrt\{2\}|}\only<-1>{??} \hll|$|
 	\hll|$| \phantomconceal{\hll|#2|}{#1} \hll|$|
@@ -221,7 +233,10 @@
 	\phantomconceal{\hll|#2|}{#1}
 }%
 
+% ook nodig voor hiden van formule
 \newcount\showcount
+
+% voor formules tonen en niet
 
 %\newcommand\showformula[2]{%
 %	#1 & %
@@ -271,6 +286,7 @@
 
 \makeatother
 
+% elke regel heeft vaste breedte, gebruikt in citatiecommand I en II slides
 \newlength{\naturalwidth}
 \newlength{\minimumwidth}
 \newbox\naturalsizebox
@@ -300,8 +316,10 @@
 	\fi
 }
 
+% TODO vervangen door minted zorgt voor klein beetje marge links van codeblok
 \lstset{framexleftmargin=0.25em,xleftmargin=0.25em}
 
+% maakt een blauwe box, donkerblauw frame
 \NewEnviron{bluebox}{
 	\begingroup
 		\adjustbox{cfbox=blue!40!white 2pt 10pt,valign=t,bgcolor=blue!5!white}{%
@@ -312,6 +330,7 @@
 	\endgroup
 }
 
+% recente geleerde keywords bovenin slide
 \newcounter{maxrecentdisplay}
 \setcounter{maxrecentdisplay}{27}
 
