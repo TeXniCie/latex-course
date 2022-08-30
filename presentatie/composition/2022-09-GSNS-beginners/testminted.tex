@@ -1,0 +1,50 @@
+\documentclass{../../cursuspresentatie}
+\usepackage{minted}
+
+\def\importslide#1#2{%
+	\import{../../slides/#1}{#2}
+}
+
+\title{GSNS \LaTeX{} course}
+\author{\TeX niCie}
+\date{8 September 2022}
+
+\begin{document}
+	\begin{frame}[fragile]
+		\begin{minted}{tex}
+			HW
+			\textbf
+		\end{minted}
+	\end{frame}
+	
+
+\section{Introduction}
+
+\begin{frame}
+	\titlepage
+	\centering
+	
+	Please log in (or create an account) on \url{overleaf.com}\\
+	
+\end{frame}
+
+\begin{frame}[fragile]{Simple document in \LaTeX}
+	\begin{minted}{tex}
+		\documentclass{article}
+		\usepackage[utf8]{inputenc}
+		
+		\title{My document}
+		\author{Vincent Kuhlmann}
+		\date{1 May 2021}
+		
+		\begin{document}
+			\maketitle
+			\section{Introduction}
+			
+			~\lang,Hello everyone!,Hallo iedereen!,~
+		\end{document}
+	\end{minted}
+	
+\end{frame}
+
+\end{document}
