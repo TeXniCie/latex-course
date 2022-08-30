@@ -37,6 +37,9 @@
 \usecolortheme{dolphin}
 \useoutertheme{miniframes}
 
+% Removes beamer navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
 %\RequirePackage{minted}
 \RequirePackage{subfiles}
 \RequirePackage{amsmath,amssymb,amsthm,commath,mathtools}
@@ -90,8 +93,8 @@
 
 %\newcommand\lang[2]{%
 
-% \lang,something in english,something in dutch, kijk eens
-% \lang{something, in english}{something, in dutch}
+% \lang,something,iets, kijk eens
+% \lang{something}{iets} kijk eens
 
 \makeatletter
 \def\lang{%
@@ -116,6 +119,8 @@
 	}%
 }
 \makeatother
+
+\DeclareMathOperator{\Image}{Image}
 
 % voor filenames met langsuffix
 \def\langsuffix{}
@@ -450,7 +455,9 @@
 	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
 	\end{beamercolorbox}
 	\begin{beamercolorbox}{section in head/foot}
-		\vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+		\vskip2pt %\insertnavigation{\paperwidth}
+		\strut
+		\vskip2pt
 	\end{beamercolorbox}%
 	%
 	\begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
