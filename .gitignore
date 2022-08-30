@@ -11,3 +11,4 @@
 oefenboekje/_minted-main/
 .DS_Store
 **/auxdir/
+*.fls
