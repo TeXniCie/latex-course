@@ -1,7 +1,5 @@
-%% !TeX program = pdflatex
-
 \documentclass{../../cursuspresentatie}
-
+\usepackage{minted} %kan later in de .cls file hierboven
 %\input{preamble.tex}
 
 \def\importslide#1#2{%
@@ -20,17 +18,13 @@
 	\titlepage
 	\centering
 
-	Slides are available at\\
-	%\href{https://vkuhlmann.com/latex}{\ul{\texttt{vkuhlmann.com/latex}}}
-	\href{http://a-eskwadraat.nl/latex}{\ul{\texttt{a-eskwadraat.nl/latex}}}
+	Please log in (or create an account) on \url{overleaf.com}\\
+	
 \end{frame}
 
-\addtorecentlist{aaa}
+%TODO We switchen naar Overleaf voor Live LaTeX
 
-\begin{frame}
-	b
-\end{frame}
-
+\importslide{beginners}{beginners-simpledoc.tex}
 % \begin{frame}
 % 	\frametitle{\lang,Schedule,Agenda,}
 	

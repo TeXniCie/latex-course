@@ -1,0 +1,17 @@
+\frametitle{Simple document in \LaTeX }
+\begin{minted}{tex}
+		\documentclass{article}
+		\usepackage[utf8]{inputenc}
+		
+		\title{My document}
+		\author{Vincent Kuhlmann}
+		\date{1 May 2021}
+		
+		\begin{document}
+			\maketitle
+			\section{Introduction}
+			
+			~\lang,Hello everyone!,Hallo iedereen!,~
+		\end{document}
+	\end{minted}
+	

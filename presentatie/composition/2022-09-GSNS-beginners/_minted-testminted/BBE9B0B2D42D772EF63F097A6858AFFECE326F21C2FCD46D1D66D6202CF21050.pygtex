@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{k}{\PYGZbs{}documentclass}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}usepackage}\PYG{n+na}{[utf8]}\PYG{n+nb}{\PYGZob{}}inputenc\PYG{n+nb}{\PYGZcb{}}
+		
+		\PYG{k}{\PYGZbs{}title}\PYG{n+nb}{\PYGZob{}}My document\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}author}\PYG{n+nb}{\PYGZob{}}Vincent Kuhlmann\PYG{n+nb}{\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}date}\PYG{n+nb}{\PYGZob{}}1 May 2021\PYG{n+nb}{\PYGZcb{}}
+		
+		\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+			\PYG{k}{\PYGZbs{}maketitle}
+			\PYG{k}{\PYGZbs{}section}\PYG{n+nb}{\PYGZob{}}Introduction\PYG{n+nb}{\PYGZcb{}}
+			
+			\PYGZti{}\PYG{k}{\PYGZbs{}lang},Hello everyone!,Hallo iedereen!,\PYGZti{}
+		\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}
