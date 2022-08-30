@@ -37,7 +37,7 @@
 \usecolortheme{dolphin}
 \useoutertheme{miniframes}
 
-\RequirePackage{minted}
+%\RequirePackage{minted}
 \RequirePackage{subfiles}
 \RequirePackage{amsmath,amssymb,amsthm,commath,mathtools}
 \RequirePackage{esint}

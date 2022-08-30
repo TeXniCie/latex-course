@@ -1,6 +1,5 @@
+%&presentatie
 \documentclass{../../cursuspresentatie}
-\usepackage{minted} %kan later in de .cls file hierboven
-%\input{preamble.tex}
 
 \def\importslide#1#2{%
 	\import{../../slides/#1}{#2}
@@ -10,6 +9,12 @@
 \author{\TeX niCie}
 \date{8 September 2022}
 
+% Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
+% fris ingeladen
+\csname endofdump\endcsname
+
+\usepackage{minted} %kan later in de .cls file hierboven
+
 \begin{document}
 
 \section{Introduction}
@@ -18,8 +23,7 @@
 	\titlepage
 	\centering
 
-	Please log in (or create an account) on \url{overleaf.com}\\
-	
+	Please log in (or create an account) on \url{overleaf.com}
 \end{frame}
 
 %TODO We switchen naar Overleaf voor Live LaTeX
