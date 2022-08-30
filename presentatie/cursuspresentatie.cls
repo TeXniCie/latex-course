@@ -1,19 +1,27 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cursuspresentatie}[2021/09/27 cursuspresentatie v0.1.0]
+\ProvidesClass{cursuspresentatie}[2022/08/30 cursuspresentatie]
+
+\RequirePackage{etoolbox}
+
+\newbool{ishandout}
 
 % skipt animaties voor pdf files voor studenten pdf geven, de juiste boolean uncommenten
 % booleans in latex zijn 
-\newif\ifishandout
-\ishandoutfalse
-%\ishandouttrue
+%\setbool{ishandout}{true}
 
-\ifishandout
-    \LoadClass[handout,aspectratio=32]{beamer}
-\else
-    \LoadClass[aspectratio=32]{beamer}
-\fi
+% aspectratio=169: aspectratio 16:9
+% aspectratio=32: aspectratio 3:2
 
 
+\ifbool{ishandout}{
+    \LoadClass[handout,aspectratio=169]{beamer}
+}{
+    \LoadClass[aspectratio=169]{beamer}
+}
+
+%\typeout{\meaning\ishandout}
+
+%TODO Vervang highlightlatex door minted, dan niet meer nodig
 \RequirePackage[tabsize=4]{highlightlatex}
 
 
@@ -50,9 +58,9 @@
 
 
 \ifbool{english}{
-	\RequirePackage[greek,english]{babel}
+	\RequirePackage[english]{babel}
 }{
-	\RequirePackage[greek,dutch]{babel}
+	\RequirePackage[dutch]{babel}
 }
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{fancyvrb}
@@ -74,14 +82,16 @@
 \RequirePackage{inputslide}
 \RequirePackage{multicol}
 
-
-\newcommand{\TeXniCie}{\TeX niCie}
+%\newcommand{\TeXniCie}{\TeX niCie}
 
 \def\importslide#1#2{%
 	\import{../../slides/#1}{#2}
 }
 
 %\newcommand\lang[2]{%
+
+% \lang,something in english,something in dutch, kijk eens
+% \lang{something, in english}{something, in dutch}
 
 \makeatletter
 \def\lang{%
@@ -111,9 +121,7 @@
 \def\langsuffix{}
 \lang{\gdef\langsuffix{EN}}{}
 
-\addbibresource{\subfix{assets/fakebib.bib}}
-
-\DeclareMathOperator{\Image}{Image}
+% \addbibresource{\subfix{assets/fakebib.bib}}
 
 % gekleurde underline werkt niet in beamer
 % Source: https://tex.stackexchange.com/questions/41683/why-is-it-that-coloring-in-soul-in-beamer-is-not-visible
@@ -210,9 +218,6 @@
 %TODO gobble hoort ook bij highlight
 \def\defaultgobble{8}
 
-%\hllconfigure{
-%	gobbletabs=3,
-%}
 
 \def\Zphantomconceal#1#2{%
 	\only<#2->{\rlap{#1}}\phantom{#1}%
@@ -450,29 +455,29 @@
 	%
 	\begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
 	\end{beamercolorbox}
-	\begin{beamercolorbox}[
-		ht=2.5ex,
-		dp=1.125ex,
-		leftskip=.3cm,rightskip=.3cm plus1fil
-		]{subsection in head/foot}
-		\usebeamerfont{subsection in head/foot}%\insertsubsectionhead
-		% \savebox\printrecentbox{\printrecentlist}%
-		% \ifdim\wd\printrecentbox>0.9\textwidth
-		% 	\adjustbox{right=0.9\textwidth}{\printrecentlist}%
-		% \else
-		% 	\adjustbox{left=0.9\textwidth}{\printrecentlist}%
-		% \fi
-		\saveprintrecentbox
-		\ifdim\wd\printrecentbox>0.9\textwidth
-			%(Shrinking box)
-			%\PackageError{debug}{Width is \the\wd\printrecentbox}{}%
-			\shrinkrecentbox{0.6\textwidth}%
-		\else
-			%(Not shrinking box)
-		\fi
-		\usebox\printrecentbox
-		%\textbullet\ Hey
-	\end{beamercolorbox}%
+	% \begin{beamercolorbox}[
+	% 	ht=2.5ex,
+	% 	dp=1.125ex,
+	% 	leftskip=.3cm,rightskip=.3cm plus1fil
+	% 	]{subsection in head/foot}
+	% 	\usebeamerfont{subsection in head/foot}%\insertsubsectionhead
+	% 	% \savebox\printrecentbox{\printrecentlist}%
+	% 	% \ifdim\wd\printrecentbox>0.9\textwidth
+	% 	% 	\adjustbox{right=0.9\textwidth}{\printrecentlist}%
+	% 	% \else
+	% 	% 	\adjustbox{left=0.9\textwidth}{\printrecentlist}%
+	% 	% \fi
+	% 	% \saveprintrecentbox
+	% 	% \ifdim\wd\printrecentbox>0.9\textwidth
+	% 	% 	%(Shrinking box)
+	% 	% 	%\PackageError{debug}{Width is \the\wd\printrecentbox}{}%
+	% 	% 	\shrinkrecentbox{0.6\textwidth}%
+	% 	% \else
+	% 	% 	%(Not shrinking box)
+	% 	% \fi
+	% 	% \usebox\printrecentbox
+	% 	%\textbullet\ Hey
+	% \end{beamercolorbox}%
 	%
 	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
 	\end{beamercolorbox}

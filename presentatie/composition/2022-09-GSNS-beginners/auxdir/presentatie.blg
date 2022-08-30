@@ -1,9 +1,0 @@
-[0] Config.pm:307> INFO - This is Biber 2.17
-[0] Config.pm:310> INFO - Logfile is 'auxdir\presentatie.blg'
-[130] biber-MSWIN64:340> INFO - === 
-[167] Biber.pm:418> INFO - Reading 'auxdir\presentatie.bcf'
-[280] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[304] bbl.pm:654> INFO - Writing 'auxdir\presentatie.bbl' with encoding 'UTF-8'
-[304] bbl.pm:757> INFO - Output to auxdir\presentatie.bbl
-[304] Biber.pm:130> WARN - The file 'auxdir\presentatie.bcf' does not contain any citations!
-[304] Biber.pm:132> INFO - WARNINGS: 1
