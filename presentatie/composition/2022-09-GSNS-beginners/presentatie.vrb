@@ -1,24 +1,32 @@
 \frametitle{Simple document in \LaTeX }
 \begin{columns}
-        \begin{column}{0.3\textwidth}
+        \begin{column}{0.5\textwidth}
 	\begin{minted}[autogobble, linenos=true, escapeinside=||]{tex}
-	\documentclass[a4paper, 11pt]{article}
+	\documentclass[a4paper,11pt]{article}
 
-
-		
 		
 	\begin{document}
 
-	The Differential and Integral Calculus, or, as it was formerly called in this country,
-	the Doctrine of Fluxions, has always been supposed to present remarkable obstacles to the beginner.
-	
-	
+	The Differential and Integral
+	Calculus, or, as it was formerly
+	called in this country,
+	the Doctrine of Fluxions, has always
+	been supposed to present remarkable
+	obstacles to the beginner.
+
 	\end{document}
 	\end{minted}
 \end{column}
-\begin{column}{0.6\textwidth}
-	{\Huge \textcolor{red}{ \} } } \begin{minipage}{7cm}\textbf{preamble}: document settings go here\end{minipage}\\[2cm]
-	{\Huge \textcolor{red}{ \} } } \begin{minipage}{7cm}\textbf{body}: content (text and images) goes here\end{minipage}\\[2cm]
+\begin{column}{0.05\textwidth}
+	{\Huge \textcolor{red}{ \} } }
+	\\[2cm]
+	\phantom{{\Huge \textcolor{red}{ \} } }}
+	
+\end{column}
+\begin{column}{0.3\textwidth}
+	\textbf{preamble}: document settings go here
+	\\[2cm]
+	\phantom{\textbf{body}: content (text and images) goes here}
 \end{column}
 \end{columns}
 
