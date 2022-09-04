@@ -1,6 +1,4 @@
-%&presentatie
 \documentclass{../../cursuspresentatie}
-
 
 \def\importslide#1#2{%
 	\import{../../slides/#1}{#2}
@@ -15,7 +13,7 @@
 \csname endofdump\endcsname
 
 \usepackage{minted} %kan later in de .cls file hierboven
-
+\usepackage{pdfpages}
 \begin{document}
 
 \section{Introduction}
@@ -31,7 +29,7 @@
 	\frametitle{\lang,Schedule,Agenda,}
 	
 	\begin{itemize}
-		\item \lang,Introduction,Introductie,
+		\item \lang,Introduction to LaTeX and Overleaf,Introductie tot LaTeX en Overleaf,
 		\item \lang,Text formatting,Tekstopmaak,
 		\item  $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
 		\item \lang,Structure of a document,Documentstructuur,
@@ -46,12 +44,28 @@
 
 \begin{frame}
 	\frametitle{Overleaf}
+	\includegraphics[width=1\textwidth]{images/overleaf_startscherm}
+\end{frame}
 
+\begin{frame}
+	\frametitle{Overleaf}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		  \includegraphics[width=0.8\textwidth]{images/new_project.pdf}\hfill
+		\end{column}
+		\begin{column}{0.4\textwidth}
+		  \includegraphics[width=1\textwidth]{images/project_name.pdf}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 %TODO We switchen naar Overleaf voor Live LaTeX
 
-\importslide{beginners}{beginners-simpledoc.tex}
+\importslide{beginners}{beginners-simpledoc-1.tex}
+\importslide{beginners}{beginners-simpledoc-2.tex}
+\importslide{beginners}{beginners-simpledoc-3.tex}
+
+
 
 
 % \subfile{1_Inleiding.tex}

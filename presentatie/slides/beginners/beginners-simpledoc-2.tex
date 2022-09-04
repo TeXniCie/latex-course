@@ -1,0 +1,35 @@
+
+
+\begin{frame}[fragile]{Simple document in \LaTeX}
+	%autogobble removes extra tabs we want in the code but should not be in the pdf code display
+	\begin{columns}
+        \begin{column}{0.5\textwidth}
+	\begin{minted}[autogobble, linenos=true, escapeinside=||]{tex} 
+	\documentclass{article}
+
+		
+	\begin{document}
+
+	The Differential and Integral 
+	Calculus, or, as it was formerly 
+	called in this country, 
+	the Doctrine of Fluxions, has always 
+	been supposed to present remarkable 
+	obstacles to the beginner.
+
+	\end{document}
+	\end{minted}
+\end{column}
+\begin{column}{0.1\textwidth}
+	% {\Huge \textcolor{red}{ \} } }
+	\\[2cm]
+	{\Huge \textcolor{red}{ \} } }
+\end{column}
+\begin{column}{0.3\textwidth}
+	% \textbf{preamble}: document settings go here
+	\\[2cm]
+	\textbf{body}: content (text and images) goes here
+\end{column}
+\end{columns}
+
+\end{frame}
