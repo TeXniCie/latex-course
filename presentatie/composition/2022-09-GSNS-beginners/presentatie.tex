@@ -13,73 +13,56 @@
 \csname endofdump\endcsname
 
 \usepackage{minted} %kan later in de .cls file hierboven
-\usepackage{pdfpages}
+
 \begin{document}
 
 \section{Introduction}
+\importslide{beginners}{welcome.tex}
+\importslide{beginners}{contents.tex}
 
-\begin{frame}
-	\titlepage
-	\centering
-
-	Please log in (or create an account) on \url{overleaf.com}
-\end{frame}
-
-\begin{frame}
-	\frametitle{\lang,Schedule,Agenda,}
-	
-	\begin{itemize}
-		\item \lang,Introduction to LaTeX and Overleaf,Introductie tot LaTeX en Overleaf,
-		\item \lang,Text formatting,Tekstopmaak,
-		\item  $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-		\item \lang,Structure of a document,Documentstructuur,
-		\item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-		\item \lang,Formulas,Formules,
-		\item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-		\item  \lang,Images,Afbeeldingen,
-		\item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-		\item \lang,Closing remarks,Afsluitende opmerkingen,
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Overleaf}
-	\includegraphics[width=1\textwidth]{images/overleaf_startscherm}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Overleaf}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-		  \includegraphics[width=0.8\textwidth]{images/new_project.pdf}\hfill
-		\end{column}
-		\begin{column}{0.4\textwidth}
-		  \includegraphics[width=1\textwidth]{images/project_name.pdf}
-		\end{column}
-	\end{columns}
-\end{frame}
+\importslide{beginners}{overleaf-1.tex}
+\importslide{beginners}{overleaf-2.tex}
 
 %TODO We switchen naar Overleaf voor Live LaTeX
 
-\importslide{beginners}{beginners-simpledoc-1.tex}
-\importslide{beginners}{beginners-simpledoc-2.tex}
-\importslide{beginners}{beginners-simpledoc-3.tex}
+\importslide{beginners}{simpledoc-1.tex}
+\importslide{beginners}{simpledoc-2.tex}
+\importslide{beginners}{simpledoc-3.tex}
 
+% switch naar live LaTeX
+\importslide{beginners}{whitespace.tex}
+\importslide{beginners}{paragraphs.tex}
 
+% # EXCERCISES 10 MIN
 
+% switch
 
-% \subfile{1_Inleiding.tex}
+\importslide{beginners}{sections.tex}
+\importslide{beginners}{title.tex}
 
-% \subfile{2_Tekstopmaak.tex}
+% switch
 
-% \subfile{3_Documentstructuur.tex}
+\importslide{beginners}{special-characters.tex}
 
-% \subfile{4_Afbeeldingen.tex}
+% switch
+\importslide{beginners}{format-text.tex}
 
-% \subfile{5_Formules.tex}
+% # EXCERCISES 15 MIN
 
-% \subfile{6_Bibliografie.tex}
+% switch
+\importslide{beginners}{math-1.tex}
 
-%\subfile{7_GoedOmTeWeten.tex}
+\importslide{beginners}{math-2.tex}
+
+% # EXCERCISES 10 MIN
+
+% switch
+\importslide{beginners}{math-3.tex}
+
+\importslide{beginners}{math-4.tex}
+
+% # EXCERCISES 10 MIN
+
+\importslide{beginners}{closing-remarks.tex}
 	
 \end{document}
