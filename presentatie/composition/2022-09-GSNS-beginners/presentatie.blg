@@ -1,0 +1,4 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'presentatie.blg'
+[59] biber-darwin:340> INFO - === Sun Sep  4, 2022, 20:47:17
+[72] Biber.pm:418> INFO - Reading 'presentatie.bcf'

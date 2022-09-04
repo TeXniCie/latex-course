@@ -68,7 +68,6 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{fancyvrb}
 \RequirePackage{marvosym}
-\RequirePackage{csquotes}
 \RequirePackage[style=numeric]{biblatex}
 \RequirePackage{textcomp}
 %\RequirePackage{enumitem}
@@ -77,13 +76,14 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{textgreek}
 \RequirePackage{lmodern}
-\RequirePackage{mhchem}
+\RequirePackage[version=4]{mhchem}
 
 \RequirePackage{ragged2e}
 
 \RequirePackage{import}
 \RequirePackage{inputslide}
 \RequirePackage{multicol}
+\RequirePackage{csquotes}
 
 %\newcommand{\TeXniCie}{\TeX niCie}
 

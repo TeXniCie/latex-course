@@ -1,17 +1,15 @@
 \frametitle{Simple document in \LaTeX }
 \begin{minted}[autogobble]{tex}
 		\documentclass{article}
-		\usepackage[utf8]{inputenc}
+
+
 		
-		\title{My document}
-		\author{My name}
-		\date{8 September 2022}
 		
 		\begin{document}
-			\maketitle
-			\section{Introduction}
-			
-			Hello everyone
+
+
+
+
 		\end{document}
 	\end{minted}
 
