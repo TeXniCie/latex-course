@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[a4paper,margin=2.54cm]{geometry}
+
+\usepackage{acrn}
+
+\acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2022}
+\acrnDefName\copyrightTim{Tim Weijers}{2022}
+\acrnDefName\copyrightHanneke{Hanneke Schroten}{2022}
+\acrnDefName\copyrightThomas{Thomas van Maaren}{2022}
+
+\begin{document}
+    \copyrightHanneke
+    \copyrightTim
+    \copyrightHanneke
+    \copyrightTim
+
+    % \expandafter\meaning\csname acrn@info@copyrightVincent\endcsname
+
+    %\printcopyright
+
+    % \expandafter\meaning\csname acrn@ids\endcsname
+
+    %\expandafter\meaning\csname acrn@idforcount@acrn@count@copyrightVincent\endcsname
+
+    \acrnPrepare
+    \ifbool{isCopyrightEmpty}{
+        No copyright information
+    }{
+        \def\acrnCopyrightline#1#2#3{%
+            \item Copyright (c) #2 \textbf{#1}\relax
+        }
+        %\adjustbox{scale=0.8,set depth={0.4\textheight}}{%
+        \begin{varwidth}{25em}%
+            \ttfamily
+            \begin{list}{}{
+                \setlength{\leftmargin}{20pt}
+                \itemindent-\leftmargin
+                \setlength{\itemsep}{0pt}
+                \setlength{\parskip}{0pt}
+            }
+                % \item Copyright (c) Hoi
+                \copyrightlines
+                % \item Doei
+                % Hier jezelf toevoegen, ook in LICENSE bestand
+            \end{list}
+        \end{varwidth}%
+        %}
+    }
+\end{document}
