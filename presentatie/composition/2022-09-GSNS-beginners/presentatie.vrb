@@ -1,13 +1,22 @@
-\frametitle{LaTeX commnands}
-other commands go in the \textbf{preamble} of the document
+\frametitle{title, author and date}
+We will now add a title to the article. We use three
+    commands to set a \textbf{title}, \textbf{author} and \textbf{date}.
+    These commands go in the \textbf{preamble}.
+
+    The command \mintinline{tex}{\maketitle} goes in the
+    \textbf{body} of the document and
+    determines the position of the title.
     \newline
-    \begin{itemize}
-    \item \mintinline{tex}{\title} sets the title of the document.\newline
-
-
-    \item \mintinline{tex}{\usepackage{PACKAGENAME}} loads LaTeX code someone else has written into your document
-    \newline
-
-    \item \mintinline{tex}{\usepackage[paper=a5paper, margin=2cm, landscape=true]{geometry} }
-        loads the geometry package with 3 optional arguments
-    \end{itemize}
+    \begin{minted}[fontsize=\small]{tex}
+        \documentclass[a4paper, 12pt]{article}
+        \title{Elementary Illustrations of the
+            Differential and Integral Calculus}
+        \author{Augustus De Morgan}
+        \date{November 11}
+        \begin{document}
+        \maketitle
+        The Differential and Integral Calculus, or, as it was formerly
+	called in this country, the Doctrine of Fluxions, has always
+	been supposed to present remarkable obstacles to the beginner.
+    \end{document}
+    \end{minted}
