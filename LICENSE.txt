@@ -1,5 +1,3 @@
-MIT License
-
 Copyright (c) 2021-2022 Vincent Kuhlmann
 Copyright (c) 2022 Tim Weijers
 Copyright (c) 2022 Hanneke Schroten

@@ -2,6 +2,18 @@
 \ProvidesClass{cursuspresentatie}[2022/08/30 cursuspresentatie]
 
 \RequirePackage{etoolbox}
+\RequirePackage{../../acrn}
+
+\DeclareOption{allauthors}{
+    \acrnAllAuthorsTrue
+}
+
+\ProcessOptions
+
+\acrnDefName\copyrightTim{Tim Weijers}{2022}
+\acrnDefName\copyrightHanneke{Hanneke Schroten}{2022}
+\acrnDefName\copyrightThomas{Thomas van Maaren}{2022}
+\acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2022}
 
 \newbool{ishandout}
 
