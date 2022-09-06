@@ -1,5 +1,25 @@
 \copyrightTim
 
-\begin{frame}
-    \frametitle{title and author}
+\begin{frame}[fragile]{title, author and date}
+    We will now add a title to the article. We use three 
+    commands to set a \textbf{title}, \textbf{author} and \textbf{date}.
+    These commands go in the \textbf{preamble}.
+
+    The command \mintinline{tex}{\maketitle} goes in the 
+    \textbf{body} of the document and 
+    determines the position of the title. 
+    \newline
+    \begin{minted}[fontsize=\small]{tex}
+        \documentclass[a4paper, 12pt]{article}
+        \title{Elementary Illustrations of the 
+            Differential and Integral Calculus}
+        \author{Augustus De Morgan}
+        \date{November 11}
+        \begin{document}
+        \maketitle
+        The Differential and Integral Calculus, or, as it was formerly 
+	called in this country, the Doctrine of Fluxions, has always 
+	been supposed to present remarkable obstacles to the beginner.
+    \end{document}
+    \end{minted}
 \end{frame}
