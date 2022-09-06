@@ -10,25 +10,9 @@
 \newcount\acrn@increment
 \acrn@increment=1\relax
 
-\newcount\acrn@cutoff
-\acrn@cutoff=0\relax
-
 \def\acrn@ids{}
 
-\def\acrnAllAuthorsTrue{
-    \acrn@cutoff=-1\relax
-}
 
-\def\acrnAllAuthorsFalse{
-    \acrn@cutoff=0\relax
-}
-
-\DeclareOption{allauthors}{
-    \acrnAllAuthorsTrue
-}
-
-
-\ProcessOptions
 
 % ====== Defining new names =====
 
@@ -73,7 +57,7 @@
     }%
     %
     \def\@pophighest{%
-        \acrn@scoretobeat=\acrn@cutoff\relax
+        \acrn@scoretobeat=0\relax
         \let\currentHighest\relax
         \let\@prevdo\do
         \def\do####1{
