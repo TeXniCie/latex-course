@@ -7,41 +7,21 @@
 
 %% Copyright (c) 2022 Vincent Kuhlmann
 
-% \def\onDefineCopyright{
-%     \acrn@defname\copyrightVincent{Vincent Kuhlmann}{2021-2022}
-%     \acrn@defname\copyrightTim{Tim Weijers}{2022}
-%     \acrn@defname\copyrightHanneke{Hanneke Schroten}{2022}
-%     \acrn@defname\copyrightThomas{Thomas van Maaren}{2022}
-% }
-
-% \newcounter{acrn@increment}
-% \setcounter{acrn@increment}{1}
-
 \newcount\acrn@increment
 \acrn@increment=1\relax
 
 \def\acrn@ids{}
 
-\def\@acrn@getCopyrightMacroName#1{
-    \expandafter\def\expandafter\@infoname\expandafter{\csname acrn@info@\expandafter\@gobble\string #1\endcsname}
-}
+
+
+% ====== Defining new names =====
 
 \def\acrn@defname#1#2#3{
-    % \PackageWarning{debug}{acrndefname param 2: #2}
-    % \PackageWarning{debug}{acrndefname param 3: #3}
     \edef\acrn@id{\expandafter\@gobble\string #1}
-    % \PackageWarning{test}{id: \meaning\acrn@id}
-    % \expandafter\def\expandafter\acrn@id\expandafter{\acrn@id}
-    %\PackageWarning{test}{id: \meaning\acrn@id}
-    %\edef\countname{\expandonce\csname acrn@count\expandafter\@gobble\string #1\endcsname}
     \expandafter\def\expandafter\countname\expandafter{\csname acrn@count@\acrn@id\endcsname}
 
     \newcount\@copyrightCounter
     \expandafter\let\countname\@copyrightCounter
-    % \expandafter\newcount\countname
-    % \expandafter\let\expandafter\@copyrightCounter\countname
-
-    %\PackageWarning{debug}{Counter: \meaning\@copyrightCounter}
 
     \def\definecounterincrement##1{
         \def#1{%
@@ -53,41 +33,27 @@
     \expandafter\def\csname acrn@info@\acrn@id\endcsname{{#2}{#3}}
 
     \expandafter\listadd\expandafter\acrn@ids\expandafter{\acrn@id}
-
-    %\PackageWarning{test}{\meaning\countname}
-
-    % \expandafter\def\csname acrn@idforcount@\expandafter\string\countname\endcsname\expandafter{\acrn@id}
-    %\expandafter\def\csname acrn@idforcount@\expandafter\expandafter\expandafter\@gobble\expandafter\expandafter\expandafter\string\countname\endcsname\expandafter{\acrn@id}
-    %\let\expandafter\@copyrightCounter\csname acrn@count@\expandafter\@gobble\string #1\endcsname}\relax
-
-    % \expandafter
-    % \PackageWarning{test}{\meaning\@copyrightCounter}
-
-    % \expandafter\newcount\@copyrightCounter
-    %\def#1{}
 }
 
+% #1: Command to increment the copyright counter of the author
+% #2: Author name
+% #3: Year
 \let\acrnDefName\acrn@defname
 
-%\onDefineCopyright
 
 
-\def\acrnCopyrightline#1#2#3{
-    Copyright (c) #2 #1
-}
+% ====== Sorting =====
+
+\newcount\acrn@scoretobeat
 
 % #1: callback
 \def\acrn@getsorted#1{
     \begingroup
-    % \expandafter\let\expandafter\isCopyrightEmpty\csname iftrue\endcsname
-    % %
+    %
     \expandafter\def\expandafter\templist\expandafter{\acrn@ids}%
     \def\onresult##1{%
-        %\expandafter\let\expandafter\isCopyrightEmpty\csname iffalse\endcsname
         \listremove\templist{##1}%
-        % \listadd{#1}{##1}
         #1{##1}%
-        %\expandafter\expandafter\expandafter\acrn@copyrightline\csname acrn@info@##1\endcsname{##1}%
     }%
     %
     \def\@pophighest{%
@@ -95,9 +61,7 @@
         \let\currentHighest\relax
         \let\@prevdo\do
         \def\do####1{
-            % \PackageWarning{debug}{Score is \expandafter\the\csname acrn@count@####1\endcsname}
             \expandafter\ifnum\csname acrn@count@####1\endcsname>\acrn@scoretobeat
-                %\PackageWarning{debug}{New highest: ####1}%
                 \def\currentHighest{####1}%
                 \expandafter\acrn@scoretobeat\csname acrn@count@####1\endcsname
             \fi
@@ -105,9 +69,6 @@
         \dolistloop{\templist}
         \let\do\@prevdo
         \unless\ifx\currentHighest\relax
-            % \expandafter\listremove\expandafter\templist\expandafter{\currentHighest}
-            % \expandafter\expandafter\expandafter\acrn@copyrightline\csname acrn@info@\currentHighest
-            % \expandafter\endcsname\expandafter{\currentHighest}
             \expandafter\onresult\expandafter{\currentHighest}%
             \@pophighest
         \fi
@@ -118,8 +79,10 @@
 
 \def\acrnSorted{}
 \newbool{isCopyrightEmpty}
-%\setbool{isCopyrightEmpty}{false}
 
+% Create list of authors in descending order of frequency. Results in:
+% - The etoolbox list \arcnSorted, and
+% - The etoolbox boolean isCopyrightEmpty, indicating if \arcnSorted is empty
 \def\acrnPrepare{%
     \def\acrnSorted{}
     \global\setbool{isCopyrightEmpty}{true}%
@@ -128,89 +91,50 @@
         \listgadd\acrnSorted{##1}%
     }%    
     \acrn@getsorted{\do}%
-    % \def\templistb{}%
-    % % \acrn@store@sorted{\templistb}%
-    % \acrn@sorted{\addtolist\templistb}%
-    % \def\do##1{%
-    %     \expandafter\expandafter\expandafter\acrn@copyrightline\csname acrn@info@##1\endcsname{##1}%
-    % }%
-    % \dolistloop{\templistb}%
 }
 
-\newcount\acrn@scoretobeat
+% ====== Printing =====
 
+% #1: Author name
+% #2: Year
+% #3: Id
+\def\acrnCopyrightline#1#2#3{
+    Copyright (c) #2 #1
+}
+
+% #1: Id
 \def\acrn@copyrightline@i#1{%
     \PackageInfo{acrn}{Copyright frequency of #1: \expandafter\the\csname acrn@count@#1\endcsname}%
     \typeout{[acrn] Copyright frequency of #1: \expandafter\the\csname acrn@count@#1\endcsname}
-    % \PackageWarning{debug}{acrn@copyrightline@i with argument #1}
     \expandafter\expandafter\expandafter\acrnCopyrightline\csname acrn@info@#1\endcsname{#1}%
 }
 
-% \def\copyrightlinesSorted{%
-%     % \def\templistb{}%
-%     % % \acrn@store@sorted{\templistb}%
-%     % \acrn@sorted{\addtolist\templistb}%
-%     % \def\do##1{%
-%     %     \expandafter\expandafter\expandafter\acrn@copyrightline\csname acrn@info@##1\endcsname{##1}%
-%     % }%
-%     % \dolistloop{\templistb}%
-
-% }
-
-% \def\copyrightlinesUnsorted{
-%     % \acrn@copyrightline{Tim}{2022}
-%     % \acrn@copyrightline{Hanneke}{2022}
-%     \def\do##1{
-%         %\expandafter\edef\expandafter\test\expandafter{\csname acrn@info@##1\endcsname{##1}}
-%         %\PackageWarning{debug}{Params for copyrightline: \meaning\test}
-%         \expandafter\expandafter\expandafter\acrn@copyrightline\csname acrn@info@##1\endcsname{##1}
-%         %\expandafter\acrn@copyrightline\test
-%         %(\expandafter\acrn@copyrightline\csname acrn@info@##1\endcsname): %\expandafter\the\csname acrn@count@##1\endcsname
-%     }
-%     \dolistloop{\acrn@ids}
-% }
-
-% \let\copyrightlines\copyrightlinesSorted
-
+% Expands to \acrnCopyrightline for each author, in descending order of frequency
 \def\copyrightlines{%
-    % \ifx\acrnSorted\relax
-    %     \PackageError{acrn}{Invoke \string\acrnPrepare{} before invoking \string\copyrightlines}
-    % \fi
     \begingroup
     \let\do\acrn@copyrightline@i
-    %\PackageWarning{debug}{acrnSorted: \meaning\acrnSorted}
     \dolistloop{\acrnSorted}%
     \endgroup
 }
 
+% Print \copyrightlines underneath each other
 \def\printcopyright{
     \def\acrnCopyrightline##1##2##3{%
-        % \PackageWarning{debug}{Param 1 of acrn@copyrightline: ##1}
-        % \PackageWarning{debug}{Param 2 of acrn@copyrightline: ##2}
-        % \PackageWarning{debug}{Param 3 of acrn@copyrightline: ##3}
-        %\item Copyright (c) ##2 ##1 [##3], \expandafter\the\csname acrn@count@##3\endcsname\relax
         \item Copyright (c) ##2 ##1\relax
     }
     \acrnPrepare
     \ifbool{isCopyrightEmpty}{
         Empty
     }{
-        %\adjustbox{scale=0.8,set depth={0.4\textheight}}{%
-        \begin{varwidth}{25em}%
-            \ttfamily
-            \begin{list}{}{
-                \setlength{\leftmargin}{20pt}
-                \itemindent-\leftmargin
-                \setlength{\itemsep}{0pt}
-                \setlength{\parskip}{0pt}
-            }
-                % \item Copyright (c) Hoi
-                \copyrightlines
-                % \item Doei
-                % Hier jezelf toevoegen, ook in LICENSE bestand
-            \end{list}
-        \end{varwidth}%
-        %}
+        \ttfamily
+        \begin{list}{}{
+            \setlength{\leftmargin}{20pt}
+            \itemindent-\leftmargin
+            \setlength{\itemsep}{0pt}
+            \setlength{\parskip}{0pt}
+        }
+            \copyrightlines
+        \end{list}
     }
 }
 
