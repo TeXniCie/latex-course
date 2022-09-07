@@ -1,6 +1,17 @@
+\copyrightVincent
+
 \addtorecentlist{\textbackslash textbackslash}
 
-\begin{frame}
+\def\frameSelection{2}
+
+\beginDetail{20}
+    \def\frameSelection{1-}
+\endDetail
+
+% \def\frameStart#1{\begin{frame}<#1>}
+
+% \expandafter\frameStart\expandafter{\frameselection}
+\beginFrameWithSelection{\frameSelection}
     \frametitle{\lang,Special characters,Speciale tekens,}
 
     \begingroup

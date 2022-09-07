@@ -1,24 +1,29 @@
+\copyrightVincent
 
-\begin{saveblock}{comments}
-	\begin{highlightblock}[linewidth=0.9\textwidth,gobble=8]
-		% Make soul package work in beamer presentations
-		% Source: https://tex.stackexchange.com/...
-		\let\UL\ul
-		\makeatletter
-		\renewcommand\ul{
-			\let\set@color\beamerorig@set@color
-			\let\reset@color\beamerorig@reset@color
-			\UL
-		}
-		...
-	\end{highlightblock}
-\end{saveblock}
+\beginDetail{20}
 
-\begin{frame}
-	\frametitle{\lang,Comments,Comments,}
+	\begin{saveblock}{comments}
+		\begin{highlightblock}[linewidth=0.9\textwidth,gobble=8]
+			% Make soul package work in beamer presentations
+			% Source: https://tex.stackexchange.com/...
+			\let\UL\ul
+			\makeatletter
+			\renewcommand\ul{
+				\let\set@color\beamerorig@set@color
+				\let\reset@color\beamerorig@reset@color
+				\UL
+			}
+			...
+		\end{highlightblock}
+	\end{saveblock}
 
-	\useblock{comments}
-\end{frame}
+	\begin{frame}
+		\frametitle{\lang,Comments,Comments,}
+
+		\useblock{comments}
+	\end{frame}
+
+\endDetail
 
 \begin{saveblock}{comments1}
 	\begin{highlightblock}[linewidth=0.6\textwidth,gobble=8]
@@ -68,7 +73,13 @@
 	\end{highlightblock}
 \end{saveblock}
 
-\begin{frame}
+\def\frameSelection{2}
+
+\beginDetail{20}
+	\def\frameSelection{1-}
+\endDetail
+
+\beginFrameWithSelection{\frameSelection}
 	\frametitle{\lang,Comments,Comments,}
 
 	\begin{columns}
