@@ -1,5 +1,24 @@
 \copyrightTim
 
-\begin{frame}
-    \frametitle{sections}
+\begin{frame}[fragile]{Sections}
+The \mintinline{tex}{\section{SECTIONNAME}} command creates a heading. These headings are automatically numbered.
+Other headings are:
+\begin{noindentlist}
+    \item \mintinline{tex}{\subsection{} |,| \subsubsection{} |and| \paragraph{}}
+\end{noindentlist}
+\begin{minted}[highlightlines={3}, fontsize=\small]{tex}
+\documentclass[a4paper]{article}
+\begin{document}
+\section{How I tried to teach the Theory of Three Dimensions to my 
+Grandson, and with what success}
+I awoke rejoicing, and began to reflect on the glorious career before me. 
+I would go forth, methought, at once, and evangelize the whole of Flatland. 
+Even to Women and Soldiers should the Gospel of Three Dimensions 
+be proclaimed. I would begin with my Wife.
+\end{document}
+\end{minted}
+{\tiny
+	Example text: ``Flatland''
+	by Edwin A. Abbott
+}\par
 \end{frame}
