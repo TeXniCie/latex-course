@@ -1,3 +1,5 @@
+\copyrightVincent
+
 \begin{saveblock}{paragraphs}
     \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
         Hallo!
@@ -65,6 +67,12 @@
 % 	Huh?
 % \end{frame}
 
+\def\frameSelection{3-}
+
+\beginDetail{20}
+    \def\frameSelection{1-}
+\endDetail
+
 \begin{saveblock}{paragraphs}
     \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
         Lorem ipsum dolor sit amet,
@@ -86,7 +94,7 @@
 
 \addtorecentlist{\textbf{\lang,blank line,witregel,}}
 
-\begin{frame}
+\beginFrameWithSelection{\frameSelection}
     \frametitle{\lang,Paragraphs,Alinea's,}
     
     \begin{columns}
@@ -108,3 +116,5 @@
     \end{columns}
     \pause
 \end{frame}
+
+\let\frameSelection\relax

@@ -1,6 +1,6 @@
 %% !TeX program = pdflatex
 
-\documentclass{../../cursuspresentatie}
+\documentclass[allauthors]{../../cursuspresentatie}
 
 %\input{preamble.tex}
 
@@ -8,24 +8,25 @@
 	\import{../../slides/#1}{#2}
 }
 
-\title{UAV \LaTeX{}-course}
-\author{Tim Weijers \& Vincent Kuhlmann}
-\date{15 March 2022}
+\title{GSNS \LaTeX{} course}
+\author{\TeX niCie}
+\date{8 September 2022}
+
+\def\assetdir{assets}
 
 \begin{document}
 
-\lang{
-	\section{Introduction}
-}{
-	\section{Introductie}
-}
+\copyrightVincent
+\copyrightTim
+
+\section{Introduction}
 
 \begin{frame}
 	\titlepage
 	\centering
 
 	Slides are available at\\
-	\href{https://vkuhlmann.com/latex}{\ul{\texttt{vkuhlmann.com/latex}}}
+	\href{https://a-eskwadraat.nl/latex}{\ul{\texttt{a-eskwadraat.nl/latex}}}
 \end{frame}
 
 \begin{frame}
@@ -43,18 +44,153 @@
 	\end{itemize}
 \end{frame}
 
-\subfile{1_Inleiding.tex}
+\importslide{intro}{intro-overleaf.tex}
+\importslide{intro}{intro-simpledoc.tex}
 
-\subfile{2_Tekstopmaak.tex}
 
-\subfile{3_Documentstructuur.tex}
+\section{Text formatting}
 
-\subfile{4_Afbeeldingen.tex}
+% \importslide{text}{text-effects.tex}
+\importslide{text}{text-groups.tex}
 
-\subfile{5_Formules.tex}
+\setDetail{10}
 
-% \subfile{6_Bibliografie.tex}
+\importslide{text}{text-paragraphs.tex}
 
-\subfile{7_GoedOmTeWeten.tex}
+\importslide{text}{text-parskip.tex}
+%\importslide{text}{text-noindent.tex}
+
+% \importslide{text}{text-vspace.tex}
+
+% Crash course detail
+
+\importslide{text}{text-lists.tex}
+
+\importslide{text}{text-specialchars.tex}
+
+\importslide{text}{text-comments.tex}
+\importslide{text}{text-quotes.tex}
+
+\setDetail{20}
+
+% \importslide{text}{text-whitespace.tex}
+
+\section{Document structure}
+
+\importslide{document}{document-parts.tex}
+
+\importslide{document}{document-margins.tex}
+
+% \importslide{document}{document-sections.tex}
+
+\importslide{document}{document-toc.tex}
+
+\importslide{document}{document-secnumdepth.tex}
+
+\importslide{document}{document-section_star.tex}
+
+\importslide{document}{document-hyperref.tex}
+
+\importslide{internals}{internals-packages-ref.tex}
+
+\lang{
+	\section{Figures}
+}{
+	\section{Afbeeldingen}
+}
+
+% \addtorecentlist{\textbackslash includegraphics}
+
+\importslide{images}{includegraphics-inline.tex}
+\importslide{images}{includegraphics-asparagraph.tex}
+\importslide{images}{includegraphics-center.tex}
+\importslide{images}{includegraphics-figure.tex}
+
+\importslide{images}{figure-placement.tex}
+\importslide{images}{figure-dimensions.tex}
+
+\importslide{images}{subfigure.tex}
+
+\lang{
+	\section{Formulas}
+}{
+	\section{Formules}
+}
+
+% \importslide{math}{inline.tex}
+
+\setDetail{10}
+\importslide{math}{basics.tex}
+
+\importslide{math}{symbols.tex}
+
+\importslide{math}{vectors.tex}
+\importslide{math}{text.tex}
+\importslide{math}{calculus.tex}
+
+\setDetail{20}
+
+\importslide{math}{relations.tex}
+\importslide{math}{arrows.tex}
+\importslide{math}{symbols-ref.tex}
+
+\importslide{math}{math-vscode_snippet_view.tex}
+
+\importslide{math}{equation.tex}
+
+\addtorecentlist{align}
+
+\importslide{math}{align-unaligned.tex}
+\importslide{math}{align-numbers.tex}
+%\importslide{math}{align-tag.tex}
+\importslide{math}{align-intertext.tex}
+
+\importslide{math}{also_in_use.tex}
+
+\importslide{math}{left_right.tex}
+\importslide{math}{left_right-delimeter_point.tex}
+
+\importslide{math}{structures.tex}
+
+\importslide{math}{mhchem.tex}
+
+% \section{Bibliografie}
+
+% \importslide{bib}{bib-ref_cmds.tex}
+% \importslide{bib}{bib-cite.tex}
+
+% \importslide{bib}{bib-printbibliography.tex}
+% \importslide{bib}{bib-bibentry.tex}
+% \importslide{bib}{bib-backend.tex}
+
+% \importslide{bib}{bib-structure.tex}
+% \importslide{bib}{bib-style.tex}
+% \importslide{bib}{bib-sort.tex}
+
+% \importslide{bib}{bib-mult_authors.tex}
+
+% %\importslide{bib}{bib-specialchars.tex}
+
+% \importslide{bib}{bib-misc.tex}
+
+
+% \section{Extra's}
+% \importslide{document}{document-subfiles.tex}
+
+\section{\texorpdfstring{}{Good to know}}
+
+\importslide{misc}{misc-installation.tex}
+
+% \begin{frame}
+%     \lang
+%     {Sometimes you might need to compile multiple times.}
+%     {Soms meermaals compileren.}
+% \end{frame}
+
+%\importslide{misc}{misc-contact-vincent.tex}
+
+\importslide{misc}{misc-contact.tex}
+
+\importslide{misc}{misc-license}
 	
 \end{document}
