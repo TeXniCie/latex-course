@@ -2,8 +2,9 @@
 
 \begin{frame}[fragile, t]{Simple document in \LaTeX}
 	%autogobble removes extra tabs we want in the code but should not be in the pdf code display
-	\begin{columns}
-        \begin{column}{0.3\textwidth}
+	\begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+			\vspace{-20pt}
 	\begin{minted}[autogobble, linenos=true, escapeinside=||]{tex} 
 	\documentclass{article}
 
@@ -13,18 +14,29 @@
 
 
 
+
+
+
+
 	\end{document}
 	\end{minted}
 
-	\phantom{Example text from ``Elementary Illustrations of the Differential and Integral Calculus'' by Augustus De Morgan}
+	\phantom{\tiny
+	Example text: ``Elementary Illustrations of the Differential and Integral Calculus''
+	by Augustus De Morgan
+	}\par
 \end{column}
-\begin{column}{0.1\textwidth}
+\begin{column}{0.05\textwidth}
+	\vspace{0pt}
+
 	{\Huge \textcolor{red}{ \} } }\\[1.5cm]
 	{\Huge \textcolor{red}{ \} } }
 \end{column}
-\begin{column}{0.5\textwidth}
-	\textbf{preamble}: document settings go here\\[1.5cm]
-	\textbf{body}: content (text and images) goes here\\[2cm]
+\begin{column}{0.4\textwidth}
+	\vspace{0pt}
+
+	\leavevmode\textbf{preamble}: document settings go here\\[1.5cm]
+	\textbf{body}: content (text and images) goes here
 \end{column}
 \end{columns}
 
