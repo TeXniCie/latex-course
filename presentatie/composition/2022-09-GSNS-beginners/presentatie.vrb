@@ -1,18 +1,17 @@
-\frametitle{math}
-There are two ways to typeset math:
+\frametitle{Display math}
+There are many display math environments. Today we focus on the \textbf{align} environment.
 
-\begin{tcolorbox}[width=13cm, title={inline mode}, size=small]
-    The trigonometric identity is given by \( \sin^2(\theta) + \cos^2(\theta) = 1 \) for all \( \theta \).
-\end{tcolorbox}
+    \begin{minted}[linenos=false]{tex}
+     The double angle formula can now be rewritten as
+    \begin{align}
+        \cos(2\theta) &=  \cos^2\theta - sin^2\theta \\
+                      &= 2\cos^2\theta - 1
+    \end{align}
+\end{minted}
+The double angle formula can now be rewritten as
+    \begin{align}
+        \cos(2\theta) &=  \cos^2\theta - sin^2\theta \\
+                      &= 2\cos^2\theta - 1
+    \end{align}
 
- \begin{tcolorbox}[width=13cm, title={display mode}, size=small]
-    The Pythagorean trigonometric identity is given by
-    \begin{equation} \sin^2(\theta) + \cos^2(\theta) = 1 \end{equation}
-    The identity
-    \begin{equation} 1 + tan^2(\theta) = \frac{1}{cos^2\theta}\end{equation}
-    Is also called the Pythagorean trigonometric identity.
 
-\end{tcolorbox}
-
-{\small There is one way to typeset math in inline mode.
-But many \textbf{environments} in display mode.}
