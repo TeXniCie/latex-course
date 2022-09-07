@@ -1,0 +1,19 @@
+\copyrightTim
+
+%\addtorecentlist{\hll|\\textbf|}
+\begin{frame}[fragile]{Logical formatting}
+    It's often better not to use the previous commands and follow the \emph{logical formatting} philosophy of \LaTeX. 
+    \vspace{4mm}
+    
+    \renewcommand{\arraystretch}{1.5}%
+    \begin{tabular}{llll}
+        \hline
+         & \textcolor{red}{not logical} & \textcolor{darkgreen}{logical} & Result\\
+        \hline
+        vector & \mintinline{tex}{\textbf{w}} & \mintinline{tex}{\vec{w}} & \(\vec{w}\)\\
+        emphasis & \mintinline{tex}{\textit{text}} & \mintinline{tex}{\emph{text}} & \emph{text}\\
+        subheading & \mintinline{tex}{\Large My Heading} & \mintinline{tex}{\subsection{My Heading}} & {\large{My Heading}} \\
+        lemma & \mintinline{tex}{\textsc{LEMMA 3.2}} & \mintinline{tex}{\begin{mylemma}|\dots|\end{mylemma}} & \textsc{LEMMA 3.2} \\  
+        \hline
+    \end{tabular}
+\end{frame}

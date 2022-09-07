@@ -17,7 +17,13 @@
 \usepackage{minted} %kan later in de .cls file hierboven
 \setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
 \usepackage{tcolorbox}
-\usepackage{color}
+% \usepackage{}
+\definecolor{darkgreen}{rgb}{0.2,0.7,0.11}
+\makeatletter
+\patchcmd{\@thm}{\thm@headfont{\scshape}}{\thm@headfont{\scshape\bfseries}}{}{}
+\patchcmd{\@thm}{\thm@notefont{\fontseries\mddefault\upshape}}{}{}{}
+\makeatother
+\newtheorem{mylemma}[]{Lemma}
 \begin{document}
 
 \section{Introduction}
@@ -85,7 +91,9 @@
 \importslide{beginners}{special-characters.tex}
 
 % switch
-\importslide{beginners}{format-text.tex}
+\importslide{beginners}{format-text-1.tex}
+
+\importslide{beginners}{logical-formatting.tex}
 
 % # EXCERCISES 15 MIN
 

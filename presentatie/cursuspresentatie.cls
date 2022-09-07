@@ -26,7 +26,7 @@
 
 
 \ifbool{ishandout}{
-    \LoadClass[handout,aspectratio=169]{beamer}
+    \LoadClass[handout,aspectratio=169,usenames,dvipsnames]{beamer}
 }{
     \LoadClass[aspectratio=169]{beamer}
 }
