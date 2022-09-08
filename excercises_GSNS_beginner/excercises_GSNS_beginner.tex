@@ -1,0 +1,43 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{parskip}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{paralist}
+\usepackage{minted}
+\usepackage{color}
+\usepackage{graphicx}
+\title{Excercises GSNS \LaTeX beginners}
+\date{\today}
+\author{Tim Weijers \and Thomas van Maaren}
+\begin{document}
+\maketitle
+\begin{compactenum}
+\item make a simple document of the article class with 1 paragraph of text. Use a5paper and a font size of 10pt.
+\item emphasise some text by using the command \mintinline{tex}{\emph{your text}}.
+\item find out what the \mintinline{tex}{\newline} command does.
+\item LaTeX can hyphenate words automatically. For this it needs the \mintinline{tex}{babel} package, with optional argument \mintinline{tex}{english}. Import this package now.
+\item Try the \mintinline{tex}{\quad} command in your document.
+\item Add two new paragraphs to your document.
+\item Now import the \mintinline{tex}{parskip} package and check the results.
+\item Add headings to your paragraphs by using the \mintinline{tex}{section} and \mintinline{tex}{subsection} commands.
+\item Make a title for your document, with an author and date.
+\item Add the following text to your document, pay attention to special characters:
+    \begin{compactitem}
+        \item \{ \} \textgreater \& 100\%
+    \end{compactitem}
+\item Recreate the following text color effects. First import the \mintinline{tex}{xcolor} package by adding the line: \mintinline{tex}{\usepackage{xcolor}} to the preamble.
+    \begin{compactitem}
+        \item \textcolor{red}{red} \textcolor{green}{green} \textcolor{yellow}{yellow}
+    \end{compactitem}
+\item Write the pythagorean theorem in inline mode.
+\item Use the \mintinline{tex}{\frac} and \mintinline{tex}{\blacksquare} command to write the following inline math: From \(z = \frac{x^3}{3(y+1)^2}\) and \(x>0\) it follows that \(z\) is positive \(\blacksquare\).
+Make sure to import the \mintinline{tex}{amssymb} package first.
+\item go to the wikipedia page about the dot-product (in english) and copy-paste the algebraic definition of the dot product into Overleaf in an align environment. You can copy all the mathematics on wikipedia directly into LaTeX.
+\item recreate the article on the next page
+\end{compactenum}
+
+\begin{figure}[h]
+    \centering
+\includegraphics[width=0.9\textwidth]{euler.pdf}
+\end{figure}
+\end{document}
