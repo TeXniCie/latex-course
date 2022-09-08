@@ -17,6 +17,41 @@
 
 \newbool{ishandout}
 
+% Detail 5: rehearsal
+% Detail 10: crash course
+% Detail 20: default
+% Detail 30: detailed
+
+\newcounter{detaillevel}
+\setcounter{detaillevel}{20}
+
+\def\setDetail#1{\setcounter{detaillevel}{#1}}
+
+\let\endDetail\fi
+
+\def\beginDetail#1{%
+	% \unless\ifnum\value{detaillevel}<#1\relax
+	% 	#2%
+	% \fi
+	\unless\ifnum\value{detaillevel}<#1\relax
+}
+
+\newcommand\detailedinline[2]{%
+	\detailStart{#1}#2\detailEnd
+}
+
+\def\@beginFrameSelection@i#1{%
+	\let\frameSelection\relax
+	\begin{frame}<#1>%
+}
+
+\def\beginFrameWithSelection#1{%
+	\expandafter\@beginFrameSelection@i\expandafter{#1}%
+}
+
+% \newenvironment{detailed}[1]{}{}
+
+
 % skipt animaties voor pdf files voor studenten pdf geven, de juiste boolean uncommenten
 % booleans in latex zijn 
 %\setbool{ishandout}{true}
