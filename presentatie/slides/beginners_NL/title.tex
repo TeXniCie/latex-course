@@ -1,0 +1,22 @@
+\copyrightTim
+
+\begin{frame}[fragile]{Title, author and date}
+    We geven het artikel nu een titel. We gebruiken drie commando's om een \textbf{title}, \textbf{author} en \textbf{date} in te stellen.
+    Deze commando's staan in de \textbf{preamble}.
+
+    Het commando \mintinline{tex}{\maketitle} staat in de 
+    \textbf{body} van het document en bepaalt de positie van de titel. 
+
+    \begin{minted}[fontsize=\small,autogobble, highlightlines={2,3,4, 6}]{tex}
+        \documentclass[a4paper, 12pt]{article}
+        \title{Elementary Illustrations of the Differential and Integral Calculus}
+        \author{Augustus De Morgan}
+        \date{November 11}
+        \begin{document}
+        \maketitle
+        The Differential and Integral Calculus, or, as it was formerly 
+        called in this country, the Doctrine of Fluxions, has always 
+        been supposed to present remarkable obstacles to the beginner.
+        \end{document}
+    \end{minted}
+\end{frame}

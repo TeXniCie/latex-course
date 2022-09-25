@@ -1,0 +1,19 @@
+\copyrightTim
+
+%\addtorecentlist{\hll|\\textbf|}
+\begin{frame}[fragile]{Logische opmaak}
+    Het is vaak beter om niet teveel van de vorige commando's gebruik te maken om de  \emph{logische opmaak} filosofie van \LaTeX te volgen. 
+    \vspace{4mm}
+    
+    \renewcommand{\arraystretch}{1.5}%
+    \begin{tabular}{llll}
+        \hline
+         & \textcolor{red}{not logisch} & \textcolor{darkgreen}{logisch} & resultaat\\
+        \hline
+        vector & \mintinline{tex}{\textbf{w}} & \mintinline{tex}{\vec{w}} & \(\vec{w}\)\\
+        nadruk & \mintinline{tex}{\textit{text}} & \mintinline{tex}{\emph{text}} & \emph{text}\\
+        kop & \mintinline{tex}{\Large My Heading} & \mintinline{tex}{\subsection{My Heading}} & {\large{My Heading}} \\
+        lemma & \mintinline{tex}{\textsc{LEMMA 3.2}} & \mintinline{tex}{\begin{mylemma}|\dots|\end{mylemma}} & \textsc{LEMMA 3.2} \\  
+        \hline
+    \end{tabular}
+\end{frame}
