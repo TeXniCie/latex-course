@@ -1,4 +1,5 @@
 \documentclass[a4paper, 11pt]{article}
+\usepackage[top=3cm]{geometry}
 \usepackage{parskip}
 \usepackage[english]{babel}
 \usepackage{amsmath, amssymb}
@@ -6,9 +7,10 @@
 \usepackage{minted}
 \usepackage{color}
 \usepackage{graphicx}
-\title{Excercises GSNS \LaTeX beginners}
+
+\title{Oefeningen bij \LaTeX beginnerscursus deel 1}
 \date{\today}
-\author{Tim Weijers \and Thomas van Maaren}
+\author{Tim Weijers \TeX niCie}
 \begin{document}
 \maketitle
 \begin{compactenum}
@@ -23,7 +25,7 @@
 \item Make a title for your document, with an author and date.
 \item Add the following text to your document, pay attention to special characters:
     \begin{compactitem}
-        \item \{ \} \textgreater \& 100\%
+         \item[] \{ \} \quad \textgreater \quad \& \quad 100\% \quad €40 \quad \$2 \quad C:\textbackslash Program\_Files 
     \end{compactitem}
 \item Recreate the following text color effects. First import the \mintinline{tex}{xcolor} package by adding the line: \mintinline{tex}{\usepackage{xcolor}} to the preamble.
     \begin{compactitem}
@@ -33,11 +35,10 @@
 \item Use the \mintinline{tex}{\frac} and \mintinline{tex}{\blacksquare} command to write the following inline math: From \(z = \frac{x^3}{3(y+1)^2}\) and \(x>0\) it follows that \(z\) is positive \(\blacksquare\).
 Make sure to import the \mintinline{tex}{amssymb} package first.
 \item go to the wikipedia page about the dot-product (in english) and copy-paste the algebraic definition of the dot product into Overleaf in an align environment. You can copy all the mathematics on wikipedia directly into LaTeX.
-\item recreate the article on the next page
+\item Write this in an align environment $\left(\sum_{i=1}^\infty a_i\right)\left(\sum_{i=1}^\infty\frac{1}{a_i}\right)\geq n^2$
+\item State the distributive laws for sets, aligned on the = sign
+\item State Wilsons theorem
+\item recreate the following math
 \end{compactenum}
-
-\begin{figure}[h]
-    \centering
-\includegraphics[width=0.9\textwidth]{euler.pdf}
-\end{figure}
+\includegraphics[width=0.9\textwidth]{plaatje.pdf}
 \end{document}
