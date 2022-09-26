@@ -8,6 +8,17 @@
     \acrnAllAuthorsTrue
 }
 
+\newbool{english}
+\booltrue{english}
+
+\DeclareOption{english}{
+    \booltrue{english}
+}
+
+\DeclareOption{dutch}{
+    \boolfalse{english}
+}
+
 \ProcessOptions
 
 \acrnDefName\copyrightTim{Tim Weijers}{2022}
@@ -102,10 +113,6 @@
 \RequirePackage{environ}
 \RequirePackage{etoolbox}
 \RequirePackage{yfonts}
-
-\newbool{english}
-\booltrue{english}
-
 
 \ifbool{english}{
 	\RequirePackage[english]{babel}
@@ -230,7 +237,8 @@
 		\co, \term, \genummerd, \bb, \cc, \dd, \ee,
 		\ProvidesClass, \LoadClass, \RequirePackage, \geometry,
 		\fancyhead, \fancyfoot, \sum, \adjustbox, \dimexpr, \NewEnviron,
-		\BODY, \ce
+		\BODY, \ce,
+		\sum, \implies, \exists, \forall, \bigcup
 	},
 	name = structure,
 	add = {
