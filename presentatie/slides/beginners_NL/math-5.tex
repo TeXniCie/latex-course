@@ -1,20 +1,39 @@
-\copyrightTim
+\copyrightVincent
 
-\begin{frame}[fragile]{Display mode}
-    Er bestaan vele environmets voor wiskunde in Display mode. Vandaag bekijken we de \textbf{align} environment.
+\def\extraslistsep{\hspace{0.5em}\textcolor{red!80!black}{\vrule width 1pt height 0.6\baselineskip\relax}\hspace{0.5em}}
+\def\es#1{\adjustbox{scale=0.8}{#1}}
 
-    \begin{minted}[linenos=false]{tex}
-     The double angle formula can now be rewritten as   
-    \begin{align}
-        \cos(2\theta) &=  \cos^2\theta - sin^2\theta \\
-                      &= 2\cos^2\theta - 1 
-    \end{align}
-\end{minted}
-The double angle formula can now be rewritten as
-    \begin{align}
-        \cos(2\theta) &=  \cos^2\theta - sin^2\theta \\
-                      &= 2\cos^2\theta - 1 
-    \end{align}
-
-
+\begin{frame}{Wiskunde - basis}
+	\renewcommand{\arraystretch}{1.5}%
+	\begin{tabularx}{0.55\textwidth}{ll}
+		\toprule
+		Formule {\global\showcount=1\relax}& Code\\
+		\midrule
+		\showformula{$ \sum_i x_i $}{\\sum_i x_i}\\
+		\showformula{$ A\cup B $}{A\\cup B}\\
+		\showformula{$ A\cap B $}{A\\cap B}\\
+        \showformula{$ A\subseteq B $}{A\\subseteq B}\\
+		\showformula{$ x\in A\implies x\in B $}{x\\in A\\implies x\\in B}\\
+		\bottomrule
+	\end{tabularx}%
+	\begin{tabularx}{0.45\textwidth}{ll}
+		\toprule
+		Formule {\global\showcount=6\relax}& Code\\
+		\midrule
+		\showformula{$ \bigcup_{i\in I}U_i $}{\\bigcup_\{i\\in I\}U_i}\\
+		%\showformula{$ x_1 + \dots + x_n $}{x_1 + \\dots + x_n}\\
+		\showformula{$ \emptyset $}{\\emptyset}\\
+		\showformula{$ \forall $}{\\forall}\\
+		\showformula{$ \exists $}{\\exists}\\
+        \showformula{$ \neg $}{\\neg}\\
+		\bottomrule
+	\end{tabularx}%
+	\par\addvspace{0.5\baselineskip}
+	% \unless\ifishandout
+	% 	\only<10->{
+	% 		\hll|$ x^22 $|\,: \es{$ x^22 $}
+	% 		\only<11->{\extraslistsep\hll|$ x^\{22\} $|\,: \es{$ x^{22} $}}
+	% 		%\only<12->{\extraslistsep\hll|$ \{x + 3^\{2\}\} \{\} + 9 $|\,: \es{$ {x + 3^{2}} {} + 9 $}}
+	% 	}%
+	% \fi
 \end{frame}
