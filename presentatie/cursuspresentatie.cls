@@ -649,6 +649,34 @@
     \end{beamercolorbox}%
 }
 
+\setbeamertemplate{footline}
+{%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    %
+    \begin{beamercolorbox}[
+        ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm plus1fil
+    ]{author in head/foot}%
+        \leavevmode{\usebeamerfont{author in head/foot}%
+            \rlap{\insertshortauthor}%
+            %\hfill Slides op texnicie.nl%
+        }%
+        \hfill%
+        {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+    \end{beamercolorbox}%
+    %
+    \begin{beamercolorbox}[
+        ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm plus1fil
+    ]{title in head/foot}%
+        {\usebeamerfont{title in head/foot}\rlap{\insertshorttitle}}\hfill Slides op texnicie.nl\hfill{\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}}%
+    \end{beamercolorbox}%
+    %
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+}
+
 % \setbeamertemplate{headline}
 % {%
 %   \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
