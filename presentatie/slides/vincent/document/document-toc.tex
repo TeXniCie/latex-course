@@ -1,36 +1,23 @@
-\updatehighlight{
-    name=accentB,
-    add={\tableofcontents}
-}
-
-\begin{saveblock}{tableOfContents}
-    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
-        \begin{document}
-            \maketitle
-            \tableofcontents
-
-            \section{AA}
-            ...
-        \end{document}
-        ~~
-        ~~
-        ~~
-        ~~
-        ~~
-        ~~
-        ~~
-        ~~
-    \end{highlightblock}
-\end{saveblock}
-
 \addtorecentlist{\textbackslash tableofcontents}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\lang,Contents,Inhoudsopgave,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \useblock{tableOfContents}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=6]{tex}
+                ~~
+
+
+                \begin{document}
+                    \maketitle
+                    \tableofcontents
+        
+                    \section{AA}
+                    ...
+                \end{document}
+                ~~
+            \end{minted}
         \end{column}
         \begin{column}{0.5\textwidth}
             \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio,page=1]{assets/tableofcontents.pdf}
@@ -38,42 +25,25 @@
     \end{columns}
 \end{frame}
 
-\updatehighlight{
-    name=accentB,
-    remove={\tableofcontents},
-    add={\newpage},
-    %
-    name=default,
-    add={\tableofcontents}
-}
-
-\begin{saveblock}{tableOfContents}
-    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
-        \begin{document}
-            \maketitle
-            \tableofcontents
-            \newpage
-            
-            \section{AA}
-            ...
-        \end{document}
-            ~~
-            ~~
-            ~~
-            ~~
-            ~~
-            ~~
-            ~~
-    \end{highlightblock}
-\end{saveblock}
-
 \addtorecentlist{\textbackslash newpage}
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\lang,Contents,Inhoudsopgave,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \useblock{tableOfContents}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=7]{tex}
+                ~~
+
+                
+                \begin{document}
+                    \maketitle
+                    \tableofcontents
+                    \newpage
+                    
+                    \section{AA}
+                    ...
+                \end{document}
+            \end{minted}
         \end{column}
         \begin{column}{0.5\textwidth}
             \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio,page=1]{assets/tableofcontentswholepage.pdf}
@@ -90,34 +60,26 @@
     add={\newpage}
 }
 
-\begin{saveblock}{tableOfContents}
-    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
-        ...
-        \usepackage[dutch]{babel}
-        
-        \begin{document}
-            \maketitle
-            \tableofcontents
-            \newpage
-            
-            \section{AA}
-            ...
-        \end{document}
-        ~~
-        ~~
-        ~~
-        ~~
-    \end{highlightblock}
-\end{saveblock}
-
 \addtorecentlist{babel}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\lang,Contents,Inhoudsopgave,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \useblock{tableOfContents}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=2]{tex}
+                ...
+                \usepackage[dutch]{babel}
+                
+                \begin{document}
+                    \maketitle
+                    \tableofcontents
+                    \newpage
+                    
+                    \section{AA}
+                    ...
+                \end{document}
+            \end{minted}
         \end{column}
         \begin{column}{0.5\textwidth}
             \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio,page=1]{assets/tableofcontentsdutch.pdf}

@@ -69,7 +69,7 @@
 
 \addtorecentlist{htbp}
 
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{\lang,Figure placement,Figuurplaatsing,}
 
 	% Een figuur wordt ergens verderop geplaatst. Soms is het dus handig om een figuur
@@ -85,7 +85,7 @@
 			Figuur mag op aparte pagina voor figuren.,
 		\item !: \lang,Override internal parameters for floats.,Override interne parameters voor floats.,
 		\item H \textsc{(here)}: \lang{No floating, always here.}
-		{Geen floating, altijd hier.} (\hll|\\usepackage\{float\}|)
+		{Geen floating, altijd hier.} (\mintinline{tex}{\usepackage{float}})
 	\end{itemize}
 
 	\medskip
@@ -93,6 +93,8 @@
 	% {Figure appearing too late? Try placing \hll|figure| to a point earlier in the code.}
 	% {Te laat in output? Verplaats \hll|figure| naar voren in je bestand.}
 
-	\uncover<1->{\lang,When working with images,Wanneer je werkt met afbeeldingen,:
-	\hll|\\usepackage\{graphicx\}|}
+	\begin{uncover}<1->\relax
+		\lang,When working with images,Wanneer je werkt met afbeeldingen,:
+		\mintinline{tex}{\usepackage{graphicx}}
+	\end{uncover}
 \end{frame}

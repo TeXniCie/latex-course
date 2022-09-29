@@ -1,6 +1,30 @@
 %% !TeX program = pdflatex
 
-\documentclass[dutch,everyoneauthor=true]{../../cursuspresentatie}
+\documentclass[
+    dutch,
+    everyoneauthor=true,
+    darktheme,
+    defaultSlideCollection=vincent,
+    slidenames=true
+]{../../cursuspresentatie}
+
+\usepackage{minted}
+
+\definecolor{codehighlight}{RGB}{44, 78, 120}
+
+\def\codeEmphasize#1{\ul{#1}}
+
+%\newmintinline[cc]{latex}{}
+
+\ifbool{darktheme}{
+    \usemintedstyle{dracula}
+    \setminted[tex]{highlightcolor=codehighlight}%blue!60!white!60!black}
+    \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
+}{}
+
+
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+\usepackage{tcolorbox}
 
 %\input{preamble.tex}
 
@@ -10,16 +34,17 @@
 % 	\import{../../slides/#1}{#2}
 % }
 
-\def\importslide#1#2{%
-    \IfFileExists{../../slides/vincent/#1/#2}{%
-        \import{../../slides/vincent/#1}{#2}%
-    }{%
-        \import{../../slides/#1}{#2}%
-    }%
-}
 
-\title[\LaTeX{}-cursus Week 2]{\LaTeX{}-cursus Week 2\\
-(slides: versie Vincent)}
+
+% \def\importslide#1#2{%
+%     \IfFileExists{../../slides/vincent/#1/#2}{%
+%         \import{../../slides/vincent/#1}{#2}%
+%     }{%
+%         \import{../../slides/#1}{#2}%
+%     }%
+% }
+
+\title[\LaTeX{}-cursus Week 2]{\LaTeX{}-cursus Week 2\\(slides: versie Vincent)}
 \author{\TeX niCie}
 \date{3 oktober 2022}
 
@@ -39,10 +64,13 @@
     \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
 \end{frame}
 
+\setul{1pt}{2pt}
+
 \begin{frame}
     \frametitle{\lang,Schedule,Agenda,}
     
     \begin{itemize}
+        \item \lang,Recap: simple document,Herhaling: simpel document,
         \item \lang,Figures,Figuren,
         \item \lang,References,Referenties,
         \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
@@ -53,6 +81,28 @@
         % \item \lang,Closing remarks,Afsluitende opmerkingen,
     \end{itemize}
 \end{frame}
+
+\section{Simpel document}
+
+\importslide{document}{document-margins.tex}
+\importslide{document}{document-toc.tex}
+
+\section{Figuren}
+
+\importslide{images}{includegraphics-center.tex}
+\importslide{images}{figure.tex}
+\importslide{images}{figure-placement.tex}
+\importslide{images}{figure-dimensions.tex}
+\importslide{images}{subfigure.tex}
+
+\section{Referenties}
+
+
+\section{`Theorem' en `Lemma'}
+
+\section{Matrices en tabellen}
+
+%\importslide{}{}
 
 
 

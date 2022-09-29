@@ -1,28 +1,24 @@
-\begin{saveblock}{baseDocument}
-    \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
-        \documentclass{article}
-        \usepackage[utf8]{inputenc}
-        
-        \title{My document}
-        \author{Vincent Kuhlmann}
-        \date{1 May 2021}
-        
-        \begin{document}
-            \maketitle
-            \section{Introduction}
-            
-            ~\lang,Hello everyone!,Hallo iedereen!,~
-        \end{document}
-        ~~
-        ~~
-    \end{highlightblock}
-\end{saveblock}
-
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\lang,Page margins,Pagina marges,}
     \begin{columns}
         \begin{column}{0.67\textwidth}
-            \useblock{baseDocument}
+            \begin{minted}[fontsize=\scriptsize]{tex}
+                \documentclass{article}
+                \usepackage[utf8]{inputenc}
+                
+                \title{My document}
+                \author{Vincent Kuhlmann}
+                \date{1 May 2021}
+                
+                \begin{document}
+                    \maketitle
+                    \section{Introduction}
+                    
+                    Hallo iedereen!
+                \end{document}
+
+
+            \end{minted}
         \end{column}
         \begin{column}{0.33\textwidth}
             \begingroup
@@ -35,41 +31,27 @@
     \end{columns}
 \end{frame}
 
-\lstset{
-    alsoletter={$@_!|?4$},
-}
-
-\updatehighlight{
-    name=accentC,
-    add={a4paper,geometry,{margin=2.54cm}}
-}
-
-\begin{saveblock}{baseDocument}
-    \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
-        \documentclass[~~a4paper~~]{article}
-        \usepackage[utf8]{inputenc}
-        \usepackage[margin=2.54cm]{geometry}
-        
-        \title{My document}
-        \author{Vincent Kuhlmann}
-        \date{1 May 2021}
-        
-        \begin{document}
-            \maketitle
-            \section{Introduction}
-            
-            ~\lang,Hello everyone!,Hallo iedereen!,~
-        \end{document}
-        ~~
-    \end{highlightblock}
-\end{saveblock}
-
 \addtorecentlist{geometry}
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\lang,Page margins,Pagina marges,}
     \begin{columns}
         \begin{column}{0.67\textwidth}
-            \useblock{baseDocument}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=3]{tex}
+                \documentclass{article}
+                \usepackage[utf8]{inputenc}
+                \usepackage[a4paper,margin=2.54cm]{geometry}
+                
+                \title{My document}
+                \author{Vincent Kuhlmann}
+                \date{1 May 2021}
+                
+                \begin{document}
+                    \maketitle
+                    \section{Introduction}
+                    
+                    ~\lang,Hello everyone!,Hallo iedereen!,~
+                \end{document}
+            \end{minted}
         \end{column}
         \begin{column}{0.33\textwidth}
             \begingroup
@@ -82,41 +64,46 @@
     \end{columns}
 \end{frame}
 
-\updatehighlight{
-    name=accentC,
-    remove={a4paper,geometry,{margin=2.54cm}},
-    add={{left=-0.5cm}}
-}
-
-\lstset{
-    alsoletter={$@_!|?$},
-}
-
-\begin{saveblock}{baseDocument}
-    \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
-        \documentclass[a4paper]{article}
-        \usepackage[utf8]{inputenc}
-        \usepackage[~~marg~~in=2.54cm,left=-0.5cm]
-        {geometry}
+% \begin{saveblock}{baseDocument}
+%     \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
+%         \documentclass[a4paper]{article}
+%         \usepackage[utf8]{inputenc}
+%         \usepackage[~~marg~~in=2.54cm,left=-0.5cm]
+%         {geometry}
         
-        \title{My document}
-        \author{Vincent Kuhlmann}
-        \date{1 May 2021}
+%         \title{My document}
+%         \author{Vincent Kuhlmann}
+%         \date{1 May 2021}
         
-        \begin{document}
-            \maketitle
-            \section{Introduction}
+%         \begin{document}
+%             \maketitle
+%             \section{Introduction}
             
-            ~\lang,Hello everyone!,Hallo iedereen!,~
-        \end{document}
-    \end{highlightblock}
-\end{saveblock}
+%             ~\lang,Hello everyone!,Hallo iedereen!,~
+%         \end{document}
+%     \end{highlightblock}
+% \end{saveblock}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\lang,Page margins,Pagina marges,}
     \begin{columns}
         \begin{column}{0.67\textwidth}
-            \useblock{baseDocument}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=3]{tex}
+                \documentclass{article}
+                \usepackage[utf8]{inputenc}
+                \usepackage[a4paper,margin=2.54cm,left=-0.5cm]{geometry}
+                
+                \title{My document}
+                \author{Vincent Kuhlmann}
+                \date{1 May 2021}
+                
+                \begin{document}
+                    \maketitle
+                    \section{Introduction}
+                    
+                    ~\lang,Hello everyone!,Hallo iedereen!,~
+                \end{document}
+            \end{minted}
         \end{column}
         \begin{column}{0.33\textwidth}
             \begingroup

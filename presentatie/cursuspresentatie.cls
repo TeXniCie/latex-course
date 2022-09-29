@@ -13,6 +13,8 @@
     }
 }
 
+\define@boolkey{cursuspresentatie}{slidenames}[true]{}
+
 \DeclareOptionX{allauthors}{
     \acrnAllAuthorsTrue
 }
@@ -24,6 +26,7 @@
 \newbool{english}
 \newbool{aestheme}
 \newbool{ishandout}
+\newbool{darktheme}
 
 \booltrue{english}
 
@@ -42,7 +45,14 @@
 }
 
 \DeclareOptionX{handout}{
+    \boolfalse{darktheme}
     \booltrue{ishandout}
+}
+
+\DeclareOptionX{darktheme}{
+    \ifbool{ishandout}{}{
+        \booltrue{darktheme}
+    }
 }
 
 \DeclareOptionX{defaultSlideCollection}[.]{%
@@ -118,6 +128,17 @@
 
 \RequirePackage[tabsize=4]{highlightlatex}
 
+\let\currSlideImportName\relax
+
+\ifbool{KV@cursuspresentatie@slidenames}{
+    \PackageWarning{debug}{Showing slidenames}
+    \setbeamertemplate{page number in head/foot}{%
+        \currSlideImportName
+    }
+}{
+
+}
+
 \setbeamertemplate{caption}[numbered] % voor het nummeren van figuren in beamer
 
 \definecolor{red1}{RGB}{185, 70, 70}
@@ -147,6 +168,9 @@
 %hsla(0, 73%, 45%, 1)
 \definecolor{red11}{RGB}{199, 31, 31}
 
+\definecolor{darkmodebackground}{RGB}{30, 30, 30}
+\definecolor{darkmodeforeground}{RGB}{219, 221, 170}
+
 \ifbool{aestheme}{
     \usetheme{aes2}
 
@@ -167,6 +191,14 @@
 
     \setbeamercolor*{structure}{fg=red11}
 
+    \ifbool{darktheme}{
+        % BEGIN Based on https://tex.stackexchange.com/questions/57477/beamer-dark-theme
+        % by https://tex.stackexchange.com/users/188576/j-xu
+        \setbeamercolor{frametitle}{fg=darkmodeforeground}
+        \setbeamercolor{background canvas}{bg=darkmodebackground}
+        \setbeamercolor{normal text}{fg=darkmodeforeground}
+        % END Based on
+    }{}
 
     \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!40!orange}
     \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!60!orange}%,bg=red9}
@@ -242,9 +274,13 @@
 
 \def\importslide#1#2{%
     \IfFileExists{../../slides/\defaultSlideCollection/#1/#2}{%
+        \def\currSlideImportName{\defaultSlideCollection/#1/#2}%
         \import{../../slides/\defaultSlideCollection/#1}{#2}%
+        \let\currSlideImportName\relax
     }{%
+        \def\currSlideImportName{#1/#2}%
         \import{../../slides/#1}{#2}%
+        \let\currSlideImportName\relax
     }%
 }
 
@@ -289,7 +325,7 @@
 % Source: https://tex.stackexchange.com/questions/41683/why-is-it-that-coloring-in-soul-in-beamer-is-not-visible
 \let\UL\ul
 \makeatletter
-\renewcommand\ul{
+\renewcommand\ul{%
     \let\set@color\beamerorig@set@color
     \let\reset@color\beamerorig@reset@color
     \UL
