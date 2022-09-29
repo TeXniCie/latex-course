@@ -2,32 +2,70 @@
 \ProvidesClass{cursuspresentatie}[2022/08/30 cursuspresentatie]
 
 \RequirePackage{etoolbox}
+\RequirePackage{xkeyval}
 \RequirePackage{../../acrn}
 
-\DeclareOption{allauthors}{
+\define@boolkey{cursuspresentatie}{everyoneauthor}[true]{
+    \ifbool{KV@cursuspresentatie@everyoneauthor}{
+        \acrnAllAuthorsTrue
+    }{
+        \acrnAllAuthorsFalse
+    }
+}
+
+\DeclareOptionX{allauthors}{
     \acrnAllAuthorsTrue
 }
 
+% \DeclareOptionX{everyoneauthor}{
+%     \acrnAllAuthorsTrue
+% }
+
 \newbool{english}
+\newbool{aestheme}
+\newbool{ishandout}
+
 \booltrue{english}
 
-\DeclareOption{english}{
+\def\defaultSlideCollection{.}
+
+\DeclareOptionX{english}{
     \booltrue{english}
 }
 
-\DeclareOption{dutch}{
+\DeclareOptionX{dutch}{
     \boolfalse{english}
 }
 
-\ProcessOptions
+\DeclareOptionX{aes}{
+    \booltrue{aestheme}
+}
+
+\DeclareOptionX{handout}{
+    \booltrue{ishandout}
+}
+
+\DeclareOptionX{defaultSlideCollection}[.]{%
+    \def\defaultSlideCollection{#1}%
+}
+
+% \DeclareOptionX*{%
+%     %\typeout{CurrentOption: \meaning\CurrentOption}
+%     \def\procCursusPresentatieOption#1{
+%         \PackageWarning{debug}{Option is #1}
+%         \setkeys{cursuspresentatie}{#1}
+%     }
+%     \expandafter\procCursusPresentatieOption\expandafter{\CurrentOption}%
+% }
+
+\ProcessOptionsX<cursuspresentatie>
+\ProcessOptionsX
 
 \acrnDefName\copyrightTim{Tim Weijers}{2022}
 \acrnDefName\copyrightHanneke{Hanneke Schroten}{2022}
 \acrnDefName\copyrightThomas{Thomas van Maaren}{2022}
 \acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2022}
 
-\newbool{ishandout}
-%\booltrue{ishandout}
 
 % Detail 5: rehearsal
 % Detail 10: crash course
@@ -42,23 +80,23 @@
 \let\endDetail\fi
 
 \def\beginDetail#1{%
-	% \unless\ifnum\value{detaillevel}<#1\relax
-	% 	#2%
-	% \fi
-	\unless\ifnum\value{detaillevel}<#1\relax
+    % \unless\ifnum\value{detaillevel}<#1\relax
+    % 	#2%
+    % \fi
+    \unless\ifnum\value{detaillevel}<#1\relax
 }
 
 \newcommand\detailedinline[2]{%
-	\detailStart{#1}#2\detailEnd
+    \detailStart{#1}#2\detailEnd
 }
 
 \def\@beginFrameSelection@i#1{%
-	\let\frameSelection\relax
-	\begin{frame}<#1>%
+    \let\frameSelection\relax
+    \begin{frame}<#1>%
 }
 
 \def\beginFrameWithSelection#1{%
-	\expandafter\@beginFrameSelection@i\expandafter{#1}%
+    \expandafter\@beginFrameSelection@i\expandafter{#1}%
 }
 
 % \newenvironment{detailed}[1]{}{}
@@ -78,23 +116,79 @@
     \LoadClass[aspectratio=169]{beamer}
 }
 
-%\typeout{\meaning\ishandout}
-
-%TODO Vervang highlightlatex door minted, dan niet meer nodig
 \RequirePackage[tabsize=4]{highlightlatex}
-
 
 \setbeamertemplate{caption}[numbered] % voor het nummeren van figuren in beamer
 
-%\usetheme{aes2}
+\definecolor{red1}{RGB}{185, 70, 70}
+\definecolor{red2}{RGB}{152, 58, 58}
+\definecolor{red3}{RGB}{122, 46, 46}
+\definecolor{red4}{RGB}{142, 26, 26}
+\definecolor{blue1}{rgb}{0.2,0.2,0.7}
 
-% \usecolortheme{rose}
-% %\useinnertheme[shadow]{rounded}
-% \useinnertheme{rounded}
+%hsla(0, 55%, 45%, 1)
+\definecolor{red5}{RGB}{178, 52, 52}
 
-\usetheme{Dresden}
-\usecolortheme{dolphin}
-\useoutertheme{miniframes}
+%hsla(0, 55%, 32%, 1)
+\definecolor{red6}{RGB}{126, 37, 37}
+
+%hsla(0, 68%, 45%, 1)
+\definecolor{red7}{RGB}{193, 37, 37}
+
+%hsla(0, 68%, 38%, 1)
+\definecolor{red8}{RGB}{163, 31, 31}
+
+%hsla(0, 45%, 67%, 1)
+\definecolor{red9}{RGB}{209, 133, 133}
+
+%hsla(0, 100%, 45%, 1)
+\definecolor{red10}{RGB}{230, 0, 0}
+
+%hsla(0, 73%, 45%, 1)
+\definecolor{red11}{RGB}{199, 31, 31}
+
+\ifbool{aestheme}{
+    \usetheme{aes2}
+
+    \usecolortheme{rose}
+    %\useinnertheme[shadow]{rounded}
+    \useinnertheme{rounded}
+
+    \setbeamertemplate{footline}{}
+}{
+    \usetheme{Dresden}
+    %\usecolortheme{dolphin}
+    \useoutertheme{miniframes}
+
+    %\PackageWarning{debug}{\expandafter\meaning\csname XC@clr@rgb@s}
+
+    % BEGIN Based on beamer/beamercolorthemedolphin.sty
+    \mode<presentation>
+
+    \setbeamercolor*{structure}{fg=red11}
+
+
+    \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!40!orange}
+    \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!60!orange}%,bg=red9}
+    \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!90!orange}%,bg=red1}
+    \setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+    \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+    
+    \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+    \setbeamercolor*{palette sidebar secondary}{fg=white}
+    \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+    \setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+    \setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
+
+    \setbeamercolor*{separation line}{}
+    \setbeamercolor*{fine separation line}{}
+
+    \mode
+    <all>
+    % END Based on
+}
 
 % Removes beamer navigation symbols
 \setbeamertemplate{navigation symbols}{}
@@ -116,9 +210,9 @@
 \RequirePackage{yfonts}
 
 \ifbool{english}{
-	\RequirePackage[english]{babel}
+    \RequirePackage[english]{babel}
 }{
-	\RequirePackage[dutch]{babel}
+    \RequirePackage[dutch]{babel}
 }
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{fancyvrb}
@@ -136,14 +230,22 @@
 \RequirePackage{ragged2e}
 
 \RequirePackage{import}
-\RequirePackage{inputslide}
+%\RequirePackage{inputslide}
 \RequirePackage{multicol}
 \RequirePackage{csquotes}
 
 %\newcommand{\TeXniCie}{\TeX niCie}
 
+% \def\importslide#1#2{%
+% 	\import{../../slides/#1}{#2}
+% }
+
 \def\importslide#1#2{%
-	\import{../../slides/#1}{#2}
+    \IfFileExists{../../slides/\defaultSlideCollection/#1/#2}{%
+        \import{../../slides/\defaultSlideCollection/#1}{#2}%
+    }{%
+        \import{../../slides/#1}{#2}%
+    }%
 }
 
 %\newcommand\lang[2]{%
@@ -153,25 +255,25 @@
 
 \makeatletter
 \def\lang{%
-	\@ifnextchar,%
-	{\lang@i}%
-	{\lang@ii}%
+    \@ifnextchar,%
+    {\lang@i}%
+    {\lang@ii}%
 }
 
 
 \def\lang@i,#1,#2,{%
-	\ifbool{english}{%
-		#1%
-	}{%
-		#2%
-	}%
+    \ifbool{english}{%
+        #1%
+    }{%
+        #2%
+    }%
 }
 \long\def\lang@ii#1#2{%
-	\ifbool{english}{%
-		#1%
-	}{%
-		#2%
-	}%
+    \ifbool{english}{%
+        #1%
+    }{%
+        #2%
+    }%
 }
 \makeatother
 
@@ -188,27 +290,27 @@
 \let\UL\ul
 \makeatletter
 \renewcommand\ul{
-	\let\set@color\beamerorig@set@color
-	\let\reset@color\beamerorig@reset@color
-	\UL
+    \let\set@color\beamerorig@set@color
+    \let\reset@color\beamerorig@reset@color
+    \UL
 }
 
 \let\ST\st
 \makeatletter
 \def\st#1{
-	\begingroup
-	\let\set@color\beamerorig@set@color
-	\let\reset@color\beamerorig@reset@color
-	\def\SOUL@uleverysyllable{%
-		\rlap{%
-			%\color{red}
-			\the\SOUL@syllable
-			\SOUL@setkern\SOUL@charkern}%
-		\SOUL@ulunderline{%
-			\phantom{\the\SOUL@syllable}}%
-	}%
-	\ST{#1}%
-	\endgroup
+    \begingroup
+    \let\set@color\beamerorig@set@color
+    \let\reset@color\beamerorig@reset@color
+    \def\SOUL@uleverysyllable{%
+        \rlap{%
+            %\color{red}
+            \the\SOUL@syllable
+            \SOUL@setkern\SOUL@charkern}%
+        \SOUL@ulunderline{%
+            \phantom{\the\SOUL@syllable}}%
+    }%
+    \ST{#1}%
+    \endgroup
 }
 \makeatother
 % https://tex.stackexchange.com/questions/71051/strikeout-in-different-color-appears-behind-letters-not-on-top-of-them
@@ -224,53 +326,53 @@
 
 %TODO op termijn verwijderen bij overstap naar minted
 \updatehighlight{
-	name = default,
-	color = {blue!90!black},
-	add = {
-		\knowncommand, \figref, \textcolor, \maketitle, \subsubsection,
-		\textasciigrave, \textasciiacute, \tag, \middle, \mathbb, \abs,
-		\mathcal, \middle, \dfrac, \subfile, \autoref, \eqref, \cites,
-		\tableofcontents, \printbibliography, \fullcite, \parencite,
-		\addbibresource, \DeclareLanguageMapping, \textcite, \intertext,
-		\sum, \dif, \norm, \text, \dod, \dpd, \int, \partial,
-		\DeclareMathOperator, \textfb,
-		\rhead, \lhead,\rfoot,\lfoot,\fancyhf,
-		\co, \term, \genummerd, \bb, \cc, \dd, \ee,
-		\ProvidesClass, \LoadClass, \RequirePackage, \geometry,
-		\fancyhead, \fancyfoot, \sum, \adjustbox, \dimexpr, \NewEnviron,
-		\BODY, \ce,
-		\sum, \implies, \exists, \forall, \bigcup
-	},
-	name = structure,
-	add = {
-	},
+    name = default,
+    color = {blue!90!black},
+    add = {
+        \knowncommand, \figref, \textcolor, \maketitle, \subsubsection,
+        \textasciigrave, \textasciiacute, \tag, \middle, \mathbb, \abs,
+        \mathcal, \middle, \dfrac, \subfile, \autoref, \eqref, \cites,
+        \tableofcontents, \printbibliography, \fullcite, \parencite,
+        \addbibresource, \DeclareLanguageMapping, \textcite, \intertext,
+        \sum, \dif, \norm, \text, \dod, \dpd, \int, \partial,
+        \DeclareMathOperator, \textfb,
+        \rhead, \lhead,\rfoot,\lfoot,\fancyhf,
+        \co, \term, \genummerd, \bb, \cc, \dd, \ee,
+        \ProvidesClass, \LoadClass, \RequirePackage, \geometry,
+        \fancyhead, \fancyfoot, \sum, \adjustbox, \dimexpr, \NewEnviron,
+        \BODY, \ce,
+        \sum, \implies, \exists, \forall, \bigcup
+    },
+    name = structure,
+    add = {
+    },
 }
 
 \updatehighlight{
-	name = greenDollar,
-	style = {\itshape\color{green!70!black}},
-	add = {
-		% The dollar sign is provided an extra time just to
-		% calm down TeXstudio's code highlighting.
-		$, $
-	},
-	name = accentA,
-	color = green!60!black,
-	add = {
-		\inAccA
-	},
-	%
-	name = accentB,
-	color = red!60!black,
-	add = {
-		\inAccB, \includegraphics
-	},
-	%
-	name = accentC,
-	color = orange!100!black,
-	add = {
-		\inAccC
-	}
+    name = greenDollar,
+    style = {\itshape\color{green!70!black}},
+    add = {
+        % The dollar sign is provided an extra time just to
+        % calm down TeXstudio's code highlighting.
+        $, $
+    },
+    name = accentA,
+    color = green!60!black,
+    add = {
+        \inAccA
+    },
+    %
+    name = accentB,
+    color = red!60!black,
+    add = {
+        \inAccB, \includegraphics
+    },
+    %
+    name = accentC,
+    color = orange!100!black,
+    add = {
+        \inAccC
+    }
 }
 
 %TODO verwijderen, highlight latex gebruikt lst
@@ -281,22 +383,22 @@
 
 
 \def\Zphantomconceal#1#2{%
-	\only<#2->{\rlap{#1}}\phantom{#1}%
-	%\only<#2->{#3}\unless\ifishandout\only<-#1>{\phantom{#3}}\fi
+    \only<#2->{\rlap{#1}}\phantom{#1}%
+    %\only<#2->{#3}\unless\ifishandout\only<-#1>{\phantom{#3}}\fi
 }
 
 \def\phantomconceal#1#2{%
-	\Zphantomconceal{#1}{#2}%
+    \Zphantomconceal{#1}{#2}%
 }
 
 % toont wel de dollartekens maar de formule nog niet, verbert het wel maar zorgt wel dat het de breedte inneemt.
 \newcommand\hideformula[2][2]{%
-	%\hll|$| \only<2->{\hll|\\sqrt\{2\}|}\only<-1>{??} \hll|$|
-	\hll|$| \phantomconceal{\hll|#2|}{#1} \hll|$|
+    %\hll|$| \only<2->{\hll|\\sqrt\{2\}|}\only<-1>{??} \hll|$|
+    \hll|$| \phantomconceal{\hll|#2|}{#1} \hll|$|
 }
 
 \newcommand\hidelatex[2][2]{%
-	\phantomconceal{\hll|#2|}{#1}
+    \phantomconceal{\hll|#2|}{#1}
 }%
 
 % ook nodig voor hiden van formule
@@ -317,8 +419,8 @@
 \makeatletter
 
 \def\showformula@i#1#2{%
-	#1 & %
-	\expandafter\hideformula\expandafter[\the\showcount]{#2}%
+    #1 & %
+    \expandafter\hideformula\expandafter[\the\showcount]{#2}%
 }
 
 %\def\showformula{%
@@ -331,23 +433,23 @@
 %}
 
 \def\showformula#1#2{
-	#1 & \global\showcount=\numexpr\showcount + 1\relax
-	\expandafter\hideformula\expandafter[\the\showcount]{#2}%
+    #1 & \global\showcount=\numexpr\showcount + 1\relax
+    \expandafter\hideformula\expandafter[\the\showcount]{#2}%
 }
 
 \def\showformulaa#1#2{
-	#1 & %
-	\expandafter\hideformula\expandafter[\the\showcount]{#2}%
+    #1 & %
+    \expandafter\hideformula\expandafter[\the\showcount]{#2}%
 }
 
 \def\showlatex#1#2{
-	#1 & \global\showcount=\numexpr\showcount + 1\relax
-	\expandafter\hidelatex\expandafter[\the\showcount]{#2}%
+    #1 & \global\showcount=\numexpr\showcount + 1\relax
+    \expandafter\hidelatex\expandafter[\the\showcount]{#2}%
 }
 
 \def\showlatexx#1#2{
-	#1 & %
-	\expandafter\hidelatex\expandafter[\the\showcount]{#2}%
+    #1 & %
+    \expandafter\hidelatex\expandafter[\the\showcount]{#2}%
 }
 
 \makeatother
@@ -357,29 +459,29 @@
 \newlength{\minimumwidth}
 \newbox\naturalsizebox
 \newcommand{\atleastwidth}[2][2cm]{%
-	\savebox\naturalsizebox{#2}%
-	\settowidth\naturalwidth{#2}%
-	\naturalwidth=\wd\naturalsizebox
-	\minimumwidth=\dimexpr #1\relax
-	\leavevmode%(\the\naturalwidth, \the\minimumwidth)%
-	\ifdim\naturalwidth<\minimumwidth\relax
-	\makebox[\minimumwidth][l]{\usebox{\naturalsizebox}}%
-	\else
-	\usebox{\naturalsizebox}%
-	\fi
+    \savebox\naturalsizebox{#2}%
+    \settowidth\naturalwidth{#2}%
+    \naturalwidth=\wd\naturalsizebox
+    \minimumwidth=\dimexpr #1\relax
+    \leavevmode%(\the\naturalwidth, \the\minimumwidth)%
+    \ifdim\naturalwidth<\minimumwidth\relax
+    \makebox[\minimumwidth][l]{\usebox{\naturalsizebox}}%
+    \else
+    \usebox{\naturalsizebox}%
+    \fi
 }
 
 \newcommand{\atleastwidthr}[2][2cm]{%
-	\savebox\naturalsizebox{#2}%
-	\settowidth\naturalwidth{#2}%
-	\naturalwidth=\wd\naturalsizebox
-	\minimumwidth=\dimexpr #1\relax
-	\leavevmode%(\the\naturalwidth, \the\minimumwidth)%
-	\ifdim\naturalwidth<\minimumwidth\relax
-	\makebox[\minimumwidth][r]{\usebox{\naturalsizebox}}%
-	\else
-	\usebox{\naturalsizebox}%
-	\fi
+    \savebox\naturalsizebox{#2}%
+    \settowidth\naturalwidth{#2}%
+    \naturalwidth=\wd\naturalsizebox
+    \minimumwidth=\dimexpr #1\relax
+    \leavevmode%(\the\naturalwidth, \the\minimumwidth)%
+    \ifdim\naturalwidth<\minimumwidth\relax
+    \makebox[\minimumwidth][r]{\usebox{\naturalsizebox}}%
+    \else
+    \usebox{\naturalsizebox}%
+    \fi
 }
 
 % TODO vervangen door minted zorgt voor klein beetje marge links van codeblok
@@ -387,13 +489,13 @@
 
 % maakt een blauwe box, donkerblauw frame
 \NewEnviron{bluebox}{
-	\begingroup
-		\adjustbox{cfbox=blue!40!white 2pt 10pt,valign=t,bgcolor=blue!5!white}{%
-			\begin{minipage}[t]{\dimexpr\linewidth-24pt\relax}
-				\BODY
-			\end{minipage}%
-		}%
-	\endgroup
+    \begingroup
+        \adjustbox{cfbox=blue!40!white 2pt 10pt,valign=t,bgcolor=blue!5!white}{%
+            \begin{minipage}[t]{\dimexpr\linewidth-24pt\relax}
+                \BODY
+            \end{minipage}%
+        }%
+    \endgroup
 }
 
 % recente geleerde keywords bovenin slide
@@ -415,57 +517,57 @@
 %}
 
 \newcommand{\addtorecentlist}[1]{%
-	\bgroup
-		\let\do\relax
-		\expandafter\gdef\expandafter\recentlist\expandafter{\recentlist\do{#1}}%
-		\addtocounter{recentcount}{1}%
-	\egroup
-	%
-	%\xdef\recentlist{\recentlist\do{#1}}%
+    \bgroup
+        \let\do\relax
+        \expandafter\gdef\expandafter\recentlist\expandafter{\recentlist\do{#1}}%
+        \addtocounter{recentcount}{1}%
+    \egroup
+    %
+    %\xdef\recentlist{\recentlist\do{#1}}%
 }
 
 \newcommand{\clearrecentlist}{%
-	\gdef\recentlist{}%
-	\setcounter{recentcount}{0}%
+    \gdef\recentlist{}%
+    \setcounter{recentcount}{0}%
 }
 
 \newif\ifisfirstrecentitem
 \newcommand{\printrecentlist}{%
-	\setcounter{recentskipremaining}{0}%
-	\ifnum\value{recentcount}>\value{maxrecentdisplay}
-		\setcounter{recentskipremaining}{\value{recentcount}-\value{maxrecentdisplay}}
-	\fi
-	%(\therecentskipremaining)
-	%(\meaning\recentlist)
-	\isfirstrecentitemtrue
-	\def\do##1{%
-		\ifnum\value{recentskipremaining}>0\relax
-			\addtocounter{recentskipremaining}{-1}%
-		\else		
-			\unless\ifisfirstrecentitem
-			\vertlistsep
-			\fi
-			\isfirstrecentitemfalse
-			\textbf{##1}%
-		\fi
-	}%
-	\recentlist
+    \setcounter{recentskipremaining}{0}%
+    \ifnum\value{recentcount}>\value{maxrecentdisplay}
+        \setcounter{recentskipremaining}{\value{recentcount}-\value{maxrecentdisplay}}
+    \fi
+    %(\therecentskipremaining)
+    %(\meaning\recentlist)
+    \isfirstrecentitemtrue
+    \def\do##1{%
+        \ifnum\value{recentskipremaining}>0\relax
+            \addtocounter{recentskipremaining}{-1}%
+        \else		
+            \unless\ifisfirstrecentitem
+            \vertlistsep
+            \fi
+            \isfirstrecentitemfalse
+            \textbf{##1}%
+        \fi
+    }%
+    \recentlist
 }
 
 \newcommand{\recentpopfront}[1][1]{%
-	\typeout{recentpopfront, before: \meaning\recentlist}
-	\setcounter{recentskipremaining}{#1}%
-	\let\origrecentlist\recentlist
-	\clearrecentlist
-	\def\do##1{%
-		\ifnum\value{recentskipremaining}>0\relax
-			\addtocounter{recentskipremaining}{-1}%
-		\else		
-			\addtorecentlist{##1}%
-		\fi
-	}%
-	\origrecentlist
-	\typeout{recentpopfront, after: \meaning\recentlist}
+    \typeout{recentpopfront, before: \meaning\recentlist}
+    \setcounter{recentskipremaining}{#1}%
+    \let\origrecentlist\recentlist
+    \clearrecentlist
+    \def\do##1{%
+        \ifnum\value{recentskipremaining}>0\relax
+            \addtocounter{recentskipremaining}{-1}%
+        \else		
+            \addtorecentlist{##1}%
+        \fi
+    }%
+    \origrecentlist
+    \typeout{recentpopfront, after: \meaning\recentlist}
 }
 
 \newsavebox\printrecentbox
@@ -477,123 +579,171 @@
 % }
 
 \newcommand{\saveprintrecentbox}{%
-	\bgroup
-		\savebox\printrecentbox{\printrecentlist}%
-		\global\setbox\printrecentbox\box\printrecentbox
-	\egroup
-	% \setbox\scratchbox\printrecentbox
-	% \global\setbox\printrecentbox\scratchbox
-	% \ifdim\wd\printrecentbox>0.9\textwidth
-	% 	\savebox\printrecentbox{\adjustbox{right=0.9\textwidth}{\printrecentlist}}%
-	% \else
-	% 	\savebox\printrecentbox{\adjustbox{left=0.9\textwidth}{\printrecentlist}}%
-	% \fi
+    \bgroup
+        \savebox\printrecentbox{\printrecentlist}%
+        \global\setbox\printrecentbox\box\printrecentbox
+    \egroup
+    % \setbox\scratchbox\printrecentbox
+    % \global\setbox\printrecentbox\scratchbox
+    % \ifdim\wd\printrecentbox>0.9\textwidth
+    % 	\savebox\printrecentbox{\adjustbox{right=0.9\textwidth}{\printrecentlist}}%
+    % \else
+    % 	\savebox\printrecentbox{\adjustbox{left=0.9\textwidth}{\printrecentlist}}%
+    % \fi
 }
 
 \newcommand{\shrinkrecentbox}[1]{%
-	{\loop
-		%\clearrecentlist
-		%\saveprintrecentbox
-		%(SavedEmptyBox)
-		%\iffalse
+    {\loop
+        %\clearrecentlist
+        %\saveprintrecentbox
+        %(SavedEmptyBox)
+        %\iffalse
 
 
-		\ifdim\wd\printrecentbox>\dimexpr #1\relax
-		%
-		\recentpopfront[1]%
-		\saveprintrecentbox
-	\repeat}%
+        \ifdim\wd\printrecentbox>\dimexpr #1\relax
+        %
+        \recentpopfront[1]%
+        \saveprintrecentbox
+    \repeat}%
 }
 
 % Based on miniframes code
 \setbeamertemplate{headline}
 {%
-	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
-	\end{beamercolorbox}
-	\begin{beamercolorbox}{section in head/foot}
-		\vskip2pt %\insertnavigation{\paperwidth}
-		\strut
-		\vskip2pt
-	\end{beamercolorbox}%
-	%
-	\begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
-	\end{beamercolorbox}
-	% \begin{beamercolorbox}[
-	% 	ht=2.5ex,
-	% 	dp=1.125ex,
-	% 	leftskip=.3cm,rightskip=.3cm plus1fil
-	% 	]{subsection in head/foot}
-	% 	\usebeamerfont{subsection in head/foot}%\insertsubsectionhead
-	% 	% \savebox\printrecentbox{\printrecentlist}%
-	% 	% \ifdim\wd\printrecentbox>0.9\textwidth
-	% 	% 	\adjustbox{right=0.9\textwidth}{\printrecentlist}%
-	% 	% \else
-	% 	% 	\adjustbox{left=0.9\textwidth}{\printrecentlist}%
-	% 	% \fi
-	% 	% \saveprintrecentbox
-	% 	% \ifdim\wd\printrecentbox>0.9\textwidth
-	% 	% 	%(Shrinking box)
-	% 	% 	%\PackageError{debug}{Width is \the\wd\printrecentbox}{}%
-	% 	% 	\shrinkrecentbox{0.6\textwidth}%
-	% 	% \else
-	% 	% 	%(Not shrinking box)
-	% 	% \fi
-	% 	% \usebox\printrecentbox
-	% 	%\textbullet\ Hey
-	% \end{beamercolorbox}%
-	%
-	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
-	\end{beamercolorbox}
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \insertnavigation{\paperwidth}%
+        %\strut %AAAA
+        \vskip4pt
+    \end{beamercolorbox}%
+    %
+    % \begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
+    % \end{beamercolorbox}%
+    % \begin{beamercolorbox}[
+    % 	ht=2.5ex,
+    % 	dp=1.125ex,
+    % 	leftskip=.3cm,rightskip=.3cm plus1fil
+    % 	]{subsection in head/foot}
+    % 	\usebeamerfont{subsection in head/foot}%\insertsubsectionhead
+    % 	% \savebox\printrecentbox{\printrecentlist}%
+    % 	% \ifdim\wd\printrecentbox>0.9\textwidth
+    % 	% 	\adjustbox{right=0.9\textwidth}{\printrecentlist}%
+    % 	% \else
+    % 	% 	\adjustbox{left=0.9\textwidth}{\printrecentlist}%
+    % 	% \fi
+    % 	% \saveprintrecentbox
+    % 	% \ifdim\wd\printrecentbox>0.9\textwidth
+    % 	% 	%(Shrinking box)
+    % 	% 	%\PackageError{debug}{Width is \the\wd\printrecentbox}{}%
+    % 	% 	\shrinkrecentbox{0.6\textwidth}%
+    % 	% \else
+    % 	% 	%(Not shrinking box)
+    % 	% \fi
+    % 	% \usebox\printrecentbox
+    % 	%\textbullet\ Hey
+    % \end{beamercolorbox}%
+    %
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
 }
+
+\setbeamertemplate{footline}
+{%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    %
+    \begin{beamercolorbox}[
+        ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm plus1fil
+    ]{author in head/foot}%
+        \leavevmode{\usebeamerfont{author in head/foot}%
+            \rlap{\insertshortauthor}%
+            %\hfill Slides op texnicie.nl%
+        }%
+        \hfill%
+        {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+    \end{beamercolorbox}%
+    %
+    \begin{beamercolorbox}[
+        ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm plus1fil
+    ]{title in head/foot}%
+        {\usebeamerfont{title in head/foot}\rlap{\insertshorttitle}}\hfill Slides op texnicie.nl\hfill{\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}}%
+    \end{beamercolorbox}%
+    %
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+}
+
+% \setbeamertemplate{headline}
+% {%
+%   \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+%   \end{beamercolorbox}
+%   \begin{beamercolorbox}{section in head/foot}
+%     \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+%   \end{beamercolorbox}%
+% %   \ifbeamer@theme@subsection%
+% %     \begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
+% %     \end{beamercolorbox}
+% %     \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+% %       leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+% %       \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+% %     \end{beamercolorbox}%
+% %   \fi%
+%   \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+%   \end{beamercolorbox}
+% }
 
 \makeatletter
 
 \NewEnviron{colC}[2][]{%
-	\def\setpadd{}%
-	\if\relax #1\relax
-	\else
-		%\def\setpadd{padding={0pt {\dimexpr ((#1)-\height)\relax} {0pt} {0pt}}}%
-		\def\setpadd{%
-			set depth={\dimexpr (#1)-\height\relax}%
-		}
-	\fi
-	% \def\setparboxargs{}%
-	% \if\relax #1\relax
-	% \else
-	% 	\def\setparboxargs{[t][\dimexpr #1\relax][]}%
-	% \fi
-	%
-	\expandafter\adjustbox\expandafter{\setpadd,
-		%margin=0pt,padding=0pt,
-	%padding={0pt {\dimexpr (0.4\textheight-\height)/2\relax} {0pt} {\dimexpr (0.4\textheight-\height)/2\relax}},
-		fbox=1pt 0pt 0pt,
-		valign=M
-	}%
-	{%
-		\parbox{\dimexpr #2-2pt\relax}{%
-			\BODY
-		}%
-	}%
+    \def\setpadd{}%
+    \if\relax #1\relax
+    \else
+        %\def\setpadd{padding={0pt {\dimexpr ((#1)-\height)\relax} {0pt} {0pt}}}%
+        \def\setpadd{%
+            set depth={\dimexpr (#1)-\height\relax}%
+        }
+    \fi
+    % \def\setparboxargs{}%
+    % \if\relax #1\relax
+    % \else
+    % 	\def\setparboxargs{[t][\dimexpr #1\relax][]}%
+    % \fi
+    %
+    \expandafter\adjustbox\expandafter{\setpadd,
+        %margin=0pt,padding=0pt,
+    %padding={0pt {\dimexpr (0.4\textheight-\height)/2\relax} {0pt} {\dimexpr (0.4\textheight-\height)/2\relax}},
+        fbox=1pt 0pt 0pt,
+        valign=M
+    }%
+    {%
+        \parbox{\dimexpr #2-2pt\relax}{%
+            \BODY
+        }%
+    }%
 }
 
 \NewEnviron{colT}[2][]{%
-	\def\setpadd{}%
-	\if\relax #1\relax
-	\else
-		\def\setpadd{%
-			set depth={\dimexpr (#1)-\height\relax}%
-		}%
-	\fi
-	%
-	\expandafter\adjustbox\expandafter{\setpadd,
-		fbox=1pt 0pt 0pt,
-		valign=T
-	}%
-	{%
-		\parbox{\dimexpr #2-2pt\relax}{%
-			\BODY
-		}%
-	}%
+    \def\setpadd{}%
+    \if\relax #1\relax
+    \else
+        \def\setpadd{%
+            set depth={\dimexpr (#1)-\height\relax}%
+        }%
+    \fi
+    %
+    \expandafter\adjustbox\expandafter{\setpadd,
+        fbox=1pt 0pt 0pt,
+        valign=T
+    }%
+    {%
+        \parbox{\dimexpr #2-2pt\relax}{%
+            \BODY
+        }%
+    }%
 }
 
 \makeatother
@@ -602,12 +752,12 @@
 
 
 \newenvironment{noindentlist}{
-	\begin{list}{\textbullet}{
-		\leftmargin=0pt\relax
-		\itemindent=0pt\relax
-		\setlength{\itemsep}{2pt}
-	}
+    \begin{list}{\textbullet}{
+        \leftmargin=0pt\relax
+        \itemindent=0pt\relax
+        \setlength{\itemsep}{2pt}
+    }
 }{
-	\end{list}
+    \end{list}
 }
 

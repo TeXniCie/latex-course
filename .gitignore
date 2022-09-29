@@ -19,3 +19,5 @@ presentatie/composition/2022-09-GSNS-beginners/presentatie.bbl
 *.pygtex
 *.pygstyle
 **/_minted-*/
+*.fdb_latexmk
+*.vrb
