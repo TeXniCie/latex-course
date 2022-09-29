@@ -8,7 +8,14 @@
     \acrnAllAuthorsTrue
 }
 
+\DeclareOption{everyoneauthor}{
+    \acrnAllAuthorsTrue
+}
+
 \newbool{english}
+\newbool{aestheme}
+\newbool{ishandout}
+
 \booltrue{english}
 
 \DeclareOption{english}{
@@ -19,6 +26,15 @@
     \boolfalse{english}
 }
 
+\DeclareOption{aes}{
+    \booltrue{aestheme}
+}
+
+\DeclareOption{handout}{
+    \booltrue{ishandout}
+}
+
+
 \ProcessOptions
 
 \acrnDefName\copyrightTim{Tim Weijers}{2022}
@@ -26,8 +42,6 @@
 \acrnDefName\copyrightThomas{Thomas van Maaren}{2022}
 \acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2022}
 
-\newbool{ishandout}
-%\booltrue{ishandout}
 
 % Detail 5: rehearsal
 % Detail 10: crash course
@@ -78,23 +92,79 @@
     \LoadClass[aspectratio=169]{beamer}
 }
 
-%\typeout{\meaning\ishandout}
-
-%TODO Vervang highlightlatex door minted, dan niet meer nodig
 \RequirePackage[tabsize=4]{highlightlatex}
-
 
 \setbeamertemplate{caption}[numbered] % voor het nummeren van figuren in beamer
 
-%\usetheme{aes2}
+\definecolor{red1}{RGB}{185, 70, 70}
+\definecolor{red2}{RGB}{152, 58, 58}
+\definecolor{red3}{RGB}{122, 46, 46}
+\definecolor{red4}{RGB}{142, 26, 26}
+\definecolor{blue1}{rgb}{0.2,0.2,0.7}
 
-% \usecolortheme{rose}
-% %\useinnertheme[shadow]{rounded}
-% \useinnertheme{rounded}
+%hsla(0, 55%, 45%, 1)
+\definecolor{red5}{RGB}{178, 52, 52}
 
-\usetheme{Dresden}
-\usecolortheme{dolphin}
-\useoutertheme{miniframes}
+%hsla(0, 55%, 32%, 1)
+\definecolor{red6}{RGB}{126, 37, 37}
+
+%hsla(0, 68%, 45%, 1)
+\definecolor{red7}{RGB}{193, 37, 37}
+
+%hsla(0, 68%, 38%, 1)
+\definecolor{red8}{RGB}{163, 31, 31}
+
+%hsla(0, 45%, 67%, 1)
+\definecolor{red9}{RGB}{209, 133, 133}
+
+%hsla(0, 100%, 45%, 1)
+\definecolor{red10}{RGB}{230, 0, 0}
+
+%hsla(0, 73%, 45%, 1)
+\definecolor{red11}{RGB}{199, 31, 31}
+
+\ifbool{aestheme}{
+	\usetheme{aes2}
+
+	\usecolortheme{rose}
+	%\useinnertheme[shadow]{rounded}
+	\useinnertheme{rounded}
+
+	\setbeamertemplate{footline}{}
+}{
+	\usetheme{Dresden}
+	%\usecolortheme{dolphin}
+	\useoutertheme{miniframes}
+
+	%\PackageWarning{debug}{\expandafter\meaning\csname XC@clr@rgb@s}
+
+	% BEGIN Based on beamer/beamercolorthemedolphin.sty
+	\mode<presentation>
+
+	\setbeamercolor*{structure}{fg=red11}
+
+
+	\setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!40!orange}
+	\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!60!orange}%,bg=red9}
+	\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!90!orange}%,bg=red1}
+	\setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+	\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+	
+	\setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+	\setbeamercolor*{palette sidebar secondary}{fg=white}
+	\setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+	\setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+	\setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
+
+	\setbeamercolor*{separation line}{}
+	\setbeamercolor*{fine separation line}{}
+
+	\mode
+	<all>
+	% END Based on
+}
 
 % Removes beamer navigation symbols
 \setbeamertemplate{navigation symbols}{}
@@ -508,16 +578,17 @@
 % Based on miniframes code
 \setbeamertemplate{headline}
 {%
-	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
 	\end{beamercolorbox}
 	\begin{beamercolorbox}{section in head/foot}
-		\vskip2pt %\insertnavigation{\paperwidth}
-		\strut
 		\vskip2pt
+		\insertnavigation{\paperwidth}%
+		%\strut %AAAA
+		\vskip4pt
 	\end{beamercolorbox}%
 	%
-	\begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
-	\end{beamercolorbox}
+	% \begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
+	% \end{beamercolorbox}%
 	% \begin{beamercolorbox}[
 	% 	ht=2.5ex,
 	% 	dp=1.125ex,
@@ -542,9 +613,28 @@
 	% 	%\textbullet\ Hey
 	% \end{beamercolorbox}%
 	%
-	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
-	\end{beamercolorbox}
+	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+	\end{beamercolorbox}%
 }
+
+% \setbeamertemplate{headline}
+% {%
+%   \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+%   \end{beamercolorbox}
+%   \begin{beamercolorbox}{section in head/foot}
+%     \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+%   \end{beamercolorbox}%
+% %   \ifbeamer@theme@subsection%
+% %     \begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
+% %     \end{beamercolorbox}
+% %     \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+% %       leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+% %       \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+% %     \end{beamercolorbox}%
+% %   \fi%
+%   \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+%   \end{beamercolorbox}
+% }
 
 \makeatletter
 

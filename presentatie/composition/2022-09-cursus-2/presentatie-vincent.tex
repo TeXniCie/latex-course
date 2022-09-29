@@ -1,0 +1,64 @@
+%% !TeX program = pdflatex
+
+\documentclass[dutch,everyoneauthor]{../../cursuspresentatie}
+
+%\input{preamble.tex}
+
+\copyrightVincent
+
+\def\importslide#1#2{%
+	\import{../../slides/#1}{#2}
+}
+
+\title{\LaTeX{}-cursus Week 2}
+\author{\TeX niCie}
+\date{3 oktober 2022}
+
+\begin{document}
+
+\lang{
+	\section{Introduction}
+}{
+	\section{Introductie}
+}
+
+\begin{frame}
+	\titlepage
+	\centering
+
+	Slides are available at\\
+	\href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\lang,Schedule,Agenda,}
+	
+	\begin{itemize}
+		\item \lang,Introduction,Introductie,
+		\item \lang,Text formatting,Tekstopmaak,
+		\item \lang,Structure of a document,Documentstructuur,
+		\item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+		\item \lang,Images,Afbeeldingen,
+		\item \lang,Formulas,Formules,
+		\item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+		\item \lang,Closing remarks,Afsluitende opmerkingen,
+	\end{itemize}
+\end{frame}
+
+% \subfile{1_Inleiding.tex}
+
+% \subfile{2_Tekstopmaak.tex}
+
+% \subfile{3_Documentstructuur.tex}
+
+% \subfile{4_Afbeeldingen.tex}
+
+% \subfile{5_Formules.tex}
+
+% % \subfile{6_Bibliografie.tex}
+
+% \subfile{7_GoedOmTeWeten.tex}
+
+\importslide{misc}{misc-license.tex}
+	
+\end{document}
