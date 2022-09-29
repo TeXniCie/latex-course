@@ -27,6 +27,7 @@
 \acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2022}
 
 \newbool{ishandout}
+%\booltrue{ishandout}
 
 % Detail 5: rehearsal
 % Detail 10: crash course

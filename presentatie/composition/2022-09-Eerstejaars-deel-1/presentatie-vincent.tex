@@ -1,0 +1,188 @@
+\documentclass[allauthors,dutch]{../../cursuspresentatie}
+
+\copyrightTim
+\copyrightVincent
+
+\def\importslide#1#2{%
+	\import{../../slides/#1}{#2}
+}
+
+\title{\LaTeX{}-cursus Week 1}
+\author{\TeX niCie}
+\date{26 september 2022}
+
+% Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
+% fris ingeladen
+\csname endofdump\endcsname
+
+\usepackage{minted} %kan later in de .cls file hierboven
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
+\usepackage{tcolorbox}
+% \usepackage{}
+\definecolor{darkgreen}{rgb}{0.2,0.7,0.11}
+\makeatletter
+\patchcmd{\@thm}{\thm@headfont{\scshape}}{\thm@headfont{\scshape\bfseries}}{}{}
+\patchcmd{\@thm}{\thm@notefont{\fontseries\mddefault\upshape}}{}{}{}
+\makeatother
+\newtheorem{mylemma}[]{Lemma}
+\begin{document}
+
+\section{Introduction}
+\importslide{beginners}{welcome.tex}
+%\importslide{beginners}{contents.tex}
+
+\begin{frame}
+	\frametitle{Agenda}
+	
+	\begin{itemize}
+		\item Introductie tot LaTeX en Overleaf
+		\item LaTeX documentstructuur
+		\item Tekst
+		\item Wiskunde
+		\item Tot slot / vervolgcursus
+		% \item \lang,Text formatting,Tekstopmaak,
+		% \item  $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+		% \item \lang,Structure of a document,Documentstructuur,
+		% \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+		% \item \lang,Formulas,Formules,
+		% \item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+		% \item  \lang,Images,Afbeeldingen,
+		% \item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+		% \item \lang,Closing remarks,Afsluitende opmerkingen,
+	\end{itemize}
+\end{frame}
+
+\importslide{beginners_NL}{overleaf-1.tex}
+\importslide{beginners_NL}{overleaf-2.tex}
+
+% We switchen naar Overleaf voor Live LaTeX : laat zien hoe je in kan loggen, nieuw bestand maken,
+% waar de compileerknop zit en waar je tekst kan typen. ook laten zien dat er een file explorer is.
+
+\importslide{beginners_NL}{simpledoc-1.tex}
+\importslide{beginners_NL}{simpledoc-2.tex}
+\importslide{beginners_NL}{simpledoc-3.tex}
+
+% simpel document met wat tekst zoals op slide simpledoc-3 namaken. Op compileren klikken en pdf
+% laten zien. laten zien wat er gebeurt als je iets fouttypt, dat er dan een error verschijnt.
+
+\importslide{beginners_NL}{commands-1.tex}
+\importslide{beginners_NL}{commands-2.tex}
+\importslide{beginners_NL}{commands-3.tex}
+% switch naar live LaTeX : demonstreer gebruik van de commands van zojuist. leg uit welke in de preamble gaan en 
+% welke in de body.
+
+% 5 min voor oefeningen 1 t/m 4
+
+\begin{frame}
+	\frametitle{Oefeningen}
+	
+	\centering
+	
+	\includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{images/cookie_art.png}
+\end{frame}
+
+
+\importslide{beginners_NL}{whitespace.tex}
+% Vertel dat quad staat voor spazio quadratone = groot vierkant spatie en de grootte heeft van een hoofdletter M
+% demo het gebruik van \ \quad en \hspace
+
+
+\importslide{text}{paragraphs-1.tex}
+% maak 3 paragrafen zonder parskip. Laat zien waar de indent zit.
+% leg nadruk op de witregel in LaTeX code die de paragrafen scheidt.
+
+\importslide{text}{paragraphs-2.tex}
+
+% 5 min voor oefeningen 5 t/m 8
+
+\importslide{beginners_NL}{sections.tex}
+
+% maak 2 sections, met subsections en een subsubsection. Zet er wat tekst in. Namen van de sections:
+% \section{Limieten en continuïteit}
+% \subsection{De afstand in R^n}
+% De norm wordt gegeven door wortel van het inproduct
+% \subsubsection{Cauchy-Schwarz}
+% dit is een belangrijke ongelijkheid
+% \subsection{Limieten van functies}
+
+\importslide{beginners_NL}{title.tex}
+
+% \title{Huiswerkopdracht 2 bewijzen in de wiskunde}
+% \author{Tim Weijers \and Vincent Kuhlmann}
+% \date{26 september 2022}
+
+\importslide{beginners_NL}{special-characters.tex}
+
+% \{ f in fruit | f is een citrusvrucht \}
+% 40\%, Piet \& Klaas, Dit boek kost 40\$
+
+% \importslide{beginners_NL}{format-text-1.tex}
+
+\importslide{text}{text-effects.tex}
+
+\importslide{beginners_NL}{logical-formatting.tex}
+
+% Dit is \textbf{vetgedrukte} tekst
+% Dit is \textbf{ \textcolor{blue} blauwe vetgedrukte }} tekst
+
+% 5 min voor oefeningen 9 t/m 11
+
+\importslide{math}{inline.tex}
+\importslide{math}{basics.tex}
+
+% \begin{frame}
+% 	\begin{align*}
+% 		\int_0^{\infty} e^{-x}\dif x &= -\eval{e^{-x}}_{0}^{\infty} = -(0 - 1) = 1\\
+% 		%\int_0^{\pi}\sin^2(x)\dif x &= \int_0^{\pi}\frac{1-(\cos^2(x)-\sin^2(x))}{2}
+% 		%= \int_0^{\pi}\frac{1-\cos(2x)}{2}\\
+% 		%&= \pi/2 - \frac{\sin()}{}
+% 	\end{align*}
+% \end{frame}
+
+\setDetail{10}
+\importslide{math}{symbols.tex}
+
+%\importslide{math}{relations.tex}
+\setDetail{20}
+
+% \importslide{beginners_NL}{math-1.tex}
+
+% \importslide{beginners_NL}{math-2.tex}
+
+% Hieruit volgt dat \( x \geq 4 \) en \( -1 \leq \sin(\theta) \leq 1 \)
+
+\setDetail{10}
+\importslide{beginners_NL}{math-5.tex}
+\setDetail{20}
+
+\importslide{math}{symbols-ref.tex}
+
+\importslide{beginners_NL}{math-3.tex}
+
+%\importslide{beginners_NL}{math-4.tex}
+
+
+
+\importslide{math}{align-unaligned.tex}
+
+\providebool{skipNonumber}
+\booltrue{skipNonumber}
+
+\importslide{math}{align-numbers.tex}
+%\importslide{beginners_NL}{math-6.tex}
+
+\importslide{beginners_NL}{math-7.tex}
+
+\importslide{math}{left_right.tex}
+
+\importslide{images}{includegraphics-inline.tex}
+\importslide{images}{includegraphics-asparagraph.tex}
+
+% slide met voorbeeldcode ALIGN op scherm houden. Oefeningen tot 18:55
+
+%\importslide{beginners_NL}{closing-remarks-1.tex}
+\importslide{beginners_NL}{closing-remarks-2.tex}
+	
+\importslide{misc}{misc-license.tex}
+
+\end{document}
