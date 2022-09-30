@@ -1,0 +1,309 @@
+\copyrightVincent
+
+% \begin{saveblock}{align}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%         De verdubbelingsformule herschrijven we nu als
+%         \begin{align}
+%             \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+%             &= 2\cos^2(\theta)-1.
+%         \end{align}
+%     \end{highlightblock}
+% \end{saveblock}
+
+% \begin{saveblock}{alignEN}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%         The double-angle formula can now be rewritten as
+%         \begin{align}
+%             \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+%             &= 2\cos^2(\theta)-1.
+%         \end{align}
+%     \end{highlightblock}
+%\end{saveblock}
+
+% \begin{frame}[fragile]{Referenties}
+%     \begin{columns}
+%         \begin{column}{0.5\textwidth}
+%             {\tiny De Taylorexpansie van $ e^{ix}+e^{-ix} $ is
+%             \begin{align*}
+%                 e^{ix}+e^{-ix}
+%                 %&= \sum_{n=0}^{\infty}\frac{1}{n!}x^{n}+\sum_{n=0}^{\infty}\frac{1}{n!}(-ix)^{n}\\
+%                 &= \sum_{n=0}^{\infty}\frac{1}{n!}(i^{n}+(-i)^n)x^n\\
+%                 &= \sum_{n=0}^{\infty}\frac{x^n}{n!}\begin{cases}
+%                     2&\mbox{ als $ n=0\text{ (mod 4)} $}\\
+%                     0&\mbox{ als $ n=1\text{ (mod 4)} $}\\
+%                     -2&\mbox{ als $ n=2\text{ (mod 4)} $}\\
+%                     0&\mbox{ als $ n=3\text{ (mod 4)} $}
+%                 \end{cases}\\
+%                 &= 2\cdot(1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + \dots)\\
+%                 &= 2\cdot\cos(x)
+%             \end{align*}}
+%         \end{column}
+%         \begin{column}{0.5\textwidth}
+%             {\tiny
+%             % De Taylor-reeks van $ e^{ax} $ is
+%             % \begin{align}
+%             %     e^{ax} = \sum_{n=0}^{\infty}\frac{1}{n!}a^nx^{n},
+%             % \end{align}
+%             De Taylorexpansie van $ e^{ix}+e^{-ix} $ is
+%             \begin{align}\label{eq:expImag}
+%                 e^{ix}+e^{-ix} = \sum_{n=0}^{\infty}\frac{1}{n!}(i^n+(-i)^n)x^{n}.
+%             \end{align}
+%             De term $ i^n+(-i)^n $ kunnen we uitschrijven als
+%             % \begin{align*}
+%             %     i^{2n+1} + (-i)^{2n+1} &= i\cdot (-1)^n - i\cdot (-1)^n=0,\\
+%             %     i^{2n} + (-i)^{2n} &= 2\cdot (-1)^{n}.
+%             % \end{align*}
+%             % \begin{align*}
+%             %     i^{4n}+(-i)^{4n} &= 1+1=2\\
+%             %     i^{4n+1}+(-i)^{4n+1} &= i - i = 0\\
+%             %     i^{4n+2}+(-i)^{4n+2} &= i^2+(-i)^2= -1 - 1 = 2\\
+%             %     i^{4n+3}+(-i)^{4n+3} &= i^3+(-i)^3= -i + i = 0.
+%             % \end{align*}
+%             \begin{align}\label{eq:imagExpansion}
+%                 \begin{split}
+%                     i^n+(-i)^n = \begin{cases}
+%                         2&\mbox{ als $ n=0\text{ (mod 4)} $}\\
+%                         0&\mbox{ als $ n=1\text{ (mod 4)} $}\\
+%                         -2&\mbox{ als $ n=2\text{ (mod 4)} $}\\
+%                         0&\mbox{ als $ n=3\text{ (mod 4)} $}.
+%                     \end{cases}
+%                 \end{split}
+%             \end{align}
+%             Als we \eqref{eq:imagExpansion} invullen in \eqref{eq:expImag} vinden we
+%             \begin{align*}
+%                 e^{ix}+e^{-ix}
+%                 %&= \sum_{n=0}^{\infty}\frac{1}{n!}x^{4n}\left(2 + 0x - 2x^2 - 0x^3\right)\\
+%                 &= 2\cdot(1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + \dots)\\
+%                 &= 2\cdot\cos(x)
+%             \end{align*}
+%             }
+%         \end{column}
+%     \end{columns}
+
+%     % ...
+%     % Als we \eqref{eq:expTaylor} invullen in $ e^{ix}+e^{-ix} $ krijgen we
+%     % \begin{align*}
+%     %     e^{ix}+e^{-ix} &= \sum_{n=0}^{\infty}\frac{1}{n!}(i^{n}+(-i)^n)x^n\\
+%     %     &= \sum_{n=0}^{\infty}\frac{1}{n!}\begin{cases}
+%     %         2&\mbox{ als $ n=0\text{ (mod 4)} $}\\
+%     %         0&\mbox{ als $ n=1\text{ (mod 4)} $}\\
+%     %         -2&\mbox{ als $ n=2\text{ (mod 4)} $}\\
+%     %         0&\mbox{ als $ n=3\text{ (mod 4)} $}
+%     %     \end{cases}\\
+%     %     &= 2\cos(x)
+%     % \end{align*}
+% \end{frame}
+
+
+\begin{frame}[fragile]{Referenties}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            {\only<2->{\color{gray}}
+            % {\tiny De integraal van $ \cos^2(5x) $ van $ 0 $ tot $ \pi $ is
+            % \begin{align*}
+            %     \int_0^{\pi} \cos^2(5x)\dif x
+            %     &= \int_0^{\pi} \cos^2(y)\left(\frac{\dif y}{\dif x}\right)^{-1}\dif y\quad (y := 5x)\\
+            %     &= 5\int_0^{\pi/5}\cos^2(y)\dif y\\
+            %     &= 5\int_0^{\pi/5}\frac{1}{2}\left(1-\sin^2(y)\right)+\frac{1}{2}\cos^2(y)\dif y\\
+            %     &= \frac{5}{2}\int_0^{\pi/5}\left(1+\cos(2y)\right)\dif y\\
+            %     &= \frac{5}{2}\left(\pi/5 + \right)
+            % \end{align*}}
+            {\tiny De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $
+            vinden we als
+            \begin{align*}
+                v(t) &= v_0 + \int_{0}^{t}\cos^2(t)\dif t\\
+                &= v_0 + \int_{t'=0}^{t't}\left(\frac{1}{2}\cos^2(t')+\frac{1}{2}(1-\sin^2(t'))\right)\dif t'\\
+                &= v_0 + \frac{1}{2}\int_{t'=0}^{t'=t}\left(1+\cos^2(t')-\sin^2(t')\right)\dif t'\\
+                &= v_0 + \frac{1}{2}\int_{t'=0}^{t'=t}\left(1+\cos(2t')\right)\dif t'\\
+                &= v_0 + \frac{1}{4}\int_{2t'=0}^{2t'=2t}\left(1+\cos(2t')\right)\dif\, (2t')\\
+                &= v_0 + \frac{1}{4}\left(2t+\sin(2t)\right)\\
+                &= v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t)
+            \end{align*}}}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{onlyenv}<2->%
+                {\tiny
+                De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                \begin{align}\label{eq:exprVelocity}
+                    v(t) &= v_0 + \int_{0}^{t}\cos^2(t)\dif t.
+                \end{align}
+                De cosinus verdubbelingsformule is
+                \begin{align*}
+                    \cos(2t) &= \cos^2(t) - \sin^2(t)\\
+                    &= 2\cos^2(t)-1.
+                    %,\mbox{oftewel}\nonumber\\
+                    % \cos^2(t) &= \frac{1}{2}\left(1+\cos(2t)\right),
+                    %\mbox{, oftewel}\\
+                \end{align*}
+                Beide leden integreren geeft
+                \begin{align*}
+                    \frac{1}{2}\sin(2t) &= \left(2\int_0^t\cos^2(t')\dif t'\right) - t.
+                \end{align*}
+                % en dus
+                % \begin{align}
+                %     \int_0^t 2\cos^2(t')\dif t' = t + \frac{1}{2}\sin(2t).
+                % \end{align}
+                Hiermee vinden we (1) als
+                \begin{align*}
+                    v(t) &= v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t).
+                \end{align*}
+                }
+            \end{onlyenv}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+
+
+% \begin{frame}[fragile]{Label}
+%     \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+        
+%     \end{minted}
+    
+%     De Taylorexpansie van $ e^{x} $ is
+%     \begin{align}
+%         e^{x} = \sum_{n=0}^{\infty}\frac{1}{n!}x^{n}
+%         \label{eq:expTaylor}
+%     \end{align}
+%     \textellipsis
+
+%     Als we \eqref{eq:expTaylor} invullen in $ e^{ix}+e^{-ix} $ krijgen we
+%     \begin{align*}
+%         e^{ix}+e^{-ix} &= \sum_{n=0}^{\infty}\frac{1}{n!}(i^{n}+(-i)^n)x^n\\
+%         &= \sum_{n=0}^{\infty}\frac{1}{n!}\begin{cases}
+%             2&\mbox{ als $ n=0\text{ (mod 4)} $}\\
+%             0&\mbox{ als $ n=1\text{ (mod 4)} $}\\
+%             -2&\mbox{ als $ n=2\text{ (mod 4)} $}\\
+%             0&\mbox{ als $ n=3\text{ (mod 4)} $}
+%         \end{cases}\\
+%         &= 2\cos(x)
+%     \end{align*}
+% \end{frame}
+
+
+% % De Taylorexpansie van $ \sin^2(\theta) $ is
+% %         \begin{align}
+% %             \sin^2(\theta) &= \left(\sum_{i=0}^{\infty}\frac{1}{(2i+1)!}(-1)^{i}x^{2i+1}\right)\\
+% %             &= 
+% %         \end{align}
+
+% \begin{frame}[fragile]{Label}
+%     \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+%         De Taylorexpansie van $ e^{x} $ is
+%         \begin{align}
+%             e^{x} = \sum_{n=0}^{\infty}\frac{1}{n!}x^{n}
+%             \label{eq:expTaylor}
+%         \end{align}
+%         ...
+%         Als we \eqref{eq:expTaylor} invullen in $ e^{ix}+e^{-ix} $ krijgen we
+%         \begin{align*}
+%             e^{ix}+e^{-ix} &= \sum_{n=0}^{\infty}\frac{1}{n!}(i^{n}+(-i)^n)x^n\\
+%             &= \sum_{n=0}^{\infty}\frac{1}{n!}\begin{cases}
+%                2&\mbox{ als $ n=0\text{ (mod 4)} $}\\
+%                0&\mbox{ als $ n=1\text{ (mod 4)} $}\\
+%                -2&\mbox{ als $ n=2\text{ (mod 4)} $}\\
+%                0&\mbox{ als $ n=3\text{ (mod 4)} $}
+%             \end{cases}\\
+%             &= 2\cos(x)
+%         \end{align*}
+%     \end{minted}
+    
+%     De Taylorexpansie van $ e^{x} $ is
+%     \begin{align}
+%         e^{x} = \sum_{n=0}^{\infty}\frac{1}{n!}x^{n}
+%         \label{eq:expTaylor}
+%     \end{align}
+%     \textellipsis
+
+%     Als we \eqref{eq:expTaylor} invullen in $ e^{ix}+e^{-ix} $ krijgen we
+%     \begin{align*}
+%         e^{ix}+e^{-ix} &= \sum_{n=0}^{\infty}\frac{1}{n!}(i^{n}+(-i)^n)x^n\\
+%         &= \sum_{n=0}^{\infty}\frac{1}{n!}\begin{cases}
+%             2&\mbox{ als $ n=0\text{ (mod 4)} $}\\
+%             0&\mbox{ als $ n=1\text{ (mod 4)} $}\\
+%             -2&\mbox{ als $ n=2\text{ (mod 4)} $}\\
+%             0&\mbox{ als $ n=3\text{ (mod 4)} $}
+%         \end{cases}\\
+%         &= 2\cos(x)
+%     \end{align*}
+% \end{frame}
+
+% \providebool{skipNonumber}
+% \unless\ifskipNonumber
+%     \begin{saveblock}{align}
+%         \begin{highlightblock}[gobble=12,linewidth=\textwidth,
+%             framexleftmargin=0.25em,xleftmargin=0.25em]
+%             De verdubbelingsformule herschrijven we nu als
+%             \begin{align}
+%                 \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
+%                 \nonumber\\
+%                 &= 2\cos^2(\theta)-1.
+%             \end{align}
+%         \end{highlightblock}
+%     \end{saveblock}
+
+%     \begin{saveblock}{alignEN}
+%         \begin{highlightblock}[gobble=12,linewidth=\textwidth,
+%             framexleftmargin=0.25em,xleftmargin=0.25em]
+%             The double-angle formula can now be rewritten as
+%             \begin{align}
+%                 \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
+%                 \nonumber\\
+%                 &= 2\cos^2(\theta)-1.
+%             \end{align}
+%         \end{highlightblock}
+%     \end{saveblock}
+
+%     \addtorecentlist{\textbackslash nonumber}
+
+%     \begin{frame}{Align}
+%         \useblock{align\langsuffix}
+
+%         \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+%             assets/mathAlignSecondNumbered\langsuffix.pdf}
+%     \end{frame}
+% \fi
+
+
+% \begin{saveblock}{align}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%         De verdubbelingsformule herschrijven we nu als
+%         \begin{align*}
+%             \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+%             &= 2\cos^2(\theta)-1.
+%         \end{align*}
+%     \end{highlightblock}
+% \end{saveblock}
+
+% \begin{saveblock}{alignEN}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%         The double-angle formula can now be rewritten as
+%         \begin{align*}
+%             \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+%             &= 2\cos^2(\theta)-1.
+%         \end{align*}
+%     \end{highlightblock}
+% \end{saveblock}
+
+% \addtorecentlist{align*}
+
+% \begin{frame}{Align}
+%     \useblock{align\langsuffix}
+
+%     \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+%         assets/mathAlignNoNumbers\langsuffix.pdf}
+% \end{frame}
+
+% \updatehighlight{
+%     name=accentC,
+%     remove={*},
+%     %
+%     name=accentBlack,
+%     color=black,
+%     add={*}
+% }

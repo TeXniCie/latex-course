@@ -1,0 +1,27 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{`Theorem' en `Lemma': Gebruik}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                \usepackage{amsthm}
+                \newtheorem{theorem}{Stelling}
+                \newtheorem{lemma}[theorem]{Lemma}
+                ...
+
+                \begin{lemma}
+                    Lorem ipsum dolor sit
+                    ... eget dolor.
+                    
+                    \begin{proof}
+                        Aenean massa. Cum
+                        ... quis enim.
+                    \end{proof}
+                \end{lemma}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/mathLemmaProof.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}

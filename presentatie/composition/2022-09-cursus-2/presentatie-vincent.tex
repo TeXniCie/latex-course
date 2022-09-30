@@ -14,10 +14,150 @@
 
 \def\codeEmphasize#1{\ul{#1}}
 
+
+\def\customhead#1#2{%
+    \ifnum\value{section}=#1\relax
+        \textcolor{fg!100!bg}{%
+            \setul{1pt}{0.5pt}\setulcolor{yellow}\ul{#2}%
+        }%
+    \else
+        #2%
+    \fi
+}
+
+% \setbeamertemplate{headline}
+% {%
+%     \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+%     \end{beamercolorbox}
+%     \begin{beamercolorbox}{section in head/foot}
+%         \vskip2pt
+%         \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+%         \color{fg!80!bg}
+%         % \ifnum\c@section=2%
+%         %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot}}}%
+%         % \else%
+%         %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot shaded}}}%
+%         % \fi}%
+%         \adjustbox{
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!40!orange,
+%             rndcorners={3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+%         }{%
+%             \customhead{2}{Document en referenties}%
+%             \hspace{5pt}$ \cdot $\hspace{5pt}
+%             \customhead{3}{Figuren}%
+%         }%
+%         \adjustbox{
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!20!orange,
+%             rndcorners={0pt 3pt 0pt 3pt},margin={0pt 0pt 10pt 0pt}
+%         }{%
+%             Oefeningen%
+%         }%
+%         % \adjustbox{padding={3pt 5pt 3pt 5pt},bgcolor=red!40!orange,rndcorners=3pt,margin={10pt 0pt 10pt 0pt}}{
+%         %     `Theorem' en `Lemma'
+%         %     \hspace{5pt}$ \cdot $\hspace{5pt}
+%         %     Matrices en tabellen
+%         % }
+%         \adjustbox{
+%             %set depth=2pt,
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!40!orange,
+%             rndcorners={3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt},
+%         }{%
+%             \customhead{4}{`Theorem' en `Lemma'}
+%             \hspace{5pt}$ \cdot $\hspace{5pt}
+%             \customhead{5}{Matrices en tabellen}\vphantom{g} %
+%         }%
+%         \adjustbox{
+%             set depth=2pt,    
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!20!orange,
+%             rndcorners={0pt 3pt 0pt 3pt},margin={0pt 0pt 10pt 0pt}
+%         }{%
+%             Oefeningen%
+%         }
+%         \hfil
+%         Slides op texnicie.nl
+%         \hfil
+%         %\strut %AAAA
+%         \vskip4pt
+%     \end{beamercolorbox}%
+%     \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+%     \end{beamercolorbox}%
+% }
+
+\setbeamertemplate{headline}
+{%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+        \color{fg!80!bg}
+        % \ifnum\c@section=2%
+        %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot}}}%
+        % \else%
+        %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot shaded}}}%
+        % \fi}%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},%bgcolor=red!40!orange,
+            rndframe={color=red!40!orange}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \customhead{2}{Document en referenties}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}
+            \customhead{3}{Figuren}%
+        }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            bgcolor=bg!80!orange,
+            rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
+            margin={0pt 0pt 10pt 0pt}
+        }{%
+            \customhead{4}{Oefeningen}%
+        }%
+        % \adjustbox{padding={3pt 5pt 3pt 5pt},bgcolor=red!40!orange,rndcorners=3pt,margin={10pt 0pt 10pt 0pt}}{
+        %     `Theorem' en `Lemma'
+        %     \hspace{5pt}$ \cdot $\hspace{5pt}
+        %     Matrices en tabellen
+        % }
+        \adjustbox{
+            %set depth=2pt,
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},%bgcolor=red!40!orange,
+            rndframe={color=red!40!orange}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \customhead{5}{`Theorem' en `Lemma'}
+            \hspace{5pt}$ \cdot $\hspace{5pt}
+            \customhead{6}{Matrices en tabellen}\vphantom{g} %
+        }%
+        \adjustbox{
+            set depth=2pt,    
+            padding={5pt 5pt 5pt 5pt},
+            % bgcolor=red!20!orange,
+            % rndcorners={0pt 3pt 0pt 3pt},
+            bgcolor=bg!80!orange,
+            rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
+            margin={0pt 0pt 10pt 0pt}
+        }{%
+            \customhead{7}{Oefeningen}%
+        }
+        \hfil
+        Slides op texnicie.nl
+        \hfil
+        %\strut %AAAA
+        \vskip4pt
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
+}
+
 %\newmintinline[cc]{latex}{}
 
 \ifbool{darktheme}{
-    \usemintedstyle{dracula}
+    \usemintedstyle{github-dark}
     \setminted[tex]{highlightcolor=codehighlight}%blue!60!white!60!black}
     \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
 }{}
@@ -70,9 +210,9 @@
     \frametitle{\lang,Schedule,Agenda,}
     
     \begin{itemize}
-        \item \lang,Recap: simple document,Herhaling: simpel document,
+        \item \lang,Document \& references,Document \& referenties,
         \item \lang,Figures,Figuren,
-        \item \lang,References,Referenties,
+        % \item \lang,References,Referenties,
         \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
         \item \lang,`Theorem' and `Lemma',`Theorem' en `Lemma',
         \item \lang,Matrices and tables,Matrices en tabellen,
@@ -82,10 +222,19 @@
     \end{itemize}
 \end{frame}
 
-\section{Simpel document}
+\section{Document en referenties}
 
 \importslide{document}{document-margins.tex}
 \importslide{document}{document-toc.tex}
+\importslide{document}{document-hyperref.tex}
+
+%\section{Referenties}
+
+% \importslide{document}{document-toc.tex}
+
+\importslide{math}{align-label.tex}
+\importslide{images}{figure-label.tex}
+
 
 \section{Figuren}
 
@@ -95,12 +244,25 @@
 \importslide{images}{figure-dimensions.tex}
 \importslide{images}{subfigure.tex}
 
-\section{Referenties}
+\section{Oefeningen}
 
+\begin{frame}
+    Oefeningen!
+\end{frame}
+
+%\section{Referenties}
 
 \section{`Theorem' en `Lemma'}
 
+\importslide{math}{theorem-proof.tex}
+
 \section{Matrices en tabellen}
+
+\section{Oefeningen}
+
+\begin{frame}
+    Oefeningen!
+\end{frame}
 
 %\importslide{}{}
 

@@ -1,0 +1,90 @@
+
+% \begin{saveblock}{refWrong}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%     \end{highlightblock}
+% \end{saveblock}
+
+% \begin{saveblock}{refWrong2}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%         \begin{figure} % <-- Figuur 1
+%             ... % Man in tuxedo-pak
+%         \end{figure}
+%         Zie pinguin in Figuur 1.
+%         \begin{figure} % <-- Figuur 2
+%             ... % Pinguin
+%         \end{figure}
+%     \end{highlightblock}
+% \end{saveblock}
+
+
+
+\begin{frame}[fragile]
+    \frametitle{Referenties}
+
+    \unless\ifishandout
+    \begin{onlyenv}<1>\relax
+        \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+            Lorem ipsum.
+
+            Zie een pinguin in Figuur 1.
+            \begin{figure} % <-- Figuur 1
+                ... % Pinguin
+            \end{figure}
+        \end{minted}
+    \end{onlyenv}
+    \fi
+
+    \begin{onlyenv}<2->\relax
+        \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+            Lorem ipsum.
+            \begin{figure} % <-- Figuur 1
+                ... % Man in tuxedo-pak
+            \end{figure}
+
+            Zie een pinguin in Figuur 1.
+            \begin{figure} % <-- Figuur 2
+                ... % Pinguin
+            \end{figure}
+        \end{minted}
+    \end{onlyenv}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Referenties}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                Lorem ipsum.
+                \begin{figure} % <-- Figuur 1
+                    ... % Man in tuxedo-pak
+                \end{figure}
+        
+                Zie een pinguin in Figuur \ref{fig:pinguin}.
+                \begin{figure} % <-- Figuur 2
+                    ... % Pinguin
+                    \caption{...}\label{fig:pinguin}
+                \end{figure}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{onlyenv}<2->
+                \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                    Lorem ipsum.
+                    \begin{align}
+                        x &= ...
+                        \label{eq:xExpr}
+                    \end{align}
+    
+                    Door de verdubbelingsformule in te vullen
+                    in (\ref{eq:xExpr}) krijgen we
+                    \begin{align*}
+                        x &= ...
+                    \end{align*}
+                \end{minted}
+            \end{onlyenv}
+        \end{column}
+    \end{columns}
+\end{frame}
