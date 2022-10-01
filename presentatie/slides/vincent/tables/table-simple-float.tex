@@ -1,0 +1,34 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{Tabellen}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                \begin{table}[htbp]
+                    \begin{tabular}{cc|l}
+                        1 & 2 & 3\\
+                        400 & 500 & 600\\
+                        \hline
+                        70 & 80 & 90
+                    \end{tabular}
+                    \caption{Interessante nummers}
+                    \label{tbl:nummers}
+                \end{table}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{table}[h]
+                \begin{tabular}{cc|l}
+                    1 & 2 & 3\\
+                    400 & 500 & 600\\
+                    \hline
+                    70 & 80 & 90
+                \end{tabular}
+                \caption{Interessante nummers}
+                \label{tbl:nummers}
+            \end{table}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+

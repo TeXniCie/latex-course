@@ -1,0 +1,122 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{Tabellen}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                De resultaten:
+                \begin{tabular}{cc|l}
+                    1 & 2 & 3\\
+                    400 & 500 & 600\\
+                    \hline
+                    70 & 80 & 90
+                \end{tabular}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{adjustbox}{frame=1pt 10pt}%
+                \begin{minipage}{\textwidth-22pt}
+                    De resultaten:
+                    \begin{tabular}{cc|l}
+                        1   & 2   & 3   \\
+                        400 & 500 & 600 \\
+                        \hline
+                        70  & 80  & 90
+                    \end{tabular}
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+    \end{columns}
+
+    \bigskip
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{uncoverenv}<2->
+                \begin{minted}[fontsize=\scriptsize,escapeinside=||]{tex}
+                    Zie Tabel \ref{tbl:nummers} voor de resultaten.
+                    \begin{table}[htbp]
+                        \begin{tabular}{cc|l}
+                            ...
+                        \end{tabular}
+                        \caption{Interessante nummers}
+                        \label{tbl:nummers}
+                    \end{table}
+                \end{minted}
+            \end{uncoverenv}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{uncoverenv}<3->
+                \begin{adjustbox}{frame=1pt 10pt}%
+                    \begin{minipage}{\textwidth-22pt}
+                        Zie Tabel \ref{tbl:nummers} voor de resultaten.
+                        \begin{table}[H]
+                            \begin{tabular}{cc|l}
+                                1   & 2   & 3   \\
+                                400 & 500 & 600 \\
+                                \hline
+                                70  & 80  & 90
+                            \end{tabular}
+                            \caption{Interessante nummers}
+                            \label{tbl:nummers}
+                        \end{table}
+                        \vspace{-20pt}
+                    \end{minipage}
+                \end{adjustbox}
+            \end{uncoverenv}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}[fragile]{Tabellen}
+%     \begin{columns}
+%         \begin{column}{0.5\textwidth}
+%             De resultaten:
+%             \begin{tabular}{rr|l}
+%                 1 & 2 & 3\\
+%                 400 & 500 & 600\\
+%                 \hline
+%                 70 & 80 & 90
+%             \end{tabular}
+
+%             \bigskip
+%             \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+%                 De resultaten:
+%                 \begin{tabular}{rr|l}
+%                     1 & 2 & 3\\
+%                     400 & 500 & 600\\
+%                     \hline
+%                     70 & 80 & 90
+%                 \end{tabular}
+%             \end{minted}
+%         \end{column}
+%         \begin{column}{0.5\textwidth}
+%             Zie Tabel \ref{tbl:nummers} voor de resultaten.
+%             \begin{uncoverenv}<2->
+%                 \begin{table}[h]
+%                     \begin{tabular}{cc|l}
+%                         1 & 2 & 3\\
+%                         400 & 500 & 600\\
+%                         \hline
+%                         70 & 80 & 90
+%                     \end{tabular}
+%                     \caption{Interessante nummers}
+%                     \label{tbl:nummers}
+%                 \end{table}
+%             \end{uncoverenv}
+
+%             \bigskip
+%             \begin{uncoverenv}<2->
+%                 \begin{minted}[fontsize=\scriptsize,escapeinside=||]{tex}
+%                     Zie Tabel \ref{tbl:nummers} voor de resultaten.
+%                     \begin{table}[htbp]
+%                         \begin{tabular}{cc|l}
+%                             ...
+%                         \end{tabular}
+%                         \caption{Interessante nummers}
+%                         \label{tbl:nummers}
+%                     \end{table}
+%                 \end{minted}
+%             \end{uncoverenv}
+%         \end{column}
+%     \end{columns}
+% \end{frame}

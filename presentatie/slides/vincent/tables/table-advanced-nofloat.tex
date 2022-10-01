@@ -1,0 +1,29 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{Tabellen}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                \begin{tabular}{c c p{2cm}}
+                    \toprule
+                    Getal 1 & Getal 2 & Notitie\\
+                    \cmidrule(lr){1-2}\cmidrule(lr){3-3}
+                    88 & 94 & Twee grote getallen\\
+                    89 & 12 & Een grote en een kleintje\\
+                    96 & 18 & Weer zo\\
+                    32 & 98 & Iets minder schreef\\
+                    \midrule
+                    \multicolumn{2}{c}{527} & Totale som\\
+                    \bottomrule
+                \end{tabular}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \adjustbox{margin={0pt 0pt 0pt 5pt},bgcolor=white}{%
+                \includegraphics[width=\textwidth]{assets/tabellen2NoFloat.pdf}%
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+

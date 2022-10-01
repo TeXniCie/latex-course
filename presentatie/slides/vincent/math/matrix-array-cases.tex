@@ -1,0 +1,64 @@
+\copyrightVincent
+
+\begin{frame}[fragile]\relax
+    \frametitle{Matrices}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                \begin{align*}
+                    \abs{x} &= \left\{\begin{matrix}
+                        x&\text{ if $ x\geq 0 $}\\
+                        -x&\text{ else}
+                    \end{matrix}\right.
+                \end{align*}
+            \end{minted}
+            \begin{uncoverenv}<2->
+                \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                    \begin{align*}
+                        \abs{x} = \left\{\begin{array}{rl}
+                            x&\text{ if $ x\geq 0 $}\\
+                            -x&\text{ else}
+                        \end{array}\right.
+                    \end{align*}
+                \end{minted}
+            \end{uncoverenv}
+            \begin{uncoverenv}<3->
+                \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                    \begin{align*}
+                        \abs{x} = \begin{cases}
+                            x&\text{ if $ x\geq 0 $}\\
+                            -x&\text{ else}
+                        \end{cases}
+                    \end{align*}
+                \end{minted}
+            \end{uncoverenv}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{align*}
+                \abs{x} = \left\{\begin{matrix}
+                    x&\text{ if $ x\geq 0 $}\\
+                    -x&\text{ else}
+                \end{matrix}\right.
+            \end{align*}
+            \begin{uncoverenv}<2->
+                \begin{align*}
+                    \abs{x} = \left\{\begin{array}{rl}
+                        x&\text{ if $ x\geq 0 $}\\
+                        -x&\text{ else}
+                    \end{array}\right.
+                \end{align*}
+            \end{uncoverenv}
+            \begin{uncoverenv}<3->
+                \begin{align*}
+                    \abs{x} = \begin{cases}
+                        x&\text{ if $ x\geq 0 $}\\
+                        -x&\text{ else}
+                    \end{cases}
+                \end{align*}
+            \end{uncoverenv}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+

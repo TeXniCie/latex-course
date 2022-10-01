@@ -3,14 +3,18 @@
 \documentclass[
     dutch,
     everyoneauthor=true,
-    darktheme,
+    %darktheme,
     defaultSlideCollection=vincent,
     slidenames=true
 ]{../../cursuspresentatie}
 
 \usepackage{minted}
 
-\definecolor{codehighlight}{RGB}{44, 78, 120}
+\ifbool{darktheme}{
+    \definecolor{codehighlight}{RGB}{44, 78, 120}
+}{
+    \definecolor{codehighlight}{RGB}{177, 213, 255}
+}
 
 \def\codeEmphasize#1{\ul{#1}}
 
@@ -105,8 +109,8 @@
             rndframe={color=red!40!orange}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
         }{%
             \customhead{2}{Document en referenties}%
-            \hspace{5pt}$ \cdot $\hspace{5pt}
-            \customhead{3}{Figuren}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \customhead{3}{`Theorem' en `Lemma'}%
         }%
         \adjustbox{
             set depth=2pt,
@@ -129,9 +133,9 @@
             rndframe={color=red!40!orange}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
             % rndcorners={3pt 0pt 3pt 0pt}
         }{%
-            \customhead{5}{`Theorem' en `Lemma'}
-            \hspace{5pt}$ \cdot $\hspace{5pt}
-            \customhead{6}{Matrices en tabellen}\vphantom{g} %
+            \customhead{5}{Figuren}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \customhead{6}{Matrices en tabellen}%
         }%
         \adjustbox{
             set depth=2pt,    
@@ -158,9 +162,13 @@
 
 \ifbool{darktheme}{
     \usemintedstyle{github-dark}
-    \setminted[tex]{highlightcolor=codehighlight}%blue!60!white!60!black}
     \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
-}{}
+}{
+    \usemintedstyle{pastie}
+    %\usemintedstyle{default}
+}
+
+\setminted[tex]{highlightcolor=codehighlight}%blue!60!white!60!black}
 
 
 \setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
@@ -211,10 +219,10 @@
     
     \begin{itemize}
         \item \lang,Document \& references,Document \& referenties,
-        \item \lang,Figures,Figuren,
+        \item \lang,`Theorem' and `Lemma',`Theorem' en `Lemma',
         % \item \lang,References,Referenties,
         \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-        \item \lang,`Theorem' and `Lemma',`Theorem' en `Lemma',
+        \item \lang,Figures,Figuren,
         \item \lang,Matrices and tables,Matrices en tabellen,
         % \item \lang,Formulas,Formules,
         \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
@@ -224,6 +232,7 @@
 
 \section{Document en referenties}
 
+\subsection{Document}
 \importslide{document}{document-margins.tex}
 \importslide{document}{document-toc.tex}
 \importslide{document}{document-hyperref.tex}
@@ -232,17 +241,12 @@
 
 % \importslide{document}{document-toc.tex}
 
+\subsection{Referenties}
 \importslide{math}{align-label.tex}
-\importslide{images}{figure-label.tex}
 
+\section{`Theorem' en `Lemma'}
 
-\section{Figuren}
-
-\importslide{images}{includegraphics-center.tex}
-\importslide{images}{figure.tex}
-\importslide{images}{figure-placement.tex}
-\importslide{images}{figure-dimensions.tex}
-\importslide{images}{subfigure.tex}
+\importslide{math}{theorem-proof.tex}
 
 \section{Oefeningen}
 
@@ -252,17 +256,43 @@
 
 %\section{Referenties}
 
-\section{`Theorem' en `Lemma'}
 
-\importslide{math}{theorem-proof.tex}
+\section{Figuren}
+
+\importslide{images}{includegraphics-center.tex}
+\importslide{images}{figure.tex}
+%\importslide{images}{figure-label.tex}
+\importslide{images}{figure-placement.tex}
+\importslide{images}{figure-dimensions.tex}
+\importslide{images}{subfigure.tex}
 
 \section{Matrices en tabellen}
+
+\subsection{Matrices}
+\setDetail{10}
+\importslide{math}{align-star.tex}
+\setDetail{20}
+
+\importslide{math}{matrices-simple.tex}
+\importslide{math}{matrices-others.tex}
+\importslide{math}{matrix-array-cases.tex}
+
+\subsection{Tabellen}
+\importslide{tables}{table-demo1.tex}
+
+\importslide{tables}{table-simple.tex}
+%\importslide{tables}{table-simple-float.tex}
+%\importslide{tables}{table-advanced-nofloat.tex}
+\importslide{tables}{table-advanced.tex}
+\importslide{tables}{table-tabularx.tex}
 
 \section{Oefeningen}
 
 \begin{frame}
     Oefeningen!
 \end{frame}
+
+\section{Afsluiting}
 
 %\importslide{}{}
 
@@ -282,6 +312,7 @@
 
 % \subfile{7_GoedOmTeWeten.tex}
 
+\subsection{Licentie}
 \importslide{misc}{misc-license.tex}
     
 \end{document}

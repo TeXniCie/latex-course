@@ -1,0 +1,112 @@
+\copyrightVincent
+
+\begin{frame}[fragile]
+    \frametitle{Matrices}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            % \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+            %     \begin{align*}
+            %         R(\theta) &= \begin{bmatrix}
+            %             \cos(\theta) & -\sin(\theta)\\
+            %             \sin(\theta) & \cos(\theta)
+            %         \end{bmatrix}
+            %         \\
+            %         &= \begin{matrix}
+            %             \cos(\theta) & -\sin(\theta)\\
+            %             \sin(\theta) & \cos(\theta)
+            %         \end{matrix}
+            %         \\
+            %         &= \left(\begin{matrix}
+            %             \cos(\theta) & -\sin(\theta)\\
+            %             \sin(\theta) & \cos(\theta)
+            %         \end{matrix}\right\}
+            %     \end{align*}
+            % \end{minted}
+            % \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+            %     \begin{align*}
+            %         R(\theta) &= \begin{bmatrix}
+            %             \cos(\theta) & -\sin(\theta)\\
+            %             \sin(\theta) & \cos(\theta)
+            %         \end{bmatrix}
+            %         \\
+            %         &= \begin{matrix}
+            %             \cos(\theta) & -\sin(\theta)\\
+            %             \sin(\theta) & \cos(\theta)
+            %         \end{matrix}
+            %         \\
+            %         &= \left(\begin{matrix}
+            %             \cos(\theta) & -\sin(\theta)\\
+            %             \sin(\theta) & \cos(\theta)
+            %         \end{matrix}\right\}
+            %     \end{align*}
+            % \end{minted}
+            \begin{adjustbox}{valign=T,set height=0pt,set depth=0.8\textheight,valign=B}%
+                \begin{minipage}{0.9\textwidth}%
+                    \leavevmode
+                \begin{onlyenv}<1>
+                    \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                        \begin{align*}
+                            R(\theta) &= \begin{bmatrix}
+                                \cos(\theta) & -\sin(\theta)\\
+                                \sin(\theta) & \cos(\theta)
+                            \end{bmatrix}
+                        \end{align*}
+                    \end{minted}
+                \end{onlyenv}%
+                \begin{onlyenv}<2>
+                    \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                        \begin{align*}
+                            R(\theta) &= \begin{bmatrix}
+                                \cos(\theta) & -\sin(\theta)\\
+                                \sin(\theta) & \cos(\theta)
+                            \end{bmatrix}
+                            \\
+                            &= \begin{matrix}
+                                \cos(\theta) & -\sin(\theta)\\
+                                \sin(\theta) & \cos(\theta)
+                            \end{matrix}
+                        \end{align*}
+                    \end{minted}
+                \end{onlyenv}%
+                \begin{onlyenv}<3->
+                    \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                        \begin{align*}
+                            R(\theta) &= \begin{bmatrix}
+                                \cos(\theta) & -\sin(\theta)\\
+                                \sin(\theta) & \cos(\theta)
+                            \end{bmatrix}
+                            \\
+                            &= \begin{matrix}
+                                \cos(\theta) & -\sin(\theta)\\
+                                \sin(\theta) & \cos(\theta)
+                            \end{matrix}
+                            \\
+                            &= \left(\begin{matrix}
+                                \cos(\theta) & -\sin(\theta)\\
+                                \sin(\theta) & \cos(\theta)
+                            \end{matrix}\right\}
+                        \end{align*}
+                    \end{minted}
+                \end{onlyenv}            
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{align*}
+                R(\theta) &= \begin{bmatrix}
+                    \cos(\theta) & -\sin(\theta)\\
+                    \sin(\theta) & \cos(\theta)
+                \end{bmatrix}\\
+                &\uncover<2->{= \begin{matrix}
+                    \cos(\theta) & -\sin(\theta)\\
+                    \sin(\theta) & \cos(\theta)
+                \end{matrix}}\\
+                &\uncover<3->{= \left(\begin{matrix}
+                    \cos(\theta) & -\sin(\theta)\\
+                    \sin(\theta) & \cos(\theta)
+                \end{matrix}\right\}}
+            \end{align*}
+        \end{column}
+    \end{columns}
+\end{frame}
+

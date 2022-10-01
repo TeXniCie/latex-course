@@ -1,0 +1,28 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{`Theorem' en `Lemma': Gebruik}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                \usepackage{amsthm}
+                \newtheorem{theorem}{Theorem}[section]
+                \newtheorem{lemma}[theorem]{Lemma}
+
+                \theoremstyle{definition}
+                \newtheorem{example}[theorem]{Example}
+                \newtheorem{definition}[theorem]{Definition}
+
+                \theoremstyle{remark}
+                \newtheorem{remark}[theorem]{Remark}
+
+                \theoremstyle{definition}
+                \newtheorem*{note}{Note}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+                %TODO Leg de soorten uit 
+        \end{column}
+    \end{columns}
+\end{frame}
+
+

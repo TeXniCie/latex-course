@@ -97,72 +97,262 @@
 % \end{frame}
 
 
-\begin{frame}[fragile]{Referenties}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            {\only<2->{\color{gray}}
-            % {\tiny De integraal van $ \cos^2(5x) $ van $ 0 $ tot $ \pi $ is
-            % \begin{align*}
-            %     \int_0^{\pi} \cos^2(5x)\dif x
-            %     &= \int_0^{\pi} \cos^2(y)\left(\frac{\dif y}{\dif x}\right)^{-1}\dif y\quad (y := 5x)\\
-            %     &= 5\int_0^{\pi/5}\cos^2(y)\dif y\\
-            %     &= 5\int_0^{\pi/5}\frac{1}{2}\left(1-\sin^2(y)\right)+\frac{1}{2}\cos^2(y)\dif y\\
-            %     &= \frac{5}{2}\int_0^{\pi/5}\left(1+\cos(2y)\right)\dif y\\
-            %     &= \frac{5}{2}\left(\pi/5 + \right)
-            % \end{align*}}
-            {\tiny De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $
-            vinden we als
-            \begin{align*}
-                v(t) &= v_0 + \int_{0}^{t}\cos^2(t)\dif t\\
-                &= v_0 + \int_{t'=0}^{t't}\left(\frac{1}{2}\cos^2(t')+\frac{1}{2}(1-\sin^2(t'))\right)\dif t'\\
-                &= v_0 + \frac{1}{2}\int_{t'=0}^{t'=t}\left(1+\cos^2(t')-\sin^2(t')\right)\dif t'\\
-                &= v_0 + \frac{1}{2}\int_{t'=0}^{t'=t}\left(1+\cos(2t')\right)\dif t'\\
-                &= v_0 + \frac{1}{4}\int_{2t'=0}^{2t'=2t}\left(1+\cos(2t')\right)\dif\, (2t')\\
-                &= v_0 + \frac{1}{4}\left(2t+\sin(2t)\right)\\
-                &= v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t)
-            \end{align*}}}
+\begin{frame}[fragile,t]{Referenties}
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}%
+            {\only<2->{\color{gray}}%
+            \begin{adjustbox}{frame=1pt 10pt,valign=t}%
+                \begin{minipage}{\textwidth-22pt}
+                        % {\tiny De integraal van $ \cos^2(5x) $ van $ 0 $ tot $ \pi $ is
+                        % \begin{align*}
+                        %     \int_0^{\pi} \cos^2(5x)\dif x
+                        %     &= \int_0^{\pi} \cos^2(y)\left(\frac{\dif y}{\dif x}\right)^{-1}\dif y\quad (y := 5x)\\
+                        %     &= 5\int_0^{\pi/5}\cos^2(y)\dif y\\
+                        %     &= 5\int_0^{\pi/5}\frac{1}{2}\left(1-\sin^2(y)\right)+\frac{1}{2}\cos^2(y)\dif y\\
+                        %     &= \frac{5}{2}\int_0^{\pi/5}\left(1+\cos(2y)\right)\dif y\\
+                        %     &= \frac{5}{2}\left(\pi/5 + \right)
+                        % \end{align*}}
+                        {\tiny De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $
+                            is
+                            \begin{align*}
+                                v(t) & = v_0 + \int_{0}^{t}\cos^2(t)\dif t                                                          \\
+                                     & = v_0 + \int_{t'=0}^{t'=t}\left(\frac{1}{2}\cos^2(t')+\frac{1}{2}(1-\sin^2(t'))\right)\dif t' \\
+                                     & = v_0 + \frac{1}{2}\int_{t'=0}^{t'=t}\left(1+\cos^2(t')-\sin^2(t')\right)\dif t'             \\
+                                     & = v_0 + \frac{1}{2}\int_{t'=0}^{t'=t}\left(1+\cos(2t')\right)\dif t'                         \\
+                                     & = v_0 + \frac{1}{4}\int_{2t'=0}^{2t'=2t}\left(1+\cos(2t')\right)\dif\, (2t')                 \\
+                                     & = v_0 + \frac{1}{4}\left(2t+\sin(2t)\right)                                                  \\
+                                     & = v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t)
+                            \end{align*}}
+                    \vspace{-20pt}
+                \end{minipage}
+            \end{adjustbox}}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{onlyenv}<2->%
-                {\tiny
-                De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
-                \begin{align}\label{eq:exprVelocity}
+                \begin{adjustbox}{frame=1pt 10pt,valign=t}%
+                    \begin{minipage}{\textwidth-22pt}
+                        {\tiny\setlength{\abovedisplayskip}{6pt}%
+                            \setlength{\belowdisplayskip}{6pt}%
+                            \setlength{\abovedisplayshortskip}{0pt}%
+                            \setlength{\belowdisplayshortskip}{0pt}%
+                            \setcounter{equation}{0}%
+                            De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                            \begin{align}
+                                v(t) & = v_0 + \int_{0}^{t}\cos^2(t)\dif t.
+                            \end{align}
+                            De cosinus verdubbelingsformule is
+                            \begin{align*}
+                                \cos(2t) & = \cos^2(t) - \sin^2(t) \\
+                                         & = 2\cos^2(t)-1.
+                                %,\mbox{oftewel}\nonumber\\
+                                % \cos^2(t) &= \frac{1}{2}\left(1+\cos(2t)\right),
+                                %\mbox{, oftewel}\\
+                            \end{align*}
+                            Beide leden integreren geeft
+                            \begin{align*}
+                                \frac{1}{2}\sin(2t) & = \left(2\int_0^t\cos^2(t')\dif t'\right) - t.
+                            \end{align*}
+                            % en dus
+                            % \begin{align}
+                            %     \int_0^t 2\cos^2(t')\dif t' = t + \frac{1}{2}\sin(2t).
+                            % \end{align}
+                            Hiermee vinden we (1) als
+                            \begin{align*}
+                                v(t) & = v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t).
+                            \end{align*}
+                        }%
+                    \end{minipage}
+                \end{adjustbox}
+            \end{onlyenv}%
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile,t]{Referenties}
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}%
+            \begin{minted}[fontsize=\tiny,escapeinside=~~]{tex}
+                De oplossing van de differentiaalvergelijking
+                $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                \begin{align}
                     v(t) &= v_0 + \int_{0}^{t}\cos^2(t)\dif t.
                 \end{align}
-                De cosinus verdubbelingsformule is
-                \begin{align*}
-                    \cos(2t) &= \cos^2(t) - \sin^2(t)\\
-                    &= 2\cos^2(t)-1.
-                    %,\mbox{oftewel}\nonumber\\
-                    % \cos^2(t) &= \frac{1}{2}\left(1+\cos(2t)\right),
-                    %\mbox{, oftewel}\\
-                \end{align*}
-                Beide leden integreren geeft
-                \begin{align*}
-                    \frac{1}{2}\sin(2t) &= \left(2\int_0^t\cos^2(t')\dif t'\right) - t.
-                \end{align*}
-                % en dus
-                % \begin{align}
-                %     \int_0^t 2\cos^2(t')\dif t' = t + \frac{1}{2}\sin(2t).
-                % \end{align}
+
+                ...
+
                 Hiermee vinden we (1) als
                 \begin{align*}
-                    v(t) &= v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t).
+                    v(t) &= v_0 + \frac{t}{2}
+                    + \frac{1}{4}\sin(2t).
                 \end{align*}
-                }
-            \end{onlyenv}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{adjustbox}{frame=1pt 10pt,valign=t}%
+                \begin{minipage}{\textwidth-22pt}
+                    \begin{onlyenv}<1->%
+                        {\tiny\setlength{\abovedisplayskip}{6pt}%
+                            \setlength{\belowdisplayskip}{6pt}%
+                            \setlength{\abovedisplayshortskip}{0pt}%
+                            \setlength{\belowdisplayshortskip}{0pt}%
+                            \setcounter{equation}{0}%
+                            De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                            \begin{align}
+                                v(t) & = v_0 + \int_{0}^{t}\cos^2(t)\dif t.
+                            \end{align}
+                            De cosinus verdubbelingsformule is
+                            \begin{align*}
+                                \cos(2t) & = \cos^2(t) - \sin^2(t) \\
+                                         & = 2\cos^2(t)-1.
+                            \end{align*}
+                            Beide leden integreren geeft
+                            \begin{align*}
+                                \frac{1}{2}\sin(2t) & = \left(2\int_0^t\cos^2(t')\dif t'\right) - t.
+                            \end{align*}
+                            Hiermee vinden we (1) als
+                            \begin{align*}
+                                v(t) & = v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t).
+                            \end{align*}
+                        }%
+                    \end{onlyenv}%
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile,t]{Referenties}
+    \tiny
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}%
+            \begin{minted}[fontsize=\tiny,escapeinside=~~]{tex}
+                De snelheid $ v $ is gedefinieerd als
+                \begin{align}
+                    v &:= \dod{x}{t}
+                \end{align}
+                De oplossing van de differentiaalvergelijking
+                $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                \begin{align}
+                    v(t) &= v_0 + \int_{0}^{t}\cos^2(t)\dif t.
+                \end{align}
+
+                ...
+
+                Hiermee vinden we (1) als
+                \begin{align*}
+                    v(t) &= v_0 + \frac{t}{2}
+                    + \frac{1}{4}\sin(2t).
+                \end{align*}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{adjustbox}{frame=1pt 10pt,valign=t}%
+                \begin{minipage}{\textwidth-22pt}
+                    \begin{onlyenv}<1->%
+                        {\tiny\setlength{\abovedisplayskip}{3pt}%
+                            \setlength{\belowdisplayskip}{3pt}%
+                            \setlength{\abovedisplayshortskip}{0pt}%
+                            \setlength{\belowdisplayshortskip}{0pt}%
+                            \setcounter{equation}{0}%
+                            De snelheid $ v $ is gedefinieerd als
+                            \begin{align}
+                                v &:= \dod{x}{t}
+                            \end{align}
+                            De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                            \begin{align}
+                                v(t) & = v_0 + \int_{0}^{t}\cos^2(t)\dif t.
+                            \end{align}
+                            De cosinus verdubbelingsformule is
+                            \begin{align*}
+                                \cos(2t) & = \cos^2(t) - \sin^2(t) \\
+                                         & = 2\cos^2(t)-1.
+                            \end{align*}
+                            Beide leden integreren geeft
+                            \begin{align*}
+                                \frac{1}{2}\sin(2t) & = \left(2\int_0^t\cos^2(t')\dif t'\right) - t.
+                            \end{align*}
+                            Hiermee vinden we (1) als
+                            \begin{align*}
+                                v(t) & = v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t).
+                            \end{align*}
+                        }%
+                    \end{onlyenv}%
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile,t]{Referenties}
+    \tiny
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}%
+            \begin{minted}[fontsize=\tiny,escapeinside=~~]{tex}
+                De snelheid $ v $ is gedefinieerd als
+                \begin{align}
+                    v &:= \dod{x}{t}
+                \end{align}
+                De oplossing van de differentiaalvergelijking
+                $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                \begin{align}
+                    v(t) &= v_0 + \int_{0}^{t}\cos^2(t)\dif t.
+                    \label{eq:exprVelocity}
+                \end{align}
+
+                ...
+
+                Hiermee vinden we (\ref{eq:exprVelocity}) als
+                \begin{align*}
+                    v(t) &= v_0 + \frac{t}{2}
+                    + \frac{1}{4}\sin(2t).
+                \end{align*}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{adjustbox}{frame=1pt 10pt,valign=t}%
+                \begin{minipage}{\textwidth-22pt}
+                    \begin{onlyenv}<1->%
+                        {\tiny\setlength{\abovedisplayskip}{3pt}%
+                            \setlength{\belowdisplayskip}{3pt}%
+                            \setlength{\abovedisplayshortskip}{0pt}%
+                            \setlength{\belowdisplayshortskip}{0pt}%
+                            \setcounter{equation}{0}%
+                            De snelheid $ v $ is gedefinieerd als
+                            \begin{align}
+                                v &:= \dod{x}{t}
+                            \end{align}
+                            De oplossing van de differentiaalvergelijking $ \frac{\dif v}{\dif t} = \cos^2(t) $ is
+                            \begin{align}
+                                v(t) & = v_0 + \int_{0}^{t}\cos^2(t)\dif t.
+                                \label{eq:exprVelocity}
+                            \end{align}
+                            De cosinus verdubbelingsformule is
+                            \begin{align*}
+                                \cos(2t) & = \cos^2(t) - \sin^2(t) \\
+                                         & = 2\cos^2(t)-1.
+                            \end{align*}
+                            Beide leden integreren geeft
+                            \begin{align*}
+                                \frac{1}{2}\sin(2t) & = \left(2\int_0^t\cos^2(t')\dif t'\right) - t.
+                            \end{align*}
+                            Hiermee vinden we (\ref{eq:exprVelocity}) als
+                            \begin{align*}
+                                v(t) & = v_0 + \frac{t}{2} + \frac{1}{4}\sin(2t).
+                            \end{align*}
+                        }%
+                    \end{onlyenv}%
+                \end{minipage}
+            \end{adjustbox}
         \end{column}
     \end{columns}
 \end{frame}
 
 
-
-
 % \begin{frame}[fragile]{Label}
 %     \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
-        
+
 %     \end{minted}
-    
+
 %     De Taylorexpansie van $ e^{x} $ is
 %     \begin{align}
 %         e^{x} = \sum_{n=0}^{\infty}\frac{1}{n!}x^{n}
@@ -210,7 +400,7 @@
 %             &= 2\cos(x)
 %         \end{align*}
 %     \end{minted}
-    
+
 %     De Taylorexpansie van $ e^{x} $ is
 %     \begin{align}
 %         e^{x} = \sum_{n=0}^{\infty}\frac{1}{n!}x^{n}

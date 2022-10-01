@@ -1,30 +1,67 @@
-\addtorecentlist{subfigure}
+% \addtorecentlist{subfigure}
+
+% \begin{frame}[fragile]
+%     \frametitle{Subfigure \mintinline{tex}{\usepackage{subcaption}}}
+
+%     \centering
+%     \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/outdir/subfigure}
+% \end{frame}
+
+% \begin{frame}[fragile]
+%     \frametitle{Subfigure \mintinline{tex}{\usepackage{subcaption}}}
+
+%     \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
+%         \begin{figure}[htbp]
+%             \centering
+%             \begin{subfigure}[b]{0.45\textwidth}
+%                 \includegraphics[width=\textwidth]{AA}
+%                 \caption{BB}
+%                 \label{fig:dphiExample}
+%             \end{subfigure}\qquad
+%             \begin{subfigure}[b]{0.45\textwidth}
+%                 \includegraphics[width=\textwidth]{CC}
+%                 \caption{CC}
+%                 \label{fig:fitExample}
+%             \end{subfigure}
+%             \caption{Meerdere afbeeldingen naast elkaar!}
+%         \end{figure}
+%     \end{minted}
+%     %\useblock{subfigure\langsuffix}
+% \end{frame}
+
+\copyrightVincent
 
 \begin{frame}[fragile]
-    \frametitle{Subfigure \mintinline{tex}{\usepackage{subcaption}}}
+    \frametitle{Subfigure}% \mintinline{tex}{\usepackage{subcaption}}}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{minted}[fontsize=\tiny,escapeinside=~~]{tex}
+                \usepackage{subcaption}
+                ...
 
-    \centering
-    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/outdir/subfigure}
+                \begin{figure}[htbp]
+                    \centering
+                    \begin{subfigure}[b]{0.45\textwidth}
+                        \includegraphics[width=\textwidth]{...}
+                        \caption{BB}
+                        \label{fig:dphiExample}
+                    \end{subfigure}\qquad
+                    \begin{subfigure}[b]{0.45\textwidth}
+                        \includegraphics[width=\textwidth]{...}
+                        \caption{CC}
+                        \label{fig:fitExample}
+                    \end{subfigure}
+                    \caption{Meerdere afbeeldingen naast elkaar!}
+                \end{figure}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{adjustbox}{frame=1pt 10pt}%
+                \begin{minipage}{\textwidth-22pt}
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/outdir/subfigure}
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+    \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{Subfigure \mintinline{tex}{\usepackage{subcaption}}}
-
-    \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
-        \begin{figure}[htbp]
-            \centering
-            \begin{subfigure}[b]{0.45\textwidth}
-                \includegraphics[width=\textwidth]{AA}
-                \caption{BB}
-                \label{fig:dphiExample}
-            \end{subfigure}\qquad
-            \begin{subfigure}[b]{0.45\textwidth}
-                \includegraphics[width=\textwidth]{CC}
-                \caption{CC}
-                \label{fig:fitExample}
-            \end{subfigure}
-            \caption{Meerdere afbeeldingen naast elkaar!}
-        \end{figure}
-    \end{minted}
-    %\useblock{subfigure\langsuffix}
-\end{frame}

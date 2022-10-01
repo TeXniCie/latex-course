@@ -169,7 +169,8 @@
 \definecolor{red11}{RGB}{199, 31, 31}
 
 \definecolor{darkmodebackground}{RGB}{30, 30, 30}
-\definecolor{darkmodeforeground}{RGB}{219, 221, 170}
+% \definecolor{darkmodeforeground}{RGB}{219, 221, 170}
+\definecolor{darkmodeforeground}{RGB}{212, 212, 212}
 
 \ifbool{aestheme}{
     \usetheme{aes2}

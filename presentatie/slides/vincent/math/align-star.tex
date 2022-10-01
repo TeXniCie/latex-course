@@ -1,0 +1,46 @@
+% \begin{saveblock}{align}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%         De verdubbelingsformule herschrijven we nu als
+%         \begin{align*}
+%             \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+%             &= 2\cos^2(\theta)-1.
+%         \end{align*}
+%     \end{highlightblock}
+% \end{saveblock}
+
+% \begin{saveblock}{alignEN}
+%     \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+%         framexleftmargin=0.25em,xleftmargin=0.25em]
+%         The double-angle formula can now be rewritten as
+%         \begin{align*}
+%             \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+%             &= 2\cos^2(\theta)-1.
+%         \end{align*}
+%     \end{highlightblock}
+% \end{saveblock}
+
+% \addtorecentlist{align*}
+
+\begin{frame}[fragile]{Align}
+    \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
+        De verdubbelingsformule herschrijven we nu als
+        \begin{align*}
+            \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+            &= 2\cos^2(\theta)-1.
+        \end{align*}
+    \end{minted}
+    \bigskip
+
+    \begin{adjustbox}{frame=1pt 10pt}%
+        \begin{minipage}{0.7\textwidth-22pt}
+            De verdubbelingsformule herschrijven we nu als
+            \begin{align*}
+                \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+                &= 2\cos^2(\theta)-1.
+            \end{align*}
+        \end{minipage}
+    \end{adjustbox}
+    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+    %     assets/mathAlignNoNumbers\langsuffix.pdf}
+\end{frame}

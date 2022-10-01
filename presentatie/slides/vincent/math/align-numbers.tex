@@ -52,38 +52,9 @@
 
 \providebool{skipNonumber}
 \unless\ifskipNonumber
-    \begin{saveblock}{align}
-        \begin{highlightblock}[gobble=12,linewidth=\textwidth,
-            framexleftmargin=0.25em,xleftmargin=0.25em]
-            De verdubbelingsformule herschrijven we nu als
-            \begin{align}
-                \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
-                \nonumber\\
-                &= 2\cos^2(\theta)-1.
-            \end{align}
-        \end{highlightblock}
-    \end{saveblock}
-
-    \begin{saveblock}{alignEN}
-        \begin{highlightblock}[gobble=12,linewidth=\textwidth,
-            framexleftmargin=0.25em,xleftmargin=0.25em]
-            The double-angle formula can now be rewritten as
-            \begin{align}
-                \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
-                \nonumber\\
-                &= 2\cos^2(\theta)-1.
-            \end{align}
-        \end{highlightblock}
-    \end{saveblock}
-
-    \addtorecentlist{\textbackslash nonumber}
-
-    \begin{frame}{Align}
-        \useblock{align\langsuffix}
-
-        \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
-            assets/mathAlignSecondNumbered\langsuffix.pdf}
-    \end{frame}
+\beginDetail{30}
+    \input{align-nonumber.tex}
+\endDetail
 \fi
 
 \updatehighlight{
@@ -95,36 +66,9 @@
     add={\nonumber}
 }
 
-\begin{saveblock}{align}
-    \begin{highlightblock}[gobble=8,linewidth=\textwidth,
-        framexleftmargin=0.25em,xleftmargin=0.25em]
-        De verdubbelingsformule herschrijven we nu als
-        \begin{align*}
-            \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
-            &= 2\cos^2(\theta)-1.
-        \end{align*}
-    \end{highlightblock}
-\end{saveblock}
-
-\begin{saveblock}{alignEN}
-    \begin{highlightblock}[gobble=8,linewidth=\textwidth,
-        framexleftmargin=0.25em,xleftmargin=0.25em]
-        The double-angle formula can now be rewritten as
-        \begin{align*}
-            \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
-            &= 2\cos^2(\theta)-1.
-        \end{align*}
-    \end{highlightblock}
-\end{saveblock}
-
-\addtorecentlist{align*}
-
-\begin{frame}{Align}
-    \useblock{align\langsuffix}
-
-    \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
-        assets/mathAlignNoNumbers\langsuffix.pdf}
-\end{frame}
+\beginDetail{20}
+    \input{align-star.tex}
+\endDetail
 
 \updatehighlight{
     name=accentC,

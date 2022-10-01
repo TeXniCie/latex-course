@@ -23,23 +23,60 @@
 % 	\end{highlightblock}
 % \end{saveblock}
 
-\begin{frame}[fragile]{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
-    \vspace{-28px}
-    % \penExCode{exinclgraph\langsuffix}
-    \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
-        Hier zie je een pingu~\"i~n:
-        \begin{center}
-            \includegraphics[height=2cm]{pinguin.jpg}
-        \end{center}
-        Foto door Sue Flood.
-        ~~
-    \end{minted}
+% \begin{frame}[fragile]{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
+%     %\vspace{-28px}
+%     \vspace{-2pt}
+%     % \penExCode{exinclgraph\langsuffix}
+%     \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
+%         Hier zie je een pingu~\"i~n:
+%         \begin{center}
+%             \includegraphics[height=2cm]{pinguin.jpg}
+%         \end{center}
+%         Foto door Sue Flood.
+%         ~~
+%     \end{minted}
     
-    \begin{penExResult}
-        \lang,Here you see a penguin:,Hier zie je een pinguïn:,
+%     \begin{penExResult}
+%         \lang,Here you see a penguin:,Hier zie je een pinguïn:,
+%         \begin{center}
+%             \includegraphics[height=2cm]{assets/pinguin.jpg}
+%         \end{center}
+%         \lang,Photo by Sue Flood.,Foto door Sue Flood.,
+%     \end{penExResult}
+% \end{frame}
+
+\begin{frame}[fragile]{Figure}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
+                Hier zie je een pingu~\"i~n:
+                \begin{center}
+                    \includegraphics[height=2cm]{pinguin.jpg}
+                \end{center}
+                Foto door Sue Flood.
+                ~~
+            \end{minted}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \lang,Here you see a penguin:,Hier zie je een pinguïn:,
         \begin{center}
             \includegraphics[height=2cm]{assets/pinguin.jpg}
         \end{center}
         \lang,Photo by Sue Flood.,Foto door Sue Flood.,
-    \end{penExResult}
+        \end{column}
+    \end{columns}
+
+    %\vspace{-28px}
+    %\vspace{-2pt}
+    % \penExCode{exinclgraph\langsuffix}
+
+    
+    % \begin{penExResult}
+    %     \lang,Here you see a penguin:,Hier zie je een pinguïn:,
+    %     \begin{center}
+    %         \includegraphics[height=2cm]{assets/pinguin.jpg}
+    %     \end{center}
+    %     \lang,Photo by Sue Flood.,Foto door Sue Flood.,
+    % \end{penExResult}
 \end{frame}
+

@@ -1,0 +1,56 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{\lang,Tables,Tabellen,}
+    % \begin{columns}
+    %     \begin{column}{0.4\textwidth}
+    %         \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+    %             \usepackage{amsthm}
+    %             \newtheorem{theorem}{Theorem}[section]
+    %             \newtheorem{lemma}[theorem]{Lemma}
+
+    %             \theoremstyle{definition}
+    %             \newtheorem{example}[theorem]{Example}
+    %             \newtheorem{definition}[theorem]{Definition}
+
+    %             \theoremstyle{remark}
+    %             \newtheorem{remark}[theorem]{Remark}
+
+    %             \theoremstyle{definition}
+    %             \newtheorem*{note}{Note}
+    %         \end{minted}
+    %     \end{column}
+    %     \begin{column}{0.4\textwidth}
+    %             %TODO Leg de soorten uit 
+    %     \end{column}
+    % \end{columns}
+    %{\lang,Installation,Installatie,}
+
+    %\href{https://vkuhlmann.com/latex/tables}{\nolinkurl{vkuhlmann.com/latex/tables}}
+
+    \begin{columns}
+        % \begin{column}{0.5\textwidth}
+        %     \includegraphics[trim={0pt, 200pt, 0pt, 120pt},clip,width=\linewidth,height=0.9\textheight,keepaspectratio]{assets/tables-demo1-light.pdf}
+        % \end{column}
+        % \begin{column}{0.5\textwidth}
+        %     \includegraphics[trim={0pt, 30pt, 0pt, 290pt},clip,width=\linewidth,height=0.9\textheight,keepaspectratio]{assets/tables-demo1-light.pdf}
+        % \end{column}
+        \def\demopdf{assets/tables-demo1-light.pdf}
+        \ifbool{darktheme}{
+            \def\demopdf{assets/tables-demo1-dark.pdf}
+        }{}
+        % \begin{column}{0.5\textwidth}
+        %     \includegraphics[trim={0pt, 250pt, 0pt, 120pt},clip,width=\linewidth,height=0.9\textheight,keepaspectratio]{\demopdf}
+        % \end{column}
+        % \begin{column}{0.5\textwidth}
+        %     \includegraphics[trim={0pt, 30pt, 0pt, 340pt},clip,width=\linewidth,height=0.9\textheight,keepaspectratio]{\demopdf}
+        % \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[trim={60pt, 380pt, 60pt, 120pt},clip,width=\linewidth,height=0.9\textheight,keepaspectratio]{\demopdf}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[trim={60pt, 30pt, 60pt, 470pt},clip,width=\linewidth,height=0.9\textheight,keepaspectratio]{\demopdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+

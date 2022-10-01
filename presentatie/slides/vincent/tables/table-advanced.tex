@@ -1,0 +1,55 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{Tabellen}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                \usepackage{booktabs}
+                ...
+
+                \begin{table}[htbp]
+                    \centering
+                    \begin{tabular}{c c p{2cm}}
+                        \toprule
+                        Getal 1 & Getal 2 & Notitie\\
+                        \cmidrule(lr){1-2}\cmidrule(lr){3-3}
+                        88 & 94 & Twee grote getallen\\
+                        89 & 12 & Een grote en een kleintje\\
+                        96 & 18 & Weer zo\\
+                        \midrule
+                        \multicolumn{2}{c}{527} & Totale som\\
+                        \bottomrule
+                    \end{tabular}
+                    \caption{Een tabel!}
+                \end{table}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{adjustbox}{frame=1pt 10pt}%
+                \begin{minipage}{\textwidth-22pt}
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{c c p{2cm}}
+                            \toprule
+                            Getal 1 & Getal 2 & Notitie\\
+                            \cmidrule(lr){1-2}\cmidrule(lr){3-3}
+                            88 & 94 & Twee grote getallen\\
+                            89 & 12 & Een grote en een kleintje\\
+                            96 & 18 & Weer zo\\
+                            \midrule
+                            \multicolumn{2}{c}{527} & Totale som\\
+                            \bottomrule
+                        \end{tabular}
+                        \caption{Een tabel!}
+                    \end{table}
+                    \vspace{-20pt}
+                \end{minipage}
+            \end{adjustbox}
+            % \adjustbox{bgcolor=white}{%
+            %     \includegraphics[width=\textwidth]{assets/tabellen2.pdf}%
+            % }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
