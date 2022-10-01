@@ -9,6 +9,8 @@
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \usepackage{thmtools}
+\usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage[dutch]{babel}
 \usepackage[bookmarksnumbered]{hyperref}
 
@@ -20,7 +22,7 @@
 \makeatletter
 
 \newlength\uprightIndent
-\setlength\uprightIndent{15pt}
+\setlength\uprightIndent{25pt}
 
 % Using https://tex.stackexchange.com/questions/67242/a-theoremstyle-with-complete-indentation-using-amsthm
 % and package documentation
@@ -54,7 +56,7 @@
 {-\uprightIndent}% indent
 {\bfseries}% header font
 {.}
-{3em
+{0.5em%3em
 }
 {}
 
@@ -101,7 +103,7 @@
 
 \makeatother
 
-\declaretheorem[style=definition,name=Oefening]{exercise} % If you want your theorems to be counted per section instead of subsection, then just remove the sub from the numberwithin
+\declaretheorem[style=uprightIndentedNoNewline,name={\ensuremath{\square} Oefening}]{exercise} % If you want your theorems to be counted per section instead of subsection, then just remove the sub from the numberwithin
 \declaretheorem[style=uprightIndented,sibling=exercise,name=Oefening]{exerciseS}
 
 \declaretheorem[style=slantedIndented,sibling=exercise]{exerciseSlanted}

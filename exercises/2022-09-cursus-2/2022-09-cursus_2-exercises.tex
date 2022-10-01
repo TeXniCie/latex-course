@@ -6,38 +6,196 @@
 \author{\TeX niCie\\(Vincent Kuhlmann)}
 \date{3 oktober 2022}
 
-\setcounter{secnumdepth}{2}
+\usepackage{minted}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+
+\setcounter{secnumdepth}{0}
 
 \begin{document}
     \maketitle
 
-    \section{Document en referenties}
+    % \CheckBox[]{aaa}
 
-    \begin{exercise}\label{ex:aaaa}
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    \section{Deel 1: Document, referenties en `Theorem'}
+    Vergeet de volgende packages niet:
+    \begin{minted}{tex}
+        \usepackage[a4paper,margin=2.54cm]{geometry}
+        \usepackage{amsmath,amssymb,amsthm}
+        \usepackage[bookmarksnumbered]{hyperref}
+    \end{minted}
+    \bigskip
+
+    \begin{exercise}[Geometry]\label{ex:aaaa}
+        Maak een A6-document in landscape met voorbeeldtekst van \nolinkurl{lipsum.com}. Zet de
+        horizontale marges op $ 2\text{ cm} $ en vertical marges op $ 3\text{ cm} $.
+
+        Hint: De volgende opties van geometry kunnen van pas komen: left, right, top, bottom,
+        vmargin, hmargin, landscape, a6paper.\\
+        Documentatie over gebruik van geometry package: \url{https://ctan.org/pkg/geometry}
+    \end{exercise}
+
+    \begin{exercise}[Titels]
+        Voeg een paar \mintinline{tex}{\section}'s toe aan je bestand, en een
+        table of contents op zijn eigen pagina.
+
+        Het \mintinline{tex}{\section} commando laat een optioneel argument toe.
+        Voeg een section ermee toe, bijvoorbeeld
+        \mintinline{tex}{\section[Intro]{Introductie}} en kijk wat er gebeurt in je table of
+        contents.
+    \end{exercise}
+
+    \begin{exercise}[PDF TOC]
+        Voeg \mintinline{tex}{\usepackage[bookmarksnumbered]{hyperref}} toe aan
+        je preamble. Download je document als PDF en open het. Kijk of je de
+        table of contents van je PDF-lezer kan vinden.
+
+        Wat gebeurt er als je \mintinline{tex}{bookmarksopen} toevoegt als option?
+    \end{exercise}
+
+    \begin{exercise}[URL's]
+        Voeg de volgende link toe aan je bestand:\\
+        \nolinkurl{https://en.wikipedia.org/wiki/Electromagnetic_tensor}
+        \begin{enumerate}[label=\alph*)]
+            \item Wat gebeurt er als je de link direct in je code plakt?
+            Kan je die foutmelding fixen?
+            \item Plak nu dezelfde link in het argument van het \mintinline{tex}{\url}-commando
+            van hyperref: \mintinline{tex}{\url{...}}. Heb je dezelfde fix nog nodig?
+            \item Wat gebeurt er als je de \texttt{https://} weglaat?
+        \end{enumerate}
+    \end{exercise}
+
+    \begin{exercise}[\textbackslash eqref]
+        De amsmath package definieert het commando \mintinline{tex}{\eqref{...}}.
+        Voeg een genummerde vergelijking toe aan je document, met een label, en
+        kijk wat het verschil is tussen \mintinline{tex}{\ref{...}}
+        en \mintinline{tex}{\eqref{...}}.
+    \end{exercise}
+
+    \begin{exercise}[Labels]
+        Wat gebeurt er als je aan een niet-bestaande label refereert?
+    \end{exercise}
+
+    \begin{exercise}[Stelling met bewijs]
+        Voeg een theorem met proof toe in je bestand voor je favoriete stelling of bewijs.
+    \end{exercise}
+
+    \begin{exercise}[Definitie]
+        Voeg een `Definitie' toe aan je bestand, en refereer eraan in je bestand.
+    \end{exercise}
+
+    \section{Deel 2: Figuren, matrices en tabellen}
+
+    Vergeet de volgende packages niet:
+    \begin{minted}{tex}
+        \usepackage[a4paper,margin=2.54cm]{geometry}
+        \usepackage{amsmath,amssymb,amsthm}
+        \usepackage{graphicx}
+        \usepackage{subcaption}
+        \usepackage{booktabs}
+        \usepackage[bookmarksnumbered]{hyperref}
+    \end{minted}
+    \bigskip
+
+    \begin{exercise}[Figure]
+        Is het mogelijk een figure environment te maken zonder \mintinline{tex}{\includegraphics}?
+    \end{exercise}
+
+    \begin{exercise}[Figuurplaatsing]
+        Cre\"eer een scenario waarbij \LaTeX{} je figuurplaatsingsadvies niet opvolgt.
+    \end{exercise}
+
+    \begin{exercise}[Subfigure]
+        Maak een figure met veel subfigures erin. Kijk wat de verschillende parameters
+        doen. Wat doet de \mintinline{tex}{\textwidth}? Wat doet de \mintinline{tex}{[b]}?
+    \end{exercise}
+
+    \begin{exercise}[Matrix]
+        Maak een matrix met een verticale streep langs beide kanten, zoals de
+        notatie voor determinant van een matrix. Kan je vinden welke environment (eindigend op
+        matrix) dit al standaard doet?
+    \end{exercise}
+
+    \begin{exercise}[Wiskunde in tabellen]
+        Maak een simpele tabel met wat woorden, nummers en wiskundige symbolen erin, b.v. $ \sqrt{2} $.
+    \end{exercise}
+
+    \begin{exercise}[Kolomscheidingen]
+        Wat gebeurt er als een regel te veel kolommen heeft? En wat als het te
+        weinig kolommen heeft?
+    \end{exercise}
+
+    \begin{exercise}[Alignering]
+        Zoek op wat de mogelijke aligneringen zijn voor een kolom in een tabular
+        en probeer ze uit.
+    \end{exercise}
+
+    \begin{exercise}[Booktabs]
+        Maak een tabel waarbij je \mintinline{tex}{\toprule}, \mintinline{tex}{\midrule}
+        en \mintinline{tex}{\bottom} van booktabs gebruikt (zie slides), om
+        een goed uitziende tabel te krijgen. Je kan \mintinline{tex}{\cmidrule} gebruiken om een
+        gedeeltelijke horizontale lijn te krijgen.
+    \end{exercise}
+
+    \begin{exercise}[Excellent]
+        Gebruik \mintinline{tex}{\multicolumn} om op een rij twee kolommen samen te voegen
+        (zoek op hoe het commando werkt, of deduceer het van de slides). Als je
+        wil kan je ook het \mintinline{tex}{\multirow}-commando van het package multirow
+        uitproberen.
+    \end{exercise}
+
+    \begin{exercise}[\textbackslash autoref]
+        Waarin verschilt het commando \mintinline{tex}{\autoref} (gedefinieerd door
+        \mintinline{tex}{hyperref}) van het simpele \mintinline{tex}{\ref}?
+    \end{exercise}
+
+    \begin{exercise}[Babel]
+        Voeg een table of contents toe, een \mintinline{tex}{\autoref} referentie
+        naar een vergelijking, en een figuur. Kijk welke automatische termen
+        babel ervoor geeft in verschillende talen.
+    \end{exercise}
+
+    \section{Uitbreiding}
+
+    \begin{exercise}[tabularx]
+        
+    \end{exercise}
+
+    \begin{exercise}[Referentie naar subfigure]
+        Kan je een \mintinline{tex}{\label{...}} toevoegen aan de caption van een subfigure?
+        Hoe ziet een referentie daaraan eruit?
+    \end{exercise}
+
+    \begin{exercise}[Subfigure nesting]
+        Plaats een subfigure binnen een andere subfigure. Hoe ziet dit eruit?
+        Hoe vreselijk voelt dat?
+    \end{exercise}
+
+    \begin{exercise}[\textbackslash hfill]
+        Maak een figure met kleine subfigures erin. Wat gebeurt er als je
+        \mintinline{tex}{\hfill} toevoegt tussen de subfigures?
+    \end{exercise}
+
+    \begin{exercise}[\textbackslash texorpdfstring]
+        Wat doet het command \mintinline{tex}{\texorpdfstring{}{}} van het hyperref package?
+        Zoek het op in de documentatie van de package.
+    \end{exercise}
+
+    \begin{exercise}[pageref]
+        
     \end{exercise}
 
     \begin{exercise}
-        Fusce blandit enim sed velit mollis auctor.
+        Voeg een aantal alinea's van \href{https://lipsum.com}{lipsum.com} toe aan je bestand, en spreidt
+        ze uit over meerdere pagina's:
+        \begin{itemize}
+            \item Pagina 1: Landscape A5-papier met marges $ 2\text{cm} $
+            \item Pagina 2: Papier van dimensies $ 100\text{mm}\times 100\text{mm} $
+            met marges $ 1\text{cm} $ en $ 2\text{cm} $ langs de onderkant
+            \item Pagina 3: Portrait A6-papier met marges $ 0\text{cm} $
+        \end{itemize}
+
+        Hint: \url{https://tex.stackexchange.com/a/528245/242407}
+
+        Opmerking: de pagina grootte van A6-papier is 105mm:148mm
     \end{exercise}
-
-    \section{`Theorem' en `Lemma'}
-
-    \begin{exercise}
-        Vestibulum at nunc fringilla, consectetur risus non, pulvinar eros.
-    \end{exercise}
-
-    \section{Figuren}
-
-    \begin{exercise}
-        Vivamus pellentesque ex non tellus cursus consequat.
-    \end{exercise}
-
-    \section{Matrices en tabellen}
-
-    \begin{exercise}
-        Aenean non dui a neque sagittis laoreet nec at metus.
-    \end{exercise}
-
-    Zie \autoref{ex:aaaa}
 \end{document}
