@@ -1,0 +1,14 @@
+\begin{frame}[fragile]{Spaties}
+    Spaties worden genegeerd door LaTeX. Behalve spaties die het einde van een command aangeven.
+
+    \begin{minted}[highlightlines={2}]{tex}
+        $ \infty a $
+        $ \infty          a$
+        $ \inftya
+    \end{minted}
+    \begin{tcolorbox}[width=11cm]
+        $\infty a$ \newline
+        $\infty a$ \newline
+        \textbf{\textcolor{red}{ERROR!}}
+    \end{tcolorbox}
+\end{frame}
