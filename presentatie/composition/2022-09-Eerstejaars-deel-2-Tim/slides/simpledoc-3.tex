@@ -1,0 +1,44 @@
+\begin{frame}[fragile, t]{Een eenvoudig document in \LaTeX}
+	%autogobble removes extra tabs we want in the code but should not be in the pdf code display
+	\begin{columns}[t]
+        \begin{column}{0.6\textwidth}
+			\vspace{-20pt}
+	\begin{minted}[autogobble, linenos=true, escapeinside=||]{tex} 
+	\documentclass[a4paper,11pt]{article}
+
+		
+	\begin{document}
+
+	The Differential and Integral 
+	Calculus, or, as it was formerly 
+	called in this country, 
+	the Doctrine of Fluxions, has always 
+	been supposed to present remarkable 
+	obstacles to the beginner.
+
+	\end{document}
+	\end{minted}
+
+	{\tiny
+	Example text: ``Elementary Illustrations of the Differential and Integral Calculus''
+	by Augustus De Morgan
+	\par}
+\end{column}
+\begin{column}{0.05\textwidth}
+	\vspace{0pt}
+
+	{\Huge \textcolor{red}{ \} } }
+	\\[1.5cm]
+	\phantom{{\Huge \textcolor{red}{ \} } }}
+	
+\end{column}
+\begin{column}{0.3\textwidth}
+	\vspace{0pt}
+	
+	\textbf{preamble}: instellingen hier
+	\\[1.5cm]
+	\phantom{\textbf{body}: inhoud (tekst, plaatjes, tabellen) hier}
+\end{column}
+\end{columns}
+
+\end{frame}

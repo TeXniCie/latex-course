@@ -1,0 +1,93 @@
+\documentclass[10pt, xcolor={dvipsnames}]{beamer}
+
+\usepackage{minted}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,amsthm,commath,mathtools}
+\usepackage{esint}
+\usepackage{enumerate}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{soul}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{environ}
+\usepackage{etoolbox}
+\usepackage{yfonts}
+\usepackage[dutch]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{marvosym}
+\usepackage[style=numeric]{biblatex}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{xkeyval}
+\usepackage[T1]{fontenc}
+\usepackage{textgreek}
+\usepackage{lmodern}
+\usepackage[version=4]{mhchem}
+\usepackage{ragged2e}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{csquotes}
+\usepackage{tcolorbox}
+\usefonttheme[onlymath]{serif}
+\newcommand{\error}{\textbf{\textcolor{red}{ERROR!}}}
+
+\usetheme{Dresden}
+\setbeamertemplate{navigation symbols}{}
+
+\title{\LaTeX{}-cursus Week 2}
+\author{\TeX niCie}
+\date{3 oktober 2022}
+
+% Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
+% fris ingeladen
+\csname endofdump\endcsname
+\usepackage{etoolbox}
+\AtBeginEnvironment{tcolorbox}{\small}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
+\usepackage{tcolorbox}
+
+\begin{document}
+
+\input{slides/welcome.tex}
+\input{slides/commands-1.tex}
+\input{slides/simpledoc-1.tex}
+\input{slides/simpledoc-2.tex}
+\input{slides/simpledoc-3.tex}
+\input{slides/aligntext-1.tex}
+\input{slides/math-packages-1.tex}
+\input{slides/math-packages-2.tex}
+\input{slides/math-1.tex}
+\input{slides/math-2.tex}
+\input{slides/math-3.tex}
+\input{slides/math-4.tex}
+\input{slides/math-5a.tex}
+\input{slides/math-5b.tex}
+\input{slides/math-6.tex}
+\input{slides/math-7.tex}
+\input{slides/math-8.tex}
+% \input{slides/math-9.tex}
+% \input{slides/math-10.tex}
+% \input{slides/math-11.tex}
+% \input{slides/math-12.tex}
+% \input{slides/math-13.tex}
+% \input{slides/math-14.tex}
+% \input{slides/math-15.tex}
+% \input{slides/math-16.tex}
+% \input{slides/math-17.tex}
+% \input{slides/math-18.tex}
+% \input{slides/math-19.tex}
+% \input{slides/math-20.tex}
+% \input{slides/math-21.tex}
+% \input{slides/declaremathoperator.tex}
+% \input{slides/align.tex}
+% \input{slides/cases.tex}
+% \input{slides/theorem-1.tex}
+% \input{slides/theorem-2.tex}
+% \input{slides/declaremathoperator.tex}
+% \input{slides/newcommand.tex}
+% \input{slides/afbeelding-1.tex}
+% \input{slides/afbeelding-2.tex}
+\end{document}
