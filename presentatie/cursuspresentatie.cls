@@ -45,14 +45,14 @@
 }
 
 \DeclareOptionX{handout}{
-    \boolfalse{darktheme}
+    %\boolfalse{darktheme}
     \booltrue{ishandout}
 }
 
 \DeclareOptionX{darktheme}{
-    \ifbool{ishandout}{}{
+    %\ifbool{ishandout}{}{
         \booltrue{darktheme}
-    }
+    %}
 }
 
 \DeclareOptionX{defaultSlideCollection}[.]{%
