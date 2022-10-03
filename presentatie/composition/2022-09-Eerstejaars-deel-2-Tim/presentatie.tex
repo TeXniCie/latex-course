@@ -16,7 +16,6 @@
 \usepackage{yfonts}
 \usepackage[dutch]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{fancyvrb}
 \usepackage{marvosym}
 \usepackage[style=numeric]{biblatex}
 \usepackage{textcomp}
@@ -33,7 +32,7 @@
 \usepackage{tcolorbox}
 \usefonttheme[onlymath]{serif}
 \newcommand{\error}{\textbf{\textcolor{red}{ERROR!}}}
-
+\newcommand{\Norm}[1]{\left\lVert#1\right\rVert}
 \usetheme{Dresden}
 \setbeamertemplate{navigation symbols}{}
 
@@ -41,14 +40,26 @@
 \author{\TeX niCie}
 \date{3 oktober 2022}
 
+\DeclareMathOperator{\atantwee}{atan2}
+
+\DeclareMathOperator{\beeld}{beeld}
+
+\DeclareMathOperator{\kernel}{ker}
+
+
+\newcommand{\abcformule}{\frac{-b \pm \sqrt{b^2-4ac}}{2a}}
+\newcommand{\abcformuleX}[3]{\frac{-#2 \pm \sqrt{#2^2-4\cdot#1\cdot#3}}{2\cdot#1}}
+\makeatletter
+\newcommand{\currentfontsize}{\fontsize{\f@size}{\f@baselineskip}\selectfont}
+\makeatother
 % Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
 % fris ingeladen
 \csname endofdump\endcsname
 \usepackage{etoolbox}
 \AtBeginEnvironment{tcolorbox}{\small}
-\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single}
 \usepackage{tcolorbox}
-
+\setmintedinline{fontsize=\currentfontsize}
 \begin{document}
 
 \input{slides/welcome.tex}
@@ -67,27 +78,29 @@
 \input{slides/math-5b.tex}
 \input{slides/math-6.tex}
 \input{slides/math-7.tex}
-\input{slides/math-8.tex}
-% \input{slides/math-9.tex}
-% \input{slides/math-10.tex}
-% \input{slides/math-11.tex}
-% \input{slides/math-12.tex}
-% \input{slides/math-13.tex}
-% \input{slides/math-14.tex}
-% \input{slides/math-15.tex}
-% \input{slides/math-16.tex}
-% \input{slides/math-17.tex}
-% \input{slides/math-18.tex}
-% \input{slides/math-19.tex}
+\input{slides/math-8a.tex}
+\input{slides/math-8b.tex}
+\input{slides/math-9a.tex}
+\input{slides/math-9b.tex}
+\input{slides/math-10.tex}
+\input{slides/math-11.tex}
+\input{slides/math-12.tex}
+\input{slides/declaremathoperator.tex}
+\input{slides/newcommand.tex}
+\input{slides/newcommand-2.tex}
+% \input{slides/displaymath-1.tex}
+% \input{slides/displaymath-2.tex}
+% \input{slides/displaymath-3.tex}
+\input{slides/math-15.tex}
+\input{slides/math-16.tex}
+\input{slides/math-17.tex}
+\input{slides/math-19.tex}
 % \input{slides/math-20.tex}
-% \input{slides/math-21.tex}
-% \input{slides/declaremathoperator.tex}
-% \input{slides/align.tex}
-% \input{slides/cases.tex}
 % \input{slides/theorem-1.tex}
 % \input{slides/theorem-2.tex}
-% \input{slides/declaremathoperator.tex}
-% \input{slides/newcommand.tex}
+% \input{slides/opgave.tex}
 % \input{slides/afbeelding-1.tex}
 % \input{slides/afbeelding-2.tex}
+% \input{closing-remarks-1.tex}
+% \input{closing-remarks-2.tex}
 \end{document}

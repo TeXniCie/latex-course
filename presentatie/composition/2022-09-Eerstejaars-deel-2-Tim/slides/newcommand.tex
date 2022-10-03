@@ -1,3 +1,16 @@
-\begin{frame}[fragile]{inproduct en kruisproduct}
+\begin{frame}[fragile]{Newcommand}
+    Met newcommand kun je eigen commando's maken:\\
+    \mintinline{tex}{\newcommand{\COMMANDONAAM}{DEFINITIE}}
+
+    Newcommand moet in de Preamble staan
+    \begin{minted}[]{tex}
+        \newcommand{\abcformule}{\frac{-b \pm \sqrt{b^2-4ac}}{2a}}
+        ...
+        de bekende abc-formule luidt: $ \abcformule $.
+    \end{minted}
+    \begin{tcolorbox}
+        de bekende abc-formule luidt: $ \abcformule $.
+    \end{tcolorbox}
+    
 
 \end{frame}

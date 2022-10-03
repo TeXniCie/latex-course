@@ -1,3 +1,19 @@
-\begin{frame}[fragile]{inproduct en kruisproduct}
+\begin{frame}[fragile]{Declare Math Operator}
+    Met het commando \mintinline{tex}{\DeclareMathOperator} kun je een nieuwe operator definiëren.
+    DeclareMathOperator moet in de Preamble staan
+    \begin{minted}{tex}
+        \DeclareMathOperator{\atantwee}{atan2}
+
+        \DeclareMathOperator{\beeld}{\beeld}
+
+        \DeclareMathOperator{\kernel}{ker}
+    \end{minted}
+
+    \begin{tcolorbox}[width=11cm, size=small]
+        \[ \atantwee (x,y)  \qquad atantwee (x.y) \]
+        \[ \beeld (f) \qquad beeld (f) \]
+        \[ \kernel A \qquad ker A \]
+    \end{tcolorbox}
+    
 
 \end{frame}

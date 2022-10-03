@@ -1,0 +1,27 @@
+\begin{frame}[fragile]{formulecomponenten - verzamelingen}
+
+\begin{table}
+    \centering
+    {\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l|l}
+       \mintinline{tex}{ \{ 2, 4, 8 \} }& $ \{ 2, 4, 8 \} $ \\ \hline
+       \mintinline{tex}{ \{ 2, 4, 8, \dots \} }& $ \{ 2, 4, 8, \dots \} $ \\ \hline
+       \mintinline{tex}{ x \notin B} & $\ x \notin B $ \\ \hline
+       \mintinline{tex}{ \{ x \in A | x > 4 \} }& $\{ x \in A | x > 4 \}$ \\ \hline
+       \mintinline{tex}{ \{ x \in \mathbb{R} \mid x > 4 \} }& $\{ x \in \mathbb{R} \mid x > 4 \}$ \\ \hline
+    \end{tabular}
+    }
+    \bigskip
+    \begin{minted}[]{tex}
+    \[
+    \mathcal{P} = \{ \emptyset, \{ \emptyset \} \}
+    \]
+    \end{minted}
+    \begin{tcolorbox}[width=11cm, size=small]
+    \[
+    \mathcal{P} = \{ \emptyset, \{ \emptyset \} \}
+    \]
+    \end{tcolorbox}
+\end{table}
+
+\end{frame}
