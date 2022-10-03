@@ -1,0 +1,775 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+
+\title{\vspace{-65pt} Oplossingen oefeningen \LaTeX-cursus Week 2}
+\author{\TeX niCie\\{\small (Vincent Kuhlmann)}}
+\date{3 oktober 2022}
+
+\usepackage{minted}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+
+\usemintedstyle{pastie}
+
+\usepackage{wrapfig}
+\usepackage{cutwin}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Stelling}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definitie}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Opmerking}
+
+\setcounter{secnumdepth}{0}
+
+\newenvironment{solution}{\par\medskip\textbf{Oplossing:}}{\medskip}
+
+\newenvironment{demobox}{
+    \begin{adjustbox}{frame=1pt 10pt}%
+        \begin{minipage}{\linewidth-22pt}
+}{
+        \end{minipage}
+    \end{adjustbox}
+}
+
+\begin{document}
+\maketitle
+
+% \CheckBox[]{aaa}
+
+\section{Deel 1: Document, referenties en `Theorem'}
+Zorg dat je steeds minstens deze packages hebt in je preamble:
+\begin{minted}{tex}
+        \usepackage[a4paper,margin=2.54cm]{geometry}
+        \usepackage{amsmath,amssymb,amsthm}
+        \usepackage[bookmarksnumbered]{hyperref}
+    \end{minted}
+\bigskip
+
+\begin{exercise}[Geometry]
+    Maak een A6-document in landscape met voorbeeldtekst van \nolinkurl{lipsum.com}. Zet de
+    horizontale marges op $ 2\text{ cm} $ en vertical marges op $ 3\text{ cm} $.
+
+    Hint: De volgende opties van geometry kunnen van pas komen: left, right, top, bottom,
+    vmargin, hmargin, landscape, a6paper.\\
+    Documentatie over gebruik van geometry package: \url{https://ctan.org/pkg/geometry}
+
+
+    \begin{solution}
+        \begin{minted}{tex}
+            \documentclass{article}
+            \usepackage[a6paper,hmargin=2cm,vmargin=3cm]{geometry}
+            ...
+        
+            \begin{document}
+                Lorem ipsum dolor ...
+            \end{document}
+        \end{minted}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Titels]
+    Voeg een paar \mintinline{tex}{\section}'s toe aan je bestand, en een
+    table of contents op een aparte pagina.
+
+    Het \mintinline{tex}{\section} commando laat een optioneel argument toe.
+    Voeg een section ermee toe, bijvoorbeeld
+    \mintinline{tex}{\section[Intro]{Introductie}} en kijk wat er gebeurt in je table of
+    contents.
+
+    \begin{solution}
+        Het optionele argument geeft een alternatieve titel aan die gebruikt wordt in de
+        inhoudsopgave. Kan handig zijn als je heel lange titels zou nodig hebben, maar een afkorting
+        voldoende is voor de inhoudsopgave.
+
+        \begin{minted}{tex}
+            \documentclass{article}
+            ...
+
+            \begin{document}
+                \tableofcontents
+                \newpage
+
+                \section[intro]{Introductie}
+                ...
+                \section{...}
+            \end{document}
+        \end{minted}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[PDF TOC]
+    Voeg \mintinline{tex}{\usepackage[bookmarksnumbered]{hyperref}} toe aan
+    je preamble. Download je document als PDF en open het. Kijk of je de
+    table of contents van je PDF-lezer kan vinden.
+    Wat gebeurt er als je \mintinline{tex}{bookmarksopen} toevoegt als option voor hyperref?
+
+    \begin{solution}
+        Bookmarksopen zorgt dat standaard alles opengeklapt is, dus subsections zie je al meteen
+        in je PDF lezer zonder de sections te hoeven openklappen. Is een afweging van hoe fijn of
+        storend die diepe niveau's altijd tonen is.
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[URL's]
+    Voeg de volgende link toe aan je bestand:\\
+    \nolinkurl{https://en.wikipedia.org/wiki/Electromagnetic_tensor}
+    \begin{enumerate}[label=\alph*)]
+        \item Wat gebeurt er als je de link direct in je code plakt?
+              Kan je die foutmelding fixen?
+        \item Plak nu dezelfde link in het argument van het \mintinline{tex}{\url}-commando
+              van hyperref: \mintinline{tex}{\url{...}}. Heb je dezelfde fix nog nodig?
+        \item Wat gebeurt er als je de \texttt{https://} weglaat?
+    \end{enumerate}
+
+    \begin{solution}
+        \begin{enumerate}[label=\alph*)]
+            \item De underscore is een speciaal karakter omdat het subscript in wiskundemodus aangeeft.
+            Helaas moet je dus zelfs in tekstmodus een underscore forceren met \mintinline{tex}{\_} (backslash ervoor).
+            \item Het \mintinline{tex}{\url}-commando van hyperref maakt de link aanklikbaar, maar
+            zorgt er ook voor dat het underscorekarakter tijdelijk niet meer ge\"interpreteerd wordt
+            als subscript. Nadat het argument is ingelezen, wordt alles weer teruggezet.
+            De fix is dus niet meer nodig, maar het kan ook geen kwaad.
+            \item Als je de \texttt{https://} weglaat formatteert hij de link nog steeds met een
+            teletype font, maar de link is niet meer aanklikbaar. Als je wil dat de link aanklikbaar
+            blijft zonder dat je de \texttt{https://} nodig hebt kan je het volgende gebruiken:
+            \begin{minted}{tex}
+                \href{https://en.wikipedia.org/wiki/Electromagnetic_tensor}{%
+                    \nolinkurl{en.wikipedia.org/wiki/Electromagnetic_tensor}
+                }
+            \end{minted}
+        \end{enumerate}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[\textbackslash eqref]
+    De amsmath package definieert het commando \mintinline{tex}{\eqref{...}}.
+    Voeg een genummerde vergelijking toe aan je document, met een label, en
+    kijk wat het verschil is tussen \mintinline{tex}{\ref{...}}
+    en \mintinline{tex}{\eqref{...}}.
+    \begin{solution}
+        De \mintinline{tex}{\eqref{...}} print ook het nummer, maar met al haakjes errond.
+
+        \begin{minted}{tex}
+            \begin{align}\label{eq:geweldig}
+                x = y + \sqrt{17}
+            \end{align}
+            Zie \ref{eq:geweldig} of \eqref{eq:geweldig}. Maar (\ref{eq:geweldig}) kan ook.
+        \end{minted}
+        \begin{demobox}
+            \begin{align}\label{eq:geweldig}
+                x = y + \sqrt{17}
+            \end{align}
+            Zie \ref{eq:geweldig} of \eqref{eq:geweldig}. Maar (\ref{eq:geweldig}) kan ook.
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Labels]
+    Wat gebeurt er als je aan een niet-bestaande label refereert?
+
+    \begin{solution}
+        In je output krijg je \textbf{??} te staan, en je krijgt een compiler warning.
+
+        % \begin{minted}{tex}
+        %     Zie: \ref{huh}
+        % \end{minted}
+        % \begin{demobox}
+        %     Zie: \ref{huh}
+        % \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\newpage
+\begin{exercise}[Stelling met bewijs]
+    Voeg een theorem met proof toe in je bestand voor je favoriete stelling of bewijs.
+
+    \begin{solution}
+        \begin{minted}{tex}
+            \documentclass{article}
+
+            \usepackage{amsmath,amssymb,amsthm}
+            \usepackage{commath,mathtools}
+            \usepackage[dutch]{babel}
+            \newtheorem{theorem}{Stelling}
+
+            \begin{document}
+            \begin{theorem}
+                De Gaussische integraal $ A := \int_0^{\infty}e^{-x^2}\dif x $ heeft waarde $ \sqrt{\pi}/2 $.
+                \begin{proof}
+                    Merk op $ A\geq 0 $, dus $ A=\sqrt{A}^2 $. We vinden dan
+                    \begin{align*}
+                        A^2 &= \left(\int_0^{\infty}e^{-r^2}\dif r\right)^2\\
+                        &= \int_0^{\infty}\int_0^{\infty}e^{-x^2-y^2}\dif x\dif y\\
+                        &= \frac{1}{4}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-x^2-y^2}\dif x\dif y.
+                    \intertext{en door omzetting naar poolco\"ordinaten vinden we}
+                        &= \frac{1}{4}\int_0^{2\pi}\int_0^{\infty}e^{-r^2}r\dif r\dif\theta\\
+                        &= \frac{2\pi}{4}\int_0^{\infty}e^{-r^2}\frac{r}{2r}\dif\,(r^2)\\
+                        &= \frac{\pi}{4}(e^0 - e^{-\infty}) = \frac{\pi}{4}.
+                    \end{align*}
+                    We vinden dus $ A = \sqrt{\pi/4} = \sqrt{\pi}/2 $.
+                \end{proof}
+            \end{theorem}
+            \end{document}
+        \end{minted}
+        \setlength\uprightIndent{0pt}
+
+        \begin{demobox}
+            \begin{theorem}
+                De Gaussische integraal $ A := \int_0^{\infty}e^{-x^2}\dif x $ heeft waarde $ \sqrt{\pi}/2 $.
+                \begin{proof}
+                    % \begin{align*}
+                    %     \int_0^{\pi}e^{-r^2}\dif r &= \frac{1}{\pi}\int_0^{\pi}\int_0^{\pi}e^{-r^2\cos^2(\theta)-r^2\sin^2(\theta)}\dif r\dif\theta\\
+                    %     &= \frac{1}{\pi}\iint e^{-x^2-y^2}\frac{1}{x^2+y^2}\dif x\dif y
+                    %     % \int_0^{\infty}\int_0^{\infty}e^{-(x^2+y^2)}\dif x\dif y\\
+                    %     % &= \int_0^{\infty}e^{}
+                    % \end{align*}\
+                    Merk op $ A>0 $, dus $ A=\sqrt{A^2} $. We kunnen dus berekenen
+                    \begin{align*}
+                        A^2 &= \left(\int_0^{\infty}e^{-r^2}\dif r\right)^2\\
+                        &= \int_0^{\infty}\int_0^{\infty}e^{-x^2-y^2}\dif x\dif y\\
+                        &= \frac{1}{4}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-x^2-y^2}\dif x\dif y,
+                    \intertext{en door omzetting naar poolco\"ordinaten vinden we}
+                        &= \frac{1}{4}\int_0^{2\pi}\int_0^{\infty}e^{-r^2}r\dif r\dif\theta\\
+                        &= \frac{2\pi}{4}\int_0^{\infty}e^{-r^2}\frac{r}{2r}\dif r^2\\
+                        &= \frac{\pi}{4}(e^0 - e^{-\infty}) = \frac{\pi}{4}.
+                    \end{align*}
+                    We vinden hiermee $ A = \sqrt{\pi/4} = \sqrt{\pi}/2 $.
+                \end{proof}
+            \end{theorem}
+        \end{demobox}        
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Definitie]
+    Voeg een `Definitie' toe aan je bestand, en refereer eraan in je bestand.
+
+    \begin{solution}
+        \begin{minted}{tex}
+            \documentclass{article}
+            \usepackage{amsthm}
+            \usepackage{hyperref}
+            
+            \theoremstyle{definition}
+            \newtheorem{definition}{Definitie}
+            \begin{document}
+                Als je echt wil weten wat een \LaTeX{} commando is, kijk dan naar \autoref{def:latexCommand}.
+    
+                \begin{definition}\label{def:latexCommand}
+                    Een commando in \LaTeX{} is een karaktersequentie beginnende met een escape character
+                    (catcode 0, standaard de backslash) gevolgd door oftewel een enkel karakter
+                    oftewel door meerdere letters met catcode 11 (letter).\footnote{Deze
+                    definitie heeft vast meerdere problemen.}
+                \end{definition}
+            \end{document}
+        \end{minted}
+    
+        \begin{demobox}
+            \setlength\uprightIndent{0pt}
+            Als je echt wil weten wat een \LaTeX{} commando is, kijk dan naar \autoref{def:latexCommand}.
+    
+            \medskip
+            \begin{definition}\label{def:latexCommand}
+                Een commando in \LaTeX{} is een karaktersequentie beginnende met een escape character
+                (catcode 0, standaard de backslash) gevolgd door oftewel een enkel karakter
+                oftewel door meerdere letters met catcode 11 (letter).\footnote{Deze definitie heeft vast meerdere problemen.}
+            \end{definition}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[\textbackslash theoremstyle]\label{ex:theoremStyle}
+Cre\"eer een nieuw bestand met de template van
+\href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+(zet de 'Include Theorem, Lemma etc.' aan). Wat is het verschil in stijl tussen
+\mintinline{tex}{\begin{theorem}},
+\mintinline{tex}{\begin{definition}} en \mintinline{tex}{\begin{remark}}?
+Probeer deze stijlen nu te veranderen door \mintinline{tex}{\theoremstyle{...}} commando's
+toe te voegen, te verplaatsen en/of te verwijderen.
+\end{exercise}
+
+\begin{solution}
+    De stijl van \mintinline{tex}{\theoremstyle{plain}} en \mintinline{tex}{\theoremstyle{definition}}
+    hebben allebei de naam en nummer in het vet, maar bij de plain is de inhoud cursief en bij de
+    definition rechtop. Bij de remark-style is de naam cursief (en niet vetgedrukt), en de
+    inhoud rechtop.
+
+    \begin{minted}{tex}
+        \documentclass{article}
+        \usepackage{amsthm}
+        \theoremstyle{plain}
+        \newtheorem{theorem}{Stelling}
+
+        \theoremstyle{definition}
+        \newtheorem{definition}{Definitie}
+
+        \theoremstyle{remark}
+        \newtheorem{remark}{Opmerking}
+
+        \begin{document}
+            \begin{definition}Definitie-inhoud
+            \end{definition}
+            \begin{theorem}Stelling-inhoud
+                \begin{proof}
+                    Met bewijs
+                \end{proof}
+            \end{theorem}
+            \begin{remark}
+                Opmerking-inhoud
+            \end{remark}
+        \end{document}
+    \end{minted}
+    \begin{demobox}
+        \setlength\uprightIndent{0pt}
+        \begin{definition}Definitie-inhoud
+        \end{definition}
+        \begin{theorem}Stelling-inhoud
+            \begin{proof}
+                Met bewijs
+            \end{proof}
+        \end{theorem}
+        \begin{remark}
+            Opmerking-inhoud
+        \end{remark}
+    \end{demobox}
+\end{solution}
+
+\begin{exercise}[Theorem nummering]%[Theorem numberwithin]
+    %Probeer uit te vinden welk effect elk van de volgende codewijzigingen hebben:
+    Welk effect heeft elk van de volgende codewijzigingen? (zelfde basisbestand als bij \autoref{ex:theoremStyle})
+    \begin{enumerate}[label=\alph*)]
+        \item \begin{minted}{tex}
+            \newtheorem{theorem}{Theorem}[section] --> \newtheorem{theorem}{Theorem}
+        \end{minted}
+        \item \begin{minted}{tex}
+            \newtheorem{lemma}[theorem]{Lemma} --> \newtheorem{lemma}{Lemma}
+        \end{minted}
+    \end{enumerate}
+
+    \begin{solution}
+        \begin{enumerate}[label=\alph*)]
+            \item De nummeringen veranderen, bv. Theorem 1.3 wordt nu Theorem 3 en Theorem 2.1
+            wordt Theorem 4, de Theorems worden niet meer per section genummerd.
+            \item Lemma deelt zijn teller niet met Theorem, waardoor je bijvoorbeeld zowel
+            Theorem 1 als Lemma 1 kan hebben.
+        \end{enumerate}
+    \end{solution}
+\end{exercise}
+
+\section{Deel 2: Figuren, matrices en tabellen}
+
+Zorg dat je steeds minstens deze packages hebt in je preamble:
+\begin{minted}{tex}
+        \usepackage[a4paper,margin=2.54cm]{geometry}
+        \usepackage{amsmath,amssymb,amsthm}
+        \usepackage{graphicx}
+        \usepackage{subcaption}
+        \usepackage{booktabs}
+        \usepackage[bookmarksnumbered]{hyperref}
+    \end{minted}
+\bigskip
+
+\begin{exercise}[Figure]
+    Is het mogelijk een figure environment te maken zonder \mintinline{tex}{\includegraphics}?
+    Kan je in plaats ervan tekst, een inline formule of een tabel hebben?
+
+    \begin{solution}
+        Ja, maar uiteraard niet de bedoeling.
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Figuurplaatsing]
+    Cre\"eer een scenario waarbij \LaTeX{} je figuurplaatsingsadvies niet opvolgt.
+
+    \begin{solution}
+        \begin{minted}{tex}
+            \documentclass{article}
+
+            \usepackage[a5paper,vmargin=4cm]{geometry}
+            \usepackage{graphicx}
+            \usepackage{lipsum}
+
+            \begin{document}
+                \lipsum[1]    
+
+                \begin{figure}[h]
+                    \includegraphics[width=\textwidth]{example-image-a}
+                    \caption{Hoi}
+                \end{figure}
+                
+                \lipsum[2]
+            \end{document}
+        \end{minted}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Subfigure]
+    Maak een figure met veel subfigures erin, gebaseerd op de code in de slides. Kijk wat de verschillende parameters
+    doen. Wat doet de \mintinline{tex}{0.45\textwidth}? Wat doet de \mintinline{tex}{[b]}?%
+    \footnote{Hint: Vervang de [b] door [t] of [c] en geef de afbeeldingen in de subfigures
+        ongelijke hoogtes.}
+
+    \begin{solution}
+        De \mintinline{tex}{[b]} specifieert dat de subfiles verticaal gealigneerd worden op de
+        onderkant van elke subfigure. Als je het op c zet wordt alles verticaal gecentreerd. Je
+        kan de waarden ook laten verschillen per subfigure, maar het gedrag daarvan vereist
+        meer begrip van \LaTeX{} dan het idee was achter deze oefening. De \mintinline{tex}{0.45\textwidth}
+        geeft de breedte aan van elke subfigure.
+
+        \begin{minted}{tex}
+            \documentclass{article}
+            \usepackage{subcaption}
+            \usepackage{float}
+            \usepackage{graphicx}
+
+            \begin{document}
+                \begin{figure}[H]
+                    \centering
+                    \begin{subfigure}[c]{0.45\textwidth}
+                        \centering
+                        \includegraphics[height=2cm,width=\linewidth]{example-image-a}
+                        \caption{...}
+                    \end{subfigure}
+                    \begin{subfigure}[c]{0.2\textwidth}
+                        \centering
+                        \includegraphics[height=1cm,width=\linewidth]{example-image-b}
+                        \caption{...}
+                    \end{subfigure}
+                    \begin{subfigure}[b]{0.2\textwidth}
+                        \centering
+                        \includegraphics[height=1cm,width=\linewidth]{example-image-c}
+                        \caption{...}
+                    \end{subfigure}
+                    \begin{subfigure}[b]{0.2\textwidth}
+                        \centering
+                        \includegraphics[height=1cm,width=\linewidth]{example-image-c}
+                        \caption{...}
+                    \end{subfigure}
+                    \caption{...}
+                \end{figure}
+            \end{document}
+        \end{minted}
+
+        \begin{demobox}
+            \begin{figure}[H]
+                \centering
+                \begin{subfigure}[c]{0.45\textwidth}
+                    \centering
+                    \includegraphics[height=2cm,width=\linewidth]{example-image-a}
+                    \caption{...}
+                \end{subfigure}
+                \begin{subfigure}[c]{0.2\textwidth}
+                    \centering
+                    \includegraphics[height=1cm,width=\linewidth]{example-image-b}
+                    \caption{...}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.2\textwidth}
+                    \centering
+                    \includegraphics[height=1cm,width=\linewidth]{example-image-c}
+                    \caption{...}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.2\textwidth}
+                    \centering
+                    \includegraphics[height=1cm,width=\linewidth]{example-image-c}
+                    \caption{...}
+                \end{subfigure}
+                \caption{...}
+            \end{figure}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Matrix]
+    Maak een matrix met een verticale streep langs beide kanten i.p.v. haakjes, zoals de
+    notatie voor determinant van een matrix. Kan je vinden welke environment (eindigend op
+    matrix) dit al standaard doet?
+
+    \begin{solution}
+        \begin{minted}{tex}
+            \begin{align*}
+                \left|\begin{matrix}
+                    0 & 1\\2&3
+                \end{matrix}\right|
+                = \begin{vmatrix}
+                    0 & 1\\2&3
+                \end{vmatrix}
+            \end{align*}
+        \end{minted}
+        
+        \begin{demobox}
+            \begin{align*}
+                \left|\begin{matrix}
+                    0 & 1\\2&3
+                \end{matrix}\right|
+                = \begin{vmatrix}
+                    0 & 1\\2&3
+                \end{vmatrix}
+            \end{align*}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+% \begin{tabular}{p{0.4\textwidth}l}
+%     \begin{minipage}{\linewidth}
+\begin{exercise}[Stelsel in matrix]
+    % \begin{cutout}{2}{20pt}{\dimexpr\linewidth-2.5cm\relax}{6}
+    %     AAA
+    %   \end{cutout}
+Stelsels lineaire vergelijkingen kunnen opgelost worden door ze te schrijven als een matrix en Gauss
+eliminatie toe te passen.
+% \begin{cutout}{3}{50pt}{\dimexpr\linewidth-50pt\relax}{6}
+%     AAA
+% \end{cutout}
+%Een vergelijking $ 2x+y-z = 8 $ wordt dan de rij $ (2, 1, -1, 8) $.
+%Dat het laatste getal geen eigenlijke variabele is, maken we in de wiskunde soms duidelijk door
+%de extra kolom af te bakenen met een verticale streep.
+Repliceer dit typische stelselmatrix:
+
+\begin{tabularx}{\textwidth}{Xp{0.7\textwidth}}
+\adjustbox{valign=t}{\small$\displaystyle
+    \left(\begin{array}{rrr|r}
+        2 & 1 & -1 & 8\\
+        -3 & -1 & 2 & -11\\
+        -2 & 1 & 2 & -3
+    \end{array}\right)
+$}&
+\parbox[t]{0.65\textwidth}{\small De eerste rij komt overeen met de vergelijking $ 2x+y-z=8 $.\\
+Getallenvoorbeeld van:\\\url{https://en.wikipedia.org/wiki/Gaussian_elimination}}
+\end{tabularx}
+% \end{exercise}
+% \end{minipage}
+% &
+% {\small$\displaystyle
+%     \left(\begin{array}{rrr|r}
+%         2 & 1 & -1 & 8\\
+%         -3 & -1 & 2 & 11\\
+%         -2 & 1 & 2 & -3
+%     \end{array}\right)
+% $}
+
+\begin{solution}
+    \begin{minted}{tex}
+        \begin{align*}
+            \left(\begin{array}{rrr|r}
+                2 & 1 & -1 & 8\\
+                -3 & -1 & 2 & -11\\
+                -2 & 1 & 2 & -3
+            \end{array}\right)
+        \end{align*}
+    \end{minted}
+
+    \begin{demobox}
+        \begin{align*}
+            \left(\begin{array}{rrr|r}
+                2 & 1 & -1 & 8\\
+                -3 & -1 & 2 & -11\\
+                -2 & 1 & 2 & -3
+            \end{array}\right)
+        \end{align*}
+    \end{demobox}
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise}[Align]
+    Hoe gedraagt het align-environment zich als je meer dan twee `kolommen' hebt?
+
+    \begin{solution}
+        Het aligneert elk paar kolommen, en maakt een horizontale sprong tussen twee paren.
+
+        \begin{minted}{tex}
+            \begin{align*}
+                0123&abcd&789&efgh\\
+                1&2&3&4
+            \end{align*}
+        \end{minted}
+
+        \begin{demobox}
+            \begin{align*}
+                0123&abcd&789&efgh\\
+                1&2&3^4
+            \end{align*}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Wiskunde in tabellen]
+    Maak een simpele tabel met wat woorden, nummers en wiskundige symbolen erin (bijvoorbeeld $ \sqrt{2} $).
+
+    \begin{solution}
+        \begin{minted}{tex}
+            \begin{tabular}{ll|c}
+                Hoi & doei & $ \sqrt{2} $\\
+                16 & 8 & $ \infty $\\
+                \hline
+            \end{tabular}
+        \end{minted}
+
+        \begin{demobox}
+            \begin{tabular}{ll|c}
+                Hoi&doei&$ \sqrt{2} $\\
+                16&8&$ \infty $\\
+                \hline
+            \end{tabular}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Kolomscheidingen]
+    Wat gebeurt er als een regel te veel kolommen heeft? En wat als het te
+    weinig kolommen heeft?
+
+    \begin{solution}
+        Teveel: error `Extra alignment tab ...'. Te weinig: rest van de rij leeg.
+
+        \begin{minted}{tex}
+            \begin{tabular}{ll|c}
+                Hoi&doei&$ \sqrt{2} $\\
+                16&8\\%& $ \infty $&9&4\\
+                \hline
+            \end{tabular}
+        \end{minted}
+
+        \begin{demobox}
+            \begin{tabular}{ll|c}
+                Hoi&doei&$ \sqrt{2} $\\
+                16&8\\%& $ \infty $&9&4\\
+                \hline
+            \end{tabular}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Alignering]
+    Zoek op wat de mogelijke aligneringen zijn voor een kolom in een tabular
+    en probeer ze uit.
+
+    \begin{solution}
+        \url{https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment}
+
+        \begin{minted}{tex}
+            \begin{tabular}{p{2cm}||r|b{2.5cm}}
+                Hoi hoe gaat het?&1&Goed, en met jou?\\
+                Ook goed.&1234&Doei.
+            \end{tabular}
+        \end{minted}
+
+        \begin{demobox}
+            \begin{tabular}{p{2cm}||r|b{2.5cm}}
+                Hoi hoe gaat het?&1&Goed, en met jou?\\
+                Ook goed.&1234&Doei.
+            \end{tabular}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Booktabs]
+    Maak een tabel waarbij je \mintinline{tex}{\toprule}, \mintinline{tex}{\midrule}
+    en \mintinline{tex}{\bottom} van booktabs gebruikt (zie slides), om
+    een goed uitziende tabel te krijgen. Je kan \mintinline{tex}{\cmidrule} gebruiken om een
+    gedeeltelijke horizontale lijn te krijgen.
+
+    \begin{solution}
+        Ik heb de slides gemaakt, dus ik heb dit al gedaan.
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Excellent]
+    Gebruik \mintinline{tex}{\multicolumn} om op een rij twee kolommen samen te voegen
+    (zoek op hoe het commando werkt, of deduceer het van de slides). Als je
+    wil kan je ook het \mintinline{tex}{\multirow}-commando van het package multirow
+    uitproberen.
+    
+    \begin{solution}
+        Zie voorbeeld in de slides.
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[\textbackslash autoref]
+    Waarin verschilt het commando \mintinline{tex}{\autoref} (gedefinieerd door
+    \mintinline{tex}{hyperref}) van het simpele \mintinline{tex}{\ref}?
+
+    \begin{solution}
+        Autoref zet ook de naam van het type referentie erbij. Voor vergelijkigen
+        geeft dit dus een goed alternatief voor \mintinline{tex}{\eqref}, maar
+        ik gebruik autoref vooral voor afbeeldingen, en eqref voor vergelijkingen.
+
+        \begin{minted}{tex}
+            Kijk eens naar \autoref{iets}.
+            \begin{align}
+                x &= 4\label{iets}
+            \end{align}
+        \end{minted}
+        \begin{demobox}
+            Kijk eens naar \autoref{iets}.
+            \begin{align}
+                x &= 4\label{iets}
+            \end{align}
+        \end{demobox}
+    \end{solution}
+\end{exercise}
+
+\begin{exercise}[Babel]
+    Voeg een table of contents toe, een \mintinline{tex}{\autoref} referentie
+    naar een vergelijking, en een figuur. Kijk welke automatische termen
+    babel ervoor geeft in verschillende talen.
+
+    \begin{demobox}
+        Leef je uit!
+    \end{demobox}
+\end{exercise}
+
+\section{Extra oefeningen} %\url{https://vkuhlmann.com/latex/exercises/2022-09-cursus/Week2_Vincent/uitbreiding}
+
+Ga naar \href{https://vkuhlmann.com/go/d98d48}{\nolinkurl{vkuhlmann.com/go/d98d48}}
+voor een extra set uitdagende oefeningen :)
+
+% \section{Uitbreiding}
+
+% \begin{exercise}[tabularx]
+%     In de slides van tabellen is er een code voorbeeld die tabularx gebruikt. Wat zijn de verschillen
+%     met de slide ervoor? Wat kan tabularx dus doen?
+% \end{exercise}
+
+% \begin{exercise}[Referentie naar subfigure]
+%     Kan je een \mintinline{tex}{\label{...}} toevoegen aan de caption van een subfigure?
+%     Hoe ziet een referentie daaraan eruit?
+% \end{exercise}
+
+% % \begin{exercise}[Subfigure nesting]
+% %     Plaats een subfigure binnen een andere subfigure. Hoe ziet dit eruit?
+% %     Hoe vreselijk voelt dat?
+% % \end{exercise}
+
+% \begin{exercise}[\textbackslash hfill]
+%     Maak een figure met kleine subfigures erin. Wat gebeurt er als je
+%     \mintinline{tex}{\hfill} toevoegt tussen de subfigures?
+% \end{exercise}
+
+% \begin{exercise}[\textbackslash texorpdfstring]
+%     Wat doet het command \mintinline{tex}{\texorpdfstring{}{}} van het hyperref package?
+%     Zoek het op in de documentatie van de package.
+% \end{exercise}
+
+% \begin{exercise}[pageref]
+
+% \end{exercise}
+
+% \begin{exercise}
+%     Voeg een aantal alinea's van \href{https://lipsum.com}{lipsum.com} toe aan je bestand, en spreidt
+%     ze uit over meerdere pagina's:
+%     \begin{itemize}
+%         \item Pagina 1: Landscape A5-papier met marges $ 2\text{cm} $
+%         \item Pagina 2: Papier van dimensies $ 100\text{mm}\times 100\text{mm} $
+%               met marges $ 1\text{cm} $ en $ 2\text{cm} $ langs de onderkant
+%         \item Pagina 3: Portrait A6-papier met marges $ 0\text{cm} $
+%     \end{itemize}
+
+%     Hint: \url{https://tex.stackexchange.com/a/528245/242407}
+
+%     Opmerking: de pagina grootte van A6-papier is 105mm:148mm
+% \end{exercise}
+\end{document}
