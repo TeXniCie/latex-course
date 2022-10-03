@@ -707,7 +707,10 @@
         ht=2.5ex,dp=1.125ex,%
         leftskip=.3cm,rightskip=.3cm plus1fil
     ]{title in head/foot}%
-        {\usebeamerfont{title in head/foot}\rlap{\insertshorttitle}}\hfill Slides op texnicie.nl\hfill{\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\llap{\usebeamertemplate{page number in head/foot}}}%
+        {\usebeamerfont{title in head/foot}\rlap{\insertshorttitle}}
+        \hfill
+        %Slides op texnicie.nl
+        \hfill{\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\llap{\usebeamertemplate{page number in head/foot}}}%
     \end{beamercolorbox}%
     %
     \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
