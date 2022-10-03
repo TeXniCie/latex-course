@@ -11,13 +11,15 @@
 \usepackage{thmtools}
 \usepackage{enumerate}
 \usepackage{enumitem}
+\usepackage{tabularx}
 \usepackage[dutch]{babel}
+\usepackage{adjustbox}
 \usepackage[bookmarksnumbered]{hyperref}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\bfseries\leftmark}
-\fancyhead[R]{\bfseries\thepage}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[L]{\bfseries\leftmark}
+% \fancyhead[R]{\bfseries\thepage}
 
 \makeatletter
 
@@ -44,8 +46,8 @@
 {}
 
 \newtheoremstyle{uprightIndentedNoNewline}
-{3pt}
-{3pt}
+{2.3pt}
+{2.3pt}
 {
 \addtolength\@totalleftmargin\uprightIndent
 \addtolength\linewidth{-\uprightIndent}

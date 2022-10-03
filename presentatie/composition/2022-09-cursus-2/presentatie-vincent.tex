@@ -3,9 +3,10 @@
 \documentclass[
     dutch,
     everyoneauthor=true,
-    darktheme,
+    %darktheme,
     defaultSlideCollection=vincent,
-    slidenames=true
+    %slidenames=true,
+    %handout
 ]{../../cursuspresentatie}
 
 \usepackage{minted}
@@ -90,8 +91,12 @@
 %     \end{beamercolorbox}%
 % }
 
+\let\placetarget\relax
+
 \setbeamertemplate{headline}
 {%
+    \placetarget
+    \let\placetarget\relax
     \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
     \end{beamercolorbox}
     \begin{beamercolorbox}{section in head/foot}
@@ -108,9 +113,11 @@
             padding={5pt 5pt 5pt 5pt},%bgcolor=red!40!orange,
             rndframe={color=red!40!orange}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
         }{%
-            \hyperlink{document}{\customhead{2}{Document en referenties}}%
+            \hyperlink{document}{\customhead{2}{Document}}%
             \hspace{5pt}$ \cdot $\hspace{5pt}%
-            \hyperlink{theorem}{\customhead{3}{`Theorem' en `Lemma'}}%
+            \hyperlink{referenties}{\customhead{3}{Referenties}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
         }%
         \adjustbox{
             set depth=2pt,
@@ -119,7 +126,7 @@
             rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
             margin={0pt 0pt 10pt 0pt}
         }{%
-            \hyperlink{oefeningen1}{\customhead{4}{Oefeningen}}%
+            \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
         }%
         % \adjustbox{padding={3pt 5pt 3pt 5pt},bgcolor=red!40!orange,rndcorners=3pt,margin={10pt 0pt 10pt 0pt}}{
         %     `Theorem' en `Lemma'
@@ -133,9 +140,11 @@
             rndframe={color=red!40!orange}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
             % rndcorners={3pt 0pt 3pt 0pt}
         }{%
-            \hyperlink{figuren}{\customhead{5}{Figuren}}%
+            \hyperlink{figuren}{\customhead{6}{Figuren}}%
             \hspace{5pt}$ \cdot $\hspace{5pt}%
-            \hyperlink{matrices}{\customhead{6}{Matrices en tabellen}}%
+            \hyperlink{matrices}{\customhead{7}{Matrices}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{tabellen}{\customhead{8}{Tabellen}}%
         }%
         \adjustbox{
             set depth=2pt,    
@@ -146,7 +155,7 @@
             rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
             margin={0pt 0pt 10pt 0pt}
         }{%
-        \hyperlink{oefeningen2}{\customhead{7}{Oefeningen}}%
+        \hyperlink{oefeningen2}{\customhead{9}{Oefeningen}}%
         }
         \hfil
         Slides op texnicie.nl
@@ -192,8 +201,8 @@
 %     }%
 % }
 
-\title[\LaTeX{}-cursus Week 2]{\LaTeX{}-cursus Week 2\\(slides: versie Vincent)}
-\author{\TeX niCie}
+\title[\LaTeX{}-cursus Week 2]{\LaTeX{}-cursus Week 2\\(Lokaal Vincent)}
+\author[\TeX niCie]{\TeX niCie\\{\tiny (Vincent Kuhlmann)}}
 \date{3 oktober 2022}
 
 \begin{document}
@@ -218,24 +227,24 @@
     \frametitle{\lang,Schedule,Agenda,}
     
     \begin{itemize}
-        \item \lang,Document \& references,Document \& referenties,
-        \item \lang,`Theorem' and `Lemma',`Theorem' en `Lemma',
+        \item \lang,Document,Document,
+        \item \lang,References,Referenties,
+        \item \lang,`Theorem',`Theorem',
         % \item \lang,References,Referenties,
         \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
         \item \lang,Figures,Figuren,
-        \item \lang,Matrices and tables,Matrices en tabellen,
+        \item \lang,Matrices,Matrices,
+        \item \lang,Tables,Tabellen,
         % \item \lang,Formulas,Formules,
         \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
-        \item \hyperref[sec:figuren]{AAA}
         % \item \lang,Closing remarks,Afsluitende opmerkingen,
     \end{itemize}
 \end{frame}
 
-\section{Document en referenties}\label{sec:document}
+\section{Document}\label{sec:document}
 
-\hypertarget{document}{}
+\def\placetarget{\hypertarget{document}{}}
 
-\subsection{Document}
 \importslide{document}{document-margins.tex}
 \importslide{document}{document-toc.tex}
 \importslide{document}{document-hyperref.tex}
@@ -244,18 +253,21 @@
 
 % \importslide{document}{document-toc.tex}
 
-\subsection{Referenties}\label{sec:referenties}
+\section{Referenties}\label{sec:referenties}
+
+\def\placetarget{\hypertarget{referenties}{}}
+
 \importslide{math}{align-label.tex}
 
-\section{`Theorem' en `Lemma'}\label{sec:theorem}
+\section{`Theorem'}\label{sec:theorem}
 
-\hypertarget{theorem}{}
+\def\placetarget{\hypertarget{theorem}{}}
 
 \importslide{math}{theorem-proof.tex}
 
 \section{Oefeningen}\label{sec:oefeningen1}
 
-\hypertarget{oefeningen1}{}
+\def\placetarget{\hypertarget{oefeningen1}{}}
 
 \begin{frame}
     \begin{center}
@@ -276,7 +288,7 @@
 
 \section{Figuren}\label{sec:figuren}
 
-\hypertarget{figuren}{}
+\def\placetarget{\hypertarget{figuren}{}}
 
 \importslide{images}{includegraphics-center.tex}
 \importslide{images}{figure.tex}
@@ -285,11 +297,10 @@
 \importslide{images}{figure-dimensions.tex}
 \importslide{images}{subfigure.tex}
 
-\section{Matrices en tabellen}\label{sec:matrices}
+\section{Matrices}\label{sec:matrices}
 
-\hypertarget{matrices}{}
+\def\placetarget{\hypertarget{matrices}{}}
 
-\subsection{Matrices}
 \setDetail{10}
 \importslide{math}{align-star.tex}
 \setDetail{20}
@@ -298,7 +309,10 @@
 \importslide{math}{matrices-others.tex}
 \importslide{math}{matrix-array-cases.tex}
 
-\subsection{Tabellen}
+\section{Tabellen}\label{sec:tabellen}
+
+\def\placetarget{\hypertarget{tabellen}{}}
+
 \importslide{tables}{table-demo1.tex}
 
 \importslide{tables}{table-simple.tex}
@@ -309,7 +323,7 @@
 
 \section{Oefeningen}\label{sec:oefeningen2}
 
-\hypertarget{oefeningen2}{}
+\def\placetarget{\hypertarget{oefeningen2}{}}
 
 \begin{frame}
     \begin{center}

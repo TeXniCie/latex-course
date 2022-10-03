@@ -43,6 +43,7 @@
             \begin{adjustbox}{valign=T,set height=0pt,set depth=0.8\textheight,valign=B}%
                 \begin{minipage}{0.9\textwidth}%
                     \leavevmode
+                \unless\ifishandout
                 \begin{onlyenv}<1>
                     \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
                         \begin{align*}
@@ -68,6 +69,7 @@
                         \end{align*}
                     \end{minted}
                 \end{onlyenv}%
+                \fi
                 \begin{onlyenv}<3->
                     \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
                         \begin{align*}

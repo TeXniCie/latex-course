@@ -1,5 +1,6 @@
 \addtorecentlist{\textbackslash tableofcontents}
 
+\unless\ifishandout
 \begin{frame}[fragile]
     \frametitle{\lang,Contents,Inhoudsopgave,}
     
@@ -61,15 +62,21 @@
     name=default,
     add={\newpage}
 }
+\fi
 
 \addtorecentlist{babel}
+
+\def\highlightlines{}
+\unless\ifishandout
+\def\highlightlines{1}
+\fi
 
 \begin{frame}[fragile]
     \frametitle{\lang,Contents,Inhoudsopgave,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=1]{tex}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=\highlightlines]{tex}
                 \usepackage[dutch]{babel}
                 ...
                 
