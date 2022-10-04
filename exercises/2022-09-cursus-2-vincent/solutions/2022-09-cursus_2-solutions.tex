@@ -4,7 +4,7 @@
 
 \title{\vspace{-65pt} Oplossingen oefeningen \LaTeX-cursus Week 2}
 \author{\TeX niCie\\{\small (Vincent Kuhlmann)}}
-\date{3 oktober 2022}
+\date{4 oktober 2022}
 
 \usepackage{minted}
 \setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
@@ -12,7 +12,29 @@
 \usemintedstyle{pastie}
 
 \usepackage{wrapfig}
-\usepackage{cutwin}
+% \usepackage{cutwin}
+\usepackage{booktabs}
+
+\usepackage[english,latin,esperanto,french,icelandic,norsk,irish,dutch]{babel}
+
+\addto\extrasbritish{%
+    \def\exercisename{Exercise}%
+    \def\exerciseautorefname{Exercise}%
+}
+
+
+\addto\extrasenglish{%
+    \def\exercisename{Exercise}%
+    \def\exerciseautorefname{Exercise}%
+}
+
+
+\addto\extrasdutch{%
+    \def\exercisename{Oefening}%
+    \def\exerciseautorefname{Oefening}%
+}
+
+\usepackage[bookmarksnumbered,colorlinks]{hyperref}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Stelling}
@@ -289,7 +311,6 @@ Cre\"eer een nieuw bestand met de template van
 \mintinline{tex}{\begin{definition}} en \mintinline{tex}{\begin{remark}}?
 Probeer deze stijlen nu te veranderen door \mintinline{tex}{\theoremstyle{...}} commando's
 toe te voegen, te verplaatsen en/of te verwijderen.
-\end{exercise}
 
 \begin{solution}
     De stijl van \mintinline{tex}{\theoremstyle{plain}} en \mintinline{tex}{\theoremstyle{definition}}
@@ -336,6 +357,7 @@ toe te voegen, te verplaatsen en/of te verwijderen.
         \end{remark}
     \end{demobox}
 \end{solution}
+\end{exercise}
 
 \begin{exercise}[Theorem nummering]%[Theorem numberwithin]
     %Probeer uit te vinden welk effect elk van de volgende codewijzigingen hebben:
@@ -717,9 +739,91 @@ Getallenvoorbeeld van:\\\url{https://en.wikipedia.org/wiki/Gaussian_elimination}
     naar een vergelijking, en een figuur. Kijk welke automatische termen
     babel ervoor geeft in verschillende talen.
 
-    \begin{demobox}
-        Leef je uit!
-    \end{demobox}
+    \begin{solution}
+        \begin{minted}{tex}
+            \documentclass{article}
+    
+            \usepackage{amsmath,amssymb}
+            \usepackage{graphicx}
+            \usepackage[dutch]{babel}
+            %\usepackage[latin]{babel}
+            %\usepackage[norwegian]{babel}
+            %\usepackage[esperanto]{babel}
+            %\usepackage[french]{babel}
+            %\usepackage[icelandic]{babel}
+            \usepackage{hyperref}
+
+            \begin{document}
+                \tableofcontents
+                
+                \section{AA}
+                De trigonometrische identeit zie je in \autoref{eq:trigEq}.
+                \begin{align}\label{eq:trigEq}
+                    \cos^2(\theta) + \sin^2(\theta) = 1
+                \end{align}
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=1cm]{example-image-a}
+                    \caption{BB}
+                \end{figure}
+            \end{document}
+        \end{minted}
+    
+        Als je een overzicht wil maken:
+    
+        \begin{minted}{tex}
+            \documentclass{article}
+            \usepackage[english,latin,esperanto,french,icelandic,norsk,irish,dutch]{babel}
+            \usepackage{etoolbox}
+            \usepackage{booktabs}
+            \usepackage{hyperref}
+    
+            \begin{document}
+                \def\nextitem{&}
+                \def\do#1{
+                    #1\nextitem
+                    \begin{otherlanguage}{#1}
+                        \contentsname
+                    \end{otherlanguage}\nextitem
+                    \begin{otherlanguage}{#1}
+                        \figurename
+                    \end{otherlanguage}\nextitem
+                    \begin{otherlanguage}{#1}
+                        \equationautorefname
+                    \end{otherlanguage}\\
+                }
+                \begin{tabular}{l|lll}
+                    \toprule
+                    Taal&Inhoudsopgave&Figuur&Vergelijking\\
+                    \midrule
+                    \docsvlist{dutch,english,latin,esperanto,french,icelandic,norsk,irish}
+                    \bottomrule
+                \end{tabular}
+            \end{document}
+        \end{minted}
+        \begin{demobox}
+            \def\nextitem{&}% http://tex.stackexchange.com/a/89187/5764
+            \def\do#1{
+                #1\nextitem
+                \begin{otherlanguage}{#1}
+                    \contentsname
+                \end{otherlanguage}\nextitem
+                \begin{otherlanguage}{#1}
+                    \figurename
+                \end{otherlanguage}\nextitem
+                \begin{otherlanguage}{#1}
+                    \equationautorefname
+                \end{otherlanguage}\\
+            }
+            \begin{tabular}{l|lll}
+                \toprule
+                Taal&Inhoudsopgave&Figuur&Vergelijking\\
+                \midrule
+                \docsvlist{dutch,english,latin,esperanto,french,icelandic,norsk,irish}
+                \bottomrule
+            \end{tabular}
+        \end{demobox}
+    \end{solution}
 \end{exercise}
 
 \section{Extra oefeningen} %\url{https://vkuhlmann.com/latex/exercises/2022-09-cursus/Week2_Vincent/uitbreiding}
