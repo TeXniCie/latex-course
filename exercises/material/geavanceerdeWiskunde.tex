@@ -1,0 +1,250 @@
+\documentclass{article}
+\usepackage[a4paper,margin=2.54cm]{geometry}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{commath,mathtools}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[dutch]{babel}
+\usepackage{adjustbox}
+
+\usepackage{minted}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+
+\usemintedstyle{pastie}
+
+\newenvironment{solution}{\par\medskip\textbf{Oplossing:}}{\medskip}
+
+\newenvironment{demobox}{
+    \begin{adjustbox}{frame=1pt 10pt}%
+        \begin{minipage}{\linewidth-22pt}
+}{
+        \end{minipage}
+    \end{adjustbox}
+}
+
+\usepackage[bookmarksnumbered]{hyperref}
+
+\def\nowOutput#1{
+    \qquad (#1)
+}
+
+% \makeatletter
+
+% \def\codeAndOutput{%
+%     \aftergroup\nowOutput
+%     %\mintinline{tex}\expandafter\bgroup\@gobble CC\egroup
+%     \expandafter\let\expandafter\openbrace\iftrue{\else}\fi
+%     \expandafter\let\expandafter\closebrace\iffalse{\else}\fi
+%     \expandafter\edef\expandafter\openbrace\expandafter{\openbrace}%
+    
+%     \PackageWarning{debug}{\meaning\openbrace}
+%     \PackageWarning{debug}{\meaning\closebrace}
+%     \def\pastemintinline{%
+%         \mintinline{tex}%
+%     }
+%     \def\continue{
+%         \PackageWarning{debug}{Opening char: \meaning\openingchar}
+%         \expandafter\pastemintinline\aftergroup\nowOutput
+%     }
+%     %\expandafter\expandafter\expandafter\pastemintinline\expandafter\openbrace\@gobble
+%     \afterassignment\continue
+%     \let\openingchar=
+%     %\expandafter\pastemintinline{aaa \sqrt{2}}
+%     %\expandafter\pastemintinline\begingroup Hi\endgroup
+%     %\mintinline{tex}\openbrace CC\closebrace
+%     %\mintinline{tex}{CC}
+% }
+% \makeatother
+
+\title{Lijst van geavanceerde wiskundige constructies in \LaTeX}
+\date{4 oktober 2022}
+\author{Vincent Kuhlmann}
+
+\begin{document}
+    \maketitle
+
+    Deze lijst is niet heel georganiseerd zoals je ziet. De meeste constructies leer je gaandeweg
+    in \LaTeX{} (en het is niet realistisch om een overzichtelijke lijst te maken van alles wat mogelijk is), maar voor degenen die bang zijn dat ze iets missen, neem deze lijst door,
+    en stuur ons een mailtje bij vragen.
+
+    \begin{enumerate}
+        \item \mintinline{tex}{$ A\rightarrow B $}\qquad $ A\rightarrow B $
+        \item \mintinline{tex}{$ A\to B $}\qquad $ A\to B $
+        \item \mintinline{tex}{$ f: \mathbb{R}\to \mathbb{R}, x\mapsto x^2 $}\qquad $ f: \mathbb{R}\to \mathbb{R}, x\mapsto x^2 $
+        \item \mintinline{tex}{$ \pi_1: \mathbb{R}^2\to \mathbb{R}, (x_1, x_2)\mapsto x_1 $}\qquad $ \pi_1: \mathbb{R}^2\to \mathbb{R}, (x_1, x_2)\mapsto x_1 $
+        \item \mintinline{tex}{$ A\xrightarrow[\alpha\to\beta]{\text{erboven}}B $}\qquad $ A\xrightarrow[\alpha\to\beta]{\text{erboven}}B $
+        \item \mintinline{tex}{$ B\xleftarrow{\text{erboven}} A $}\qquad $ B\xleftarrow{\text{erboven}} A $
+        \item \begin{minted}{tex}
+            De sommatie over $ x_i $ schrijven we als
+            \begin{align*}
+                \sum_{i=0}^{\infty} x_i
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            De sommatie over $ x_i $ schrijven we als
+            \begin{align*}
+                \sum_{i=0}^{\infty} x_i.
+            \end{align*}
+        \end{demobox}
+        \item \begin{minted}{tex}
+            Het product van $ x_i $ schrijven we als
+            \begin{align*}
+                \prod_{i=0}^{\infty} x_i
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            Het product van $ x_i $ schrijven we als
+            \begin{align*}
+                \prod_{i=0}^{\infty} x_i.
+            \end{align*}
+        \end{demobox}
+        \item \begin{minted}{tex}
+            De vereniging van een verzameling sets $ \mathcal{V} $ schrijven we als
+            \begin{align*}
+                \bigcup_{V\in\mathcal{V}} V
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            De vereniging van een verzameling sets $ \mathcal{V} $ schrijven we als
+            \begin{align*}
+                \bigcup_{V\in\mathcal{V}} V
+            \end{align*}
+        \end{demobox}
+        \item \mintinline{tex}{$ \frac{\sqrt{\mu}}{1-\rho(i)} $}\qquad $ \frac{\sqrt{\mu}}{1-\rho(i)} $
+        \item \mintinline{tex}{$ \binom{6}{2} = \frac{6!}{2!4!} = 15 $}\qquad $ \binom{6}{2} = \frac{6!}{2!4!} = 15 $
+        \item \mintinline{tex}{$ \mathbb{R}^{+} $}\qquad $ \mathbb{R}^{+} $
+        \item \mintinline{tex}{$ \mathbb{R}_{>0} $}\qquad $ \mathbb{R}_{>0} $
+        \item \mintinline{tex}{$ \mathbb{R}_{>0} = \left\{x\in\mathbb{R}\mid x > 0\right\} $}\qquad $ \mathbb{R}_{>0} = \left\{x\in\mathbb{R}\mid x > 0\right\} $
+        \item \mintinline{tex}{$ \mathbb{R}_{>0} = \{x\in\mathbb{R} | x > 0\} $}\qquad $ \mathbb{R}_{>0} = \{x\in\mathbb{R} | x > 0\} $
+        \item \mintinline{tex}{$ \mathbb{Z}_{\geq 0} = \left\{x\in\mathbb{Z}\mid x > 0\right\} $}\qquad $ \mathbb{Z}_{\geq 0} = \left\{x\in\mathbb{Z}\mid x > 0\right\} $
+        \item \mintinline{tex}{$ a\qquad b $}\qquad {$ a\qquad b $}
+        \item \mintinline{tex}{$ a^b/c\cdot d^{\sqrt[3]{2}} $}\qquad $ a^b/c\cdot d^{\sqrt[3]{2}} $
+        \item \mintinline{tex}{$ 5\in\mathbb{Z} $}\qquad $ 5\in\mathbb{Z} $
+        \item \mintinline{tex}{$ 5.3\not\in\mathbb{Z} $}\qquad $ 5.3\not\in\mathbb{Z} $
+        \item \mintinline{tex}{$ \mathbb{R}\not\subseteq \mathbb{Z} $}\qquad $ \mathbb{R}\not\subseteq \mathbb{Z} $
+        \item \mintinline{tex}{$ \mathbb{Z}\subseteq \mathbb{R} $}\qquad $ \mathbb{Z}\subseteq \mathbb{R} $
+        \item \mintinline{tex}{$ 2\mathbb{Z} = \left\{x\in\mathbb{Z}\mid\text{$ x $ is even}\right\} $}\qquad $ 2\mathbb{Z} = \left\{x\in\mathbb{Z}\mid\text{$ x $ is even}\right\} $
+        \item \mintinline{tex}{$ \langle a,b\rangle $}\qquad $ \langle a,b\rangle $
+        \item \mintinline{tex}{$ f'(x) := \frac{\dif f(x)}{\dif x} $}\qquad $ f'(x) := \frac{\dif f(x)}{\dif x} $ (commath en mathtools nodig)
+        \item \mintinline{tex}{$ f'(x) := \od{f(x)}{x} $}\qquad $ f'(x) := \od{f(x)}{x} $ (commath en mathtools nodig)
+        \item \mintinline{tex}{$ (x=4\wedge y^2=x)\implies (y=2\vee y=-2) $}\qquad $ (x=4\wedge y^2=x)\implies (y=2\vee y=-2) $
+        \item \mintinline{tex}{$ (x=4\text{ en } y^2=x)\implies (y=2\text{ of } y=-2 )$}\qquad $ (x=4\text{ en } y^2=x)\implies (y=2\text{ of } y=-2 )$
+        \item \begin{minted}{tex}
+            Voor $ x, y\in\real $ met $ y\geq 0 $ geldt
+            \begin{align*}
+                &x^2 = y\\
+                &\iff x = \sqrt{y}\text{ of } x=-\sqrt{y}\\
+                &\iff \abs{x} = \sqrt{y}.
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            Voor $ x, y\in\real $ met $ y\geq 0 $ geldt
+            \begin{align*}
+                &x^2 = y\\
+                &\iff x = \sqrt{y}\text{ of } x=-\sqrt{y}\\
+                &\iff \abs{x} = \sqrt{y}.
+            \end{align*}
+        \end{demobox}
+        \item \begin{minted}{tex}
+            We evalueren de integraal,
+            \begin{align*}
+                \int_{a}^{b}x^2\dif x &= \left.\left[\frac{x^3}{3}\right]\right|_{x=a}^{x=b}\\
+                &= \frac{b^3-a^3}{3}
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            We evalueren de integraal,
+            \begin{align*}
+                \int_{a}^{b}x^2\dif x &= \left.\left[\frac{x^3}{3}\right]\right|_{x=a}^{x=b}\\
+                &= \frac{b^3-a^3}{3}
+            \end{align*}
+        \end{demobox}
+        \item Zonder de \mintinline{tex}{\left} en \mintinline{tex}{\right}:        
+        \begin{minted}{tex}
+            We evalueren de integraal,
+            \begin{align*}
+                \int_{a}^{b}x^2\dif x &= [\frac{x^3}{3}]|_{x=a}^{x=b}\\
+                &= \frac{b^3-a^3}{3}
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            We evalueren de integraal,
+            \begin{align*}
+                \int_{a}^{b}x^2\dif x &= [\frac{x^3}{3}]|_{x=a}^{x=b}\\
+                &= \frac{b^3-a^3}{3}
+            \end{align*}
+        \end{demobox}
+        \item \mintinline{tex}{$ \tilde{a} $}\qquad $ \tilde{a} $
+        \item \mintinline{tex}{$ \hat{a} $}\qquad $ \hat{a} $
+        \item \mintinline{tex}{$ \widehat{a} $}\qquad $ \widehat{a} $
+        \item \mintinline{tex}{$ \widetilde{a} $}\qquad $ \widetilde{a} $
+        \item \mintinline{tex}{$ a\sim b $}\qquad $ a\sim b $
+        \item \mintinline{tex}{$ x\overset{\text{def}}{=} y+3 $}\qquad $ x\overset{\text{def}}{=} y+3 $
+        \item Zonder de \mintinline{tex}{\left} en \mintinline{tex}{\right}:        
+        \begin{minted}{tex}
+            We evalueren de integraal,
+            \begin{align*}
+                \int_{a}^{b}x^2\dif x
+                &= \underbrace{[\frac{x^3}{3}]|_{x=a}^{x=b}}_{\text{Dit ziet er lelijk uit}}\\
+                &= \frac{b^3-a^3}{3}
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            We evalueren de integraal,
+            \begin{align*}
+                \int_{a}^{b}x^2\dif x &= \underbrace{[\frac{x^3}{3}]|_{x=a}^{x=b}}_{\text{Dit ziet er lelijk uit}}\\
+                &= \frac{b^3-a^3}{3}
+            \end{align*}
+        \end{demobox}
+        \item \mintinline{tex}{Voor vectoren wordt zowel de notatie $ \vec{x} $ als $ \mathbf{x} $ gebruikt.}\qquad Voor vectoren wordt zowel de notatie $ \vec{x} $ als $ \mathbf{x} $ gebruikt.
+        \item
+         \begin{minted}{tex}
+            Drie lelijke manieren om een identiteitsmatrix te noteren zijn
+            \begin{align*}
+                \begin{pmatrix}
+                    1 & 0 & \cdots & 0\\
+                    0 & \ddots & \ddots & \vdots\\
+                    \vdots & \ddots & \ddots & 0\\
+                    0 & \cdots & 0 & 1
+                \end{pmatrix}
+                = \begin{pmatrix}
+                    1 & 0 & 0\\
+                    0 &\ddots & 0\\
+                    0 & 0 & 1
+                \end{pmatrix}
+                = \begin{pmatrix}
+                    1 &  & \\
+                    &\ddots & \\
+                     &  & 1
+                \end{pmatrix}
+            \end{align*}
+        \end{minted}
+        \begin{demobox}
+            Drie lelijke manieren om een identiteitsmatrix te noteren zijn
+            \begin{align*}
+                \begin{pmatrix}
+                    1 & 0 & \cdots & 0\\
+                    0 & \ddots & \ddots & \vdots\\
+                    \vdots & \ddots & \ddots & 0\\
+                    0 & \cdots & 0 & 1
+                \end{pmatrix}
+                = \begin{pmatrix}
+                    1 & 0 & 0\\
+                    0 &\ddots & 0\\
+                    0 & 0 & 1
+                \end{pmatrix}
+                = \begin{pmatrix}
+                    1 &  & \\
+                    &\ddots & \\
+                     &  & 1
+                \end{pmatrix}
+            \end{align*}
+        \end{demobox}
+    \end{enumerate}
+\end{document}
