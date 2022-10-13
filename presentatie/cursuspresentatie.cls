@@ -231,6 +231,7 @@
         %structure.bg!80!orange
 
         \colorlet{underlineColor}{red}
+        \colorlet{navigationUnderlineColor}{yellow}
     }
     \def\themePurple{
         \setbeamercolor*{structure}{fg=themepurple,bg=themepurple}
@@ -267,6 +268,7 @@
         \colorlet{exerciseTileBackground}{themepurple!80!CornflowerBlue}
 
         \colorlet{underlineColor}{blue}
+        \colorlet{navigationUnderlineColor}{yellow}
     }
     \def\themePurpleTwo{
         \setbeamercolor*{structure}{fg=themepurple}
@@ -319,7 +321,7 @@
 \RequirePackage{subfiles}
 \RequirePackage{amsmath,amssymb,amsthm,commath,mathtools}
 \RequirePackage{esint}
-\RequirePackage{enumerate}
+%\RequirePackage{enumerate}
 \RequirePackage{subcaption}
 \RequirePackage{graphicx}
 \PassOptionsToPackage{usenames,dvipsnames}{xcolor}
@@ -342,7 +344,7 @@
 \RequirePackage{marvosym}
 \RequirePackage[style=numeric]{biblatex}
 \RequirePackage{textcomp}
-%\RequirePackage{enumitem}
+\RequirePackage{enumitem}
 \RequirePackage{hyperref}
 \RequirePackage{xkeyval}
 \RequirePackage[T1]{fontenc}

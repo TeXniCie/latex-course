@@ -3,10 +3,10 @@
 \documentclass[
     dutch,
     everyoneauthor=true,
-    darktheme,
+    %darktheme,
     defaultSlideCollection=vincent,
     %slidenames=true,
-    handout
+    %handout
 ]{../../cursuspresentatie}
 
 \usepackage{minted}
@@ -23,7 +23,7 @@
 \def\customhead#1#2{%
     \ifnum\value{section}=#1\relax
         \textcolor{fg!100!bg}{%
-            \setul{1pt}{0.5pt}\setulcolor{yellow}\ul{#2}%
+            \setul{1pt}{0.5pt}\setulcolor{navigationUnderlineColor}\ul{#2}%
         }%
     \else
         #2%
@@ -44,8 +44,8 @@
         \color{fg!80!bg}
         \adjustbox{
             set depth=2pt,
-            padding={5pt 5pt 5pt 5pt},,
-            rndframe={color=navigationTileOutline}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
         }{%
             \hyperlink{installatie}{\customhead{2}{Installatie}}%
             % \hspace{5pt}$ \cdot $\hspace{5pt}%
@@ -65,11 +65,11 @@
         \adjustbox{
             set depth=2pt,
             padding={5pt 5pt 5pt 5pt},
-            rndframe={color=navigationTileOutline}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
         }{%
-            \hyperlink{shortcuts}{\customhead{2}{Shortcuts}}%
+            \hyperlink{shortcuts}{\customhead{3}{Shortcuts}}%
             \hspace{5pt}$ \cdot $\hspace{5pt}%
-            \hyperlink{tips}{\customhead{3}{Tips}}%
+            \hyperlink{tips}{\customhead{4}{Tips}}%
             % \hspace{5pt}$ \cdot $\hspace{5pt}%
             % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
         }%
@@ -80,15 +80,15 @@
             %bgcolor=bg!80!orange,
             %bgcolor=structure.bg!80!orange,
             bgcolor=exerciseTileBackground,
-            rndframe={color=exerciseTileOutline}{0pt 3pt 0pt 3pt},
-            margin={0pt 0pt 10pt 0pt}
+            rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+            margin={-1pt 0pt 10pt 0pt}
         }{%
             \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
         }%
         \adjustbox{
             set depth=2pt,
             padding={5pt 5pt 5pt 5pt},
-            rndframe={color=navigationTileOutline}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
             % rndcorners={3pt 0pt 3pt 0pt}
         }{%
             \hyperlink{LaTeXDefinities}{\customhead{6}{\LaTeX-definities}}%
@@ -101,10 +101,10 @@
             set depth=2pt,    
             padding={5pt 5pt 5pt 5pt},
             bgcolor=exerciseTileBackground,
-            rndframe={color=exerciseTileOutline}{0pt 3pt 0pt 3pt},
-            margin={0pt 0pt 10pt 0pt}
+            rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+            margin={-1pt 0pt 10pt 0pt}
         }{%
-        \hyperlink{oefeningen2}{\customhead{9}{Oefeningen}}%
+        \hyperlink{oefeningen2}{\customhead{8}{Oefeningen}}%
         }
         \hfil
         Slides op texnicie.nl
@@ -144,8 +144,9 @@
 %     }%
 % }
 
-\title[\LaTeX{}-cursus Week 3]{\LaTeX{}-cursus Week 3\\(Lokaal Vincent)}
-\author[\TeX niCie]{\TeX niCie\\{\tiny (Vincent Kuhlmann)}}
+\title[\LaTeX{}-cursus Week 3]{\LaTeX{}-cursus Week 3\\{\small (Slides: versie Vincent)}}
+% \author[\TeX niCie]{\TeX niCie\\{\tiny (Vincent Kuhlmann)}}
+\author[\TeX niCie]{\TeX niCie}
 \date{3 oktober 2022}
 
 \begin{document}
@@ -155,6 +156,8 @@
 % }{
 %     \section{Introductie}
 % }
+
+\section{Opening}
 
 \begin{frame}
     \titlepage
@@ -185,13 +188,27 @@
 
 \def\placetarget{\hypertarget{installatie}{}}
 
-\begin{frame}
+\importslide{setup}{compiler-manual.tex}
 
-\end{frame}
+\importslide{setup}{compiler-manual_vs_overleaf.tex}
+
+% \importslide{setup}{compiler-overleaf_vs_vscode}
+\importslide{setup}{compiler-overleaf_vs_vscode.tex}
+
+\importslide{setup}{setup-feature-comp.tex}
+
+\importslide{setup}{vscode-install.tex}
+
+%\importslide{misc}{misc-installation.tex}
+
 
 \section{Shortcuts}
 
 \def\placetarget{\hypertarget{shortcuts}{}}
+
+\begin{frame}
+\end{frame}
+
 
 
 \section{Tips}
@@ -199,23 +216,64 @@
 \def\placetarget{\hypertarget{tips}{}}
 
 
+\begin{frame}
+\end{frame}
+
+
 \section{Oefeningen}
 
 \def\placetarget{\hypertarget{oefeningen1}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE Oefeningen!}
+        \vspace{30pt}
+
+        Vergeet niet de nodige packages toe te voegen.
+        
+        Op mijn site staat een basisdocument met alle nodige packages erin:
+
+        \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+    \end{center}
+\end{frame}
+
 
 
 \section{\LaTeX-definities}
 
 \def\placetarget{\hypertarget{LaTeXDefinities}{}}
 
+\begin{frame}
+\end{frame}
+
+
 
 \section{Aparte preamble}
 
 \def\placetarget{\hypertarget{apartePreamble}{}}
 
+\begin{frame}
+\end{frame}
+
+
 \section{Oefeningen}
 
 \def\placetarget{\hypertarget{oefeningen2}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE Oefeningen!}
+        \vspace{30pt}
+
+        Vergeet niet de nodige packages toe te voegen.
+        
+        Op mijn site
+        staat een basisdocument met alle nodige packages erin:
+
+        \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+    \end{center}
+\end{frame}
+
 
 % \section{Document}\label{sec:document}
 
