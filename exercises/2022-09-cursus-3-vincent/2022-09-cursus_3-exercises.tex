@@ -3,7 +3,9 @@
 \input{preamble.tex}
 
 \title{\vspace{-65pt} Oefeningen \LaTeX-cursus Week 3}
-\author{\TeX niCie\\{\small (Vincent Kuhlmann)}}
+\author{\TeX niCie%
+%\\{\small (Vincent Kuhlmann)}
+}
 \date{17 oktober 2022}
 
 \usepackage{minted}
@@ -151,36 +153,89 @@ Kan je dit een optioneel argument maken?
     \mintinline{tex}{\documentclass{inleveropgave}}?
 \end{exercise}
 
-\begin{exercise}[aux-directory]
+\begin{exercise}[aux-directory]\label{ex:auxDir}
     In plaats van dat alle hulpbestanden zoals \texttt{.aux}, \texttt{.toc}, \texttt{.out}
     je mapje onoverzichtelijk maken, is het mogelijk de locatie ervoor te veranderen naar een
     ander mapje. Vraag Vincent als je benieuwd bent.
+
+    In VS Code, onder het TeX-tabje, gebruik `Clean up auxiliary files' onder `Build LaTeX project'.
+
+    Typ \mintinline{text}{"latex-workshop.latex.tools"} in je settings.json bestand, en gebruik
+    de auto-complete. Je krijgt een hele lijst met 'tools'. Voeg deze tool toe:
+    \begin{minted}{tex}
+        {
+            "name": "pdflatexDirs",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-aux-directory=auxdir",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    \end{minted}
+    Typ nu \mintinline{text}{"latex-workshop.latex.recipes"} in je settings.json bestand,
+    en gebruik weer auto-complete. Voeg bovenaan de recipes toe:
+    \begin{minted}{tex}
+        {
+            "name": "pdflatexDirs",
+            "tools": [
+                "pdflatexDirs"
+            ]
+        },
+    \end{minted}
+    Sla op, en compileer je bestand. Je zou nu een nieuw mapje `auxdir' moeten zien, en
+    hierin staan al je auxiliary files.
 \end{exercise}
 
 \begin{exercise}[Snelle compilatie]
-    Maak een \texttt{.tex}-bestand en compileer het manueel met het \texttt{pdflatex}-commando
-    in je terminal.
+    Zie oefeningen PDF op texnicie.nl.
 
-    Eenmaal dat is gelukt, voeg deze lijn bovenaan je \texttt{.tex}-bestand toe
-    \begin{minted}{text}
-        %&document
-        \documentclass{article}
+    % Maak een \texttt{.tex}-bestand en compileer het manueel met het \texttt{pdflatex}-commando
+    % in je terminal.
 
-        ...
-    \end{minted}
-    en voer dit commando uit in je terminal:
-    \begin{minted}{text}
-        pdftex -ini -jobname="document" "&pdflatex" mylatexformat.ltx document.tex
-    \end{minted}
+    % Eenmaal dat is gelukt, voeg deze lijn bovenaan je \texttt{.tex}-bestand toe
+    % \begin{minted}{text}
+    %     %&document_format
+    %     \documentclass{article}
 
-    Als het goed is zie je nu een \texttt{document.fmt}-bestand. Dit is een cache van het moment
-    dat de preamble helemaal was ingeladen. Als je nu je \texttt{.tex}-bestand weer compileert
-    (kan ook via Visual Studio Code), zou dit veel sneller moeten gaan.
+    %     ...
+    % \end{minted}
+    % en voer dit commando uit in je terminal:
+    % \begin{minted}{text}
+    %     pdftex -ini -jobname="document" "&pdflatex" mylatexformat.ltx document.tex
+    % \end{minted}
 
-    Maar let op! De cache kijkt niet of je preamble is veranderd, dus als je je preamble verandert
-    moet je je \texttt{document.fmt}-bestand verwijderen, en opnieuw maken.
-    Je kan het commando voor het maken van dit \texttt{.fmt}-bestand ook instellen in VS~Code.
-    Vraag Vincent als je benieuwd bent.
+    % Als het goed is zie je nu een \texttt{document.fmt}-bestand. Dit is een cache van het moment
+    % dat de preamble helemaal was ingeladen. Als je nu je \texttt{.tex}-bestand weer compileert
+    % (kan ook via Visual Studio Code), zou dit veel sneller moeten gaan.
+
+    % Maar let op! De cache kijkt niet of je preamble is veranderd, dus als je je preamble verandert
+    % moet je je \texttt{document.fmt}-bestand verwijderen, en opnieuw maken.
+    % Je kan het commando voor het maken van dit \texttt{.fmt}-bestand ook instellen in VS~Code.
+    % Dit gaat analoog aan \autoref{ex:auxDir}, als
+    % \begin{minted}{json}
+    %     {
+    %         "name": "mylatexformat",
+    %         "command": "pdftex",
+    %         "args": [
+    %             "-ini",
+    %             "-jobname=\"%DOC%_format\"",
+    %             "&pdflatex",
+    %             "mylatexformat.ltx",
+    %             "%DOC%"
+    %         ],
+    %         "env": {}
+    %     },
+    % \end{minted}
+
+    % Let erop dat in je document de eerste regel \texttt{\%\&document\_format} is, en vervang \texttt{document\_format}
+    % hier door de naam van je bestand zonder de \texttt{.tex}, en met \texttt{\_format} erachter.
+
+    % Dit is een moeilijke opgave, en het kan zijn dat ik iets mis in de instructies. 
+    % Vraag Vincent als het niet meteen lukt.
 \end{exercise}
 
 \end{document}
