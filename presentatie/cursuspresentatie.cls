@@ -898,3 +898,11 @@
     \end{list}
 }
 
+\NewEnviron{demobox}{
+    \begin{adjustbox}{frame=1pt 10pt}%
+        \begin{minipage}{\textwidth-22pt}
+            \BODY
+        \end{minipage}
+    \end{adjustbox}
+}
+

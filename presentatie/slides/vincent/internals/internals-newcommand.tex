@@ -1,135 +1,166 @@
-\begin{saveblock}{newcommand}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		\newcommand\aa{aa: ()}
-        \newcommand\bb[1]{bb: (#1)}
-        \newcommand\cc[2]{cc: (#1,#2)}
-        \newcommand\dd[3]{dd: (#1,#2,#3)}
-        \newcommand\ee[3][Z]{ee: (#1,#2,#3)}
 
-        Lorem \aa, \bb{A}, \cc{A}{B}, \dd{A}{B}{C},
-        \ee{A}{B}, \ee[A]{B}{C}, \ee ABC. %$ \frac{2}\sqrt{3} $
-	\end{highlightblock}
-\end{saveblock}
+\begin{frame}[fragile]{Commando's}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize]{tex}
+                \newcommand\fp{$ \pi/2 $-faseplaatje}
+                \newcommand\co{CO$_2$}
+        
+                \begin{document}
+                    Benodigdheden: laser, camera, lenzen, \fp.
 
-\addtorecentlist{\textbackslash newcommand}
+                    Het \fp zorgt voor ...
 
-\let\aa\somethingUndefined
-\let\bb\somethingUndefined
-\let\cc\somethingUndefined
-\let\dd\somethingUndefined
-\let\ee\somethingUndefined
-
-\newcommand\aa{aa: ()}
-\newcommand\bb[1]{bb: (#1)}
-\newcommand\cc[2]{cc: (#1,#2)}
-\newcommand\dd[3]{dd: (#1,#2,#3)}
-\newcommand\ee[3][Z]{ee: (#1,#2,#3)}
-
-\begin{frame}{\hll|\\newcommand|}
-    \useblock{newcommand}
-
-    \medskip
-
-    Lorem \aa, \bb{A}, \cc{A}{B}, \dd{A}{B}{C}, \ee{A}{B},
-    \ee[A]{B}{C}, \ee ABC. %$ \frac{2}\sqrt{3} $
-\end{frame}
-
-\begin{saveblock}{newcommand}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		\newcommand\co{CO$_2$}
-        \newcommand\term[1]{\textcolor{blue}{\textit{#1}}}
-
-        Lorem ipsum \co{} dolor sit amet \co.
-        Duis \term{iaculis} id orci eu mattis.
-        \term{Suspendisse facilisis.}
-	\end{highlightblock}
-\end{saveblock}
-
-\bgroup
-
-\def\co{CO$_2$}
-\def\term#1{\textcolor{blue}{\textit{#1}}}
-
-\begin{frame}{\hll|\\newcommand|}
-	\useblock{newcommand}
-
-    \medskip
-
-    Lorem ipsum \co{} dolor sit amet \co.
-    Duis \term{iaculis} id orci eu mattis. \term{Suspendisse facilisis.}
-
-	% \centering
-    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
-	% 	assets/mathAlignIntertext\langsuffix.pdf}
-\end{frame}
-\egroup
-
-\begin{saveblock}{newcommand}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-        \newcommand\genummerd[3][.]{\textbf{#2}\leaders
-        \hbox{#1}\hfill #3}
+                    Het \fp{} zorgt voor ...
+        
+                    En nu iets anders: \co. Dit zit in onze
+                    atmosfeer.
+                \end{document}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{demobox}\small\setlength\parskip{5pt}
+                \def\fp{$ \pi/2 $-faseplaatje}
+                \def\co{CO$_2$}
     
-        \genummerd{AA}{6}\par    
-        \genummerd{Lorem ipsum}{12}\par    
-        \genummerd{Amet}{20}\par    
-        \genummerd[-]{Vivamus}{20}
-    \end{highlightblock}
-\end{saveblock}
+                Benodigdheden: laser, camera, lenzen, \fp.
 
-\let\genummerd\somethingUndefined
-\newcommand\genummerd[3][.]{\textbf{#2}\leaders
-\hbox{#1}\hfill #3}
+                Het \fp zorgt voor ...
 
-\begin{frame}{\hll|\\newcommand|}
-	\useblock{newcommand}
-
-    \medskip
-
-    \genummerd{AA}{6}\par
-    \genummerd{Lorem ipsum}{12}\par
-    \genummerd{Amet}{20}\par
-    \genummerd[-]{Vivamus}{20}
-
-	% \centering
-    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
-	% 	assets/mathAlignIntertext\langsuffix.pdf}
+                Het \fp{} zorgt voor ...
+    
+                En nu iets anders: \co. Dit zit in onze
+                atmosfeer.
+            \end{demobox}
+        \end{column}
+    \end{columns}
 \end{frame}
 
+\let\exampleTerm\somethingundefined
+\newcommand\exampleTerm[1]{\textcolor{blue}{\textit{#1}}}
 
-\begin{saveblock}{newcommand}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-        \newcommand\genummerd[3][.]{\par\textbf{#2}\hspace{0.2em}
-        \leaders\hbox{#1}\hfill \hbox to 1.55em{\hfil #3}\par}
-    
-        \genummerd{AA}{6}
-        \genummerd{Lorem ipsum}{12}
-        \genummerd{Amet}{20}
-        \genummerd[-]{Vivamus}{20}
-        \genummerd[Hoi!]{Vivamus}{20}
-    \end{highlightblock}
-\end{saveblock}
+\begin{frame}[fragile]{Commando's}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize]{tex}
+                \newcommand\term[1]{\textcolor{blue}{\textit{#1}}}
+        
+                \begin{document}
+                    We noemen een groep \term{abels} of
+                    \term{commutatief} als voor elk
+                    paar elementen van de groep
+                    $ a, b $ er is $ a\cdot b = b\cdot a $.
+                \end{document}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{demobox}\small\setlength\parskip{5pt}        
+                We noemen een groep \exampleTerm{abels} of
+                \exampleTerm{commutatief} als
+                voor elk paar elementen van de groep $ a, b $
+                er is $ a\cdot b = b\cdot a $.
+            \end{demobox}
+        \end{column}
+    \end{columns}    
+\end{frame}
 
-\let\genummerd\somethingUndefined
-\newcommand\genummerd[3][.]{\par\textbf{#2}\hspace{0.2em}\leaders
-\hbox{#1}\hfill \hbox to 1.55em{\hfil #3}\par}
+\let\diag\somethingundefined
+% \newcommand\diag[1]{\begin{pmatrix}
+%     #1 & 0\\
+%     0 & #1
+% \end{pmatrix}}
+\newcommand\diag[2]{\begin{pmatrix}
+    #2 & #1\\
+    #1 & #2
+\end{pmatrix}}
 
-\begin{frame}{\hll|\\newcommand|}
-	\useblock{newcommand}
+\begin{frame}[fragile]{Commando's}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=||]{tex}
+                \newcommand\diag[2]{\begin{pmatrix}
+                    #2 & #1\\
+                    #1 & #2
+                \end{pmatrix}}
+        
+                \begin{document}
+                    De identiteitsmatrix is $\diag{0}{1}$.
+                    We zien
+                    \begin{align*}
+                        2\cdot\diag{0}{1} = \diag{0}{2}.
+                    \end{align*}
 
-    \medskip
+                    Verder
+                    \begin{align*}
+                        \diag{5}{0} + \diag{2}{0} = \diag{7}{0}.
+                    \end{align*}
+                \end{document}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{demobox}\small\setlength\parskip{5pt}    
+                De identiteitsmatrix is $\diag{0}{1}$.
+                We zien
+                \begin{align*}
+                    2\cdot\diag{0}{1} = \diag{0}{2}.
+                \end{align*}
 
-    \genummerd{AA}{6}
-    \genummerd{Lorem ipsum}{12}
-    \genummerd{Amet}{20}
-    \genummerd[-]{Vivamus}{20}
-    \genummerd[Hoi!]{Vivamus}{20}
+                Verder
+                \begin{align*}
+                    \diag{5}{0} + \diag{2}{0} = \diag{7}{0}.
+                \end{align*}
+            \end{demobox}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-	% \centering
-    % \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
-	% 	assets/mathAlignIntertext\langsuffix.pdf}
+\let\diag\somethingundefined
+% \newcommand\diag[1]{\begin{pmatrix}
+%     #1 & 0\\
+%     0 & #1
+% \end{pmatrix}}
+\newcommand\diag[2][0]{\begin{pmatrix}
+    #2 & #1\\
+    #1 & #2
+\end{pmatrix}}
+
+\begin{frame}[fragile]{Commando's}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=||]{tex}
+                \newcommand\diag[2][0]{\begin{pmatrix}
+                    #2 & #1\\
+                    #1 & #2
+                \end{pmatrix}}
+        
+                \begin{document}
+                    De identiteitsmatrix is $\diag{1}$.
+                    We zien
+                    \begin{align*}
+                        2\cdot\diag{1} = \diag{2}.
+                    \end{align*}
+
+                    Verder
+                    \begin{align*}
+                        \diag[5]{0} + \diag[2]{0} = \diag[7]{0}.
+                    \end{align*}
+                \end{document}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{demobox}\small\setlength\parskip{5pt}    
+                De identiteitsmatrix is $\diag{1}$.
+                We zien
+                \begin{align*}
+                    2\cdot\diag{1} = \diag{2}.
+                \end{align*}
+
+                Verder
+                \begin{align*}
+                    \diag[5]{0} + \diag[2]{0} = \diag[7]{0}.
+                \end{align*}
+            \end{demobox}
+        \end{column}
+    \end{columns}
 \end{frame}
 
