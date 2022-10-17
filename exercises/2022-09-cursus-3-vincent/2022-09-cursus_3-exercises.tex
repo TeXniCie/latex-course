@@ -191,51 +191,51 @@ Kan je dit een optioneel argument maken?
 \end{exercise}
 
 \begin{exercise}[Snelle compilatie]
-    Zie oefeningen PDF op texnicie.nl.
+    %Zie oefeningen PDF op texnicie.nl.
 
-    % Maak een \texttt{.tex}-bestand en compileer het manueel met het \texttt{pdflatex}-commando
-    % in je terminal.
+    Maak een \texttt{.tex}-bestand en compileer het manueel met het \texttt{pdflatex}-commando
+    in je terminal.
 
-    % Eenmaal dat is gelukt, voeg deze lijn bovenaan je \texttt{.tex}-bestand toe
-    % \begin{minted}{text}
-    %     %&document_format
-    %     \documentclass{article}
+    Eenmaal dat is gelukt, voeg deze lijn bovenaan je \texttt{.tex}-bestand toe
+    \begin{minted}{text}
+        %&document_format
+        \documentclass{article}
 
-    %     ...
-    % \end{minted}
-    % en voer dit commando uit in je terminal:
-    % \begin{minted}{text}
-    %     pdftex -ini -jobname="document" "&pdflatex" mylatexformat.ltx document.tex
-    % \end{minted}
+        ...
+    \end{minted}
+    en voer dit commando uit in je terminal:
+    \begin{minted}{text}
+        pdftex -ini -jobname="document" "&pdflatex" mylatexformat.ltx document.tex
+    \end{minted}
 
-    % Als het goed is zie je nu een \texttt{document.fmt}-bestand. Dit is een cache van het moment
-    % dat de preamble helemaal was ingeladen. Als je nu je \texttt{.tex}-bestand weer compileert
-    % (kan ook via Visual Studio Code), zou dit veel sneller moeten gaan.
+    Als het goed is zie je nu een \texttt{document.fmt}-bestand. Dit is een cache van het moment
+    dat de preamble helemaal was ingeladen. Als je nu je \texttt{.tex}-bestand weer compileert
+    (kan ook via Visual Studio Code), zou dit veel sneller moeten gaan.
 
-    % Maar let op! De cache kijkt niet of je preamble is veranderd, dus als je je preamble verandert
-    % moet je je \texttt{document.fmt}-bestand verwijderen, en opnieuw maken.
-    % Je kan het commando voor het maken van dit \texttt{.fmt}-bestand ook instellen in VS~Code.
-    % Dit gaat analoog aan \autoref{ex:auxDir}, als
-    % \begin{minted}{json}
-    %     {
-    %         "name": "mylatexformat",
-    %         "command": "pdftex",
-    %         "args": [
-    %             "-ini",
-    %             "-jobname=\"%DOC%_format\"",
-    %             "&pdflatex",
-    %             "mylatexformat.ltx",
-    %             "%DOC%"
-    %         ],
-    %         "env": {}
-    %     },
-    % \end{minted}
+    Maar let op! De cache kijkt niet of je preamble is veranderd, dus als je je preamble verandert
+    moet je je \texttt{document.fmt}-bestand verwijderen, en opnieuw maken.
+    Je kan het commando voor het maken van dit \texttt{.fmt}-bestand ook instellen in VS~Code.
+    Dit gaat analoog aan \autoref{ex:auxDir}, als
+    \begin{minted}{json}
+        {
+            "name": "mylatexformat",
+            "command": "pdftex",
+            "args": [
+                "-ini",
+                "-jobname=\"%DOC%_format\"",
+                "&pdflatex",
+                "mylatexformat.ltx",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    \end{minted}
 
-    % Let erop dat in je document de eerste regel \texttt{\%\&document\_format} is, en vervang \texttt{document\_format}
-    % hier door de naam van je bestand zonder de \texttt{.tex}, en met \texttt{\_format} erachter.
+    Let erop dat in je document de eerste regel \texttt{\%\&document\_format} is, en vervang \texttt{document\_format}
+    hier door de naam van je bestand zonder de \texttt{.tex}, en met \texttt{\_format} erachter.
 
-    % Dit is een moeilijke opgave, en het kan zijn dat ik iets mis in de instructies. 
-    % Vraag Vincent als het niet meteen lukt.
+    Dit is een moeilijke opgave, en het kan zijn dat ik iets mis in de instructies. 
+    Vraag Vincent als het niet meteen lukt.
 \end{exercise}
 
 \end{document}

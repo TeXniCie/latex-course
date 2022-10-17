@@ -6,7 +6,7 @@
     %darktheme,
     defaultSlideCollection=vincent,
     %slidenames=true,
-    %handout
+    handout
 ]{../../cursuspresentatie}
 
 \usepackage{minted}
@@ -69,7 +69,7 @@
         }{%
             \hyperlink{shortcuts}{\customhead{3}{Shortcuts}}%
             \hspace{5pt}$ \cdot $\hspace{5pt}%
-            \hyperlink{tips}{\customhead{4}{Tips}}%
+            \hyperlink{snippets}{\customhead{4}{Snippets}}%
             % \hspace{5pt}$ \cdot $\hspace{5pt}%
             % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
         }%
@@ -118,16 +118,16 @@
 %\newmintinline[cc]{latex}{}
 
 \ifbool{darktheme}{
-    \usemintedstyle{github-dark}
+    \usemintedstyle[tex]{github-dark}
     \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
 }{
-    \usemintedstyle{pastie}
+    \usemintedstyle[tex]{pastie}
 }
 
-\setminted[tex]{highlightcolor=codehighlight}
+\setminted{highlightcolor=codehighlight}
 
 
-\setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+\setminted{fontsize=\small, autogobble=true, linenos=false, frame=none}
 \usepackage{tcolorbox}
 
 \copyrightVincent
@@ -201,24 +201,167 @@
 
 %\importslide{misc}{misc-installation.tex}
 
+\begin{frame}
+    \begin{center}
+        \large
+        Verward over laatste stapjes in VS Code?
+        Kijk op 
+        
+        \url{https://vkuhlmann.com/latex/installation}
+        
+        of stuur ons een mail:
+        
+        \url{https://texnicie.nl/contact}
+    \end{center}
+\end{frame}
+
 
 \section{Shortcuts}
 
 \def\placetarget{\hypertarget{shortcuts}{}}
 
-\begin{frame}
+\begin{frame}[fragile]
+    Open shortcuts met Ctrl+Shift+P, typ `Keyboard Shortcuts JSON', en selecteer
+    `Preferences: Open Keyboard Shortcuts (JSON)'.
+
+    % De \texttt{keybindings.json} is bestaat uit een lijst [..., ..., ...],
+    % met daarin objecten {...: ..., ...: ...}.
+
+    Mogelijke inhoud:
+    \begin{minted}[fontsize=\scriptsize,]{json}
+        [
+            {
+                "key": "ctrl+shift+m",
+                "command": "editor.action.insertSnippet",
+                "args": {
+                    "snippet": "\\$ $1 \\$"
+                }
+            }
+        ]
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Shortcuts}
+    Open shortcuts met Ctrl+Shift+P, typ `Keyboard Shortcuts JSON', en selecteer
+    `Preferences: Open Keyboard Shortcuts (JSON)'.
+
+    % De \texttt{keybindings.json} is bestaat uit een lijst [..., ..., ...],
+    % met daarin objecten {...: ..., ...: ...}.
+
+    Mogelijke inhoud:
+    \begin{minted}[fontsize=\tiny,escapeinside=~~]{json}
+        [
+            {
+                "key": "ctrl+shift+m",
+                "command": "editor.action.insertSnippet",
+                "args": {
+                    "snippet": "\\$ $1 \\$"
+                }
+            }~{\large\textcolor{red!60!black}{,}}~
+            {
+                "key": "ctrl+shift+q",
+                "command": "editor.action.insertSnippet",
+                "args": {
+                    "snippet": "\\\\sqrt{$1}"
+                }
+            }
+        ]
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Shortcuts}
+    Waarom \mintinline{json}{"\\$ $1 \\$"} en \mintinline{json}{"\\\\sqrt{$1}"}?
+
+    \textbf{Eerste interpretatieronde}: JSON \textrightarrow{} key-waarde
+
+    Bijvoorbeeld \mintinline{text}{\n} wordt nieuwe lijn-karakter en \mintinline{text}{\t}
+    wordt tab-karakter. Voor echte backslash: \mintinline{text}{\\}.
+
+    \begin{minted}{text}
+        \\$ $1 \\$     ->   \$ $1 \$
+        \\\\sqrt{$1}   ->   \\sqrt{$1}
+    \end{minted}
+
+    \textbf{Tweede interpretatieronde}: key-waarde \textrightarrow{} snippet
+
+    Dollartekens geven de plaatsen van placeholders aan. Een echt dollarteken: \mintinline{text}{\$},
+    en dan echte backslash: \mintinline{text}{\\}.
+
+    \begin{minted}{text}
+        \$ $1 \$     ->   $ <hier mag je iets invullen> $
+        \\sqrt{$1}   ->   \sqrt{<hier mag je iets invullen>}
+    \end{minted}
+\end{frame}
+
+\section{Snippets}
+
+\def\placetarget{\hypertarget{snippets}{}}
+
+\begin{frame}[fragile]{Snippets}
+    \begin{center}
+        LaTeX Workshop heeft default snippets en shortcuts voor LaTeX. Zie
+
+        \url{https://github.com/James-Yu/LaTeX-Workshop/wiki/Snippets}
     
+        Bijvoorbeeld `BFI' + tab geeft een figure environment.
+    
+        De shortcut van daarnet was een inline snippet. 
+        Op de volgende slide hoe je zelf een echte snippet kan instellen.
+    \end{center}
 \end{frame}
 
 
+\begin{frame}[fragile]{Snippets}
+    Een snippet kan je zo instellen:
+    Ctrl+Shift+P \textrightarrow{} `Snippets: Configure User Snippets' \textrightarrow{} `LaTeX' dan
+    \begin{minted}[fontsize=\scriptsize]{json}
+        {
+            "CreateEnvironment": {
+                "prefix": "env",
+                "body": [
+                    "\\begin{${1:align*}}",
+                    "    $0",
+                    "\\end{$1}"
+                ],
+                "description": "Create LaTeX environment"
+            }
+        }
+    \end{minted}
 
-\section{Tips}
+    Als je nu typt `env' + tab, krijg je een environment. Je kan de environmentnaam typen, of de
+    default \mintinline{tex}{align*} houden. Met nog eens tab kom je binnenin de environment.
+\end{frame}
 
-\def\placetarget{\hypertarget{tips}{}}
+\begin{frame}[fragile]
+    We kunnen deze environment nu ook aanroepen met een shortcut:
+    \begin{minted}[fontsize=\scriptsize]{json}
+        {
+            "key": "ctrl+e",
+            "command": "editor.action.insertSnippet",
+            "args": {
+                "name": "CreateEnvironment",
+                "langId": "latex"
+            }
+        }
+    \end{minted}
 
+    Meer info: \url{https://code.visualstudio.com/docs/editor/userdefinedsnippets}
+\end{frame}
 
 \begin{frame}
+    En natuurlijk de standaard text editing shortcuts:
+
+    \url{https://www.howtogeek.com/115664/42-text-editing-keyboard-shortcuts-that-work-almost-everywhere/}
 \end{frame}
+
+
+% \section{Tips}
+
+% \def\placetarget{\hypertarget{tips}{}}
+
+
+% \begin{frame}
+% \end{frame}
 
 
 \section{Oefeningen}
@@ -230,11 +373,11 @@
         {\LARGE Oefeningen!}
         \vspace{30pt}
 
-        Vergeet niet de nodige packages toe te voegen.
+        % Vergeet niet de nodige packages toe te voegen.
         
-        Op mijn site staat een basisdocument met alle nodige packages erin:
+        % Op mijn site staat een basisdocument met alle nodige packages erin:
 
-        \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
     \end{center}
 \end{frame}
 
@@ -263,12 +406,12 @@
         {\LARGE Oefeningen!}
         \vspace{30pt}
 
-        Vergeet niet de nodige packages toe te voegen.
+        % Vergeet niet de nodige packages toe te voegen.
         
-        Op mijn site
-        staat een basisdocument met alle nodige packages erin:
+        % Op mijn site
+        % staat een basisdocument met alle nodige packages erin:
 
-        \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
     \end{center}
 \end{frame}
 
