@@ -119,6 +119,7 @@
 % aspectratio=169: aspectratio 16:9
 % aspectratio=32: aspectratio 3:2
 
+\PassOptionsToPackage{usenames,dvipsnames}{xcolor}
 
 \ifbool{ishandout}{
     \LoadClass[handout,aspectratio=169,usenames,dvipsnames]{beamer}
@@ -168,6 +169,8 @@
 %hsla(0, 73%, 45%, 1)
 \definecolor{red11}{RGB}{199, 31, 31}
 
+\definecolor{themepurple}{RGB}{95, 31, 199}
+
 \definecolor{darkmodebackground}{RGB}{30, 30, 30}
 % \definecolor{darkmodeforeground}{RGB}{219, 221, 170}
 \definecolor{darkmodeforeground}{RGB}{212, 212, 212}
@@ -190,33 +193,121 @@
     % BEGIN Based on beamer/beamercolorthemedolphin.sty
     \mode<presentation>
 
-    \setbeamercolor*{structure}{fg=red11}
+    \def\themeRed{
+        \setbeamercolor*{structure}{fg=red11}
 
-    \ifbool{darktheme}{
-        % BEGIN Based on https://tex.stackexchange.com/questions/57477/beamer-dark-theme
-        % by https://tex.stackexchange.com/users/188576/j-xu
-        \setbeamercolor{frametitle}{fg=darkmodeforeground}
-        \setbeamercolor{background canvas}{bg=darkmodebackground}
-        \setbeamercolor{normal text}{fg=darkmodeforeground}
-        % END Based on
-    }{}
+        \ifbool{darktheme}{
+            % BEGIN Based on https://tex.stackexchange.com/questions/57477/beamer-dark-theme
+            % by https://tex.stackexchange.com/users/188576/j-xu
+            \setbeamercolor{frametitle}{fg=darkmodeforeground}
+            \setbeamercolor{background canvas}{bg=darkmodebackground}
+            \setbeamercolor{normal text}{fg=darkmodeforeground}
+            % END Based on
+        }{}
 
-    \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!40!orange}
-    \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!60!orange}%,bg=red9}
-    \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!90!orange}%,bg=red1}
-    \setbeamercolor*{palette quaternary}{fg=white,bg=black}
+        \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!40!orange}
+        \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!60!orange}%,bg=red9}
+        \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!90!orange}%,bg=red1}
+        \setbeamercolor*{palette quaternary}{fg=white,bg=black}
 
-    \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
-    
-    \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
-    \setbeamercolor*{palette sidebar secondary}{fg=white}
-    \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
-    \setbeamercolor*{palette sidebar quaternary}{fg=white}
+        \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+        
+        \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+        \setbeamercolor*{palette sidebar secondary}{fg=white}
+        \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+        \setbeamercolor*{palette sidebar quaternary}{fg=white}
 
-    \setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
+        \setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
 
-    \setbeamercolor*{separation line}{}
-    \setbeamercolor*{fine separation line}{}
+        \setbeamercolor*{separation line}{}
+        \setbeamercolor*{fine separation line}{}
+
+
+        \colorlet{navigationTileOutline}{red!40!orange}
+        \colorlet{exerciseTileOutline}{red!20!orange}
+        % \colorlet{exerciseTileBackground}{bg!80!orange}
+        %\colorlet{exerciseTileBackground}{structure.bg!80!orange}
+        \colorlet{exerciseTileBackground}{red11!80!orange}
+        %structure.bg!80!orange
+
+        \colorlet{underlineColor}{red}
+        \colorlet{navigationUnderlineColor}{yellow}
+    }
+    \def\themePurple{
+        \setbeamercolor*{structure}{fg=themepurple,bg=themepurple}
+
+        \ifbool{darktheme}{
+            % BEGIN Based on https://tex.stackexchange.com/questions/57477/beamer-dark-theme
+            % by https://tex.stackexchange.com/users/188576/j-xu
+            \setbeamercolor{frametitle}{fg=darkmodeforeground}
+            \setbeamercolor{background canvas}{bg=darkmodebackground}
+            \setbeamercolor{normal text}{fg=darkmodeforeground}
+            \setbeamercolor{structure}{fg=themepurple!50!CornflowerBlue}
+            % END Based on
+        }{}
+
+        \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.bg!40!CornflowerBlue}
+        \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.bg!60!CornflowerBlue}%,bg=red9}
+        \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.bg!90!CornflowerBlue}%,bg=red1}
+        \setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+        \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+        
+        \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.bg!10}
+        \setbeamercolor*{palette sidebar secondary}{fg=white}
+        \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.bg!50}
+        \setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+        \setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
+
+        \setbeamercolor*{separation line}{}
+        \setbeamercolor*{fine separation line}{}
+
+        \colorlet{navigationTileOutline}{themepurple!40!CornflowerBlue}
+        \colorlet{exerciseTileOutline}{themepurple!20!CornflowerBlue}
+        \colorlet{exerciseTileBackground}{themepurple!80!CornflowerBlue}
+
+        \colorlet{underlineColor}{blue}
+        \colorlet{navigationUnderlineColor}{yellow}
+    }
+    \def\themePurpleTwo{
+        \setbeamercolor*{structure}{fg=themepurple}
+
+        \ifbool{darktheme}{
+            % BEGIN Based on https://tex.stackexchange.com/questions/57477/beamer-dark-theme
+            % by https://tex.stackexchange.com/users/188576/j-xu
+            \setbeamercolor{frametitle}{fg=darkmodeforeground}
+            \setbeamercolor{background canvas}{bg=darkmodebackground}
+            \setbeamercolor{normal text}{fg=darkmodeforeground}
+            % END Based on
+        }{}
+
+        \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!40!Cyan}
+        \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!60!Cyan}%,bg=red9}
+        \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!90!Cyan}%,bg=red1}
+        \setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+        \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+        
+        \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+        \setbeamercolor*{palette sidebar secondary}{fg=white}
+        \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+        \setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+        \setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
+
+        \setbeamercolor*{separation line}{}
+        \setbeamercolor*{fine separation line}{}
+
+        \colorlet{navigationTileOutline}{themepurple!40!Cyan}
+        \colorlet{exerciseTileOutline}{themepurple!20!Cyan}
+        \colorlet{exerciseTileBackground}{themepurple!80!Cyan}
+
+        \colorlet{underlineColor}{blue}
+    }
+
+    %\themeRed
+    \themePurple
 
     \mode
     <all>
@@ -230,9 +321,10 @@
 \RequirePackage{subfiles}
 \RequirePackage{amsmath,amssymb,amsthm,commath,mathtools}
 \RequirePackage{esint}
-\RequirePackage{enumerate}
+%\RequirePackage{enumerate}
 \RequirePackage{subcaption}
 \RequirePackage{graphicx}
+\PassOptionsToPackage{usenames,dvipsnames}{xcolor}
 \RequirePackage{xcolor}
 \RequirePackage{adjustbox}
 \RequirePackage{soul}
@@ -252,7 +344,7 @@
 \RequirePackage{marvosym}
 \RequirePackage[style=numeric]{biblatex}
 \RequirePackage{textcomp}
-%\RequirePackage{enumitem}
+\RequirePackage{enumitem}
 \RequirePackage{hyperref}
 \RequirePackage{xkeyval}
 \RequirePackage[T1]{fontenc}
@@ -352,8 +444,8 @@
 \makeatother
 % https://tex.stackexchange.com/questions/71051/strikeout-in-different-color-appears-behind-letters-not-on-top-of-them
 
-\setulcolor{red}
-\setstcolor{red}
+\setulcolor{underlineColor}
+\setstcolor{underlineColor}
 
 % Override if you want. Else you can delete it.
 %\colorlet{curlyBrackets}{red!50!blue}
@@ -804,5 +896,13 @@
     }
 }{
     \end{list}
+}
+
+\NewEnviron{demobox}{
+    \begin{adjustbox}{frame=1pt 10pt}%
+        \begin{minipage}{\textwidth-22pt}
+            \BODY
+        \end{minipage}
+    \end{adjustbox}
 }
 

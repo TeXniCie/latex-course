@@ -1,0 +1,182 @@
+% Color definitions from latexcolor.com
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\definecolor{darkpastelred}{rgb}{0.76, 0.23, 0.13}
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+
+% \begin{frame}[fragile]
+%     \relax
+%     \centering
+%     {
+%         \def\ja#1{\textcolor{darkpastelgreen}{Ja$ ^{#1} $}}
+%         \def\nee#1{\textcolor{darkpastelred}{Nee$ ^{#1} $}}
+%         \def\beperkt#1{\textcolor{darkorange}{Beperkt$ ^{#1} $}}
+%         %
+%         \fontsize{6}{8}\selectfont
+%         \begin{tabular}{p{10em}p{8em}p{8em}p{8em}} %{0.8\textwidth}{XXXX}
+%             \toprule
+%             &\textbf{Manueel}&\textbf{Overleaf}&\textbf{VS Code}\\
+%             \midrule
+%             Nodig&MiKTeX&Overleaf account&
+%             \parbox[t]{\linewidth}{MiKTeX\newline VS Code\newline LaTeX Workshop\adjustbox{set depth=4pt}{}}\\
+%             Autocompile&\nee{} &\ja{} &\ja{}\\
+%             Grote bestanden&\ja{} &\nee{\ref{it:compileTimeout}} &\ja{}\\
+%             Versiegeschiedenis&\ja{2}&\beperkt{3}&\ja{2}\\
+%             Cloud backup&\ja{5}&\beperkt{4}&\ja{5}\\
+%             Niet-commercieel&\ja{}&\nee{}&\ja{}\\
+%             Theme aanpasbaar&\nee{}&\beperkt{}&\ja{}\\
+%             Shortcuts&\nee{}&\beperkt{6}&\ja{}\\
+%             Samenwerken&\nee{}&\ja{}&\beperkt{7}\\
+%             Offline&\ja{}&\nee{}&\ja{}\\
+%             \bottomrule
+%         \end{tabular}
+
+%         Wat als Overleaf plots enkel betaalde versie aanbiedt?
+
+%         Wat als je tegen een `Free Overleaf'-limitatie aanloopt vlak voor deadline van inleveren?
+
+%         Wat als je internet instabiel is?
+        
+%         Wat als Overleaf gehackt wordt of serverproblemen heeft?
+
+%         Ons advies:
+%         \begin{enumerate}[label={\arabic*)}]
+%             % \item Heb een werkende installatie op je computer
+%             \item Gebruik Overleaf.com voor samenwerken
+%             \item Probeer VS Code voor individuele projecten
+%             \item Kijk wat je het fijnst vindt
+%             \item Laat werkende installatie op je computer voor als je issues hebt met Overleaf
+%         \end{enumerate}
+
+%         \vspace{1cm}
+
+%         \parbox{0.7\textwidth}{
+%             \tiny
+%             \fontsize{4}{6}\selectfont
+%             \begin{enumerate}[label={\arabic*)},itemsep=0pt,ref={\arabic*}]
+%                 %[noitemsep,nosep]
+%                 \item Je krijgt compile time timeouts op gratis versie\label{it:compileTimeout}
+%                 \item Met Git
+%                 \item Tot 24 uur
+%                 \item Overleaf is zelf in de cloud, maar synchroniseren naar iets anders (zoals Dropbox)
+%                 kan enkel op betaalde versie
+%                 \item Installeer OneDrive/Google Drive/Dropbox op je computer en plaats je .tex
+%                 bestanden in een mapje erin
+%                 \item Als in: heel beperkt
+%                 \item Met Live Share kan je tegelijk aan bestand op iemands computer schrijven
+%             \end{enumerate}
+%         }
+%     }
+
+%     % \begin{enumerate}[label={\alph*)},itemsep=0pt]
+%     %     %[noitemsep,nosep]
+%     %     \item Je krijgt compile time timeouts op gratis versie
+%     %     \item Met Git
+%     %     \item Tot 24 uur
+%     %     \item Overleaf is zelf in de cloud, maar synchroniseren naar iets anders (zoals Dropbox)
+%     %     kan enkel op betaalde versie
+%     %     \item Installeer OneDrive/Google Drive/Dropbox op je computer en plaats je .tex
+%     %     bestanden in een mapje erin
+%     %     \item Als in: heel beperkt
+%     % \end{enumerate}
+
+%     %\fontsize{6}{8}\selectfont
+% \end{frame}
+
+\begin{frame}[fragile]
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \centering
+            {
+                \def\ja#1{\textcolor{darkpastelgreen}{Ja$ ^{#1} $}}
+                \def\nee#1{\textcolor{darkpastelred}{Nee$ ^{#1} $}}
+                \def\beperkt#1{\textcolor{darkorange}{Beperkt$ ^{#1} $}}
+                %
+                \fontsize{6}{8}\selectfont
+                \begin{tabular}{p{10em}p{7.5em}p{7.5em}p{7.5em}} %{0.8\textwidth}{XXXX}
+                    \toprule
+                    &\textbf{Manueel}&\textbf{Overleaf}&\textbf{VS Code}\\
+                    \midrule
+                    Nodig&MiKTeX&Overleaf account&
+                    \parbox[t]{\linewidth}{MiKTeX\newline VS Code\newline LaTeX Workshop\adjustbox{set depth=4pt}{}}\\
+                    Autocompile&\nee{} &\ja{} &\ja{}\\
+                    Grote bestanden&\ja{} &\nee{\ref{it:compileTimeout}} &\ja{}\\
+                    Versiegeschiedenis&\ja{\ref{it:versionControl}}&\beperkt{\ref{it:overleafVersionControl}}&\ja{\ref{it:versionControl}}\\
+                    Cloud backup&\ja{\ref{it:storageCloud}}&\beperkt{\ref{it:overleafCloud}}&\ja{\ref{it:storageCloud}}\\
+                    Niet-commercieel&\ja{}&\nee{}&\ja{}\\
+                    Theme aanpasbaar&\nee{}&\beperkt{}&\ja{}\\
+                    % Shortcuts&\nee{}&\beperkt{\ref{it:overleafShortcuts}}&\ja{}\\
+                    Geavanceerde shortcuts&\nee{}&\nee{}&\ja{}\\
+                    Live samenwerken&\nee{}&\ja{}&\beperkt{\ref{it:liveShare}}\\
+                    Offline mogelijk&\ja{}&\nee{}&\ja{}\\
+                    \bottomrule
+                \end{tabular}
+
+                %\parbox{0.3\textwidth}{
+                \tiny
+                \fontsize{4}{6}\selectfont
+                \begin{enumerate}[label={\arabic*)},itemsep=0pt,ref={\arabic*}]
+                    %[noitemsep,nosep]
+                    \item Je krijgt compile timeouts op gratis versie\label{it:compileTimeout}
+                    \item Met Git of met Timeline in VS Code (default setting van Timeline is enkel de laatste 50 versies, over al je VS Code bestanden die je bewaart),
+                    of gebruik een andere extension :)\label{it:versionControl}
+                    \item Tot 24 uur\label{it:overleafVersionControl}
+                    \item Overleaf is zelf in de cloud, maar synchroniseren naar iets anders (zoals Dropbox)
+                    kan enkel op betaalde versie\label{it:overleafCloud}
+                    \item Installeer OneDrive/Google Drive/Dropbox op je computer en plaats je .tex
+                    bestanden in een mapje erin\label{it:storageCloud}
+                    % \item Als in: heel beperkt\label{it:overleafShortcuts}
+                    \item Met Live Share kan je tegelijk aan een bestand op iemands computer schrijven
+                    \label{it:liveShare}
+                \end{enumerate}
+                %}
+
+                Disclaimer: er kunnen uiteraard fouten zitten in bovenstaande tabel. Stuur ons een
+                mailtje als je er een vindt :)
+            }
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            {
+            \tiny
+            \fontsize{6}{8}\selectfont
+            \begin{itemize}[label=\textbullet]
+                \item Wat als Overleaf plots enkel betaalde versie aanbiedt?
+                \item Wat als je tegen een `Free Overleaf'-limitatie aanloopt vlak voor deadline van inleveren?
+                \item Wat als je internet instabiel is?
+                \item Wat als Overleaf gehackt wordt of serverproblemen heeft?
+                \item Ben je het eens met privacy agreement van Overleaf?
+            \end{itemize}
+
+            \bigskip
+            
+            Ons advies:
+            \begin{enumerate}[label={\arabic*)}]
+                % \item Heb een werkende installatie op je computer
+                \item Samenwerken: Gebruik Overleaf.com
+                \item Individueel: Probeer VS Code, kijk wat je het fijnste vindt.
+                %  voor individuele projecten
+                % \item Kijk wat je het fijnst vindt
+                \item Laat werkende installatie op je computer voor als je issues hebt met Overleaf
+            \end{enumerate}
+            }
+        \end{column}
+    \end{columns}
+
+    \relax
+    
+
+    % \begin{enumerate}[label={\alph*)},itemsep=0pt]
+    %     %[noitemsep,nosep]
+    %     \item Je krijgt compile time timeouts op gratis versie
+    %     \item Met Git
+    %     \item Tot 24 uur
+    %     \item Overleaf is zelf in de cloud, maar synchroniseren naar iets anders (zoals Dropbox)
+    %     kan enkel op betaalde versie
+    %     \item Installeer OneDrive/Google Drive/Dropbox op je computer en plaats je .tex
+    %     bestanden in een mapje erin
+    %     \item Als in: heel beperkt
+    % \end{enumerate}
+
+    %\fontsize{6}{8}\selectfont
+\end{frame}
+

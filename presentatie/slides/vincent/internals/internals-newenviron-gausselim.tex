@@ -1,0 +1,100 @@
+\let\examplegauss\somethingundefined
+% \newcommand\diag[1]{\begin{pmatrix}
+%     #1 & 0\\
+%     0 & #1
+% \end{pmatrix}}
+% \newcommand\diag[2][0]{\begin{pmatrix}
+%     #2 & #1\\
+%     #1 & #2
+% \end{pmatrix}}
+
+% \NewEnviron{examplegauss}{
+%     \left(\begin{array}{ccc|c}
+%         2&6&4\BODY
+%     \end{array}\right)
+%     % aa
+%     % \BODY
+%     % bb
+% }
+
+\newenvironment{examplegauss}{
+    \left(\begin{array}{ccc|c}
+}{
+    \end{array}\right)
+}
+
+\begin{frame}[fragile]{Environments}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize]{tex}
+                \newenvironment{gauss}{
+                    \left(\begin{array}{ccc|c}
+                }{
+                    \end{array}\right)
+                }
+        
+                \begin{document}
+                    We krijgen nu de matrix
+                    \begin{align*}
+                        A = \begin{gauss}
+                            4 & 8 & 2 & -3\\
+                            6 & 0 & 0 & 4
+                        \end{gauss}
+                    \end{align*}
+                \end{document}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{demobox}\small\setlength\parskip{5pt}    
+                We krijgen nu de matrix
+                \begin{align*}
+                    A = \begin{examplegauss}
+                        4 & 8 & 2 & -3\\
+                        6 & 0 & 0 & 4
+                    \end{examplegauss}
+                \end{align*}
+            \end{demobox}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\renewenvironment{examplegauss}[1]{
+    \left(\begin{array}{*{#1}{c}|c}
+}{
+    \end{array}\right)
+}
+
+\begin{frame}[fragile]{Environments}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{minted}[fontsize=\scriptsize]{tex}
+                \newenvironment{gauss}[1]{
+                    \left(\begin{array}{*{#1}{c}|c}
+                }{
+                    \end{array}\right)
+                }
+        
+                \begin{document}
+                    We krijgen nu de matrix
+                    \begin{align*}
+                        A = \begin{gauss}{2}
+                            0 & 1 & -9\\
+                            1 & 0 & 2
+                        \end{gauss}
+                    \end{align*}
+                \end{document}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{demobox}\small\setlength\parskip{5pt}    
+                We krijgen nu de matrix
+                \begin{align*}
+                    A = \begin{examplegauss}{2}
+                        0 & 1 & -9\\
+                        1 & 0 & 2
+                    \end{examplegauss}
+                \end{align*}
+            \end{demobox}
+        \end{column}
+    \end{columns}
+\end{frame}

@@ -1,0 +1,438 @@
+%% !TeX program = pdflatex
+
+\documentclass[
+    dutch,
+    everyoneauthor=true,
+    darktheme,
+    defaultSlideCollection=vincent,
+    %slidenames=true,
+    handout
+]{../../cursuspresentatie}
+
+\usepackage{minted}
+
+\ifbool{darktheme}{
+    \definecolor{codehighlight}{RGB}{44, 78, 120}
+}{
+    \definecolor{codehighlight}{RGB}{177, 213, 255}
+}
+
+\def\codeEmphasize#1{\ul{#1}}
+
+
+\def\customhead#1#2{%
+    \ifnum\value{section}=#1\relax
+        \textcolor{fg!100!bg}{%
+            \setul{1pt}{0.5pt}\setulcolor{navigationUnderlineColor}\ul{#2}%
+        }%
+    \else
+        #2%
+    \fi
+}
+
+\let\placetarget\relax
+
+\setbeamertemplate{headline}
+{%
+    \placetarget
+    \let\placetarget\relax
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+        \color{fg!80!bg}
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{installatie}{\customhead{2}{Installatie}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{referenties}{\customhead{3}{Referenties}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
+        }%
+        % \adjustbox{
+        %     set depth=2pt,
+        %     padding={5pt 5pt 5pt 5pt},
+        %     bgcolor=bg!80!orange,
+        %     rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
+        %     margin={0pt 0pt 10pt 0pt}
+        % }{%
+        %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
+        % }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{shortcuts}{\customhead{3}{Shortcuts}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{snippets}{\customhead{4}{Snippets}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
+        }%
+        %\PackageWarning{debug}{\meaning}
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            %bgcolor=bg!80!orange,
+            %bgcolor=structure.bg!80!orange,
+            bgcolor=exerciseTileBackground,
+            rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+            margin={-1pt 0pt 10pt 0pt}
+        }{%
+            \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
+        }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{LaTeXDefinities}{\customhead{6}{\LaTeX-definities}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{apartePreamble}{\customhead{7}{Aparte preamble}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{tabellen}{\customhead{8}{Tabellen}}%
+        }%
+        \adjustbox{
+            set depth=2pt,    
+            padding={5pt 5pt 5pt 5pt},
+            bgcolor=exerciseTileBackground,
+            rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+            margin={-1pt 0pt 10pt 0pt}
+        }{%
+        \hyperlink{oefeningen2}{\customhead{8}{Oefeningen}}%
+        }
+        \hfil
+        Slides op texnicie.nl
+        \hfil
+        \vskip4pt
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
+}
+
+%\newmintinline[cc]{latex}{}
+
+\ifbool{darktheme}{
+    \usemintedstyle[tex]{github-dark}
+    \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
+}{
+    \usemintedstyle[tex]{pastie}
+}
+
+\setminted{highlightcolor=codehighlight}
+
+
+\setminted{fontsize=\small, autogobble=true, linenos=false, frame=none}
+\usepackage{tcolorbox}
+
+\copyrightVincent
+
+% \def\importslide#1#2{%
+% 	\import{../../slides/#1}{#2}
+% }
+
+% \def\importslide#1#2{%
+%     \IfFileExists{../../slides/vincent/#1/#2}{%
+%         \import{../../slides/vincent/#1}{#2}%
+%     }{%
+%         \import{../../slides/#1}{#2}%
+%     }%
+% }
+
+\title[\LaTeX{}-cursus Week 3]{\LaTeX{}-cursus Week 3\\{\small (Slides: versie Vincent)}}
+% \author[\TeX niCie]{\TeX niCie\\{\tiny (Vincent Kuhlmann)}}
+\author[\TeX niCie]{\TeX niCie}
+\date{17 oktober 2022}
+
+\begin{document}
+
+% \lang{
+%     \section{Introduction}
+% }{
+%     \section{Introductie}
+% }
+
+\section{Opening}
+
+\begin{frame}
+    \titlepage
+    \centering
+
+    {\Large\lang,Slides are available at,Slides zijn te vinden op,\\
+    \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+\end{frame}
+
+\setul{1pt}{2pt}
+
+\begin{frame}
+    \frametitle{\lang,Schedule,Agenda,}
+    
+    \begin{itemize}
+        \item Installatie
+        \item $ \langle $Checkpoint$ \rangle $
+        \item Shortcuts
+        \item Andere code editing tips
+        \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+        \item LaTeX definities
+        \item Aparte preamble
+        \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+    \end{itemize}
+\end{frame}
+
+\section{Installatie}\label{sec:installatie}
+
+\def\placetarget{\hypertarget{installatie}{}}
+
+\importslide{setup}{compiler-manual.tex}
+
+\importslide{setup}{compiler-manual_vs_overleaf.tex}
+
+% \importslide{setup}{compiler-overleaf_vs_vscode}
+\importslide{setup}{compiler-overleaf_vs_vscode.tex}
+
+\importslide{setup}{setup-feature-comp.tex}
+
+\importslide{setup}{vscode-install.tex}
+
+%\importslide{misc}{misc-installation.tex}
+
+\begin{frame}
+    \begin{center}
+        \large
+        Verward over laatste stapjes in VS Code?
+        Kijk op 
+        
+        \url{https://vkuhlmann.com/latex/installation}
+        
+        of stuur ons een mail:
+        
+        \url{https://texnicie.nl/contact}
+    \end{center}
+\end{frame}
+
+
+\section{Shortcuts}
+
+\def\placetarget{\hypertarget{shortcuts}{}}
+
+\begin{frame}[fragile]
+    Open shortcuts met Ctrl+Shift+P, typ `Keyboard Shortcuts JSON', en selecteer
+    `Preferences: Open Keyboard Shortcuts (JSON)'.
+
+    % De \texttt{keybindings.json} is bestaat uit een lijst [..., ..., ...],
+    % met daarin objecten {...: ..., ...: ...}.
+
+    Mogelijke inhoud:
+    \begin{minted}[fontsize=\scriptsize,]{json}
+        [
+            {
+                "key": "ctrl+shift+m",
+                "command": "editor.action.insertSnippet",
+                "args": {
+                    "snippet": "\\$ $1 \\$"
+                }
+            }
+        ]
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Shortcuts}
+    Open shortcuts met Ctrl+Shift+P, typ `Keyboard Shortcuts JSON', en selecteer
+    `Preferences: Open Keyboard Shortcuts (JSON)'.
+
+    % De \texttt{keybindings.json} is bestaat uit een lijst [..., ..., ...],
+    % met daarin objecten {...: ..., ...: ...}.
+
+    Mogelijke inhoud:
+    \begin{minted}[fontsize=\tiny,escapeinside=~~]{json}
+        [
+            {
+                "key": "ctrl+shift+m",
+                "command": "editor.action.insertSnippet",
+                "args": {
+                    "snippet": "\\$ $1 \\$"
+                }
+            }~{\large\textcolor{red!60!black}{,}}~
+            {
+                "key": "ctrl+shift+q",
+                "command": "editor.action.insertSnippet",
+                "args": {
+                    "snippet": "\\\\sqrt{$1}"
+                }
+            }
+        ]
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Shortcuts}
+    Waarom \mintinline{json}{"\\$ $1 \\$"} en \mintinline{json}{"\\\\sqrt{$1}"}?
+
+    \textbf{Eerste interpretatieronde}: JSON \textrightarrow{} key-waarde
+
+    Bijvoorbeeld \mintinline{text}{\n} wordt nieuwe lijn-karakter en \mintinline{text}{\t}
+    wordt tab-karakter. Voor echte backslash: \mintinline{text}{\\}.
+
+    \begin{minted}{text}
+        \\$ $1 \\$     ->   \$ $1 \$
+        \\\\sqrt{$1}   ->   \\sqrt{$1}
+    \end{minted}
+
+    \textbf{Tweede interpretatieronde}: key-waarde \textrightarrow{} snippet
+
+    Dollartekens geven de plaatsen van placeholders aan. Een echt dollarteken: \mintinline{text}{\$},
+    en dan echte backslash: \mintinline{text}{\\}.
+
+    \begin{minted}{text}
+        \$ $1 \$     ->   $ <hier mag je iets invullen> $
+        \\sqrt{$1}   ->   \sqrt{<hier mag je iets invullen>}
+    \end{minted}
+\end{frame}
+
+\section{Snippets}
+
+\def\placetarget{\hypertarget{snippets}{}}
+
+\begin{frame}[fragile]{Snippets}
+    \begin{center}
+        LaTeX Workshop heeft default snippets en shortcuts voor LaTeX. Zie
+
+        \url{https://github.com/James-Yu/LaTeX-Workshop/wiki/Snippets}
+    
+        Bijvoorbeeld `BFI' + tab geeft een figure environment.
+    
+        De shortcut van daarnet was een inline snippet. 
+        Op de volgende slide hoe je zelf een echte snippet kan instellen.
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]{Snippets}
+    Een snippet kan je zo instellen:
+    Ctrl+Shift+P \textrightarrow{} `Snippets: Configure User Snippets' \textrightarrow{} `LaTeX' dan
+    \begin{minted}[fontsize=\scriptsize]{json}
+        {
+            "CreateEnvironment": {
+                "prefix": "env",
+                "body": [
+                    "\\begin{${1:align*}}",
+                    "    $0",
+                    "\\end{$1}"
+                ],
+                "description": "Create LaTeX environment"
+            }
+        }
+    \end{minted}
+
+    Als je nu typt `env' + tab, krijg je een environment. Je kan de environmentnaam typen, of de
+    default \mintinline{tex}{align*} houden. Met nog eens tab kom je binnenin de environment.
+\end{frame}
+
+\begin{frame}[fragile]
+    We kunnen deze environment nu ook aanroepen met een shortcut:
+    \begin{minted}[fontsize=\scriptsize]{json}
+        {
+            "key": "ctrl+e",
+            "command": "editor.action.insertSnippet",
+            "args": {
+                "name": "CreateEnvironment",
+                "langId": "latex"
+            }
+        }
+    \end{minted}
+
+    Meer info: \url{https://code.visualstudio.com/docs/editor/userdefinedsnippets}
+\end{frame}
+
+\begin{frame}
+    En natuurlijk de standaard text editing shortcuts:
+
+    \url{https://www.howtogeek.com/115664/42-text-editing-keyboard-shortcuts-that-work-almost-everywhere/}
+\end{frame}
+
+
+% \section{Tips}
+
+% \def\placetarget{\hypertarget{tips}{}}
+
+
+% \begin{frame}
+% \end{frame}
+
+
+\section{Oefeningen}
+
+\def\placetarget{\hypertarget{oefeningen1}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE Oefeningen!}
+        \vspace{30pt}
+
+        % Vergeet niet de nodige packages toe te voegen.
+        
+        % Op mijn site staat een basisdocument met alle nodige packages erin:
+
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+    \end{center}
+\end{frame}
+
+
+
+\section{\LaTeX-definities}
+
+\def\placetarget{\hypertarget{LaTeXDefinities}{}}
+
+\importslide{internals}{internals-newcommand.tex}
+\importslide{internals}{internals-newenviron-gausselim.tex}
+
+\section{Aparte preamble}
+
+\def\placetarget{\hypertarget{apartePreamble}{}}
+
+\importslide{internals}{internals-input.tex}
+\importslide{internals}{internals-providesclass.tex}
+
+\section{Oefeningen}
+
+\def\placetarget{\hypertarget{oefeningen2}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE Oefeningen!}
+        \vspace{30pt}
+
+        % Vergeet niet de nodige packages toe te voegen.
+        
+        % Op mijn site
+        % staat een basisdocument met alle nodige packages erin:
+
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+    \end{center}
+\end{frame}
+
+
+% \section{Document}\label{sec:document}
+
+% \def\placetarget{\hypertarget{document}{}}
+
+% \importslide{document}{document-margins.tex}
+
+\section{Afsluiting}
+
+\begin{frame}
+    Volgende cursus
+\end{frame}
+
+\begin{frame}
+    Evaluatie
+\end{frame}
+
+\subsection{Licentie}
+\importslide{misc}{misc-license.tex}
+    
+\end{document}

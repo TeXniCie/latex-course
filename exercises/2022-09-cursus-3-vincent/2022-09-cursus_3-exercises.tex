@@ -1,0 +1,241 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+
+\title{\vspace{-65pt} Oefeningen \LaTeX-cursus Week 3}
+\author{\TeX niCie%
+%\\{\small (Vincent Kuhlmann)}
+}
+\date{17 oktober 2022}
+
+\usepackage{minted}
+\setminted{fontsize=\small, autogobble=true, linenos=false, frame=none}
+% \setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+% \setminted[json]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+
+%\usemintedstyle{pastie}
+
+\usepackage{wrapfig}
+%\usepackage{cutwin}
+
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+\maketitle
+
+% \CheckBox[]{aaa}
+
+\section{Deel 1: Effici\"entie met VS Code}
+% Zorg dat je steeds minstens deze packages hebt in je preamble:
+% \begin{minted}{tex}
+%         \usepackage[a4paper,margin=2.54cm]{geometry}
+%         \usepackage{amsmath,amssymb,amsthm}
+%         \usepackage[bookmarksnumbered]{hyperref}
+%     \end{minted}
+% \bigskip
+
+\begin{exercise}[Compilatie]
+    Kopieer de code van \url{https://vkuhlmann.com/latex/example} in Visual Studio Code,
+    en compileer het bestand met Ctrl+S.
+\end{exercise}
+
+\begin{exercise}[PDF-viewer]
+    Ga naar het TeX-tabje in de activity bar links in VS~Code. Probeer de verschillende opties
+    onder `View LaTeX PDF'. Wat vind je het fijnste werken?
+    Verander de \texttt{latex-workshop.view.pdf.viewer} optie in de settings als je
+    een andere default wil.
+\end{exercise}
+
+\begin{exercise}[Inline math shortcut]
+    Stel een shortcut in voor het invoegen van inline math. Bijvoorbeeld door
+    het volgende toe te voegen aan je \texttt{keybindings.json}:
+    \begin{minted}{json}
+        {
+            "key": "ctrl+shift+m",
+            "when": "editorTextFocus && editorLangId == latex",
+            "command": "editor.action.insertSnippet",
+            "args": {
+                "snippet": "\\$ ${1:} \\$$0"
+            }
+        },
+    \end{minted}
+    Check dat dit werkt.
+\end{exercise}
+
+\begin{exercise}[Errors en warnings]
+    Maak een error door een align met een witregel erin, en daarna een warning door
+    \mintinline{tex}{\label} twee keer te gebruiken met hetzelfde argument.
+    Waar zie je de errors en warnings in Visual Studio Code?
+\end{exercise}
+
+\begin{exercise}[LaTeX Workshop snippets]
+    Ga naar de volgende URL:
+    
+    \url{https://github.com/James-Yu/LaTeX-Workshop/wiki/Snippets}.
+    
+    Stel de \texttt{editor.suggest.snippetsPreventQuickSuggestions} in zoals aangegeven op de
+    pagina. Probeer vervolgens een figure, een section en een \mintinline{tex}{\textbf} te maken
+    met de default snippets en shortcuts die erop vermeld staan.
+\end{exercise}
+
+\begin{exercise}[Environment snippet]
+    Stel een snippet in voor het toevoegen van een environment. Kies als default environment
+    naam wat je denkt het meest te zullen gebruiken (bijvoorbeeld align).
+\end{exercise}
+
+\begin{exercise}[VS Code algemene shortcuts]
+    Ga naar \url{https://code.visualstudio.com/docs}, klik op `Keyboard Shortcut Reference Sheet'
+    en download de PDF voor jouw besturingssysteem.
+    Probeer wat shortcuts uit. Welke zouden voor jou handig kunnen zijn?
+\end{exercise}
+
+\begin{exercise}[Basisdocument snippet]
+    Maak een snippet die een basisdocument voor LaTeX voorziet, met alle \mintinline{tex}{\usepackage}'s
+    die je meestal nodig hebt.
+\end{exercise}
+
+\begin{exercise}[Python]
+    Als je Python kent, maak een Python bestand in VS Code, en zoek hoe je het kan
+    uitvoeren. Probeer ook de interactive console.
+\end{exercise}
+
+\pagebreak
+\section{Deel 2: Effici\"entie in LaTeX code}
+
+% Zorg dat je steeds minstens deze packages hebt in je preamble:
+% \begin{minted}{tex}
+%         \usepackage[a4paper,margin=2.54cm]{geometry}
+%         \usepackage{amsmath,amssymb,amsthm}
+%         \usepackage{graphicx}
+%         \usepackage{subcaption}
+%         \usepackage{booktabs}
+%         \usepackage[bookmarksnumbered]{hyperref}
+%     \end{minted}
+% \bigskip
+
+\begin{exercise}[Stelsel in matrix revisited]
+Stelsels lineaire vergelijkingen kunnen opgelost worden door ze te schrijven als een matrix en Gauss
+eliminatie toe te passen.
+Repliceer dit typische stelselmatrix:
+
+\begin{tabularx}{\textwidth}{Xp{0.7\textwidth}}
+\adjustbox{valign=t}{\small$\displaystyle
+    \left(\begin{array}{rrr|r}
+        2 & 1 & -1 & 8\\
+        -3 & -1 & 2 & -11\\
+        -2 & 1 & 2 & -3
+    \end{array}\right)
+$}&
+\parbox[t]{0.65\textwidth}{\small De eerste rij komt overeen met de vergelijking $ 2x+y-z=8 $.\\
+Getallenvoorbeeld van:\\\url{https://en.wikipedia.org/wiki/Gaussian_elimination}}
+\end{tabularx}
+
+Maak een environment hiervoor. Zorg dat het environment een argument heeft voor hoeveel
+kolommen er voor de verticale streep staan.
+
+Kan je dit een optioneel argument maken?
+\end{exercise}
+
+\begin{exercise}[Vector]
+    Definieer een commando die drie argumenten neemt, en er een kolommatrix van maakt.
+\end{exercise}
+
+\begin{exercise}[Commando \textbackslash input]
+    Kopieer het \texttt{.tex}-bestand van je vorige inleveropgave, en plaats de preamble ervan
+    in een ander bestand, dat je bijvoorbeeld \texttt{preamble.tex} noemt. Gebruik
+    \mintinline{tex}{\input{preamble.tex}} in je eigenlijke \texttt{.tex}-bestand.
+    Kan je het nog steeds compileren?
+\end{exercise}
+
+\begin{exercise}[Eigen documentclass]
+    Maak je eigen documentclass zoals aangegeven in de slides. Werkt het als je
+    in het kopie van je vorige inleveropgave de preamble vervangt door\newline
+    \mintinline{tex}{\documentclass{inleveropgave}}?
+\end{exercise}
+
+\begin{exercise}[aux-directory]\label{ex:auxDir}
+    In plaats van dat alle hulpbestanden zoals \texttt{.aux}, \texttt{.toc}, \texttt{.out}
+    je mapje onoverzichtelijk maken, is het mogelijk de locatie ervoor te veranderen naar een
+    ander mapje. Vraag Vincent als je benieuwd bent.
+
+    In VS Code, onder het TeX-tabje, gebruik `Clean up auxiliary files' onder `Build LaTeX project'.
+
+    Typ \mintinline{text}{"latex-workshop.latex.tools"} in je settings.json bestand, en gebruik
+    de auto-complete. Je krijgt een hele lijst met 'tools'. Voeg deze tool toe:
+    \begin{minted}{tex}
+        {
+            "name": "pdflatexDirs",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-aux-directory=auxdir",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    \end{minted}
+    Typ nu \mintinline{text}{"latex-workshop.latex.recipes"} in je settings.json bestand,
+    en gebruik weer auto-complete. Voeg bovenaan de recipes toe:
+    \begin{minted}{tex}
+        {
+            "name": "pdflatexDirs",
+            "tools": [
+                "pdflatexDirs"
+            ]
+        },
+    \end{minted}
+    Sla op, en compileer je bestand. Je zou nu een nieuw mapje `auxdir' moeten zien, en
+    hierin staan al je auxiliary files.
+\end{exercise}
+
+\begin{exercise}[Snelle compilatie]
+    %Zie oefeningen PDF op texnicie.nl.
+
+    Maak een \texttt{.tex}-bestand en compileer het manueel met het \texttt{pdflatex}-commando
+    in je terminal.
+
+    Eenmaal dat is gelukt, voeg deze lijn bovenaan je \texttt{.tex}-bestand toe
+    \begin{minted}{text}
+        %&document_format
+        \documentclass{article}
+
+        ...
+    \end{minted}
+    en voer dit commando uit in je terminal:
+    \begin{minted}{text}
+        pdftex -ini -jobname="document" "&pdflatex" mylatexformat.ltx document.tex
+    \end{minted}
+
+    Als het goed is zie je nu een \texttt{document.fmt}-bestand. Dit is een cache van het moment
+    dat de preamble helemaal was ingeladen. Als je nu je \texttt{.tex}-bestand weer compileert
+    (kan ook via Visual Studio Code), zou dit veel sneller moeten gaan.
+
+    Maar let op! De cache kijkt niet of je preamble is veranderd, dus als je je preamble verandert
+    moet je je \texttt{document.fmt}-bestand verwijderen, en opnieuw maken.
+    Je kan het commando voor het maken van dit \texttt{.fmt}-bestand ook instellen in VS~Code.
+    Dit gaat analoog aan \autoref{ex:auxDir}, als
+    \begin{minted}{json}
+        {
+            "name": "mylatexformat",
+            "command": "pdftex",
+            "args": [
+                "-ini",
+                "-jobname=\"%DOC%_format\"",
+                "&pdflatex",
+                "mylatexformat.ltx",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    \end{minted}
+
+    Let erop dat in je document de eerste regel \texttt{\%\&document\_format} is, en vervang \texttt{document\_format}
+    hier door de naam van je bestand zonder de \texttt{.tex}, en met \texttt{\_format} erachter.
+
+    Dit is een moeilijke opgave, en het kan zijn dat ik iets mis in de instructies. 
+    Vraag Vincent als het niet meteen lukt.
+\end{exercise}
+
+\end{document}

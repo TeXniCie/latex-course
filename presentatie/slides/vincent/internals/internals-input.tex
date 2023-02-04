@@ -1,0 +1,49 @@
+\copyrightVincent
+\begin{frame}[fragile]{Aparte preamble, optie 1: \mintinline{tex}{\input}}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \small
+            Bestand \texttt{document.tex}:
+            \begin{minted}[fontsize=\scriptsize]{tex}
+                \documentclass{article}
+                \usepackage[a4paper,margin=2.54cm]{geometry}
+                \usepackage{amsmath}
+                \usepackage{amssymb}
+                \usepackage{commath}
+                \usepackage{mathtools}
+                \usepackage{graphicx}
+                \usepackage{subcaption}
+                \usepackage[dutch]{babel}
+                \usepackage[bookmarksnumbered]{hyperref}
+
+                \begin{document}
+                    ...
+                \end{document}
+            \end{minted}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \small
+            \begin{uncoverenv}<2->%
+                Bestand \texttt{document.tex}:
+                \begin{minted}[fontsize=\scriptsize]{tex}
+                    \documentclass{article}
+                    \input{preamble.tex}
+            
+                    \begin{document}
+                        ...
+                    \end{document}
+                \end{minted}
+
+                \bigskip
+                Bestand \texttt{preamble.tex}:
+                \begin{minted}[fontsize=\scriptsize]{tex}
+                    \usepackage[a4paper,margin=2.54cm]{geometry}
+                    \usepackage{amsmath}
+                    \usepackage{amssymb}
+                    \usepackage{commath}
+                    ...
+                \end{minted}
+            \end{uncoverenv}
+        \end{column}
+    \end{columns}
+\end{frame}
