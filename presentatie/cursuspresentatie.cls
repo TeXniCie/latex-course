@@ -71,10 +71,10 @@
 \ProcessOptionsX<cursuspresentatie>
 \ProcessOptionsX
 
-\acrnDefName\copyrightTim{Tim Weijers}{2022}
-\acrnDefName\copyrightHanneke{Hanneke Schroten}{2022}
-\acrnDefName\copyrightThomas{Thomas van Maaren}{2022}
-\acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2022}
+\acrnDefName\copyrightTim{Tim Weijers}{2022-2023}
+\acrnDefName\copyrightHanneke{Hanneke Schroten}{2022-2023}
+\acrnDefName\copyrightThomas{Thomas van Maaren}{2022-2023}
+\acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2023}
 
 
 % Detail 5: rehearsal
@@ -358,6 +358,11 @@
 %\RequirePackage{inputslide}
 \RequirePackage{multicol}
 \RequirePackage{csquotes}
+\RequirePackage{minted}
+\RequirePackage{pbox}
+\RequirePackage{tikz}
+
+\usetikzlibrary{calc,positioning,quotes}
 
 %\newcommand{\TeXniCie}{\TeX niCie}
 
@@ -905,4 +910,136 @@
         \end{minipage}
     \end{adjustbox}
 }
+
+
+\ifbool{darktheme}{
+    \definecolor{codehighlight}{RGB}{44, 78, 120}
+}{
+    \definecolor{codehighlight}{RGB}{177, 213, 255}
+}
+
+\def\codeEmphasize#1{\ul{#1}}
+
+
+\def\customhead#1#2{%
+    \ifnum\value{section}=#1\relax
+        \textcolor{fg!100!bg}{%
+            \setul{1pt}{0.5pt}\setulcolor{navigationUnderlineColor}\ul{#2}%
+        }%
+    \else
+        #2%
+    \fi
+}
+
+\let\placetarget\relax
+
+\setbeamertemplate{headline}
+{%
+    \placetarget
+    \let\placetarget\relax
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+        \color{fg!80!bg}
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            % rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{recap}{\customhead{1}{Recap}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{referenties}{\customhead{3}{Referenties}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
+        }%
+        % \adjustbox{
+        %     set depth=2pt,
+        %     padding={5pt 5pt 5pt 5pt},
+        %     bgcolor=bg!80!orange,
+        %     rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
+        %     margin={0pt 0pt 10pt 0pt}
+        % }{%
+        %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
+        % }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            %rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{bulk}{\customhead{2}{Bulk}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{snippets}{\customhead{4}{Snippets}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
+        }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            % rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{hybrid}{\customhead{3}{Hybrid}}%
+        }%
+        %\PackageWarning{debug}{\meaning}
+        % \adjustbox{
+        %     set depth=2pt,
+        %     padding={5pt 5pt 5pt 5pt},
+        %     %bgcolor=bg!80!orange,
+        %     %bgcolor=structure.bg!80!orange,
+        %     bgcolor=exerciseTileBackground,
+        %     rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+        %     margin={-1pt 0pt 10pt 0pt}
+        % }{%
+        %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
+        % }%
+        % \adjustbox{
+        %     set depth=2pt,
+        %     padding={5pt 5pt 5pt 5pt},
+        %     rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        %     % rndcorners={3pt 0pt 3pt 0pt}
+        % }{%
+        %     \hyperlink{LaTeXDefinities}{\customhead{6}{\LaTeX-definities}}%
+        %     \hspace{5pt}$ \cdot $\hspace{5pt}%
+        %     \hyperlink{apartePreamble}{\customhead{7}{Aparte preamble}}%
+        %     % \hspace{5pt}$ \cdot $\hspace{5pt}%
+        %     % \hyperlink{tabellen}{\customhead{8}{Tabellen}}%
+        % }%
+        % \adjustbox{
+        %     set depth=2pt,    
+        %     padding={5pt 5pt 5pt 5pt},
+        %     bgcolor=exerciseTileBackground,
+        %     rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+        %     margin={-1pt 0pt 10pt 0pt}
+        % }{%
+        % \hyperlink{oefeningen2}{\customhead{8}{Oefeningen}}%
+        % }
+        \hfil
+        %Slides op texnicie.nl
+        % Slides op ...
+        \hfil
+        \vskip4pt
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
+}
+
+%\newmintinline[cc]{latex}{}
+
+\ifbool{darktheme}{
+    \usemintedstyle{dracula}
+    \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
+}{
+    % \usemintedstyle{pastie}
+}
+
+\setminted{highlightcolor=codehighlight}
+
+
+\setminted{fontsize=\small, autogobble=true, linenos=false, frame=none}
+\usepackage{tcolorbox}
+
 
