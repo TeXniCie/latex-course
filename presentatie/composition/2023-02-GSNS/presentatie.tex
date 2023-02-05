@@ -5,7 +5,7 @@
     everyoneauthor=true,
     %darktheme,
     defaultSlideCollection=vincent,
-    handout
+    % handout
 ]{../../cursuspresentatie}
 
 \usepackage{minted}
@@ -54,11 +54,24 @@
 \section{Text document}\label{sec:textdocument}
 \def\placetarget{\hypertarget{textdocument}{}}
 
-\begin{frame}
-    Text document
-\end{frame}
+\importslide{tim/beginners}{overleaf-1.tex}
+\importslide{tim/beginners}{overleaf-2.tex}
 
-\importslide{vincent/document}{document-parts.tex}
+\importslide{vincent/internals}{command-syntax-beginners.tex}
+\importslide{vincent/document}{document-parts-overleaf.tex}
+
+\importslide{vincent/internals}{internals-usepackage.tex}
+
+\importslide{vincent/text}{text-syntax-1.tex}
+
+\setDetail{10}
+\importslide{vincent/text}{text-specialchars.tex}
+\importslide{vincent/text}{text-quotes.tex}
+
+\importslide{vincent/text}{text-effects.tex}
+\importslide{vincent/text}{text-lists.tex}
+
+\setDetail{20}
 
 \section{Exercises}
 \def\placetarget{\hypertarget{exercises1}{}}
@@ -91,9 +104,14 @@
 \section{Figures}
 \def\placetarget{\hypertarget{figures}{}}
 
-\begin{frame}
-    Figures
-\end{frame}
+% \importslide{vincent/images}{includegraphics-inline.tex}
+% \importslide{vincent/images}{includegraphics-asparagraph.tex}
+\importslide{vincent/images}{includegraphics-center.tex}
+\importslide{vincent/images}{includegraphics-figure.tex}
+\importslide{vincent/images}{figure-placement.tex}
+\importslide{vincent/images}{figure-dimensions.tex}
+\importslide{vincent/images}{subfigure.tex}
+
 
 
 \section{Exercises}

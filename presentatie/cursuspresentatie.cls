@@ -911,6 +911,14 @@
     \end{adjustbox}
 }
 
+\newenvironment{codebox}{
+    \begin{adjustbox}{frame=1pt 5pt,valign=t}%
+        \begin{minipage}{\dimexpr\textwidth - 12pt\relax}%
+}{
+        \end{minipage}
+    \end{adjustbox}
+}
+
 
 \ifbool{darktheme}{
     \definecolor{codehighlight}{RGB}{44, 78, 120}
@@ -1033,7 +1041,7 @@
     \usemintedstyle{dracula}
     \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
 }{
-    % \usemintedstyle{pastie}
+    \usemintedstyle{pastie}
 }
 
 \setminted{highlightcolor=codehighlight}

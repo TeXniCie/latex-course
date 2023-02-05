@@ -47,7 +47,20 @@
 
 \begin{frame}[fragile]{Figure}
     \begin{columns}
-        \begin{column}{0.6\textwidth}
+        \begin{column}{0.68\textwidth}
+            \ifenglish
+            \begin{codebox}%
+                \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
+                    Here you see a penguin:
+                    \begin{center}
+                        \includegraphics[height=2cm]{penguin.jpg}
+                    \end{center}
+                    Photo by Sue Flood.
+                    ~~
+                \end{minted}
+            \end{codebox}
+            \else
+            \begin{codebox}%
             \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
                 Hier zie je een pingu~\"i~n:
                 \begin{center}
@@ -56,13 +69,15 @@
                 Foto door Sue Flood.
                 ~~
             \end{minted}
+            \end{codebox}
+            \fi
         \end{column}
-        \begin{column}{0.4\textwidth}
+        \begin{column}{0.32\textwidth}
             \lang,Here you see a penguin:,Hier zie je een pinguïn:,
-        \begin{center}
-            \includegraphics[height=2cm]{assets/pinguin.jpg}
-        \end{center}
-        \lang,Photo by Sue Flood.,Foto door Sue Flood.,
+            \begin{center}
+                \includegraphics[height=2cm]{assets/pinguin.jpg}
+            \end{center}
+            \lang,Photo by Sue Flood.,Foto door Sue Flood.,
         \end{column}
     \end{columns}
 
