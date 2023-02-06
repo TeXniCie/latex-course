@@ -1,0 +1,5 @@
+{
+    "latex-workshop.latex.search.rootFiles.include": [
+        "**/composition/2023-02-GSNS/*"
+    ],
+}

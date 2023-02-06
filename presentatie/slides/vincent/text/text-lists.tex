@@ -123,6 +123,23 @@
 \end{saveblock}
 
 \begin{saveblock}{listEN}
+    % \begin{codebox}
+    %     \begin{minted}{tex}
+    %         These are the ingredients:
+    %         \begin{itemize}
+    %             \item Carrots
+    %             \begin{enumerate}
+    %                 \item Buy
+    %                 \item Peel
+    %                 \item Chop
+    %             \end{enumerate}
+    %             \item Onions
+                
+    %             Lipsum dolor sit amet.
+    %             \item Potatoes
+    %         \end{itemize}
+    %     \end{minted}
+    % \end{codebox}
     \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
         These are the ingredients:
         \begin{itemize}
@@ -140,12 +157,29 @@
     \end{highlightblock}
 \end{saveblock}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\lang,More with text -- Lists,Lijsten,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \lang,\useblock{listEN},\useblock{list},
+            % \lang,\useblock{listEN},\useblock{list},
+            \begin{codebox}
+                \begin{minted}{tex}
+                    These are the ingredients:
+                    \begin{itemize}
+                        \item Carrots
+                        \begin{enumerate}
+                            \item Buy
+                            \item Peel
+                            \item Chop
+                        \end{enumerate}
+                        \item Onions
+                        
+                        Lipsum dolor sit amet.
+                        \item Potatoes
+                    \end{itemize}
+                \end{minted}
+            \end{codebox}
         \end{column}
         \begin{column}{0.5\textwidth}
             \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/lijstItemEnum\langsuffix.pdf}
