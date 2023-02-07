@@ -1,0 +1,130 @@
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=2.54cm]{geometry}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{commath,mathtools}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{thmtools}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[dutch]{babel}
+\usepackage{adjustbox}
+\usepackage{lmodern}
+\usepackage[bookmarksnumbered]{hyperref}
+
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[L]{\bfseries\leftmark}
+% \fancyhead[R]{\bfseries\thepage}
+
+\makeatletter
+
+\newlength\uprightIndent
+\setlength\uprightIndent{25pt}
+
+% Using https://tex.stackexchange.com/questions/67242/a-theoremstyle-with-complete-indentation-using-amsthm
+% and package documentation
+\newtheoremstyle{uprightIndented}
+{3pt}
+{3pt}
+{
+\addtolength\@totalleftmargin\uprightIndent
+\addtolength\linewidth{-\uprightIndent}
+\parshape 1
+%0pt \textwidth
+\uprightIndent \dimexpr\textwidth-\uprightIndent\relax
+}
+{-\uprightIndent}% indent
+{\bfseries}% header font
+{.}
+{\newline%.5em
+}
+{}
+
+\newtheoremstyle{uprightIndentedNoNewline}
+{2.3pt}
+{2.3pt}
+{
+\addtolength\@totalleftmargin\uprightIndent
+\addtolength\linewidth{-\uprightIndent}
+\parshape 1
+%0pt \textwidth
+\uprightIndent \dimexpr\textwidth-\uprightIndent\relax
+}
+{-\uprightIndent}% indent
+{\bfseries}% header font
+{.}
+{0.5em%3em
+}
+{}
+
+\newlength\slantedIndent
+\setlength\slantedIndent{15pt}
+
+% Using https://tex.stackexchange.com/questions/67242/a-theoremstyle-with-complete-indentation-using-amsthm
+% and package documentation
+\newtheoremstyle{slantedIndented}
+{3pt}
+{3pt}
+{
+\addtolength\@totalleftmargin\slantedIndent
+\addtolength\linewidth{-\slantedIndent}
+\parshape 1
+%0pt \textwidth
+\slantedIndent \dimexpr\textwidth-\slantedIndent\relax
+\itshape
+}
+{-\slantedIndent}% indent
+{\bfseries}% header font
+{.}
+{\newline%.5em
+}
+{}
+
+\newtheoremstyle{slantedIndentedNoNewline}
+{3pt}
+{3pt}
+{
+\addtolength\@totalleftmargin\slantedIndent
+\addtolength\linewidth{-\slantedIndent}
+\parshape 1
+%0pt \textwidth
+\slantedIndent \dimexpr\textwidth-\slantedIndent\relax
+\itshape
+}
+{-\slantedIndent}% indent
+{\bfseries}% header font
+{.}
+{1.5em
+}
+{}
+
+\makeatother
+
+\declaretheorem[style=uprightIndentedNoNewline,name={\ensuremath{\square} Oefening}]{exercise} % If you want your theorems to be counted per section instead of subsection, then just remove the sub from the numberwithin
+\declaretheorem[style=uprightIndented,sibling=exercise,name=Oefening]{exerciseS}
+
+\declaretheorem[style=slantedIndented,sibling=exercise]{exerciseSlanted}
+
+\addto\extrasbritish{%
+    \def\exercisename{Exercise}%
+    \def\exerciseautorefname{Exercise}%
+}
+
+
+\addto\extrasenglish{%
+    \def\exercisename{Exercise}%
+    \def\exerciseautorefname{Exercise}%
+}
+
+
+\addto\extrasdutch{%
+    \def\exercisename{Oefening}%
+    \def\exerciseautorefname{Oefening}%
+}
+

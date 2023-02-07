@@ -1,0 +1,73 @@
+\copyrightVincent
+
+\begin{frame}[fragile]%{What are packages?}
+    \begin{columns}
+        \begin{column}{\textwidth}
+            {\large\textbf{What are packages?}}
+
+            \LaTeX-code written by other people. They can add new commands, change how your
+            document looks, or improve existing functionalities.
+            
+            Example:
+            package `xcolor' provides the command \mintinline{tex}{\textcolor{red}{some text}}.
+
+            \bigskip
+
+            {\large Syntax: \mintinline{tex}{\usepackage[aa=6cm,bb,cc=red]{xxx}}}
+
+            \smallskip
+            Imports package `xxx'. The optional argument is a list of instructions.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]%{Most essential packages}
+    \begin{columns}
+        \begin{column}{\textwidth}
+            {\large\textbf{Most essential packages}}
+
+            \begin{enumerate}[label=\textbullet]
+                \item \textbf{Math packages: amsmath, amssymb}
+                
+                Defines \mintinline{tex}{\begin{pmatrix}}-environment, which is a
+                matrix with parentheses.
+
+                \medskip
+                \item \textbf{Layout packages: geometry}
+                
+                \begin{minted}{tex}
+                    \usepackage[a4paper,margin=2.54cm]{geometry}
+                \end{minted}
+
+                % This reduces the oversized default margins, and ensures we are using A4-paper
+
+                \medskip
+                \item \textbf{Other}: \textbf{graphicx}, \textbf{babel}
+                
+                Graphicx fixes and improves use of images,
+                Babel translates default terms, e.g. `Inhoudsopgave' instead of `Contents'.
+            \end{enumerate}
+            
+            \bigskip
+            \centering
+
+            {\small Available packages are managed by CTAN. On their website you find package manuals.}
+
+            \begin{center}
+                \textit{Exercises and examples from this presentation will not work if you forget required
+                    packages. For a good starting point, see \textnormal{\url{https://vkuhlmann.com/latex/example}}.%
+                }
+            \end{center}
+
+            % Example:\\
+            % \mintinline{tex}{\section{Introduction}}
+
+            % \begin{enumerate}[label=\arabic*)]
+            %     \item \textbf{Backslash:} we are starting a command
+            %     \item \textbf{Command name:} `section', place a header in the
+            %     document. Takes 1 argument.
+            %     \item \textbf{Argument 1:} the name of the section
+            % \end{enumerate}
+        \end{column}
+    \end{columns}
+\end{frame}

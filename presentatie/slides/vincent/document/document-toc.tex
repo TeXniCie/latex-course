@@ -2,23 +2,27 @@
 
 \unless\ifishandout
 \begin{frame}[fragile]
-    \frametitle{\lang,Contents,Inhoudsopgave,}
+    \frametitle{\lang,Table of contents,Inhoudsopgave,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=6]{tex}
-                ~~
+            \adjustbox{margin*={0pt 0pt 0pt 60pt},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                        \textcolor{red}{\rule{3pt}{1em}}}%
+            \begin{codebox}
+                \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                    ~~
 
 
-                \begin{document}
-                    \maketitle
-                    \tableofcontents
-        
-                    \section{AA}
-                    ...
-                \end{document}
-                ~~
-            \end{minted}
+                    \begin{document}
+                        \maketitle
+                        \tableofcontents
+            
+                        \section{AA}
+                        ...
+                    \end{document}
+                    ~~
+                \end{minted}
+            \end{codebox}
         \end{column}
         \begin{column}{0.5\textwidth}
             \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio,page=1]{assets/tableofcontents.pdf}
@@ -29,11 +33,14 @@
 
 \addtorecentlist{\textbackslash newpage}
 \begin{frame}[fragile]
-    \frametitle{\lang,Contents,Inhoudsopgave,}
+    \frametitle{\lang,Table of contents,Inhoudsopgave,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=7]{tex}
+            \adjustbox{margin*={0pt 0pt 0pt 6.3em},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                        \textcolor{red}{\rule{3pt}{1em}}}%
+            \begin{codebox}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
                 ~~
 
                 
@@ -46,6 +53,7 @@
                     ...
                 \end{document}
             \end{minted}
+            \end{codebox}
         \end{column}
         \begin{column}{0.5\textwidth}
             \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio,page=1]{assets/tableofcontentswholepage.pdf}
@@ -64,6 +72,8 @@
 }
 \fi
 
+\beginDetail{30}
+
 \addtorecentlist{babel}
 
 \def\highlightlines{}
@@ -72,10 +82,13 @@
 \fi
 
 \begin{frame}[fragile]
-    \frametitle{\lang,Contents,Inhoudsopgave,}
+    \frametitle{\lang,Table of contents,Inhoudsopgave,}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
+            \adjustbox{margin*={0pt 0pt 0pt 0em},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                        \textcolor{red}{\rule{3pt}{1em}}}%
+            \begin{codebox}
             \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=\highlightlines]{tex}
                 \usepackage[dutch]{babel}
                 ...
@@ -89,6 +102,7 @@
                     ...
                 \end{document}
             \end{minted}
+            \end{codebox}
         \end{column}
         \begin{column}{0.5\textwidth}
             \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio,page=1]{assets/tableofcontentsdutch.pdf}
@@ -96,6 +110,8 @@
         \end{column}
     \end{columns}
 \end{frame}
+
+\endDetail
 
 \updatehighlight{
     name=accentB,

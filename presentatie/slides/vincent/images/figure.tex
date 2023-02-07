@@ -58,19 +58,35 @@
 
 \begin{frame}[fragile]{Figure}
     \begin{columns}
-        \begin{column}{0.6\textwidth}
-            \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
-                Een pingu~\"i~n zie je in Figuur~\textasciitilde~\ref{fig:pinguin}.
-                \begin{figure}[h]
-                    \centering
-                    \includegraphics[height=2cm]{pinguin.jpg}
-                    \caption{Een schattige pingu~\"i~n.
-                    Foto door Sue Flood.}
-                    \label{fig:pinguin}
-                \end{figure}
-            \end{minted}
+        \begin{column}{0.68\textwidth}
+            \ifenglish
+                \begin{codebox}
+                    \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
+                        You can see a penguin in Figure~\textasciitilde~\ref{fig:penguin}.
+                        \begin{figure}[h]
+                            \centering
+                            \includegraphics[height=2cm]{penguin.jpg}
+                            \caption{A cute penguin. Photo by Sue Flood.}
+                            \label{fig:penguin}
+                        \end{figure}
+                    \end{minted}
+                \end{codebox}
+            \else
+                \begin{codebox}
+                    \begin{minted}[fontsize=\small,escapeinside=~~]{tex}
+                        Een pingu~\"i~n zie je in Figuur~\textasciitilde~\ref{fig:pinguin}.
+                        \begin{figure}[h]
+                            \centering
+                            \includegraphics[height=2cm]{pinguin.jpg}
+                            \caption{Een schattige pingu~\"i~n.
+                            Foto door Sue Flood.}
+                            \label{fig:pinguin}
+                        \end{figure}
+                    \end{minted}
+                \end{codebox}
+            \fi
         \end{column}
-        \begin{column}{0.4\textwidth}
+        \begin{column}{0.32\textwidth}
             \lang,You can see a penguin in Figure,Een pinguïn zie je in Figuur,~\ref{fig:pinguin}.
             \begin{figure}[h]
                 \centering

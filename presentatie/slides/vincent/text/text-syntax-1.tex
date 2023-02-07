@@ -1,0 +1,99 @@
+\copyrightVincent
+
+\begin{frame}[fragile]{Syntax for text?}
+    \begin{columns}
+        \begin{column}{0.8\textwidth}
+            % \adjustbox{valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+            %     \textcolor{red}{\rule{3pt}{7.2em}}}%
+            % \adjustbox{margin*={0pt 0pt 0pt 9.5em},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+            %             \textcolor{orange}{\rule{3pt}{4.5em}}}%
+            \begin{adjustbox}{frame=1pt 5pt,valign=t}%
+                \begin{minipage}{\textwidth}%
+                    \begin{minted}[fontsize=\small]{tex} 
+                        \begin{document}
+                        
+                        This is some text, very \textbf{meaningful} text.
+                        On a new line? And I want     spaces,    lots of spaces.
+
+                        This is some text, very \textbf{meaningful} text.
+                        \end{document}
+                    \end{minted}
+                \end{minipage}
+            \end{adjustbox}
+
+            \centering
+            \bigskip
+            What does this look like in the output?
+        \end{column}
+        % \begin{column}{0.2\textwidth}
+        %     {\large\textbf{Simple text structure:}}
+
+        %     \begin{enumerate}[label=\textbullet]
+        %         \item \adjustbox{valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+        %         \textcolor{red}{\rule{2pt}{1em}}}\; Preamble. 
+
+        %         This is where configuration goes.
+
+        %         \begin{itemize}[label=\textbullet]
+        %             \item \mintinline{tex}{\documentclass}: specify a template.
+        %             \item \mintinline{tex}{\usepackage{xxx}}: import package `xxx'.
+        %             % \item \mintinline{tex}{\usepackage[a4paper,margin=2.54cm]{geometry}}:
+        %             % import package `geometry'. List of instructions: use A4 paper size,
+        %             % set margin to 2.54 cm.
+        %             \item Other: a.o. setting the title of your document
+        %         \end{itemize}
+
+        %         \item \adjustbox{valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+        %         \textcolor{orange}{\rule{2pt}{1em}}}\; Document body.
+
+        %         This is where the text and other content go.
+
+        %     \end{enumerate}
+            
+        %     \bigskip
+
+        %     % Example:\\
+        %     % \mintinline{tex}{\section{Introduction}}
+
+        %     % \begin{enumerate}[label=\arabic*)]
+        %     %     \item \textbf{Backslash:} we are starting a command
+        %     %     \item \textbf{Command name:} `section', place a header in the
+        %     %     document. Takes 1 argument.
+        %     %     \item \textbf{Argument 1:} the name of the section
+        %     % \end{enumerate}
+        % \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Syntax for text?}
+    \begin{columns}
+        \begin{column}{0.8\textwidth}
+            % \adjustbox{valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+            %     \textcolor{red}{\rule{3pt}{7.2em}}}%
+            % \adjustbox{margin*={0pt 0pt 0pt 9.5em},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+            %             \textcolor{orange}{\rule{3pt}{4.5em}}}%
+
+            The fix:
+
+            \bigskip
+            \begin{adjustbox}{frame=1pt 5pt,valign=t}%
+                \begin{minipage}{\textwidth}%
+                    \begin{minted}[fontsize=\small]{tex} 
+                        ...
+                        \usepackage{parskip}
+
+                        \begin{document}
+                        
+                        This is some text, very \textbf{meaningful} text.\\
+                        On a new line? And I want\ \ \ \ \ spaces,
+                        \hspace{1cm}lots of spaces.
+
+                        This is some text, very \textbf{meaningful} text.
+                        \end{document}
+                    \end{minted}
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+    \end{columns}
+\end{frame}

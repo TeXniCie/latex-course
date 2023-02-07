@@ -3,22 +3,24 @@
     \frametitle{\lang,Page margins,Pagina marges,}
     \begin{columns}
         \begin{column}{0.67\textwidth}
-            \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
-                \documentclass{article}
-                \usepackage[utf8]{inputenc}
+            \begin{codebox}
+                \begin{minted}[fontsize=\scriptsize,escapeinside=~~]{tex}
+                    \documentclass{article}
+                    \usepackage[utf8]{inputenc}
 
-                \title{My document}
-                \author{Vincent Kuhlmann}
-                \date{1 May 2021}
-                
-                \begin{document}
-                    \maketitle
-                    \section{Introduction}
+                    \title{My document}
+                    \author{Vincent Kuhlmann}
+                    \date{1 May 2021}
                     
-                    Hallo iedereen!
-                \end{document}
-                ~~
-            \end{minted}
+                    \begin{document}
+                        \maketitle
+                        \section{Introduction}
+                        
+                        Hallo iedereen!
+                    \end{document}
+                    ~~
+                \end{minted}       
+            \end{codebox}
         \end{column}
         \begin{column}{0.33\textwidth}
             \begingroup
@@ -37,22 +39,26 @@
     \frametitle{\lang,Page margins,Pagina marges,}
     \begin{columns}
         \begin{column}{0.67\textwidth}
-            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=3]{tex}
-                \documentclass{article}
-                \usepackage[utf8]{inputenc}
-                \usepackage[a4paper,margin=2.54cm]{geometry}
-                
-                \title{My document}
-                \author{Vincent Kuhlmann}
-                \date{1 May 2021}
-                
-                \begin{document}
-                    \maketitle
-                    \section{Introduction}
+            \adjustbox{margin*={0pt 0pt 0pt 3.3em},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                        \textcolor{red}{\rule{3pt}{1em}}}%
+            \begin{codebox}
+                \begin{minted}[fontsize=\scriptsize]{tex}
+                    \documentclass{article}
+                    \usepackage[utf8]{inputenc}
+                    \usepackage[a4paper,margin=2.54cm]{geometry}
                     
-                    Hallo iedereen!
-                \end{document}
-            \end{minted}
+                    \title{My document}
+                    \author{Vincent Kuhlmann}
+                    \date{1 May 2021}
+                    
+                    \begin{document}
+                        \maketitle
+                        \section{Introduction}
+                        
+                        Hallo iedereen!
+                    \end{document}
+                \end{minted}
+            \end{codebox}
         \end{column}
         \begin{column}{0.33\textwidth}
             \begingroup
@@ -85,27 +91,30 @@
 %     \end{highlightblock}
 % \end{saveblock}
 
+\beginDetail{30}
 \unless\ifishandout
 \begin{frame}[fragile]
     \frametitle{\lang,Page margins,Pagina marges,}
     \begin{columns}
         \begin{column}{0.67\textwidth}
-            \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=3]{tex}
-                \documentclass{article}
-                \usepackage[utf8]{inputenc}
-                \usepackage[a4paper,margin=2.54cm,left=-0.5cm]{geometry}
-                
-                \title{My document}
-                \author{Vincent Kuhlmann}
-                \date{1 May 2021}
-                
-                \begin{document}
-                    \maketitle
-                    \section{Introduction}
+            \begin{codebox}
+                \begin{minted}[fontsize=\scriptsize,escapeinside=~~,highlightlines=3]{tex}
+                    \documentclass{article}
+                    \usepackage[utf8]{inputenc}
+                    \usepackage[a4paper,margin=2.54cm,left=-0.5cm]{geometry}
                     
-                    Hallo iedereen!
-                \end{document}
-            \end{minted}
+                    \title{My document}
+                    \author{Vincent Kuhlmann}
+                    \date{1 May 2021}
+                    
+                    \begin{document}
+                        \maketitle
+                        \section{Introduction}
+                        
+                        Hallo iedereen!
+                    \end{document}
+                \end{minted}
+            \end{codebox}
         \end{column}
         \begin{column}{0.33\textwidth}
             \begingroup
@@ -118,6 +127,7 @@
     \end{columns}
 \end{frame}
 \fi
+\endDetail
 
 \updatehighlight{
     name=accentC,

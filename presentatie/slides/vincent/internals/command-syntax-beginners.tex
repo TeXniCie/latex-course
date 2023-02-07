@@ -1,0 +1,102 @@
+\copyrightVincent
+
+\begin{frame}[fragile]
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \adjustbox{valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                \textcolor{red}{\rule{3pt}{7.2em}}}%
+            \adjustbox{margin*={0pt 0pt 0pt 9.5em},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                        \textcolor{orange}{\rule{3pt}{4.5em}}}%
+            \begin{adjustbox}{frame=1pt 5pt,valign=t}%
+                \begin{minipage}{\textwidth}%
+                    \begin{minted}[fontsize=\small]{tex} 
+                        \documentclass{article}
+                        \usepackage[utf8]{inputenc}
+
+                        \title{Example project}
+                        \author{Vincent Kuhlmann}
+                        \date{February 2023}
+
+                        \begin{document}
+
+                        \maketitle
+
+                        \section{Introduction}
+
+                        \end{document}
+                    \end{minted}
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            {\large\textbf{Command syntax:}}
+            
+            \mintinline{tex}{\xxx{argument1}{argument2}}\\
+            \mintinline{tex}{\xxx[optional argument]{argument1}{argument2}}
+            \bigskip
+
+            Example:\\
+            \mintinline{tex}{\section{Introduction}}
+
+            \begin{enumerate}[label=\arabic*)]
+                \item \textbf{Backslash:} we are starting a command
+                \item \textbf{Command name:} `section', place a header in the
+                document. Takes 1 argument.
+                \item \textbf{Argument 1:} the name of the section
+            \end{enumerate}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \adjustbox{valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                \textcolor{red}{\rule{3pt}{7.2em}}}%
+            \adjustbox{margin*={0pt 0pt 0pt 9.5em},valign=t,set depth=0pt,set height=0pt,left=0pt}{%
+                        \textcolor{orange}{\rule{3pt}{4.5em}}}%
+            \begin{adjustbox}{frame=1pt 5pt,valign=t}%
+                \begin{minipage}{\textwidth}%
+                    \begin{minted}[fontsize=\small]{tex} 
+                        \documentclass{article}
+                        \usepackage[utf8]{inputenc}
+
+                        \title{Example project}
+                        \author{Vincent Kuhlmann}
+                        \date{February 2023}
+
+                        \begin{document}
+
+                        \maketitle
+
+                        \section{Introduction}
+
+                        \end{document}
+                    \end{minted}
+                \end{minipage}
+            \end{adjustbox}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            {\large\textbf{Environment syntax:}}
+
+            \begin{minted}[fontsize=\small]{tex}
+                \begin{xxx}
+                    ...
+                \end{xxx}
+            \end{minted}
+
+            \bigskip
+
+            Example:\\
+            \mintinline{tex}{\begin{center}}
+
+            \begin{enumerate}[label=\arabic*)]
+                \item \textbf{Begin:} We are starting the
+                center environment
+                \item \textbf{Body:} The text to be centered on the page
+                \item \textbf{End:} Now go back to normal
+            \end{enumerate}
+        \end{column}
+    \end{columns}
+\end{frame}
