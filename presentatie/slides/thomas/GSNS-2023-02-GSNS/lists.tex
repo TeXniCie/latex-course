@@ -1,0 +1,54 @@
+\begin{frame}[fragile]{Lists}
+
+There are three types of lists environments in latex.
+
+
+\begin{description}
+	\item[enumerate]  is used for information that has order:
+	\item[itemize] is used for information that does not have order:
+	\item[description] is used for information that has descriptions for each item
+\end{description}
+	%\begin{tcolorbox}[width=13cm, title={Biggest Cities in the netherlands}, size=small]
+	%	hey 
+	%    %\begin{enumerate}
+	%    %    \item Amsterdam
+	%    %    \item Rotterdam
+	%    %    \item The Hague
+	%    %    \item Utrecht
+	%    %    \item Eindhoven
+	%    %\end{enumerate}
+	%\end{tcolorbox}
+	\begin{tcolorbox}[width=13cm, title={Examples}, size=small]
+	\begin{tabular}{m{3cm}| m{3cm} | m{5cm}}
+		\textbf{Enumerated list} & \textbf{Itemized list} & \textbf{Descriptive list}\\
+		\hline
+		Biggest cities of the Netherlands &Members of the TeXniCie &   Tech companies\\
+		\hline
+		\begin{itemize}[label=\textbullet]
+			\item Amsterdam 
+			\item Rotterdam
+			\item The Hague
+			\item Utrecht
+		\end{itemize}
+		&
+		\begin{itemize}[label=\textbullet]
+			\item Hanneke 
+			\item Thomas
+			\item Tim
+			\item Vincent
+		\end{itemize}
+		& 
+		\begin{description}
+			\item[Apple] Computer company
+			\item[Facebook] Social media company
+			\item[Microsoft] Software company
+		\end{description}
+	\end{tabular}
+	%\begin{itemize}[label=\textbullet]
+	%	\item Hanneke 
+	%	\item Thomas
+	%	\item Tim
+	%	\item Vincent
+	%\end{itemize}
+	\end{tcolorbox}
+\end{frame}

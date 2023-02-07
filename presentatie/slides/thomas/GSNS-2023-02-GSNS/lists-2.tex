@@ -1,0 +1,42 @@
+\begin{frame}[fragile]{Lists}
+
+To make a list, start with the command
+\mintinline{latex}{\begin{enumerate},\begin{itemize}} or
+\mintinline{latex}{\begin{description}} depending on the list environment and
+end with \mintinline{latex}{\end{enumerate},\end{itemize}} or
+\mintinline{latex}{\end{description}} respectively. In front of each item use
+the command \mintinline{latex}{\item}. In case of the descriptive environment add
+square braces to assign a label to each item: \mintinline{latex}{\item[label]}
+
+\begin{tcolorbox}[title={Examples}, size=small]
+\begin{tabular}{m{3cm} | m{3cm} | m{3cm}}
+Itemized list & Enumerated list & Descriptive list\\
+\hline
+\begin{minted}{latex}
+\begin{itemize}
+\item Hanneke 
+\item Thomas
+\item Tim
+\item Vincent
+\end{itemize}
+\end{minted}
+&
+\begin{minted}{latex}
+\begin{enumerate}
+\item Amsterdam
+\item Rotterdam
+\item The Hague
+\item Utrecht
+\end{enumerate}
+\end{minted}
+&
+\begin{minted}{latex}
+\begin{description}
+\item[Apple] Computer company
+\item[Facebook] Social media company
+\item[Microsoft] Software company
+\end{description}
+\end{minted}
+\end{tabular}
+\end{tcolorbox}
+\end{frame}

@@ -1,0 +1,17 @@
+\begin{frame}[fragile]{Math packages}
+The following three packages are useful for typesetting mathematics:
+\begin{minted}[highlightlines={2,3,4}]{tex}
+\documentclass[a4paper, 10pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\begin{document}
+\[
+    ax^2 + bx + c = 0 \qquad 
+    \text{the general form of the quadratic equation} 
+\]
+\end{document}
+\end{minted}
+These provide options for adding text to formulae, 
+extra symbols such as \( \boxplus \) , \( \leadsto \) and \(\mathbb{R}\) and better theorem and proof environments.
+\end{frame}

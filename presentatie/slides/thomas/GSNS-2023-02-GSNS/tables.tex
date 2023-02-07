@@ -1,0 +1,27 @@
+\begin{frame}[fragile]{Tables}
+Tables are made in the \textbf{tabular} environment. When making a table you start with \mintinline{latex}{\begin{tabular}}. Afterwards, an extra parameter must be given that tells Latex how the table will be formatted. For example \mintinline{latex}{{l l l}} tells us that we want a table with three columns that are aligned to the left.
+
+Inside of the tabular environment a new column is made with the \&-symbol and a new row with \textbackslash \textbackslash.
+
+
+\begin{tcolorbox}[width=13cm, title={Example}, size=small]
+\begin{tabular}{l | m{8cm}}
+\begin{tabular}{l l}
+	Name & Population\\
+	Amsterdam & 903,399\\
+	Rotterdam & 655,468\\
+	The Hague & 553,417\\
+\end{tabular}
+&
+\begin{minted}{latex}
+\begin{tabular}{l l l}
+Name & Population\\
+Amsterdam & 903,399\\
+Rotterdam & 655,468\\
+The Hague & 553,417\\
+\end{tabular}
+\end{minted}
+\end{tabular}
+\end{tcolorbox}
+
+\end{frame}

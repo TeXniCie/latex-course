@@ -1,0 +1,18 @@
+\copyrightTim
+\begin{frame}[fragile]{Inline math}
+    Text and symbols between \mintinline{tex}{\(} and \mintinline{tex}{\)} are treated as \textbf{math sybmols}.
+
+    \begin{minted}[highlightlines={4}]{tex}
+        \documentclass[a5paper]{article}
+        \begin{document}
+        The trigonometric identity is 
+        given by \( \sin^2(\theta) + \cos^2(\theta) = 1 \). This identity is also 
+        called the Pythagorean trigonometric identity.
+        \end{document}
+    \end{minted}
+    \begin{tcolorbox}[width=13cm]
+        The trigonometric identity is 
+        given by \( \sin^2(\theta) + \cos^2(\theta) = 1 \). This identity is also 
+        called the Pythagorean trigonometric identity.
+    \end{tcolorbox}
+\end{frame}

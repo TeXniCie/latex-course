@@ -1,0 +1,25 @@
+\begin{frame}[fragile]{Tables}
+	You have now leaned how to make a table, but it would be nice if we could have seperator lines between rows and columns. For the columns you can add a pipe symbol between columns in the paramater. For seperator lines between rows the command \mintinline{latex}{\hline} is used.
+
+\begin{tcolorbox}[title={Example}, size=small]
+\begin{tabular}{l | m{8cm}}
+\begin{tabular}{||l | l||}
+	\hline\hline
+	Name & Population\\\hline
+	Amsterdam & 903,399\\\hline
+	Rotterdam & 655,468\\\hline
+	The Hague & 553,417\\\hline\hline
+\end{tabular}
+&
+\begin{minted}{latex}
+\begin{tabular}{||l | l||}
+	\hline\hline
+	Name & Population\\\hline
+	Amsterdam & 903,399\\\hline
+	Rotterdam & 655,468\\\hline
+	The Hague & 553,417\\\hline\hline
+\end{tabular}
+\end{minted}
+\end{tabular}
+\end{tcolorbox}
+\end{frame}

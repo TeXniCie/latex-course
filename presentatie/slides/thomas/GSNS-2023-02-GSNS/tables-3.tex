@@ -1,0 +1,38 @@
+\begin{frame}[fragile]{Tables}
+Parameter options:
+
+\begin{description}
+	\item[l] Align columns to the left.
+	\item[c] Align columns to the centre.
+	\item[r] Align columns to the right.
+\end{description}
+
+Also note that just like images, tables can be figures
+
+
+\begin{tcolorbox}[title={Example}, size=small]
+\begin{tabular}{m{6.5cm} | m{8cm}}
+\begin{figure}
+\begin{tabular}{|l | l|}
+Name & Population\\\hline
+Amsterdam & 903,399\\
+Rotterdam & 655,468\\
+The Hague & 553,417\\
+\end{tabular}
+\caption{Biggest cities of NL}
+\end{figure}
+&
+\begin{minted}{latex}
+\begin{figure}
+\begin{tabular}{||l | l||}
+Name & Population\\\hline
+Amsterdam & 903,399\\
+Rotterdam & 655,468\\
+\end{tabular}
+\caption{Biggest cities of NL}
+\end{figure}
+\end{minted}
+\end{tabular}
+\end{tcolorbox}
+
+\end{frame}
