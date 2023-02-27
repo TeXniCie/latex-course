@@ -1,0 +1,88 @@
+%%% This is a file to test some environments like theorem+proof, lemma+proof and claims
+
+\documentclass[thesis]{subfiles}
+
+\begin{document}
+\newpage % Use newpage to start on a new page
+\section{Theorems and proofs}
+\label{sec:theorems}
+
+\subsection{Not my theorem}
+\begin{theorem}[Theorem of Someone Else] % The brackets are usefull for adding stuff like (Pythagoras' Theorem).
+The unit sphere is not compact in $l^2$.
+\begin{proof} 
+The sequence $(1,0,0,0,...),(0,1,0,0,...),(0,0,1,0,...),...$ does not have a converging subsequence so it is not sequentially compact hence not compact.
+\end{proof} 
+\end{theorem}
+
+\thm{This is a shorter theorem.}{Look at the source code.} % Using \thm instead of environments
+
+\begin{theorem}
+Adding a [title] is not necessary.
+\begin{proof}
+Proof by lack of contradicition.
+\end{proof}
+\end{theorem}
+
+% here we use one of our custom commands:
+\lm{This lemma keeps the same numbering as the theorems.}{Proof by picture: look at the number.}
+
+%This is an example of a lemma with a proof, further in the text.
+\begin{lemma}
+The proof of this lemma will come later.
+\label{lm.laterproof} % Note the \label that is used.
+\end{lemma}
+
+
+\subsection{More numbering}
+
+\begin{lemma}
+We now see that the $2^{nd}$ number increased but the last number went back to 1.
+\begin{proof}
+\clm{The $2^{nd}$ number increased.}
+We use a claim here, using the `\textbackslash clm' command.
+\clm{The last number went back to one.}
+\end{proof}
+\end{lemma}
+
+\vspace{0.5cm}
+\fbox{\begin{minipage}{0.99\textwidth}
+\thm{This Theorem is very important!}{Although the equation
+$$\boxed{E=mc^2}$$ is very important, this Theorem is even more important because it has a bigger box and more space around it!}
+\end{minipage}}
+\vspace{0.5cm}
+
+\begin{remark}
+Whenever we make a claim in a proof, the claim counter starts back at one.
+\begin{proof}
+Proof by picture:
+\clm{Here we see an one.}
+\end{proof}
+\end{remark}
+
+\clm{This is a maintext claim. Now the next claim after this will start with a two.}
+
+\begin{remark}
+As a test, we do a proof with claim:
+\begin{proof}
+Proof by picture:
+\clm{Here we see a two.}
+\end{proof}
+\end{remark}
+
+\begin{remark}
+The effect only works for one proof:
+\begin{proof}
+Proof by picture:
+\clm{Here we see a one.}
+\end{proof}
+\end{remark}
+
+We did not prove the earlier lemma yet, so let's do that now.
+% Here we prove the lemma we made earlier but didn't prove. Using a label and reference command is VERY much advised.
+\begin{proof}[Proof of lemma \ref{lm.laterproof}]
+Here be the proof of thy lemma.
+\end{proof}
+
+\end{document}
+
