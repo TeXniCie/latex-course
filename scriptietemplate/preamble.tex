@@ -123,11 +123,13 @@ style = numeric-comp, %
 % authortitle, authortitle-comp, authortitle-ibid, authortitle-icomp, authortitle-terse, authortitle-tcomp, authortitle-ticomp,
 % verbose, verbose-ibid, verbose-note, verbose-inote, verbose-trad1, verbose-trad2, verbose-trad3,
 % reading, (draft, debug)
-sorting = none % 
+sorting = none, % 
 % Choose how the bibliography is sorted.
 % Options: nty, nyt, nyvt, anyt, anyvt, ynt, ydnt, none, (debug)
 % Here n = name, t = title, y = year, v = volume, a = alphabetic label, ...d = ... descending
 % So nty = sort by name, then title, then year.
+backend = biber%
+% This is the default, and should almost alway be kept as such. 'backend = bibtex' is legacy.
 ]{biblatex}
 
 % If you use APA, you will need:
