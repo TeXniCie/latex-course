@@ -1,74 +1,82 @@
-%FEBRUARY 2020, made by the TeXniCie with input from Freek Geerligs
-\documentclass{beamer}
+%FEBRUARY 2020, made by the TeXniCie with some code copied from Freek Geerligs' bachelor thesis presentation
+% minor adjustments made in March 2023 by the TeXniCie
 
-\usetheme{aes2}
-%\usetheme{Frankfurt} %A different but comparable theme if you don't want to use the aeskwadraat theme
+\documentclass{beamer}
 
 % Packages:
 %\usepackage[a4paper]{geometry} 
-\usepackage[english]{babel} %for correct linebreaks
-\usepackage{parskip} % Alineas start on the left and there is an empty line between alineas.
-\usepackage{amsmath, amssymb, textcomp,amsthm} % Mathematical symbols etc
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage{hyperref} %For hyperlinks that you can click on
+\usepackage[english]{babel} 	% correct linebreaks etc.
+\usepackage{%
+	parskip, 					% alinea's (no indent, whitespace)
+	amsmath, amssymb,			%
+	textcomp,amsthm, 			% Mathematical symbols etc.
+	color, 						% Colors
+	enumerate,					% For enumerations
+	hyperref,					% clickable links in pdf
+	graphicx,					% For including pictures
+	caption,
+	%subcaption,
+	%subfig,
+	mathrsfs,
+	amsthm, 					% Definition,proof,... environments		
+	tikz-cd						% For commutative diagrams
+}
 
-\usepackage {graphicx} % To include pictures
-\usepackage{caption}
-%\usepackage{subcaption}
-%\usepackage{subfig}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{mathrsfs}
-\usepackage{amsthm}% For definition, proof, theorem etc environments.
-
-\usepackage{tikz-cd}
-
-%Here some lines for layout of theorems and enumerate them well
+% Below layout for definitions and proof related things
 \theoremstyle{definition}
-\newtheorem{dfn}{Definition}[section]% enumeration now follows sections
+\newtheorem{dfn}{Definition}[section]% nummering van definities volgt nu met secties
 \theoremstyle{example}
 \newtheorem{conseq}[dfn]{Consequence}
 \newtheorem{const}[dfn]{Construction}
 %\theoremstyle{plain}
-\newtheorem{thm}[dfn]{Theorem}% enumeration now follows definitions 
+\newtheorem{thm}[dfn]{Stelling}% nummering van stellingen loopt nu samen met dfn (als [dfn] aan het eind zou staan, zou het een nieuw getal erachter betekenen)
 %\newtheorem{lemma}[dfn]{Lemma}
 %\newtheorem{example}[]{Example}
 %\newtheorem{nexample}[example]{Non-example}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\usecolortheme{dolphin} %crane of dolphin
+% Layout for the presentation (colours etc.), a-eskwadraat has its own theme, but you can choose another theme. (Highly recommended for a bit more professionality.)
+
+\usetheme{aes2}
+%\usetheme{Frankfurt} % Another similar theme without the a-es logo
+%\usecolortheme{dolphin} %crane or dolphin are nice
 %\useinnertheme{circles}
 %\useoutertheme{smoothbars}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modify these for your own presentation.
 \title{Title of your presentation}
-\date{\today}
+\date{Your presentation date, for example \today}
 \author{Your name here}
 
 \begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}	
+	
+	\begin{frame}{Content}% each slide (with name between {} ) is in the frame-environment
+		\tableofcontents
+	\end{frame}
+	
+	\section{First subject}
+	% The structure (sections, subsections etc.) like you're used to in TeX-files also work in the beamer class, it affects the progress part of the slides (at the top).	
+	
+	\begin{frame}
+		\frametitle{What you should know before I start with my thesis work}
+		In the frame-environment you can do what you're used to to make it print on a slide. For example use text and formula's like
+		\begin{align}
+			E &= \frac{p^2}{2m}\\
+			E_{rel}^2 &= m^2c^4 + p^2c^2
+		\end{align}
+		\begin{block}{Important}
+			It is very   I M P O R T A N T   to be able to \emph{emphasise} in \textit{different} \textbf{ways}!
+		\end{block}
+	\end{frame}
 
-\begin{frame}
-\titlepage
-\end{frame}	
-
-\begin{frame}{Contents} %What is on a slide is in the frame environment, you can name each slide
-	\tableofcontents
-\end{frame}
-\section{First subject}
-%The structure (sections, subsections etc) you're used to in TeX-files can still be used, you can see the structure in the table of contents and in the progress-bar at the top of each slide.
-
-
-\begin{frame}
-	\frametitle{What everyone should know before I start}
-	In the frame environment you can do what you are used to in \LaTeX. For example nice formulas like
-	\begin{align}
-	E &= \frac{p^2}{2m}\\
-	E_{rel}^2 &= m^2c^4 + p^2c^2
-	\end{align}
-	\begin{block}{Important}
-		It is \quad I M P O R T A N T \quad to be able to \textbf{emphasise} \textit{in different} \emph{ways}!
-	\end{block}
- 
-\end{frame}
 
 \begin{frame}{Let's continue}
 Sometimes it is a shame if everything you want to say is already on the slide.\newline
@@ -78,7 +86,8 @@ Sometimes it is a shame if everything you want to say is already on the slide.\n
 \begin{block}{Proof}
 	The proof is here.
 \end{block}
-But we can fix this!\\
+But we can fix this!
+
 Let's try this again.
 
 \end{frame}
@@ -97,10 +106,8 @@ Let's try this again.
 Much better!
 \end{frame}
 
-\section{Applications}
-
 \begin{frame}{More advanced}
-	\only<1->{We can even make the text disappear.\\}
+	\only<1->{We can even make the text disappear. (Or keep an important text/formula on your slide.)\\}
 	\only<2-3>{Peekaboo!\\}
 	\only<3>{Go and seek! (by lack of a better translation of \textit{Wie niet weg is is gezien!})}
 	\only<4>{And let's go on...}
@@ -160,17 +167,19 @@ Enumerations can look better this way as well
 %
 %\end{frame}
 
-
+\section{Applications}
 
 \begin{frame}
 \begin{columns}[T]
 	\begin{column}[T]{5cm}
-		We can also place colums next to each other.\\
+		We can also place colums next to each other.
+		
 		\begin{block}{Also cool}
 			More indents in your code.
 		\end{block}
 		\begin{alertblock}{Attention!}
-			A block for even more \emph{emphasis}!\\
+			A block for even more \emph{emphasis}!
+			
 			Just differently colored.
 		\end{alertblock}
 	\end{column}
@@ -190,9 +199,17 @@ Enumerations can look better this way as well
 
 
 \begin{frame}{Also}
-Don't forget to compile, the table of contents and the progress bar will need more than one compilation to be updated correctly.\\
-At the end of a presentation you thank your audience and leave room for questions.\\
+Don't forget to compile, the table of contents and the progress bar will need more than one compilation to be updated correctly.
+
+At the end of a presentation you thank your audience and leave room for questions.
+
 Then your presentation is done!
+\end{frame}
+
+
+\begin{frame}{P.S.}
+	It looks a bit more professional not to have the a-eswiggle on each slide.
+	How to remove this is in the code. %see the layout section of the preamble.
 \end{frame}
 
 \end{document}
