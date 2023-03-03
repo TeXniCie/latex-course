@@ -2,33 +2,35 @@
 \begin{document}
 \newgeometry{margin=1.5cm} %% Special margins on the titlepage. It is also possible to set each margin separately; see package Geometry.
 
-\begin{titlepage} %%% This is your titlepage. Everything should match the conditions as they are right now for a physics thesis; hopefully the conditions won't change soon. In order to change this page into your very own title page, replace the noted parts with your own (like 'Your title').
+\begin{titlepage} %%% This is your titlepage. In order to change this page into your very own title page, replace the noted parts with your own (like 'Your title'). You can also change the text and UU logo to English.
+%Please check if you meet the set requirements for your degree (if there are any), once upon a time the requirements for Physics were met with this template but the requirements might have changed without our knowlegde.
 
 	\noindent
-	\begin{minipage}{0.4\textwidth}
-		\includegraphics[width=\linewidth]{uulogo} %%%% Logo of the UU. English version is also available
+	\begin{minipage}{0.5\textwidth}
+		\includegraphics[width=\linewidth]{uulogoNL} %%%% Logo of the UU. Dutch version is also available in this template as "uulogoEN", for other (perhaps more current) versions of the logo and the guidelines for usage see  https://www.uu.nl/en/organisation/corporate-identity/guidelines/logo
 	\end{minipage}
 	\hfill
     \begin{minipage}{0.2\textwidth}\raggedleft
 		\includegraphics[width=\linewidth]{aes2logo-rood} %%% Logo of the place you did your thesis, not necessary, but nice.
 	\end{minipage}
     
-    \par\vspace{1cm}
+    \par\vspace{0.5cm}
     
     \begin{flushright}
-    {\LARGE\bfseries Faculteit B\`etawetenschappen \par} %Enter your faculty here. It is probably right already (usually in Dutch).
+    {\LARGE\bfseries Faculteit B\`etawetenschappen \par} %Faculty of Science \par} %for English edit out "Faculteit B\`etawetenschappen \par} %"
+	%Enter your faculty here. It is probably right already.
     \end{flushright}
-	\vspace{1cm}
+	\vspace{0.5cm}
     \begin{center}
     {\huge\bfseries Your title \par} %% ENTER TITLE HERE
     \end{center}
-	\vspace{1cm}
+	\vspace{0.75cm}
     {\scshape\Large Bachelor Thesis\par}
-	\vspace{0.75cm} % You change this to set the distance 'Bachelor Thesis' to 'Your name', and all the other vspaces to set the heights of everything.
+	\vspace{0.25cm} % \vspaces creates vertical empty space, so you can in/decrease this number (or elsewhere on \vspace) to create more or less vertical space.
 	{\Large\itshape Your name\par} %% ENTER NAME HERE
     \vspace{0.5cm}
     {\Large Natuur- en Sterrenkunde // Wiskunde (en Toepassingen)}\par %% ENTER BACHELOR HERE
-    \vspace{0.5cm}
+    \vspace{0.75cm}
     \centering
     \frame{%% frame and fbox put a border around your picture
     \includegraphics[height=0.35\textheight]{ibavlag}%% If you use a picture, place it here. If you don't, delete this, from '\centering' to '\par'.
@@ -39,14 +41,14 @@
     \raggedleft
 	{\Large\itshape Supervisors}:\par\vspace{0.25cm}
 	{\large Dr.~First \textsc{Supervisor}\par} %% first supervisor
-    First supervisor's Institute\par %% his/her institute
+    First supervisor's Institute\par %% their institute
     \vspace{0.25cm}
     {\large Prof. Dr.~Second \textsc{Supervisor}\par} %%second supervisor
-    Second supervisor's Institute %% his/her institute
+    Second supervisor's Institute %% their institute
     %% copy/past from \vspace{0.25cm} to here for more supervisors.
 
 	\vfill
-	{\large Your Date\par}%%% The date. Replace \today with the necessary date if your necessary date isn't today.
+	{\large Your Date\par}%%% The date. Instead of a full date, writing only the month and year (of finishing the thesis) can also suffice.
     
 \end{titlepage}    
 
