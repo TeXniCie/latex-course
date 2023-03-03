@@ -5,10 +5,10 @@
 \begin{document}
 \newpage % Use newpage to start on a new page
 \section{Theorems and proofs}
-\label{sec:theorems}
+\label{sec:theorems} %Use this label to refer to this section, this will appear in another subfile as ?? but if you compile the main file (thesis.tex) it will be a correct reference to this section.
 
 \subsection{Not my theorem}
-\begin{theorem}[Theorem of Someone Else] % The brackets are usefull for adding stuff like (Pythagoras' Theorem).
+\begin{theorem}[Mine] % The brackets are usefull for adding stuff like (Pythagoras) for his theorem).
 The unit sphere is not compact in $l^2$.
 \begin{proof} 
 The sequence $(1,0,0,0,...),(0,1,0,0,...),(0,0,1,0,...),...$ does not have a converging subsequence so it is not sequentially compact hence not compact.
@@ -29,7 +29,7 @@ Proof by lack of contradicition.
 
 %This is an example of a lemma with a proof, further in the text.
 \begin{lemma}
-The proof of this lemma will come later.
+The proof of this lemma will come later, refer to it using the label given in the source code.
 \label{lm.laterproof} % Note the \label that is used.
 \end{lemma}
 
@@ -56,7 +56,7 @@ $$\boxed{E=mc^2}$$ is very important, this Theorem is even more important becaus
 Whenever we make a claim in a proof, the claim counter starts back at one.
 \begin{proof}
 Proof by picture:
-\clm{Here we see an one.}
+\clm{Here we see a one.}
 \end{proof}
 \end{remark}
 
