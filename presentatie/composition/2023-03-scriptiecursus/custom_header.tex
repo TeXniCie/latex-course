@@ -1,0 +1,79 @@
+
+\setbeamertemplate{headline}
+{%
+    \placetarget
+    \let\placetarget\relax
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+        \color{fg!80!bg}
+        % \adjustbox{
+        %     set depth=2pt,
+        %     padding={5pt 5pt 5pt 5pt},
+        %     bgcolor=bg!80!orange,
+        %     rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
+        %     margin={0pt 0pt 10pt 0pt}
+        % }{%
+        %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
+        % }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{textdocument}{\customhead{2}{Scriptietemplate}}%
+        }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            %bgcolor=bg!80!orange,
+            %bgcolor=structure.bg!80!orange,
+            bgcolor=exerciseTileBackground,
+            rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+            margin={-1pt 0pt 10pt 0pt}
+        }{%
+            \hyperlink{exercises1}{\customhead{3}{Uitproberen}}%
+        }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{bibliografie}{\customhead{4}{Bibliografie}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{referenties}{\customhead{5}{Referenties}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{afbeeldingen}{\customhead{6}{Afbeeldingen}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{tabellen}{\customhead{8}{Tabellen}}%
+        }%
+        % \adjustbox{
+        %     set depth=2pt,    
+        %     padding={5pt 5pt 5pt 5pt},
+        %     bgcolor=exerciseTileBackground,
+        %     rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+        %     margin={-1pt 0pt 10pt 0pt}
+        % }{%
+        %     \hyperlink{exercises2}{\customhead{7}{Oefeningen}}%
+        % }
+        % \adjustbox{
+        %     set depth=2pt,
+        %     padding={5pt 5pt 5pt 5pt},
+        %     rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        % }{%
+        %     \hyperlink{tables}{\customhead{7}{Tables}}%
+        %     \hspace{5pt}$ \cdot $\hspace{5pt}%
+        %     \hyperlink{finishingnotes}{\customhead{8}{Finishing notes}}%
+        % }%
+        \hfil
+        Slides op texnicie.nl
+        % \hfil
+        % \thepage
+        \vskip4pt
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
+}

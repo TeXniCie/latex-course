@@ -72,10 +72,9 @@
 \ProcessOptionsX
 
 \acrnDefName\copyrightThomas{Thomas van Maaren}{2022-2023}
-\acrnDefName\copyrightTim{Tim Weijers}{2022-2023}
 \acrnDefName\copyrightHanneke{Hanneke Schroten}{2022-2023}
+\acrnDefName\copyrightTim{Tim Weijers}{2022-2023}
 \acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2023}
-
 
 % Detail 5: rehearsal
 % Detail 10: crash course
@@ -807,7 +806,8 @@
         {\usebeamerfont{title in head/foot}\rlap{\insertshorttitle}}
         \hfill
         %Slides op texnicie.nl
-        \hfill{\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\llap{\usebeamertemplate{page number in head/foot}}}%
+        % \hfill{\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\llap{\usebeamertemplate{page number in head/foot}}}%
+        \thepage
     \end{beamercolorbox}%
     %
     \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}

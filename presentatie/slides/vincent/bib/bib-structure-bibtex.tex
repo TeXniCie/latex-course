@@ -16,22 +16,21 @@
 \begin{saveblock}{codeboxB}
 	\begin{highlightblock}[linewidth=0.6\textwidth]
 		% File: document.tex
-		\documentclass[a4paper]{article}
-		\usepackage{biblatex}
-		\addbibresource{bibfile.bib}
-		
-		\begin{document}
-			This has been shown.
-			\parencite{babington}
+        \documentclass[a4paper]{article}
+        \usepackage{natbib}
+        \bibliographystyle{unsrtnat}
 
-			\printbibliography
-		\end{document}
+        \begin{document}
+            This has been shown.
+            \citep{babington}
+
+            \bibliography{bibfile.bib}
+        \end{document}
 	\end{highlightblock}
 \end{saveblock}
 
-\begin{frame}{Minimum working example (biblatex met backend biber)}
-	% Je hebt dus twee bestanden, die er minimaal zo uitzien.
-	% (voor biblatex met backend biber)
+\begin{frame}{Minimum working example (natbib met backed bibtex)}
+	% Voor natbib met backend BibTeX:
 	
 	\bigskip\medskip
 	\begin{columns}

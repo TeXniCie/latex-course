@@ -10,7 +10,7 @@
 \newcommand\firstpart[1]{\atleastwidth[\columnfakewidth]{#1}}
 
 
-\begin{frame}[<+->]{Citatiecommando II}
+\begin{frame}[<+->]{Citeren}
 	Variaties in gebruik:
 	
 	%	\begin{tabular}{ll}
@@ -22,7 +22,7 @@
 	%		\only<6->{\lstinline|\\cite[See chapter 3 of]\{mysource\}|& [1, See chapter 3 of]\\}
 	%		\phantom{\lstinline|\\cite[See chapter 3 of]\{mysource\}|}&\phantom{[1, See chapter 3 of]}
 	%	\end{tabular}
-	\begin{itemize}
+	\begin{itemize}[label=\textbullet]
 		\item \firstpart{\lstinline|\\cite\{mysource\}|}  [1]
 		\item \firstpart{\lstinline|\\cite[21]\{mysource\}|}  [1, p. 21]
 		\item \firstpart{\lstinline|\\cite[21--30,8]\{mysource\}|}  [1, pp. 21--30, 8]
