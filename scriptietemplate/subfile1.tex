@@ -1,0 +1,21 @@
+% Credit: TeXniCie A-eskwadraat
+%
+%%% This is a subfile! Type your chapters/section, appendices, etc in here! This code can be run by itself to try for bugs or typo's, but you have to declare your master file for this to work (also references to other files do not work when only compiling this subfile)
+
+% Declare the documentclass. Don't change \documentclass[...]{subfiles}, but replace the ... with the name of your master file.
+\documentclass[thesis]{subfiles}
+
+% Write the body of the chapter/section/other. You CAN NOT define preamble stuff in here (like \newcommand or \usepackage), that should be done in the preamble.tex instead (which will automatically apply to all subfiles).
+\begin{document}
+The first text of the subfile.
+
+% Add a new section: The enumeration of this section will continue in the mainfile, even though it's alone here. So if this is the 5th section including earlier subfiles, this will print: '5  First section' in the main file.
+\section{First section}
+
+
+Like you can see, everything here is perfectly copied into the master file.\bigbreak
+Subfiles are pasted right below each other, without any page-break. However, subfile 2 starts with a `newpage', so we still see a page-break here.
+
+
+\end{document}
+

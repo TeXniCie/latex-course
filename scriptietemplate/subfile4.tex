@@ -1,0 +1,32 @@
+\documentclass[thesis]{subfiles}
+
+\begin{document}
+
+\section{Tips \& Tricks}
+If at a later time you run into some difficulties then we have some tips for you:
+\begin{itemize}
+\item The IBA has some very nice blogs in wich some usefull things are explained. You can find these blogs \href{https://iba.a-eskwadraat.nl/}{here} or by clicking this link: \url{https://iba.a-eskwadraat.nl/}\footnote{Unless this is printed, in which case you should stop trying right now}. There are blogs about pictures and their placement, defining your own commands and tikz.
+
+\item See the next section (or the IBA blogs) to read how \textbf{pictures} are placed in LaTeX and what you can do if jou want to force it to be at a certain place.
+
+\item If you happend to need \textbf{pictures with a lot of boxes or arrows}, then tikz can be very usefull for you.
+
+\item For \textbf{diagrams} one uses the tikz-cd (tikz Commutative Diagrams) package.
+
+\item You have probably heard of the \textbf{label command} and probably used it a lot for equations and pictures, but you can also use it for sections! See also the next section.
+
+\item If you want to \textbf{define text like commands for the math environment} then DeclareMathOperator is the command for you. You already know this structure from the sine and cosine commands, but you can also use this for things like $\arg(z)$ for a complex number inside the math environment. This command makes sure that `arg' will be written straight and not in \textit{itallic}. Check the code comment if you want to see how it works. The first argument is the command that you will type inside your math environment and the second command is the word you want to use like log or sin etc.
+% Syntax: \DeclareMathOperator{\arg}{arg}
+
+\item We have already loaded the hyperref package for you. Hyperref won't do anything on paper, but is incredibly useful in your pdf, as it allows you to \textbf{click any reference} to immediately jump to the referred place. It is good practice to label every main section (\textbackslash label\{sec:tipstricks\}) so you can refer to them. Note this only applies on sources from your bibliography.
+
+\item Use can use the listings package to \textbf{display code}, in your appendix for instance. Listings actually uses code files as input and displays them nicely. Listings isn't loaded in this file, but you can find and uncomment it in the preamble.tex file.
+
+\item Do you run into some \textbf{symbol} that you don't know the \LaTeX code for? You probably used it before and your browser remembers, but you can draw the symbol into \url{detexify.kirelabs.org/}.
+
+\item Google is your best friend, be kind to it, and it will be kind to you. Stackexchange is full of questions about how to do a spicific thing in \LaTeX.
+
+\item For issues or questions about a certain package you can check the CTAN documentation (\url{ctan.org} and search for the package), most packages have an introduction or manual of some sort.
+\end{itemize}
+
+\end{document}

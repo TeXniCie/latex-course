@@ -1,0 +1,102 @@
+% Copyright (C) 1995-2015 TeXniCie A-Eskwadraat <hektex@a-eskwadraat.nl>
+%
+% This file is part of the A-Eskwadraat LaTeX collection and may be
+% redistributed under the terms of version 2 of the GNU General Public License
+% as published by the Free Software Foundation. See LICENSE file for details.
+%
+%% $Id: aes.sty 807 2017-04-04 10:53:24Z aldo $
+
+%Werking en nut: Masterpackage nodig voor andere classes. Meer onderzoek vereist.
+
+\RequirePackage{eurosym}
+\RequirePackage{xspace}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{graphicx}
+\RequirePackage{epsfig}
+\newlength{\raiselength}
+\def\aesl#1{\begin{picture}(5,5)
+   \put(0,0.5){\framebox(4.5,4.5)[b]{\raisebox{\raiselength}{{\tmpfont #1}}}}
+   % the box with letter
+   \put(0.5,0){\rule{4.5\unitlength}{0.5\unitlength}}
+   \put(4.5,0){\rule{0.5\unitlength}{4.5\unitlength}}
+   \end{picture}}
+\def\blokjes#1{\ifdim#1<6pt \setlength{\unitlength}{.5mm}
+                         \font\tmpfont=cmr5
+               \else \ifdim#1<7pt \setlength{\unitlength}{.6mm}
+                         \font\tmpfont=cmr6
+               \else \ifdim#1<8pt \setlength{\unitlength}{.7mm}
+                         \font\tmpfont=cmr7
+               \else \ifdim#1<9pt \setlength{\unitlength}{.8mm}
+                         \font\tmpfont=cmr8
+               \else \ifdim#1<10pt \setlength{\unitlength}{.9mm}
+                         \font\tmpfont=cmr9
+               \else \ifdim#1<11pt \setlength{\unitlength}{1mm}
+                         \font\tmpfont=cmr10
+               \else \ifdim#1<13pt \setlength{\unitlength}{1.2mm}
+                         \font\tmpfont=cmr12
+               \else \ifdim#1<15pt \setlength{\unitlength}{1.4mm}
+                         \font\tmpfont=cmr12 scaled \magstep1
+               \else \ifdim#1<18pt \setlength{\unitlength}{1.7mm}
+                         \font\tmpfont=cmr17
+               \else \ifdim#1<21pt \setlength{\unitlength}{2mm}
+                         \font\tmpfont=cmr17 scaled \magstep1
+               \else \setlength{\unitlength}{2.4mm}
+                         \font\tmpfont=cmr17 scaled \magstep2
+                     \ifdim#1>24pt
+                     \typeout{Warning: largest `blokjes' dimension is 24pt, which I will use right now}
+               \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+   \linethickness{.1\unitlength}
+   \setlength{\raiselength}{.9\unitlength}
+   \begin{minipage}{36\unitlength}
+   \begin{picture}(35,11)
+   \put(0,6){\aesl{A}}
+   \put(6,6){\aesl{-}}
+   \put(12,6){\aesl{E}}
+   \put(18,6){\aesl{s}}
+   \put(24,6){\aesl{k}}
+   \put(30,6){\aesl{w}}
+   %
+   \put(0,0){\aesl{a}}
+   \put(6,0){\aesl{d}}
+   \put(12,0){\aesl{r}}
+   \put(18,0){\aesl{a}}
+   \put(24,0){\aesl{a}}
+   \put(30,0){\aesl{t}}
+   \end{picture}
+   \end{minipage}}
+\def\aes{\blokjes{10pt}\hfill\parbox{8cm}{Studievereniging voor
+studenten in de wis-, natuur-, sterrenkunde, geofysica en informatica}}
+\def\eaes{\blokjes{10pt}\hfill\parbox{8cm}{Association of students in
+physics, mathematics, computer science, astronomy and geophysics}}
+%
+
+\let\euro\officialeuro
+
+%% hieronder nieuwe definities, met de definities hierboven kunnen we later wat doen
+
+%% Commissienamen etc..
+
+\def\pmb#1{\setbox0=\hbox{#1}%
+        \kern-0.025em\copy0\kern-\wd0
+        \kern0.05em\copy0\kern-\wd0
+        \kern-0.025em\raise0.0433em\box0 }
+\def\axicie{{\normalfont\sc\pmb{axicie}}}
+\newcommand{\aesnaam}[1][\xspace]{\mbox{A--Es}\-kwa\-draat#1} %% Met argument, om bijv. A-Eskwadraatkamer te kunnen maken
+\let\aeskwadraat\aesnaam
+\newcommand{\aeslogo}[1][20mm]{\includegraphics[width=#1]{aes2-kleur}}
+\newcommand{\aeslogogrijs}[1][20mm]{\includegraphics[width=#1]{a-es}}
+\newcommand{\BBCie}[1][12pt]{\lower2pt\hbox{\epsfig{file=bbclogo,height=#1}}}
+\let\bbcie\BBCie
+%\newcommand{\TbC}{$\mathcal{T}$\hspace{-0.45em}\raisebox{-0.5ex}{$\mathcal{B}$}$\mathcal{C}$}
+\let\tbc\TbC
+\newcommand{\aesroots}{\mbox{\mbox{$\textrm{A--Es}^2$}\hspace{-3pt}\mbox{$\sqrt{\textrm{\emph{roots}}}$}}\xspace}
+\let\aeskwadraatroots\aesroots
+\def\TeXniCie{\mbox{\textsf{\TeX niCie}}}
+\let\texnicie\TeXniCie
+\let\hektex\TeXniCie
+\def\btw{{\sl``By the way\dots''}}
+\newcommand{\TbC}{$\mathcal{T}%
+        \kern-.45em\lower.5ex\hbox{$\mathcal{B}$}%
+        \kern-.00em\mathcal{C}$\@\relax%
+}
+\endinput

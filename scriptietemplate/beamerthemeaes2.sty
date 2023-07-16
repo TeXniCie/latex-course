@@ -1,0 +1,54 @@
+% Copyright (C) 2007-2015 TeXniCie A-Eskwadraat <hektex@a-eskwadraat.nl>
+%
+% This file is part of the A-Eskwadraat LaTeX collection and may be
+% redistributed under the terms of version 2 of the GNU General Public License
+% as published by the Free Software Foundation. See LICENSE file for details.
+%
+%% $Id: beamerthemeaes2.sty 733 2015-02-23 14:38:43Z aldo $
+
+\RequirePackage{ifthen}
+\RequirePackage{calc}
+% Presentation theme
+\usetheme{Frankfurt}
+% Color theme modifications
+\definecolor{aes@red}{rgb}{0.59,0.00,0.12}
+\setbeamercolor{structure}{fg=aes@red}
+\newlength{\progressbarlength}
+% Inner theme modifications
+\useinnertheme{rectangles}
+% Outer theme modifications
+\setbeamertemplate{mini frames}[box]
+\defbeamertemplate*{footline}{aes2 theme}
+{%
+	\pgfdeclarehorizontalshading{aes@progressbar}{2ex}{%
+		color(0ex)=(aes@red);%
+		color(0.3in)=(white)%
+	}%
+	\leavevmode%
+	% herbereken progressbar length
+	\setlength{\progressbarlength}{\paperwidth/\maxof{\inserttotalframenumber}{\insertframenumber}*\insertframenumber}%
+	\begin{beamercolorbox}[wd=\progressbarlength,ht=2ex]{frametitle}%
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=0.3in,ht=2ex]{frametitle}%
+		\pgfuseshading{aes@progressbar}%
+	\end{beamercolorbox}%
+	\vskip0pt%
+}
+% Default logo
+\pgfdeclareimage[width=25mm]{logo}{slinger}
+\logo{\pgfuseimage{logo}}
+% Progressbar configuration
+\newlength{\aes@step}
+\setlength{\aes@step}{0pt}
+\AtEndDocument{
+	\newcounter{aes@upc}
+	\setcounter{aes@upc}{1}
+	\newlength{\aes@pagelen}
+	\setlength{\aes@pagelen}{\inserttotalframenumber\unitlength}
+	\whiledo{\lengthtest{\theaes@upc\aes@pagelen<\paperwidth}}{\stepcounter{aes@upc}}
+	\setlength{\aes@step}{\theaes@upc\unitlength}
+  \if@filesw
+		\immediate\write\@auxout{\string\@writefile{nav}%
+			{\noexpand\headcommand{\noexpand\setlength{\noexpand\aes@step}{\the\aes@step}}}}
+	\fi
+}
