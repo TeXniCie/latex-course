@@ -1,0 +1,295 @@
+%\begin{frame}[fragile]{Lists}
+%
+%There are three types of lists environments in latex.
+%
+%
+%\begin{description}
+%	\item[enumerate]  is used for information that has order:
+%	\item[itemize] is used for information that does not have order:
+%	\item[description] is used for information that has descriptions for each item
+%\end{description}
+%	%\begin{tcolorbox}[width=13cm, title={Biggest Cities in the netherlands}, size=small]
+%	%	hey 
+%	%    %\begin{enumerate}
+%	%    %    \item Amsterdam
+%	%    %    \item Rotterdam
+%	%    %    \item The Hague
+%	%    %    \item Utrecht
+%	%    %    \item Eindhoven
+%	%    %\end{enumerate}
+%	%\end{tcolorbox}
+%	\begin{tcolorbox}[width=13cm, title={Examples}, size=small]
+%	\begin{tabular}{m{3cm}| m{3cm} | m{5cm}}
+%		\textbf{Enumerated list} & \textbf{Itemized list} & \textbf{Descriptive list}\\
+%		\hline
+%		Biggest cities of the Netherlands &Members of the TeXniCie &   Tech companies\\
+%		\hline
+%		\begin{enumerate}[label=\textbullet]
+%			\item Amsterdam 
+%		\begin{enumerate}[label=\textbullet]
+%			\item Hido
+%		\end{enumerate}
+%		\end{enumerate}
+%		&
+%		\begin{itemize}[label=\textbullet]
+%			\item Hanneke 
+%			\item Thomas
+%			\item Tim
+%			\item Vincent
+%		\end{itemize}
+%		& 
+%		\begin{description}
+%			\item[Apple] Computer company
+%			\item[Facebook] Social media company
+%			\item[Microsoft] Software company
+%		\end{description}
+%	\end{tabular}
+%	%\begin{itemize}[label=\textbullet]
+%	%	\item Hanneke 
+%	%	\item Thomas
+%	%	\item Tim
+%	%	\item Vincent
+%	%\end{itemize}
+%	\end{tcolorbox}
+%\end{frame}
+\copyrightVincent
+
+\addtorecentlist{\textbf{enumerate}}
+
+\beginDetail{20}
+    \begin{saveblock}{list}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+            Dit zijn de ingredi~\"e~nten:
+            \begin{enumerate}
+                \item Wortels
+                \item Uien
+                
+                Lipsum dolor sit amet.
+                \item Aardappelen
+            \end{enumerate}
+        \end{highlightblock}
+    \end{saveblock}
+
+    \begin{saveblock}{listEN}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+            These are the ingredients:
+            \begin{enumerate}
+                \item Carrots
+                \item Onions
+                
+                Lipsum dolor sit amet.
+                \item Potatoes
+            \end{enumerate}
+        \end{highlightblock}
+    \end{saveblock}
+
+    \begin{frame}
+        \frametitle{\lang,Lists,Lijsten,}
+        
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \lang,\useblock{listEN},\useblock{list},
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                %\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
+                % Dit zijn de ingrediënten:
+                % \begin{enumerate}
+                % 	\item Wortels
+                % 	\item Uien
+                    
+                % 	Lipsum dolor sit amet.
+                % 	\item Aardappelen
+                % \end{enumerate}
+                %\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/lijstEnum\langsuffix.pdf}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{saveblock}{list}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+            Dit zijn de ingredi~\"e~nten:
+            \begin{enumerate}
+                \item Wortels
+                \begin{enumerate}
+                    \item Kopen
+                    \item Raspen
+                    \item Fijnsnijden
+                \end{enumerate}			
+                \item Uien
+                
+                Lipsum dolor sit amet.
+                \item Aardappelen
+            \end{enumerate}
+        \end{highlightblock}
+    \end{saveblock}
+
+    \begin{saveblock}{listEN}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+            These are the ingredients:
+            \begin{enumerate}
+                \item Carrots
+                \begin{enumerate}
+                    \item Buy
+                    \item Peel
+                    \item Chop
+                \end{enumerate}			
+                \item Onions
+                
+                Lipsum dolor sit amet.
+                \item Potatoes
+            \end{enumerate}
+        \end{highlightblock}
+    \end{saveblock}
+
+    \begin{frame}
+        \frametitle{\lang,Lists,Lijsten,}
+        
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \lang,\useblock{listEN},\useblock{list},
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/lijstEnumEnum\langsuffix.pdf}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+\endDetail
+
+\addtorecentlist{\textbf{itemize}}
+
+\begin{saveblock}{list}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+        Dit zijn de ingredi~\"e~nten:
+        \begin{itemize}
+            \item Wortels
+            \begin{enumerate}
+                \item Kopen
+                \item Raspen
+                \item Fijnsnijden
+            \end{enumerate}			
+            \item Uien
+            
+            Lipsum dolor sit amet.
+            \item Aardappelen
+        \end{itemize}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{listEN}
+    % \begin{codebox}
+    %     \begin{minted}{tex}
+    %         These are the ingredients:
+    %         \begin{itemize}
+    %             \item Carrots
+    %             \begin{enumerate}
+    %                 \item Buy
+    %                 \item Peel
+    %                 \item Chop
+    %             \end{enumerate}
+    %             \item Onions
+                
+    %             Lipsum dolor sit amet.
+    %             \item Potatoes
+    %         \end{itemize}
+    %     \end{minted}
+    % \end{codebox}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+        These are the ingredients:
+        \begin{itemize}
+            \item Carrots
+            \begin{enumerate}
+                \item Buy
+                \item Peel
+                \item Chop
+            \end{enumerate}
+            \item Onions
+            
+            Lipsum dolor sit amet.
+            \item Potatoes
+        \end{itemize}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}[fragile]
+    \frametitle{\lang,More with text -- Lists,Lijsten,}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            % \lang,\useblock{listEN},\useblock{list},
+            \begin{codebox}
+                \begin{minted}{tex}
+                    These are the ingredients:
+                    \begin{itemize}
+                        \item Carrots
+                        \begin{enumerate}
+                            \item Buy
+                            \item Peel
+                            \item Chop
+                        \end{enumerate}
+                        \item Onions
+                        
+                        Lipsum dolor sit amet.
+                        \item Potatoes
+                    \end{itemize}
+                \end{minted}
+            \end{codebox}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/lijstItemEnum\langsuffix.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\beginDetail{20}
+    \begin{saveblock}{list}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+            Dit zijn de ingredi~\"e~nten:
+            \begin{itemize}
+                \item Wortels
+                \begin{itemize}
+                    \item Kopen
+                    \item Raspen
+                    \item Fijnsnijden
+                \end{itemize}			
+                \item Uien
+                
+                Lipsum dolor sit amet.
+                \item Aardappelen
+            \end{itemize}
+        \end{highlightblock}
+    \end{saveblock}
+
+    \begin{saveblock}{listEN}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+            These are the ingredients:
+            \begin{itemize}
+                \item Carrots
+                \begin{itemize}
+                    \item Buy
+                    \item Peel
+                    \item Chop
+                \end{itemize}
+                \item Onions
+                
+                Lipsum dolor sit amet.
+                \item Potatoes
+            \end{itemize}
+        \end{highlightblock}
+    \end{saveblock}
+
+    \begin{frame}
+        \frametitle{\lang,Lists,Lijsten,}
+        
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \lang,\useblock{listEN},\useblock{list},
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]
+                {assets/lijstItemItem\langsuffix.pdf}
+            \end{column}
+        \end{columns}
+    \end{frame}
+    
+\endDetail

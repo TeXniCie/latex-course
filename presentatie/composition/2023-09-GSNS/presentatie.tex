@@ -1,0 +1,162 @@
+%% !TeX program = pdflatex
+
+\documentclass[
+    english,
+    everyoneauthor=true,
+    %darktheme,
+    defaultSlideCollection=vincent,
+    % handout
+]{../../cursuspresentatie}
+
+\usepackage{minted}
+
+\input{custom_header.tex}
+
+\copyrightThomas
+\copyrightVincent
+
+\title[GSNS workshop: \LaTeX{} beginners]{GSNS workshop: \LaTeX{} beginners}
+\author[\TeX niCie]{\TeX niCie\\{\scriptsize Presenters: Thomas \& Vincent}}
+% \author[\TeX niCie]{Thomas \& Vincent ()}
+\date{7 February 2023}
+
+\begin{document}
+
+\def\placetarget{\hypertarget{introduction}{}}
+\section{Introduction}
+
+\importslide{tim/beginners}{welcome.tex}
+
+% \begin{frame}
+%     \titlepage
+%     \centering
+
+%     {\Large\lang,Slides are available at,Slides zijn te vinden op,\\
+%     \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+% \end{frame}
+
+% \setul{1pt}{2pt}
+
+\begin{frame}
+    \frametitle{\lang,Schedule,Agenda,}
+    
+    \begin{itemize}[label=\textbullet]
+        \item Text document
+        \item $ \langle $\lang,Exercises,Oefeningen,$ \rangle $
+        \item Formulas
+        \item Figures
+        \item $ \langle $\lang,Exercises,Oefeningen,$ \rangle $
+        \item Lists and Tables
+        \item Finishing notes
+    \end{itemize}
+\end{frame}
+
+\section{Text document}\label{sec:textdocument}
+\def\placetarget{\hypertarget{textdocument}{}}
+
+\importslide{tim/beginners}{overleaf-1.tex}
+\importslide{tim/beginners}{overleaf-2.tex}
+
+\importslide{vincent/internals}{command-syntax-beginners.tex}
+\importslide{vincent/document}{document-parts-overleaf.tex}
+
+\importslide{vincent/internals}{internals-usepackage.tex}
+
+\importslide{vincent/text}{text-syntax-1.tex}
+
+\setDetail{10}
+\importslide{vincent/text}{text-specialchars.tex}
+\importslide{vincent/text}{text-quotes.tex}
+
+\importslide{vincent/text}{text-effects.tex}
+\importslide{vincent/text}{text-lists.tex}
+
+\importslide{vincent/document}{document-margins.tex}
+\importslide{vincent/document}{document-sections.tex}
+\importslide{vincent/document}{document-toc.tex}
+
+\setDetail{20}
+
+\section{Exercises}
+\def\placetarget{\hypertarget{exercises1}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE Exercises!}
+        \vspace{30pt}
+
+        % Vergeet niet de nodige packages toe te voegen.
+        
+        % Op mijn site
+        % staat een basisdocument met alle nodige packages erin:
+
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+
+        {\Large\lang,Slides and exercises are available at,Slides zijn te vinden op,\\
+         \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+    \end{center}
+\end{frame}
+
+
+\section{Formulas}
+\def\placetarget{\hypertarget{formulas}{}}
+\importslide{tim/beginners}{math-1.tex}
+\importslide{tim/beginners}{math-2.tex}
+\importslide{tim/beginners}{math-3.tex}
+\importslide{tim/beginners}{math-4.tex}
+\importslide{tim/beginners}{math-5.tex}
+
+
+\section{Figures}
+\def\placetarget{\hypertarget{figures}{}}
+
+% \importslide{vincent/images}{includegraphics-inline.tex}
+% \importslide{vincent/images}{includegraphics-asparagraph.tex}
+\importslide{vincent/images}{includegraphics-center.tex}
+\importslide{vincent/images}{includegraphics-figure.tex}
+\importslide{vincent/images}{figure-placement.tex}
+\importslide{vincent/images}{figure-dimensions.tex}
+\importslide{vincent/images}{subfigure.tex}
+
+
+
+\section{Exercises}
+\def\placetarget{\hypertarget{exercises2}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE Exercises!}
+        \vspace{30pt}
+
+        {\Large\lang,Slides and exercises are available at,Slides zijn te vinden op,\\
+         \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+    \end{center}
+\end{frame}
+
+
+\section{Lists and Tables}
+\def\placetarget{\hypertarget{tables}{}}
+
+\importslide{thomas/GSNS-2023-02-GSNS}{lists.tex}
+\importslide{thomas/GSNS-2023-02-GSNS}{lists-2.tex}
+%\importslide{thomas/GSNS-2023-02-GSNS}{nested-lists.tex}
+\importslide{thomas/GSNS-2023-02-GSNS}{tables.tex}
+\importslide{thomas/GSNS-2023-02-GSNS}{tables-2.tex}
+\importslide{thomas/GSNS-2023-02-GSNS}{tables-3.tex}
+\begin{frame}
+    Lists and Tables
+\end{frame}
+
+\section{Finishing notes}
+\def\placetarget{\hypertarget{finishingnotes}{}}
+
+\begin{frame}
+    Finishing notes
+\end{frame}
+
+\importslide{vincent/misc}{misc-contact.tex}
+
+\section{License}
+\importslide{misc}{misc-license.tex}
+    
+\end{document}

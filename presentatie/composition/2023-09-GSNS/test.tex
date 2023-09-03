@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{array}
+\makeatletter
+\newcolumntype{e}[1]{%--- Enumerated cells ---
+   >{\minipage[t]{\linewidth}%
+     \NoHyper%                Hyperref adds a vertical space
+     \let\\\tabularnewline
+     \enumerate
+        \addtolength{\rightskip}{0pt plus 50pt}% for raggedright
+        \setlength{\itemsep}{-\parsep}}%
+   p{#1}%
+   <{\@finalstrut\@arstrutbox\endenumerate
+     \endNoHyper
+     \endminipage}}
+
+\newcolumntype{i}[1]{%--- Itemized cells ---
+   >{\minipage[t]{\linewidth}%
+        \let\\\tabularnewline
+        \itemize
+           \addtolength{\rightskip}{0pt plus 50pt}%
+           \setlength{\itemsep}{-\parsep}}%
+   p{#1}%
+   <{\@finalstrut\@arstrutbox\enditemize\endminipage}}
+
+\AtBeginDocument{%
+    \@ifpackageloaded{hyperref}{}%
+        {\let\NoHyper\relax\let\endNoHyper\relax}}
+\makeatother
+
+\newlength{\pcolwdth}
+\begin{document}
+\setlength{\pcolwdth}{5cm}% 
+\begin{tabular}{li{\pcolwdth}}
+2009--present & \multicolumn{1}{p{\pcolwdth}}{company 1} \\
+              & \item editor                             \\
+2011--2012    & \multicolumn{1}{p{\pcolwdth}}{company 2} \\
+              & \item judge
+                \item jury
+                \item executioner                        \\
+\end{tabular}
+\end{document}
