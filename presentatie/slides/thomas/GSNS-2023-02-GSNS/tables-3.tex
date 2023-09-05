@@ -7,30 +7,29 @@ Parameter options:
 	\item[r] Align columns to the right.
 \end{description}
 
-Also note that just like images, tables can be figures
-
+Also note that just like images, tables can have captions and labels
 
 \begin{tcolorbox}[title={Example}, size=small]
 \begin{tabular}{m{6.5cm} | m{8cm}}
-\begin{figure}
-\begin{tabular}{|l | l|}
+\begin{table}
+\begin{tabular}{|l | c|}
 Name & Population\\\hline
 Amsterdam & 903,399\\
 Rotterdam & 655,468\\
 The Hague & 553,417\\
 \end{tabular}
 \caption{Biggest cities of NL}
-\end{figure}
+\label{table:BiggestCitiesNL}
+\end{table}
 &
 \begin{minted}{latex}
-\begin{figure}
-\begin{tabular}{||l | l||}
-Name & Population\\\hline
-Amsterdam & 903,399\\
-Rotterdam & 655,468\\
+\begin{table}
+\begin{tabular}{||l | c||}
+...
 \end{tabular}
 \caption{Biggest cities of NL}
-\end{figure}
+\label{table:BiggestCitiesNL}
+\end{table}
 \end{minted}
 \end{tabular}
 \end{tcolorbox}

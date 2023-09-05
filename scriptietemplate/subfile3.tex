@@ -1,0 +1,33 @@
+%%% This is a file to test and show references. Some of the references will change when you change the settings, some won't.
+
+%% The main ways of citation are:
+% \cite{***}, using your normal settings.
+% \textcitet{***}, made to fit as part of a sentence.
+% \parencite{***}, puts your normal cite between parentheses.
+%% Less used:
+% \autocite{***}, automatically chooses one of the above (will make some mistakes).
+% \footcite{***}, puts the normal cite in a footnote.
+% \fullcite{***}, when you want all information citet.
+
+\documentclass[thesis]{subfiles}
+
+\begin{document}
+
+%%% Based on an original piece by Laurens Stoop, also see his bibfile.bib
+\section{A sample section with many citations}
+
+\subsection{Here I refer to some stuff}
+Please look at the bibfile (bibfile.bib) as well, and look in the preamble for the citation styles and how to make it work correctly for this template (if you want, of course you are free to use your favorite citation style).
+
+Here I first cite an inbook \cite{inbook}. I can also cite in a different matter\footnote{Disclaimer: this only works for certain citing styles, see the preamble.}, e.g. \textcite{inbook}. I will now cite an master thesis \cite{mastersthesis}, and even though the citation command is the same, the style might change (depending on your cite settings). Just look at all these mad citations referring to a booklet \cite{booklet} and its author \parencite{booklet}, a conference \cite{conference} and an article \cite{article}. You can do even more that this! 
+
+\subsection{Here I refer to some other stuff}
+For in a collection \cite{incollection} you can refer to a manual \cite{manual} or a book \cite{book} or a thesis written by a PhD student \cite{phdthesis} or a master student \cite{mastersthesis} and if that is not enough for you, then you can even cite some miscellaneous stuff \cite{misc}. A technical report on something irrelevant \cite{techreport} can also be cited, just like the proceeding for citations \cite{proceedings} and if you are still unpublished \cite{unpublished} you can even refer to that stuff.\\
+Finally I refer multiple things at once: like this \cite{misc,phdthesis} or this \cite{incollection,conference,techreport} or, if you are introducing many new refs at once, like this \cite{inbook,mastersthesis,booklet,conference} . As a final thing, I refer to the previous section, section \ref{sec:theorems}.
+
+Also remark that the autocite (which will change to what it thinks is best) \autocite{reference} and footcite \footcite{reference} commands exist.
+\bigbreak
+And if you really want to show everything? Use  ``\textbackslash fullcite'':\newline  \fullcite{article}
+
+\end{document}
+

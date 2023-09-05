@@ -8,23 +8,13 @@ There are three types of lists environments in latex.
 	\item[itemize] is used for information that does not have order:
 	\item[description] is used for information that has descriptions for each item
 \end{description}
-	%\begin{tcolorbox}[width=13cm, title={Biggest Cities in the netherlands}, size=small]
-	%	hey 
-	%    %\begin{enumerate}
-	%    %    \item Amsterdam
-	%    %    \item Rotterdam
-	%    %    \item The Hague
-	%    %    \item Utrecht
-	%    %    \item Eindhoven
-	%    %\end{enumerate}
-	%\end{tcolorbox}
 	\begin{tcolorbox}[width=13cm, title={Examples}, size=small]
 	\begin{tabular}{m{3cm}| m{3cm} | m{5cm}}
 		\textbf{Enumerated list} & \textbf{Itemized list} & \textbf{Descriptive list}\\
 		\hline
 		Biggest cities of the Netherlands &Members of the TeXniCie &   Tech companies\\
 		\hline
-		\begin{enumerate}[label=\arabic*.]
+		\begin{enumerate}[label=\arabic*)]
 			\item Amsterdam 
 			\item Rotterdam
 			\item The Hague
@@ -34,7 +24,6 @@ There are three types of lists environments in latex.
 		\begin{itemize}[label=\textbullet]
 			\item Hanneke 
 			\item Thomas
-			\item Tim
 			\item Vincent
 		\end{itemize}
 		& 
@@ -44,11 +33,5 @@ There are three types of lists environments in latex.
 			\item[Microsoft] Software company
 		\end{description}
 	\end{tabular}
-	%\begin{itemize}[label=\textbullet]
-	%	\item Hanneke 
-	%	\item Thomas
-	%	\item Tim
-	%	\item Vincent
-	%\end{itemize}
 	\end{tcolorbox}
 \end{frame}

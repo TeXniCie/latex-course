@@ -1,0 +1,74 @@
+%%% Credit: TeXniCie, A-EsKwadraat
+% Note that we have done our best to make a file that can be used for a thesis and we can help you if you have any problems (get in touch with us in person or via email), but we are not responsible for any issues that may occur.
+
+%%% TROUBLESHOOTING %%%
+% If the first compile fails, clean the auxilary files (Tools > Clean Auxilary Files...) and
+% remove one layer of % from the following three lines to see if that works: (ideally try them one-by-one)
+%% !TEX TS-program = pdflatex
+%% !BIB TS-program = biber
+%	% This might ask for permission first to use biber instead of the default bibliography.
+% If this fixes it, your default setting for latex or bib is wrong.
+% For TexStudio this can be fixed in Options > Configure Texstudio... > Build.
+
+% First we have to declare what kind of document this is. For a thesis, the usual options are article (for normal theses), report (for slightly larger theses) or book (for 100 or more pages of thesis). Report is rarely used and not supported as well as the article class:
+\documentclass{article}
+
+% Next we have to load all the settings. This is done by 'inputting' the code from the file preamble.tex. The \input command literally takes all the LaTeX code and pastes it here; so you can type all the usepackages, styles, newcommand, etc etc in there. This makes sure you almost never have to change this 'main' file, unless it is to add a new subfile or mix up the order of your chapters/sections.
+\input{preamble}
+
+
+% Begin the actual document
+\begin{document}
+
+% Import the subfiles in the order in which you want to run them.
+% You can use \frontmatter, \mainmatter, \appendix and \backmatter to give small roman numbers, normal numbers, capital roman numbers and no numbers, respectively.
+
+\subfile{titlepage} % Example of a title page
+
+\frontmatter % We want lowercase roman numerals here. Each *matter automatically forces the stuff after it to start on a new page
+
+\subfile{abstract} % Subfile containing the abstract
+\clearpage % Contents on next page
+\tableofcontents % The table of contents, always necessary
+
+
+\mainmatter % We want normal pagenumbers here.
+\subfile{subfile1} % Explanation of a general subfile
+%\clearpage        % If you want a new subfile to start 
+				   % 	on a fresh page and also make sure all 
+				   % 	figures from the previous subfile 
+				   % 	are placed before the next one starts.
+\subfile{subfile2} % Some tested lemma's, styles and subsections
+\subfile{subfile3} % References
+\subfile{subfile4} % Some tips & tricks you might like
+\subfile{subfile5} % Some code to copypaste for the figures 
+				   % 	you want included in you thesis
+
+\textit{}
+
+\newpage
+
+\appendix % From here on, sections are numbered with capital letters
+\subfile{appendixAB} % Contains two 'appendices'
+
+\backmatter % Capital Romans from here on
+
+% Print the bibliography:
+\printbibliography[% 
+% There are a lot of options for partial bibliographies, but you probably won't use them.
+% title = Optional custom title (not recommended)
+]
+
+% You can comment/uncomment the following line to makes your references appear in the Table of Contents, or not.
+\addcontentsline{toc}{section}{References}
+
+
+
+
+
+
+
+
+
+
+\end{document}
