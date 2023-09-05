@@ -3,7 +3,8 @@
 \input{preamble.tex}
 
 \title{\vspace{-65pt} Exercises LaTeX workshop}
-\author{\TeX niCie%
+\author{\TeX niCie\\
+{\small (Thomas, Vincent \& Hanneke)}
 %\\{\small (Vincent Kuhlmann)}
 }
 \date{7 February 2023}
@@ -31,7 +32,6 @@ Remember the slides are available on \url{https://texnicie.nl}\quad Also, make s
         \usepackage{amsmath,amssymb,amsthm}
         \usepackage{graphicx}
     \end{minted}
-\bigskip
 
 \section{Part 1: Text document}
 % Zorg dat je steeds minstens deze packages hebt in je preamble:
@@ -101,9 +101,11 @@ Remember the slides are available on \url{https://texnicie.nl}\quad Also, make s
     {\itshape When I woke up this morning, the temperature in my room was 13°C with 75\%
     humidity. I wrote down this data on my ``C:\textbackslash{}'' drive, in a file
     called temp\_room.txt. That morning the dollar-to-euro exchange rate was
-    \$1.00 is €0.84.\footnote{This exchange rate was real in February 2021. How
-    times have changed. You don't have to reproduce this footnote, however you could with
-    \mintinline{tex}{\footnote{}}. Or just insert a superscript 1, if you really want that.}}
+    \$1.00 is €0.84.%
+    % \footnote{This exchange rate was real in February 2021. How
+    % times have changed. You don't have to reproduce this footnote, however you could with
+    % \mintinline{tex}{\footnote{}}. Or just insert a superscript 1, if you really want that.}
+    }
 
     Hints:
     \begin{itemize}
@@ -136,7 +138,38 @@ Remember the slides are available on \url{https://texnicie.nl}\quad Also, make s
 \section{Part 2: Formulas and figures}
 
 \begin{exercise}
-    ... add exercises about formulas ...
+    \textit{Recreate the following expression in inline mode:}
+
+$$\left(\frac{x^3}{3(x+1)^2}\right)^{\frac{1}{n}}$$
+
+\end{exercise}
+\begin{exercise}
+\textit{Recreate the following proof by using align:}
+
+    \bgroup\small
+	The solution of $ax^2+bx+c=0$ where $a\neq 0$ is
+
+	\begin{align}
+		\frac{-b\pm \sqrt{d}}{2a}\text{ where }d=b^2-4ac
+	\end{align}
+	\begin{proof}
+		We see that the equation is equivalent to
+		\begin{align}
+			ax^2+bx&=-c
+			\intertext{Or equivalently}
+			-\frac{c}{a}=x^2+\frac{b}{a}x&=x^2+2\frac{b}{2a}x
+			\intertext{By adding $\left(\frac{b}{2a})\right)^2$ to both sides we get} 
+			\left(\frac{b}{2a}\right)^2-\frac{c}{a}&=x^2+2\frac{b}{2a}+\left(\frac{b}{2a}\right)^2\\
+			&=\left(x+\frac{b}{2a}\right)^2
+			\intertext{By multiplying $4a^2$ to bot sides we get}
+			b^2-4ac&=(2ax+b)^2
+			\intertext{So}
+			\pm \sqrt{b^2-4ac}&=2ax+b
+			\intertext{And therefore}
+			\frac{-b \pm \sqrt{b^2-4ac}}{2a}&=x
+		\end{align}
+	\end{proof}
+    \egroup
 \end{exercise}
 
 \begin{exercise}[basic image]
@@ -362,12 +395,12 @@ Remember the slides are available on \url{https://texnicie.nl}\quad Also, make s
 %     Vraag Vincent als het niet meteen lukt.
 % \end{exercise}
 
-Exercises were created by members of the TeXniCie:
-\begin{verbatim}
-    Copyright (c) 2022-2023 Tim Weijers
-    Copyright (c) 2022-2023 Thomas van Maaren
-    Copyright (c) 2022-2023 Hanneke Schroten
-    Copyright (c) 2021-2023 Vincent Kuhlmann
-\end{verbatim}
+% Exercises were created by members of the TeXniCie:
+% \begin{verbatim}
+%     Copyright (c) 2022-2023 Tim Weijers
+%     Copyright (c) 2022-2023 Thomas van Maaren
+%     Copyright (c) 2022-2023 Hanneke Schroten
+%     Copyright (c) 2021-2023 Vincent Kuhlmann
+% \end{verbatim}
 
 \end{document}

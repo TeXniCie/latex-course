@@ -1,0 +1,259 @@
+%% !TeX program = pdflatex
+
+\documentclass[
+    % english=false,
+    dutch,
+    everyoneauthor=true,
+    %darktheme,
+    defaultSlideCollection=vincent,
+    % handout
+]{../../cursuspresentatie}
+
+\usepackage{minted}
+
+\input{custom_header.tex}
+
+\addbibresource{fakebib.bib}
+
+% \copyrightThomas
+% \copyrightVincent
+
+\title[\LaTeX{} scriptiecursus]{\LaTeX{} scriptiecursus}
+\author[\TeX niCie]{\TeX niCie}%\\{\scriptsize Presenters: Thomas \& Vincent}}
+% \author[\TeX niCie]{Thomas \& Vincent ()}
+\date{7 maart 2023}
+
+\begin{document}
+
+\def\placetarget{\hypertarget{introduction}{}}
+\section{Introduction}
+
+\importslide{tim/beginners}{welcome.tex}
+
+
+\begin{frame}
+    \frametitle{\lang,Schedule,Agenda,}
+    
+    \begin{itemize}[label=\textbullet]
+        \item Scriptietemplate
+        % \item Text document
+        \item $ \langle $ Uitproberen $ \rangle $
+        \item Bibliografie
+        \item Referenties
+        \item Afbeeldingen
+        % \item Formulas
+        % \item Figures
+        % \item $ \langle $\lang,Exercises,Oefeningen,$ \rangle $
+        % \item Lists and Tables
+        % \item Finishing notes
+    \end{itemize}
+\end{frame}
+
+\section{Scriptietemplate}
+\begin{frame}
+    Demo op Overleaf
+\end{frame}
+
+
+\section{Exercises}
+\def\placetarget{\hypertarget{exercises1}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE \lang,Try out,Uitproberen,}
+        \vspace{30pt}
+
+        % Vergeet niet de nodige packages toe te voegen.
+        
+        % Op mijn site
+        % staat een basisdocument met alle nodige packages erin:
+
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+
+        % {\Large\lang,Slides and exercises are available at,Slides zijn te vinden op,\\
+        %  \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+        {\Large Scriptietemplate is te vinden op\\
+         \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+    \end{center}
+\end{frame}
+
+% \begin{frame}
+%     \titlepage
+%     \centering
+
+%     {\Large\lang,Slides are available at,Slides zijn te vinden op,\\
+%     \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+% \end{frame}
+
+% \setul{1pt}{2pt}
+
+\section{Bibliografie}
+\def\placetarget{\hypertarget{bibliografie}{}}
+
+\importslide{vincent/bib}{bib-ref_cmds}
+\importslide{vincent/bib}{bib-printbibliography}
+\importslide{vincent/bib}{bib-bibentry}
+\importslide{vincent/bib}{bib-structure}
+\importslide{vincent/bib}{bib-structure-bibtex}
+
+\begin{frame}
+    \centering
+    De \texttt{.bib} code hoef je bijna nooit zelf te schrijven!
+
+    \bigskip
+    \raggedright
+    \begin{itemize}[label=\textbullet]
+        \item Op meeste wetenschappelijke websites voor artikels en boeken heb je
+    een `export citation' functie. Kies hierbij voor type BibTeX.
+
+        \item Of gebruik een citation manager of browser extension die je hiermee
+    helpt.
+    \end{itemize}
+    
+    % Finding bib code from article sites
+\end{frame}
+% \importslide{vincent/bib}{}
+\importslide{vincent/bib}{bib-cite}
+\importslide{vincent/bib}{bib-style}
+\importslide{vincent/bib}{bib-backend}
+
+% \begin{frame}
+%     BibTeX+natbib instead of Biber+biblatex
+% \end{frame}
+
+\importslide{vincent/bib}{bib-mult_authors}
+
+\importslide{vincent/bib}{bib-sort}
+\importslide{vincent/bib}{bib-specialchars}
+
+\importslide{vincent/bib}{bib-misc}
+
+\section{Referenties}\label{sec:textdocument}
+\def\placetarget{\hypertarget{referenties}{}}
+% \def\placetarget{\hypertarget{referenties}{}}
+
+\importslide{math}{align-label.tex}
+% \importslide{vincent/}
+
+% \begin{frame}
+%     Referenties
+% \end{frame}
+
+% \importslide{vincent/}
+
+\begin{frame}[fragile]{Referenties}
+    \begin{codebox}
+        \begin{minted}{tex}
+            \section{Methods}
+            \label{sec:methods}
+
+            ...
+            \section{Results}
+
+            This result was obtained with the experiment as
+            described in Section~\ref{sec:methods} on page \pageref{sec:methods}.
+        \end{minted}
+    \end{codebox}
+\end{frame}
+
+\section{Afbeeldingen}\label{sec:afbeeldingen}
+\def\placetarget{\hypertarget{afbeeldingen}{}}
+
+% \begin{frame}
+%     Afbeeldingen
+% \end{frame}
+
+% \def\placetarget{\hypertarget{figuren}{}}
+
+\importslide{images}{includegraphics-center.tex}
+\importslide{images}{figure.tex}
+%\importslide{images}{figure-label.tex}
+\importslide{images}{figure-placement.tex}
+\importslide{images}{figure-dimensions.tex}
+\importslide{images}{subfigure.tex}
+
+
+% \section{Exercises}
+% \def\placetarget{\hypertarget{exercises2}{}}
+
+% \begin{frame}
+%     \begin{center}
+%         {\LARGE \lang,Exercises!,Oefeningen!,}
+%         \vspace{30pt}
+
+%         {\Large\lang,Slides and exercises are available at,Slides zijn te vinden op,\\
+%          \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+%     \end{center}
+% \end{frame}
+
+
+% \importslide{tim/beginners}{overleaf-1.tex}
+% \importslide{tim/beginners}{overleaf-2.tex}
+
+% \importslide{vincent/internals}{command-syntax-beginners.tex}
+% \importslide{vincent/document}{document-parts-overleaf.tex}
+
+% \importslide{vincent/internals}{internals-usepackage.tex}
+
+% \importslide{vincent/text}{text-syntax-1.tex}
+
+% \setDetail{10}
+% \importslide{vincent/text}{text-specialchars.tex}
+% \importslide{vincent/text}{text-quotes.tex}
+
+% \importslide{vincent/text}{text-effects.tex}
+% % \importslide{vincent/text}{text-lists.tex}
+
+% \importslide{vincent/document}{document-margins.tex}
+% \importslide{vincent/document}{document-sections.tex}
+% \importslide{vincent/document}{document-toc.tex}
+
+% \setDetail{20}
+
+
+
+% \section{Formulas}
+% \def\placetarget{\hypertarget{formulas}{}}
+% \importslide{tim/beginners}{math-1.tex}
+% \importslide{tim/beginners}{math-2.tex}
+% \importslide{tim/beginners}{math-3.tex}
+% \importslide{tim/beginners}{math-4.tex}
+% \importslide{tim/beginners}{math-5.tex}
+
+
+% \section{Figures}
+% \def\placetarget{\hypertarget{figures}{}}
+
+% % \importslide{vincent/images}{includegraphics-inline.tex}
+% % \importslide{vincent/images}{includegraphics-asparagraph.tex}
+% \importslide{vincent/images}{includegraphics-center.tex}
+% \importslide{vincent/images}{includegraphics-figure.tex}
+% \importslide{vincent/images}{figure-placement.tex}
+% \importslide{vincent/images}{figure-dimensions.tex}
+% \importslide{vincent/images}{subfigure.tex}
+
+
+
+
+% \section{Lists and Tables}
+% \def\placetarget{\hypertarget{tables}{}}
+
+% \importslide{thomas/GSNS-2023-02-GSNS}{lists.tex}
+% \importslide{thomas/GSNS-2023-02-GSNS}{lists-2.tex}
+% \importslide{thomas/GSNS-2023-02-GSNS}{nested-lists.tex}
+% \importslide{thomas/GSNS-2023-02-GSNS}{tables.tex}
+% \importslide{thomas/GSNS-2023-02-GSNS}{tables-2.tex}
+% \importslide{thomas/GSNS-2023-02-GSNS}{tables-3.tex}
+
+\section{Finishing notes}
+\def\placetarget{\hypertarget{finishingnotes}{}}
+
+% \importslide{vincent/misc}{misc-installation.tex}
+
+\importslide{vincent/misc}{misc-contact.tex}
+
+\section{License}
+\importslide{misc}{misc-license.tex}
+    
+\end{document}
+
