@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\half}{\frac{1}{2}}
+
+
+
+
+\begin{document}
+\textit{Recreate the following expression in inline mode:}
+
+$$\left(\frac{x^3}{3(x+1)^2}\right)^{\frac{1}{n}}$$
+
+\textit{Recreate the following proof by using align:}
+
+	The solution of $ax^2+bx+c=0$ where $a\neq 0$ is
+
+	\begin{align}
+		\frac{-b\pm \sqrt{d}}{2a}\text{ where }d=b^2-4ac
+	\end{align}
+	\begin{proof}
+		We see that the equation is equivalent to
+		\begin{align}
+			ax^2+bx&=-c
+			\intertext{Or equivalently}
+			-\frac{c}{a}=x^2+\frac{b}{a}x&=x^2+2\frac{b}{2a}x
+			\intertext{By adding $\left(\frac{b}{2a})\right)^2$ to both sides we get} 
+			\left(\frac{b}{2a}\right)^2-\frac{c}{a}&=x^2+2\frac{b}{2a}+\left(\frac{b}{2a}\right)^2\\
+			&=\left(x+\frac{b}{2a}\right)^2
+			\intertext{By multiplying $4a^2$ to bot sides we get}
+			b^2-4ac&=(2ax+b)^2
+			\intertext{So}
+			\pm \sqrt{b^2-4ac}&=2ax+b
+			\intertext{And therefore}
+			\frac{-b \pm \sqrt{b^2-4ac}}{2a}&=x
+		\end{align}
+	\end{proof}
+
+\end{document}
