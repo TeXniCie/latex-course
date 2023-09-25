@@ -1,0 +1,423 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+
+\title{\vspace{-65pt} Exercises LaTeX workshop}
+\author{\TeX niCie\\
+{\small (Thomas, Vincent \& Hanneke)}
+%\\{\small (Vincent Kuhlmann)}
+}
+\date{6 September 2023}
+
+\usepackage{minted}
+\setminted{fontsize=\small, autogobble=true, linenos=false, frame=none}
+% \setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+% \setminted[json]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+
+%\usemintedstyle{pastie}
+
+\usepackage{wrapfig}
+%\usepackage{cutwin}
+
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+\maketitle
+
+% \CheckBox[]{aaa}
+
+Remember the slides are available on \url{https://texnicie.nl}\quad Also, make sure you have at least these lines in your preamble:
+\begin{minted}{tex}
+        \usepackage[a4paper,margin=2.54cm]{geometry}
+        \usepackage{amsmath,amssymb,amsthm}
+        \usepackage{graphicx}
+    \end{minted}
+
+\section{Part 1: Text document}
+% Zorg dat je steeds minstens deze packages hebt in je preamble:
+% \begin{minted}{tex}
+%         \usepackage[a4paper,margin=2.54cm]{geometry}
+%         \usepackage{amsmath,amssymb,amsthm}
+%         \usepackage[bookmarksnumbered]{hyperref}
+%     \end{minted}
+% \bigskip
+
+\begin{exercise}[first document]
+    Create a document with a title and a first line of text. Set the author to
+    be your name. Change the paper size to a5paper, and set the margins to 1cm.
+\end{exercise}
+
+\begin{exercise}[emphasize]
+    Emphasize some text by using \mintinline{tex}{\emph{your text}}. Put some another word
+    or phrase in bold.
+    
+    % Extra: Can you find the difference between \mintinline{tex}{\emph} and \mintinline{tex}{\textit}?
+\end{exercise}
+
+\begin{exercise}[flushright]
+    Find out what the \mintinline{tex}{\flushright} command does.
+\end{exercise}
+
+\begin{exercise}[headings]
+    Create headings (section, subsection etc.), and create
+    a table of contents for it. The table of contents should be on its own page.
+\end{exercise}
+
+\begin{exercise}[spacing]
+    Let's make your document very\; s\,p\,a\,c\,i\,o\,u\,s. First, add the following
+    lines to your preamble:
+    \begin{minted}{tex}
+    \usepackage{parskip}
+
+    \setlength{\parskip}{20pt}
+    \renewcommand{\baselinestretch}{1.5} 
+    \end{minted}
+
+    % They will make sure we are using paragraph spacing, with 20pt between paragraphs
+    % (you can also use a value in centimeters if you prefer that). Additionally, the
+    % line spacing is
+    % set to 1.5.\footnote{If you are interested in how line spacing can be changed mid-document, see \url{https://tex.stackexchange.com/a/241121}}
+    
+    Check if this increases paragraph spacing and line spacing.
+
+    Next, change the vertical margins to be 4 cm. Refer to the manual of the geometry
+    package, or try what the following package options for geometry do: \mintinline{tex}{top=},
+    \mintinline{tex}{bottom=}, \mintinline{tex}{vmargin=}.
+    
+\end{exercise}
+
+\begin{exercise}[hyphenation]
+    LaTeX can hyphenate words automatically. For this it needs the \texttt{babel} package,
+    with package option \texttt{english} (i.e. \mintinline{tex}{\usepackage[english]{babel}}).
+    Try to produce such hyphenation in your document.
+
+    Hint: if you are having difficulty, increase the horizontal margin size, and change the paper
+    size to A5 if you haven't already.
+\end{exercise}
+
+\begin{exercise}[special characters]
+    Reproduce the following text:
+
+    {\itshape When I woke up this morning, the temperature in my room was 13°C with 75\%
+    humidity. I wrote down this data on my ``C:\textbackslash{}'' drive, in a file
+    called temp\_room.txt. That morning the dollar-to-euro exchange rate was
+    \$1.00 is €0.84.%
+    % \footnote{This exchange rate was real in February 2021. How
+    % times have changed. You don't have to reproduce this footnote, however you could with
+    % \mintinline{tex}{\footnote{}}. Or just insert a superscript 1, if you really want that.}
+    }
+
+    Hints:
+    \begin{itemize}
+        \item You can use \mintinline{tex}{\textdegree} instead of pasting in a degree
+        symbol, if you use \mintinline{tex}{\usepackage{gensymb}}.
+        \item Look at the slide of typing special characters literally.
+        \item Use \mintinline{tex}{\usepackage{lmodern}} for a nicer euro symbol.
+        (You can enter a euro symbol directly in the code)
+        \item For special characters it is often advisable to use \mintinline{tex}{\usepackage[utf8]{inputenc}}
+        (which Overleaf includes by default). Then more characters can be typed in directly in code.
+    \end{itemize}
+\end{exercise}
+
+\begin{exercise}[parskip]
+    Add two paragraphs to your document, and observe the difference with \mintinline{tex}{\usepackage{parskip}}
+    and without it. Which style do you prefer?
+\end{exercise}
+
+\begin{exercise}[manual spacing]
+    Find out what the following commands do: \mintinline{tex}{\quad}, \mintinline{tex}{\qquad}, \mintinline{tex}{\hspace{2cm}},
+    \mintinline{tex}{\;}, \mintinline{tex}{\!}, \mintinline{tex}{\vspace{2cm}}, \mintinline{tex}{\bigskip}.
+\end{exercise}
+
+\begin{exercise}[colors]
+    Add package \mintinline{tex}{\usepackage{xcolor}}, produce the following text
+    in red and orange colors:
+    \textbf{\textcolor{orange}{Hi, I like the color \textcolor{red}{red}.}}
+\end{exercise}
+
+\section{Part 2: Formulas and figures}
+
+\begin{exercise}
+    \textit{Recreate the following expression in inline mode:}
+
+$$\left(\frac{x^3}{3(x+1)^2}\right)^{\frac{1}{n}}$$
+
+\end{exercise}
+\begin{exercise}
+\textit{Recreate the following proof by using align:}
+
+    \bgroup\small
+	If $ax^2+bx+c=0$, where $a\neq 0$, and if $ d=b^2-4ac $, then
+	\begin{align}
+		x = \frac{-b\pm \sqrt{d}}{2a}
+	\end{align}
+	\begin{proof}
+        % Since $ a\neq 0 $, we can rewrite the expression as
+        % \begin{align*}
+        %     x^2+\frac{b}{a}x=\frac{-c}{a}.
+        % \end{align*}
+
+        % If we add $ \left(\frac{b}{2a}\right)^2 $ to both sides, we obtain
+        % \begin{align*}
+        %     \left(\frac{b}{2a}\right)^2-\frac{c}{a}
+        %     &= x^2+\frac{b}{a}x + \left(\frac{b}{2a}\right)^2\\
+        %     &= x^2+2\left(\frac{b}{2a}\right)x + \left(\frac{b}{2a}\right)^2\\
+        %     &= \left(x+\frac{b}{2a}\right)^2.
+        % \end{align*}
+
+        % Therefore
+        % \begin{align*}
+        %     x+\frac{b}{2a} = \sqrt{\left(\frac{b}{2a}\right)^2-\frac{c}{a}}
+        % \end{align*}
+
+		We see that the equation is equivalent to
+		\begin{align}
+			ax^2+bx&=-c
+			\intertext{Or equivalently}
+			-\frac{c}{a}=x^2+\frac{b}{a}x&=x^2+2\frac{b}{2a}x
+			\intertext{By adding $\left(\frac{b}{2a}\right)^2$ to both sides we get} 
+			\left(\frac{b}{2a}\right)^2-\frac{c}{a}&=x^2+2\frac{b}{2a}+\left(\frac{b}{2a}\right)^2\\
+			&=\left(x+\frac{b}{2a}\right)^2
+			\intertext{If we multiply both sides with $4a^2$ we get}
+			b^2-4ac&=(2ax+b)^2\\
+			% \intertext{So}
+			\pm \sqrt{b^2-4ac}&=2ax+b
+			\intertext{And therefore}
+			\frac{-b \pm \sqrt{b^2-4ac}}{2a}&=x
+		\end{align}
+	\end{proof}
+    \egroup
+\end{exercise}
+
+\begin{exercise}[basic image]
+    Find an image of your favourite animal species, and upload the image into your
+    Overleaf document. First, use a direct \mintinline{tex}{\includegraphics{...}}
+    with \mintinline{tex}{...} the name of the image. If this works, wrap
+    a proper figure environment around it as seen in the slides.
+\end{exercise}
+
+\begin{exercise}[reference]
+    Add a reference to a numbered equation and a figure in your text. Use the proper
+    \LaTeX{} way of doing this, i.e. with \mintinline{tex}{\label{fig:cuteanimal}}
+    and \mintinline{tex}{\ref{fig:cuteanimal}}. This ensures the numbers will stay
+    correct.
+\end{exercise}
+
+\begin{exercise}[image trimming]
+    You can crop an image from within \LaTeX{} using this command:
+    \begin{minted}{tex}
+        \includegraphics[width=0.9\linewidth,trim=10pt 10pt 10pt 10pt,clip]{example-image-a}
+    \end{minted}
+    Observe how changing the 4 numbers in the trim option (corresponding to left, bottom,
+    right, top respecitvely) affects the cropping. Make sure you have added \mintinline{tex}{\usepackage{graphicx}}
+    to your preamble!
+\end{exercise}
+
+% \begin{exercise}[PDF-viewer]
+%     Ga naar het TeX-tabje in de activity bar links in VS~Code. Probeer de verschillende opties
+%     onder `View LaTeX PDF'. Wat vind je het fijnste werken?
+%     Verander de \texttt{latex-workshop.view.pdf.viewer} optie in de settings als je
+%     een andere default wil.
+% \end{exercise}
+
+% \begin{exercise}[Inline math shortcut]
+%     Stel een shortcut in voor het invoegen van inline math. Bijvoorbeeld door
+%     het volgende toe te voegen aan je \texttt{keybindings.json}:
+%     \begin{minted}{json}
+%         {
+%             "key": "ctrl+shift+m",
+%             "when": "editorTextFocus && editorLangId == latex",
+%             "command": "editor.action.insertSnippet",
+%             "args": {
+%                 "snippet": "\\$ ${1:} \\$$0"
+%             }
+%         },
+%     \end{minted}
+%     Check dat dit werkt.
+% \end{exercise}
+
+% \begin{exercise}[Errors en warnings]
+%     Maak een error door een align met een witregel erin, en daarna een warning door
+%     \mintinline{tex}{\label} twee keer te gebruiken met hetzelfde argument.
+%     Waar zie je de errors en warnings in Visual Studio Code?
+% \end{exercise}
+
+% \begin{exercise}[LaTeX Workshop snippets]
+%     Ga naar de volgende URL:
+    
+%     \url{https://github.com/James-Yu/LaTeX-Workshop/wiki/Snippets}.
+    
+%     Stel de \texttt{editor.suggest.snippetsPreventQuickSuggestions} in zoals aangegeven op de
+%     pagina. Probeer vervolgens een figure, een section en een \mintinline{tex}{\textbf} te maken
+%     met de default snippets en shortcuts die erop vermeld staan.
+% \end{exercise}
+
+% \begin{exercise}[Environment snippet]
+%     Stel een snippet in voor het toevoegen van een environment. Kies als default environment
+%     naam wat je denkt het meest te zullen gebruiken (bijvoorbeeld align).
+% \end{exercise}
+
+% \begin{exercise}[VS Code algemene shortcuts]
+%     Ga naar \url{https://code.visualstudio.com/docs}, klik op `Keyboard Shortcut Reference Sheet'
+%     en download de PDF voor jouw besturingssysteem.
+%     Probeer wat shortcuts uit. Welke zouden voor jou handig kunnen zijn?
+% \end{exercise}
+
+% \begin{exercise}[Basisdocument snippet]
+%     Maak een snippet die een basisdocument voor LaTeX voorziet, met alle \mintinline{tex}{\usepackage}'s
+%     die je meestal nodig hebt.
+% \end{exercise}
+
+% \begin{exercise}[Python]
+%     Als je Python kent, maak een Python bestand in VS Code, en zoek hoe je het kan
+%     uitvoeren. Probeer ook de interactive console.
+% \end{exercise}
+
+% \pagebreak
+% \section{Deel 2: Effici\"entie in LaTeX code}
+
+% % Zorg dat je steeds minstens deze packages hebt in je preamble:
+% % \begin{minted}{tex}
+% %         \usepackage[a4paper,margin=2.54cm]{geometry}
+% %         \usepackage{amsmath,amssymb,amsthm}
+% %         \usepackage{graphicx}
+% %         \usepackage{subcaption}
+% %         \usepackage{booktabs}
+% %         \usepackage[bookmarksnumbered]{hyperref}
+% %     \end{minted}
+% % \bigskip
+
+% \begin{exercise}[Stelsel in matrix revisited]
+% Stelsels lineaire vergelijkingen kunnen opgelost worden door ze te schrijven als een matrix en Gauss
+% eliminatie toe te passen.
+% Repliceer dit typische stelselmatrix:
+
+% \begin{tabularx}{\textwidth}{Xp{0.7\textwidth}}
+% \adjustbox{valign=t}{\small$\displaystyle
+%     \left(\begin{array}{rrr|r}
+%         2 & 1 & -1 & 8\\
+%         -3 & -1 & 2 & -11\\
+%         -2 & 1 & 2 & -3
+%     \end{array}\right)
+% $}&
+% \parbox[t]{0.65\textwidth}{\small De eerste rij komt overeen met de vergelijking $ 2x+y-z=8 $.\\
+% Getallenvoorbeeld van:\\\url{https://en.wikipedia.org/wiki/Gaussian_elimination}}
+% \end{tabularx}
+
+% Maak een environment hiervoor. Zorg dat het environment een argument heeft voor hoeveel
+% kolommen er voor de verticale streep staan.
+
+% Kan je dit een optioneel argument maken?
+% \end{exercise}
+
+% \begin{exercise}[Vector]
+%     Definieer een commando die drie argumenten neemt, en er een kolommatrix van maakt.
+% \end{exercise}
+
+% \begin{exercise}[Commando \textbackslash input]
+%     Kopieer het \texttt{.tex}-bestand van je vorige inleveropgave, en plaats de preamble ervan
+%     in een ander bestand, dat je bijvoorbeeld \texttt{preamble.tex} noemt. Gebruik
+%     \mintinline{tex}{\input{preamble.tex}} in je eigenlijke \texttt{.tex}-bestand.
+%     Kan je het nog steeds compileren?
+% \end{exercise}
+
+% \begin{exercise}[Eigen documentclass]
+%     Maak je eigen documentclass zoals aangegeven in de slides. Werkt het als je
+%     in het kopie van je vorige inleveropgave de preamble vervangt door\newline
+%     \mintinline{tex}{\documentclass{inleveropgave}}?
+% \end{exercise}
+
+% \begin{exercise}[aux-directory]\label{ex:auxDir}
+%     In plaats van dat alle hulpbestanden zoals \texttt{.aux}, \texttt{.toc}, \texttt{.out}
+%     je mapje onoverzichtelijk maken, is het mogelijk de locatie ervoor te veranderen naar een
+%     ander mapje. Vraag Vincent als je benieuwd bent.
+
+%     In VS Code, onder het TeX-tabje, gebruik `Clean up auxiliary files' onder `Build LaTeX project'.
+
+%     Typ \mintinline{text}{"latex-workshop.latex.tools"} in je settings.json bestand, en gebruik
+%     de auto-complete. Je krijgt een hele lijst met 'tools'. Voeg deze tool toe:
+%     \begin{minted}{tex}
+%         {
+%             "name": "pdflatexDirs",
+%             "command": "pdflatex",
+%             "args": [
+%                 "-synctex=1",
+%                 "-interaction=nonstopmode",
+%                 "-file-line-error",
+%                 "-aux-directory=auxdir",
+%                 "%DOC%"
+%             ],
+%             "env": {}
+%         },
+%     \end{minted}
+%     Typ nu \mintinline{text}{"latex-workshop.latex.recipes"} in je settings.json bestand,
+%     en gebruik weer auto-complete. Voeg bovenaan de recipes toe:
+%     \begin{minted}{tex}
+%         {
+%             "name": "pdflatexDirs",
+%             "tools": [
+%                 "pdflatexDirs"
+%             ]
+%         },
+%     \end{minted}
+%     Sla op, en compileer je bestand. Je zou nu een nieuw mapje `auxdir' moeten zien, en
+%     hierin staan al je auxiliary files.
+% \end{exercise}
+
+% \begin{exercise}[Snelle compilatie]
+%     %Zie oefeningen PDF op texnicie.nl.
+
+%     Maak een \texttt{.tex}-bestand en compileer het manueel met het \texttt{pdflatex}-commando
+%     in je terminal.
+
+%     Eenmaal dat is gelukt, voeg deze lijn bovenaan je \texttt{.tex}-bestand toe
+%     \begin{minted}{text}
+%         %&document_format
+%         \documentclass{article}
+
+%         ...
+%     \end{minted}
+%     en voer dit commando uit in je terminal:
+%     \begin{minted}{text}
+%         pdftex -ini -jobname="document" "&pdflatex" mylatexformat.ltx document.tex
+%     \end{minted}
+
+%     Als het goed is zie je nu een \texttt{document.fmt}-bestand. Dit is een cache van het moment
+%     dat de preamble helemaal was ingeladen. Als je nu je \texttt{.tex}-bestand weer compileert
+%     (kan ook via Visual Studio Code), zou dit veel sneller moeten gaan.
+
+%     Maar let op! De cache kijkt niet of je preamble is veranderd, dus als je je preamble verandert
+%     moet je je \texttt{document.fmt}-bestand verwijderen, en opnieuw maken.
+%     Je kan het commando voor het maken van dit \texttt{.fmt}-bestand ook instellen in VS~Code.
+%     Dit gaat analoog aan \autoref{ex:auxDir}, als
+%     \begin{minted}{json}
+%         {
+%             "name": "mylatexformat",
+%             "command": "pdftex",
+%             "args": [
+%                 "-ini",
+%                 "-jobname=\"%DOC%_format\"",
+%                 "&pdflatex",
+%                 "mylatexformat.ltx",
+%                 "%DOC%"
+%             ],
+%             "env": {}
+%         },
+%     \end{minted}
+
+%     Let erop dat in je document de eerste regel \texttt{\%\&document\_format} is, en vervang \texttt{document\_format}
+%     hier door de naam van je bestand zonder de \texttt{.tex}, en met \texttt{\_format} erachter.
+
+%     Dit is een moeilijke opgave, en het kan zijn dat ik iets mis in de instructies. 
+%     Vraag Vincent als het niet meteen lukt.
+% \end{exercise}
+
+% Exercises were created by members of the TeXniCie:
+% \begin{verbatim}
+%     Copyright (c) 2022-2023 Tim Weijers
+%     Copyright (c) 2022-2023 Thomas van Maaren
+%     Copyright (c) 2022-2023 Hanneke Schroten
+%     Copyright (c) 2021-2023 Vincent Kuhlmann
+% \end{verbatim}
+
+\end{document}
