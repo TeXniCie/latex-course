@@ -1,0 +1,372 @@
+%% !TeX program = pdflatex
+
+\documentclass[
+    dutch,
+    everyoneauthor=true,
+    % darktheme,
+    defaultSlideCollection=vincent,
+    %slidenames=true,
+    % handout
+]{../../cursuspresentatie}
+
+\usepackage{minted}
+
+\ifbool{darktheme}{
+    \definecolor{codehighlight}{RGB}{44, 78, 120}
+}{
+    \definecolor{codehighlight}{RGB}{177, 213, 255}
+}
+
+\def\codeEmphasize#1{\ul{#1}}
+
+
+\def\customhead#1#2{%
+    \ifnum\value{section}=#1\relax
+        \textcolor{fg!100!bg}{%
+            \setul{1pt}{0.5pt}\setulcolor{yellow}\ul{#2}%
+        }%
+    \else
+        #2%
+    \fi
+}
+
+% \setbeamertemplate{headline}
+% {%
+%     \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+%     \end{beamercolorbox}
+%     \begin{beamercolorbox}{section in head/foot}
+%         \vskip2pt
+%         \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+%         \color{fg!80!bg}
+%         % \ifnum\c@section=2%
+%         %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot}}}%
+%         % \else%
+%         %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot shaded}}}%
+%         % \fi}%
+%         \adjustbox{
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!40!orange,
+%             rndcorners={3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+%         }{%
+%             \customhead{2}{Document en referenties}%
+%             \hspace{5pt}$ \cdot $\hspace{5pt}
+%             \customhead{3}{Figuren}%
+%         }%
+%         \adjustbox{
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!20!orange,
+%             rndcorners={0pt 3pt 0pt 3pt},margin={0pt 0pt 10pt 0pt}
+%         }{%
+%             Oefeningen%
+%         }%
+%         % \adjustbox{padding={3pt 5pt 3pt 5pt},bgcolor=red!40!orange,rndcorners=3pt,margin={10pt 0pt 10pt 0pt}}{
+%         %     `Theorem' en `Lemma'
+%         %     \hspace{5pt}$ \cdot $\hspace{5pt}
+%         %     Matrices en tabellen
+%         % }
+%         \adjustbox{
+%             %set depth=2pt,
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!40!orange,
+%             rndcorners={3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt},
+%         }{%
+%             \customhead{4}{`Theorem' en `Lemma'}
+%             \hspace{5pt}$ \cdot $\hspace{5pt}
+%             \customhead{5}{Matrices en tabellen}\vphantom{g} %
+%         }%
+%         \adjustbox{
+%             set depth=2pt,    
+%             padding={5pt 5pt 5pt 5pt},bgcolor=red!20!orange,
+%             rndcorners={0pt 3pt 0pt 3pt},margin={0pt 0pt 10pt 0pt}
+%         }{%
+%             Oefeningen%
+%         }
+%         \hfil
+%         Slides op texnicie.nl
+%         \hfil
+%         %\strut %AAAA
+%         \vskip4pt
+%     \end{beamercolorbox}%
+%     \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+%     \end{beamercolorbox}%
+% }
+
+\let\placetarget\relax
+
+\input{custom_header.tex}
+
+%\newmintinline[cc]{latex}{}
+
+\ifbool{darktheme}{
+    \usemintedstyle{github-dark}
+    \def\codeEmphasize#1{\textcolor{white}{\ul{#1}}}
+}{
+    \usemintedstyle{pastie}
+    %\usemintedstyle{default}
+}
+
+\setminted[tex]{highlightcolor=codehighlight}%blue!60!white!60!black}
+
+
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=false, frame=none}
+\usepackage{tcolorbox}
+
+%\input{preamble.tex}
+
+\copyrightVincent
+
+% \def\importslide#1#2{%
+% 	\import{../../slides/#1}{#2}
+% }
+
+
+
+% \def\importslide#1#2{%
+%     \IfFileExists{../../slides/vincent/#1/#2}{%
+%         \import{../../slides/vincent/#1}{#2}%
+%     }{%
+%         \import{../../slides/#1}{#2}%
+%     }%
+% }
+
+% \title[\LaTeX{}-cursus Week 2]{\LaTeX{}-cursus Week 2\\(Lokaal Vincent)}
+\title[\LaTeX{}-cursus Week 2]{\LaTeX{}-cursus Week 2}
+% \author[\TeX niCie]{\TeX niCie\\{\tiny (Vincent Kuhlmann)}}
+\author{\TeX niCie}
+\date{5 oktober 2023}
+
+\begin{document}
+
+\lang{
+    \section{Introduction}
+}{
+    \section{Introductie}
+}
+
+\begin{frame}
+    \titlepage
+    \centering
+
+    {\Large\lang,Slides are available at,Slides zijn te vinden op,\\
+    \href{https://texnicie.nl}{\ul{\texttt{texnicie.nl}}}}
+\end{frame}
+
+\setul{1pt}{2pt}
+
+\begin{frame}
+    \frametitle{\lang,Schedule,Agenda,}
+    
+    \begin{itemize}[label=\textbullet]
+        \item \lang,More about text \& maths,Meer over tekst \& formules,
+        \item \lang,References,Referenties,
+        % \item \lang,`Theorem',`Theorem',
+        % \item \lang,References,Referenties,
+        \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+        \item \lang,Figures,Figuren,
+        \item \lang,Matrices,Matrices,
+        \item \lang,Tables,Tabellen,
+        % \item \lang,Formulas,Formules,
+        \item $ \langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+        % \item \lang,Closing remarks,Afsluitende opmerkingen,
+    \end{itemize}
+\end{frame}
+
+\section{Meer over tekst \& formules}\label{sec:basics}
+
+\def\placetarget{\hypertarget{basics}{}}
+
+% \begin{align*}
+    
+% \end{align*}
+
+\importslide{text}{text-parskip.tex}
+\importslide{internals}{internals-blank-lines-in-math.tex}
+\importslide{text}{text-quotes.tex}
+
+\importslide{document}{document-margins.tex}
+\importslide{document}{document-toc.tex}
+% \importslide{document}{document-hyperref.tex}
+
+%\section{Referenties}
+
+% \importslide{document}{document-toc.tex}
+
+\importslide{math}{also_in_use.tex}
+
+% \begin{frame}
+%     Alternatieve notaties voor inline / display wiskunde modus
+% \end{frame}
+
+\importslide{math}{text.tex}
+% \begin{frame}
+%     Sin vs backslash sin,
+%     Ftot vs F{text{tot}}
+% \end{frame}
+
+\section{Referenties}\label{sec:referenties}
+
+\def\placetarget{\hypertarget{referenties}{}}
+
+\importslide{math}{align-label.tex}
+
+% \section{`Theorem'}\label{sec:theorem}
+
+% \def\placetarget{\hypertarget{theorem}{}}
+
+\importslide{math}{theorem-proof.tex}
+
+\section{Oefeningen}\label{sec:oefeningen1}
+
+\def\placetarget{\hypertarget{oefeningen1}{}}
+
+\bgroup
+\def\showformula#1#2{#1 & \hll|$ #2 $|}%
+\begin{frame}[fragile]
+    \begin{center}
+        {\LARGE Oefeningen!}
+        \vspace{10pt}
+
+        \renewcommand{\arraystretch}{1.5}%
+        \begin{tabularx}{0.55\textwidth}{ll}
+            \toprule
+            \lang,Formula,Formule,& Code\\
+            \midrule
+            % $ \sum_{i=0}^{\infty} $ & \mintinline{tex}{$ \sum_{i=0}^{\infty} $}\\
+            \showformula{$ \sum_{i=0}^{\infty} $}{\\sum_\{i=0\}^\{\\infty\}}\\
+            \showformula{$ \lim_{x\to\pi}\sin(x) $}{\\lim_\{x\\to\\pi\}\\sin(x)}\\
+            \showformula{$ \od{f(x)}{x} $}{\\dod\{f(x)\}\{x\}}\\
+            \showformula{$ \int_{a}^{b}f(x)\dif x $}{\\int_\{a\}^\{b\}f(x)\\dif x}\\
+            % \showformula{$ \alpha,\beta,\gamma $}{\\alpha,\\beta,\\gamma}\\
+            % \showformula{$ \epsilon,\varepsilon $}{\\epsilon,\\varepsilon}\\
+            % \showformula{$ \phi,\varphi $}{\\phi,\\varphi}\\
+            $ \left(\adjustbox{left=10pt,set height=13pt,valign=b,bgcolor=black!10!white}{}\right) $
+            &
+            \hll|$ \\left(|
+            \adjustbox{left=10pt,set height=10pt,raise={-2pt},bgcolor=black!10!white}{}
+            \hll|\\right) $|\\
+            \bottomrule
+        \end{tabularx}%
+        \begin{tabularx}{0.4\textwidth}{ll}
+            \toprule
+            \lang,Formula,Formule,& Code\\
+            \midrule
+            \showformula{$ 5\cdot 6 $}{5\\cdot 6}\\
+            %\showformula{$ x_1 + \dots + x_n $}{x_1 + \\dots + x_n}\\
+            % \showformula{$ A,B,\Gamma $}{A,B,\\Gamma}\\
+            \showformula{$ \norm{\mathbf{x}}_2 $}{\\norm\{\\mathbf(x)\}_2}\\
+            % \showformula{$ \lfloor x\rfloor $}{\\norm\{\\mathbf(x)\}}\\
+            % \showformula{$ \mathcal{P} $}{\\mathcal\{P\}}\\
+            \showformula{$ \mathbb{R}^3 $}{\\mathbb\{R\}^3}\\
+            %\showformula{$ f(\{3, 6\}) $}{f(\\\{3, 6\\\})}\\
+            % \showformula{$ \uparrow,\lfloor $}{\\uparrow,\\lfloor}\\
+            % \showformula{$ \oint,\oiint $}{\\oint, \\oiint}\\
+            \\
+            $ \left. \adjustbox{left=10pt,set height=13pt,valign=b,bgcolor=black!10!white}{}\right| $
+            &
+            \hll|$ \\left.|
+            \adjustbox{left=10pt,set height=10pt,raise={-2pt},bgcolor=black!10!white}{}
+            \hll~\\right| $~\\
+            \bottomrule
+        \end{tabularx}%
+
+        % Vergeet niet de nodige packages toe te voegen.
+        
+        % Op mijn site
+        % staat een basisdocument met alle nodige packages erin:
+
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+    \end{center}
+\end{frame}
+\egroup
+
+%\section{Referenties}
+
+
+\section{Figuren}\label{sec:figuren}
+
+\def\placetarget{\hypertarget{figuren}{}}
+
+\importslide{images}{includegraphics-center.tex}
+\importslide{images}{figure.tex}
+%\importslide{images}{figure-label.tex}
+\importslide{images}{figure-placement.tex}
+\importslide{images}{figure-dimensions-easy.tex}
+\importslide{images}{subfigure.tex}
+
+\section{Matrices}\label{sec:matrices}
+
+\def\placetarget{\hypertarget{matrices}{}}
+
+% \setDetail{10}
+% \importslide{math}{align-star.tex}
+% \setDetail{20}
+
+\importslide{math}{matrices-simple.tex}
+\importslide{math}{matrices-others.tex}
+\importslide{math}{matrix-array-cases.tex}
+
+\section{Tabellen}\label{sec:tabellen}
+
+\def\placetarget{\hypertarget{tabellen}{}}
+
+\importslide{tables}{table-demo1.tex}
+
+\importslide{tables}{table-simple.tex}
+%\importslide{tables}{table-simple-float.tex}
+%\importslide{tables}{table-advanced-nofloat.tex}
+\importslide{tables}{table-advanced.tex}
+\importslide{tables}{table-tabularx.tex}
+
+\section{Oefeningen}\label{sec:oefeningen2}
+
+\def\placetarget{\hypertarget{oefeningen2}{}}
+
+\begin{frame}
+    \begin{center}
+        {\LARGE Oefeningen!}
+        \vspace{30pt}
+
+        % Voor Oefening 10, herinner dat
+        % \begin{align*}
+        %     \begin{array}{r|rl}
+        %         8 & 4 & 2\\
+        %         \hline
+        %         7
+        %     \end{array}
+        % \end{align*}
+
+        % Vergeet niet de nodige packages toe te voegen.
+        
+        % Op mijn site
+        % staat een basisdocument met alle nodige packages erin\footnote{Enkel
+        % booktabs staat er niet in, want tabellen gebruik je niet standaard in je
+        % inleveropgaves.}:
+
+        % \href{https://vkuhlmann.com/latex/example}{\nolinkurl{vkuhlmann.com/latex/example}}
+    \end{center}
+\end{frame}
+
+\section{Afsluiting}
+
+%\importslide{}{}
+
+
+
+% \subfile{1_Inleiding.tex}
+
+% \subfile{2_Tekstopmaak.tex}
+
+% \subfile{3_Documentstructuur.tex}
+
+% \subfile{4_Afbeeldingen.tex}
+
+% \subfile{5_Formules.tex}
+
+% % \subfile{6_Bibliografie.tex}
+
+% \subfile{7_GoedOmTeWeten.tex}
+
+\subsection{Licentie}
+\importslide{misc}{misc-license.tex}
+    
+\end{document}

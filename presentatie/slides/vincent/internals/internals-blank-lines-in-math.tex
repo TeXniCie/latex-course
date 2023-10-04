@@ -1,0 +1,42 @@
+
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\definecolor{darkpastelred}{rgb}{0.76, 0.23, 0.13}
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+
+\begin{frame}[fragile]
+	\frametitle{Witregels in wiskundemodus}
+
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \textbf{\textcolor{darkpastelred}{Error:}}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=||]{tex}
+                1  \begin{align}
+                2
+                3     x = \cos(y)
+                4
+                5  \end{align}
+            \end{minted}            
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \onslide<2->
+            \textbf{\textcolor{darkpastelgreen}{Ok:}}
+            \begin{minted}[fontsize=\scriptsize,escapeinside=||]{tex}
+                1  \begin{align}
+                2  %
+                3      x = \cos(y)
+                4  %
+                5  \end{align}
+            \end{minted}            
+        \end{column}
+    \end{columns}
+
+	% \medskip
+
+    % \pause
+	% \textbf{\textcolor{darkpastelgreen}{Ok}}
+	% \useblock{kvlistOverLines}
+	% \medskip
+
+	% \textbf{\textcolor{darkpastelred}{Nope}}
+	% \useblock{kvlistOverLinesParBroken}
+\end{frame}

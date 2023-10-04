@@ -1,0 +1,74 @@
+
+\setbeamertemplate{headline}
+{%
+    \placetarget
+    \let\placetarget\relax
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+        \color{fg!80!bg}
+        % \ifnum\c@section=2%
+        %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot}}}%
+        % \else%
+        %     \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot shaded}}}%
+        % \fi}%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},%bgcolor=navigationTileOutline,
+            rndframe={color=navigationTileOutline}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{basics}{\customhead{2}{Meer over tekst \& formules}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{referenties}{\customhead{3}{Referenties}}%
+            % \hspace{5pt}$ \cdot $\hspace{5pt}%
+            % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
+        }%
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            bgcolor=exerciseTileBackground,
+            rndframe={color=exerciseTileOutline}{0pt 3pt 0pt 3pt},
+            margin={-1pt 0pt 10pt 0pt}
+        }{%
+            \hyperlink{oefeningen1}{\customhead{4}{Oefeningen}}%
+        }%
+        % \adjustbox{padding={3pt 5pt 3pt 5pt},bgcolor=navigationTileOutline,rndcorners=3pt,margin={10pt 0pt 10pt 0pt}}{
+        %     `Theorem' en `Lemma'
+        %     \hspace{5pt}$ \cdot $\hspace{5pt}
+        %     Matrices en tabellen
+        % }
+        \adjustbox{
+            %set depth=2pt,
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},%bgcolor=navigationTileOutline,
+            rndframe={color=navigationTileOutline}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{figuren}{\customhead{5}{Figuren}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{matrices}{\customhead{6}{Matrices}}%
+            \hspace{5pt}$ \cdot $\hspace{5pt}%
+            \hyperlink{tabellen}{\customhead{7}{Tabellen}}%
+        }%
+        \adjustbox{
+            set depth=2pt,    
+            padding={5pt 5pt 5pt 5pt},
+            % bgcolor=exerciseTileOutline,
+            % rndcorners={0pt 3pt 0pt 3pt},
+            bgcolor=exerciseTileBackground,
+            rndframe={color=exerciseTileOutline}{0pt 3pt 0pt 3pt},
+            margin={-1pt 0pt 10pt 0pt}
+        }{%
+        \hyperlink{oefeningen2}{\customhead{8}{Oefeningen}}%
+        }
+        \hfil
+        Slides op texnicie.nl
+        \hfil
+        %\strut %AAAA
+        \vskip4pt
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
+}

@@ -346,8 +346,8 @@
     }
 
     % \themeRed
-    \themeRedTwo
-    % \themePurple
+    % \themeRedTwo
+    \themePurple
 
     \mode
     <all>
