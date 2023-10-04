@@ -232,6 +232,46 @@
         \colorlet{underlineColor}{red}
         \colorlet{navigationUnderlineColor}{yellow}
     }
+    \def\themeRedTwo{
+        \setbeamercolor*{structure}{fg=red11}
+
+        \ifbool{darktheme}{
+            % BEGIN Based on https://tex.stackexchange.com/questions/57477/beamer-dark-theme
+            % by https://tex.stackexchange.com/users/188576/j-xu
+            \setbeamercolor{frametitle}{fg=darkmodeforeground}
+            \setbeamercolor{background canvas}{bg=darkmodebackground}
+            \setbeamercolor{normal text}{fg=darkmodeforeground}
+            % END Based on
+        }{}
+
+        \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!50!orange}
+        \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!80!orange}%,bg=red9}
+        \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!95!orange}%,bg=red1}
+        \setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+        \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+        
+        \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+        \setbeamercolor*{palette sidebar secondary}{fg=white}
+        \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+        \setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+        \setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
+
+        \setbeamercolor*{separation line}{}
+        \setbeamercolor*{fine separation line}{}
+
+
+        \colorlet{navigationTileOutline}{red!40!orange}
+        \colorlet{exerciseTileOutline}{red!20!orange}
+        % \colorlet{exerciseTileBackground}{bg!80!orange}
+        %\colorlet{exerciseTileBackground}{structure.bg!80!orange}
+        \colorlet{exerciseTileBackground}{red11!80!orange}
+        %structure.bg!80!orange
+
+        \colorlet{underlineColor}{red}
+        \colorlet{navigationUnderlineColor}{yellow}
+    }
     \def\themePurple{
         \setbeamercolor*{structure}{fg=themepurple,bg=themepurple}
 
@@ -305,8 +345,9 @@
         \colorlet{underlineColor}{blue}
     }
 
-    %\themeRed
-    \themePurple
+    % \themeRed
+    \themeRedTwo
+    % \themePurple
 
     \mode
     <all>
@@ -941,99 +982,100 @@
 
 \let\placetarget\relax
 
-\setbeamertemplate{headline}
-{%
-    \placetarget
-    \let\placetarget\relax
-    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
-    \end{beamercolorbox}
-    \begin{beamercolorbox}{section in head/foot}
-        \vskip2pt
-        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
-        \color{fg!80!bg}
-        \adjustbox{
-            set depth=2pt,
-            padding={5pt 5pt 5pt 5pt},
-            % rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
-            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
-        }{%
-            \hyperlink{recap}{\customhead{1}{Recap}}%
-            % \hspace{5pt}$ \cdot $\hspace{5pt}%
-            % \hyperlink{referenties}{\customhead{3}{Referenties}}%
-            % \hspace{5pt}$ \cdot $\hspace{5pt}%
-            % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
-        }%
-        % \adjustbox{
-        %     set depth=2pt,
-        %     padding={5pt 5pt 5pt 5pt},
-        %     bgcolor=bg!80!orange,
-        %     rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
-        %     margin={0pt 0pt 10pt 0pt}
-        % }{%
-        %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
-        % }%
-        \adjustbox{
-            set depth=2pt,
-            padding={5pt 5pt 5pt 5pt},
-            %rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
-            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
-        }{%
-            \hyperlink{bulk}{\customhead{2}{Bulk}}%
-            % \hspace{5pt}$ \cdot $\hspace{5pt}%
-            % \hyperlink{snippets}{\customhead{4}{Snippets}}%
-            % \hspace{5pt}$ \cdot $\hspace{5pt}%
-            % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
-        }%
-        \adjustbox{
-            set depth=2pt,
-            padding={5pt 5pt 5pt 5pt},
-            % rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
-            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
-        }{%
-            \hyperlink{hybrid}{\customhead{3}{Hybrid}}%
-        }%
-        %\PackageWarning{debug}{\meaning}
-        % \adjustbox{
-        %     set depth=2pt,
-        %     padding={5pt 5pt 5pt 5pt},
-        %     %bgcolor=bg!80!orange,
-        %     %bgcolor=structure.bg!80!orange,
-        %     bgcolor=exerciseTileBackground,
-        %     rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
-        %     margin={-1pt 0pt 10pt 0pt}
-        % }{%
-        %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
-        % }%
-        % \adjustbox{
-        %     set depth=2pt,
-        %     padding={5pt 5pt 5pt 5pt},
-        %     rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
-        %     % rndcorners={3pt 0pt 3pt 0pt}
-        % }{%
-        %     \hyperlink{LaTeXDefinities}{\customhead{6}{\LaTeX-definities}}%
-        %     \hspace{5pt}$ \cdot $\hspace{5pt}%
-        %     \hyperlink{apartePreamble}{\customhead{7}{Aparte preamble}}%
-        %     % \hspace{5pt}$ \cdot $\hspace{5pt}%
-        %     % \hyperlink{tabellen}{\customhead{8}{Tabellen}}%
-        % }%
-        % \adjustbox{
-        %     set depth=2pt,    
-        %     padding={5pt 5pt 5pt 5pt},
-        %     bgcolor=exerciseTileBackground,
-        %     rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
-        %     margin={-1pt 0pt 10pt 0pt}
-        % }{%
-        % \hyperlink{oefeningen2}{\customhead{8}{Oefeningen}}%
-        % }
-        \hfil
-        %Slides op texnicie.nl
-        % Slides op ...
-        \hfil
-        \vskip4pt
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
-    \end{beamercolorbox}%
-}
+
+% \setbeamertemplate{headline}
+% {%
+%     \placetarget
+%     \let\placetarget\relax
+%     \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+%     \end{beamercolorbox}
+%     \begin{beamercolorbox}{section in head/foot}
+%         \vskip2pt
+%         \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+%         \color{fg!80!bg}
+%         \adjustbox{
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},
+%             % rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+%             rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+%         }{%
+%             \hyperlink{recap}{\customhead{1}{Recap}}%
+%             % \hspace{5pt}$ \cdot $\hspace{5pt}%
+%             % \hyperlink{referenties}{\customhead{3}{Referenties}}%
+%             % \hspace{5pt}$ \cdot $\hspace{5pt}%
+%             % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
+%         }%
+%         % \adjustbox{
+%         %     set depth=2pt,
+%         %     padding={5pt 5pt 5pt 5pt},
+%         %     bgcolor=bg!80!orange,
+%         %     rndframe={color=red!20!orange}{0pt 3pt 0pt 3pt},
+%         %     margin={0pt 0pt 10pt 0pt}
+%         % }{%
+%         %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
+%         % }%
+%         \adjustbox{
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},
+%             %rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+%             rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+%         }{%
+%             \hyperlink{bulk}{\customhead{2}{Bulk}}%
+%             % \hspace{5pt}$ \cdot $\hspace{5pt}%
+%             % \hyperlink{snippets}{\customhead{4}{Snippets}}%
+%             % \hspace{5pt}$ \cdot $\hspace{5pt}%
+%             % \hyperlink{theorem}{\customhead{4}{`Theorem'}}%
+%         }%
+%         \adjustbox{
+%             set depth=2pt,
+%             padding={5pt 5pt 5pt 5pt},
+%             % rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+%             rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+%         }{%
+%             \hyperlink{hybrid}{\customhead{3}{Hybrid}}%
+%         }%
+%         %\PackageWarning{debug}{\meaning}
+%         % \adjustbox{
+%         %     set depth=2pt,
+%         %     padding={5pt 5pt 5pt 5pt},
+%         %     %bgcolor=bg!80!orange,
+%         %     %bgcolor=structure.bg!80!orange,
+%         %     bgcolor=exerciseTileBackground,
+%         %     rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+%         %     margin={-1pt 0pt 10pt 0pt}
+%         % }{%
+%         %     \hyperlink{oefeningen1}{\customhead{5}{Oefeningen}}%
+%         % }%
+%         % \adjustbox{
+%         %     set depth=2pt,
+%         %     padding={5pt 5pt 5pt 5pt},
+%         %     rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+%         %     % rndcorners={3pt 0pt 3pt 0pt}
+%         % }{%
+%         %     \hyperlink{LaTeXDefinities}{\customhead{6}{\LaTeX-definities}}%
+%         %     \hspace{5pt}$ \cdot $\hspace{5pt}%
+%         %     \hyperlink{apartePreamble}{\customhead{7}{Aparte preamble}}%
+%         %     % \hspace{5pt}$ \cdot $\hspace{5pt}%
+%         %     % \hyperlink{tabellen}{\customhead{8}{Tabellen}}%
+%         % }%
+%         % \adjustbox{
+%         %     set depth=2pt,    
+%         %     padding={5pt 5pt 5pt 5pt},
+%         %     bgcolor=exerciseTileBackground,
+%         %     rndframe={color=exerciseTileOutline,width=1pt}{0pt 3pt 0pt 3pt},
+%         %     margin={-1pt 0pt 10pt 0pt}
+%         % }{%
+%         % \hyperlink{oefeningen2}{\customhead{8}{Oefeningen}}%
+%         % }
+%         \hfil
+%         %Slides op texnicie.nl
+%         % Slides op ...
+%         \hfil
+%         \vskip4pt
+%     \end{beamercolorbox}%
+%     \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+%     \end{beamercolorbox}%
+% }
 
 %\newmintinline[cc]{latex}{}
 

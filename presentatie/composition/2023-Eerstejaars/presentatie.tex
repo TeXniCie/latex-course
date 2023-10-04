@@ -1,14 +1,17 @@
-\documentclass[allauthors,dutch]{../../cursuspresentatie}
+\documentclass[allauthors,dutch,
+defaultSlideCollection=tim]{../../cursuspresentatie}
 
 \copyrightTim
+\copyrightThomas
+\copyrightVincent
 
-\def\importslide#1#2{%
-	\import{../../slides/tim/#1}{#2}
-}
+% \def\importslide#1#2{%
+% 	\import{../../slides/tim/#1}{#2}
+% }
 
 \title{\LaTeX{}-cursus Week 1}
 \author{\TeX niCie}
-\date{26/28 september 2022}
+\date{26/28 september 2023}
 
 % Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
 % fris ingeladen
@@ -18,6 +21,9 @@
 \usepackage{xcolor}
 \setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
 \usepackage{tcolorbox}
+
+\input{custom_header.tex}
+
 % \usepackage{}
 \definecolor{darkgreen}{rgb}{0.2,0.7,0.11}
 \makeatletter
@@ -27,7 +33,9 @@
 \newtheorem{mylemma}[]{Lemma}
 \begin{document}
 
-\section{Introduction}
+\section{Introductie}
+\def\placetarget{\hypertarget{introductie}{}}
+
 \importslide{beginners}{welcome.tex}
 %\importslide{beginners}{contents.tex}
 
@@ -63,20 +71,23 @@
 	\begin{itemize}
 		\item Week 3 (10/12 oktober)
 			\begin{itemize}[label=\textbullet]
-			\item tabellen
+			\item Tabellen
 			\item \textbackslash newcommand
 			\item \textbackslash DeclareMathOperator
-			\item bibliografie
+			\item Bibliografie
     			\item Commutatieve diagrammen
 		\end{itemize}
 	\item Week 4 (17 oktober)
-		\begin{itemize}
-			\item Installatie Visual Studio
+		\begin{itemize}[label=\textbullet]
+			\item Installatie VS Code
 			\item Vragenuurtje
 		\end{itemize}
 	\end{itemize}
 	\end{tabular}
 \end{frame}
+
+\section{Eerste document}
+\def\placetarget{\hypertarget{eerste-document}{}}
 
 \importslide{beginners_NL}{overleaf-1.tex}
 \importslide{beginners_NL}{overleaf-2.tex}
@@ -87,6 +98,8 @@
 \importslide{beginners_NL}{simpledoc-1.tex}
 \importslide{beginners_NL}{simpledoc-2.tex}
 \importslide{beginners_NL}{simpledoc-3.tex}
+
+\importslide{vincent/document}{document-parts-overleaf.tex}
 
 % simpel document met wat tekst zoals op slide simpledoc-3 namaken. Op compileren klikken en pdf
 % laten zien. laten zien wat er gebeurt als je iets fouttypt, dat er dan een error verschijnt.
@@ -99,6 +112,9 @@
 
 % 5 min voor oefeningen 1 t/m 4
 
+\section{Oefeningen}
+\def\placetarget{\hypertarget{oefeningen1}{}}
+
 \begin{frame}
 	\frametitle{Oefeningen}
 	
@@ -107,6 +123,9 @@
 	%\includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{images/cookie_art.png}
 \end{frame}
 
+
+\section{Tekst}
+\def\placetarget{\hypertarget{tekst}{}}
 
 \importslide{beginners_NL}{whitespace.tex}
 % Vertel dat quad staat voor spazio quadratone = groot vierkant spatie en de grootte heeft van een hoofdletter M
@@ -137,19 +156,38 @@
 % \author{Tim Weijers \and Vincent Kuhlmann}
 % \date{26 september 2022}
 
-\importslide{beginners_NL}{special-characters.tex}
+% \importslide{beginners_NL}{special-characters.tex}
+
+\importslide{vincent/text}{text-specialchars.tex}
 
 % \{ f in fruit | f is een citrusvrucht \}
 % 40\%, Piet \& Klaas, Dit boek kost 40\$
 
 \importslide{beginners_NL}{format-text-1.tex}
 
+% \setDetail{30}
+% \importslide{vincent/text}{text-effects.tex}
+% \setDetail{10}
+
 \importslide{beginners_NL}{logical-formatting.tex}
 
 % Dit is \textbf{vetgedrukte} tekst
 % Dit is \textbf{ \textcolor{blue} blauwe vetgedrukte }} tekst
 
+\section{Oefeningen}
+\def\placetarget{\hypertarget{oefeningen2}{}}
+
+\begin{frame}
+	\frametitle{Oefeningen}
+	
+	\centering
+\end{frame}
+
 % 5 min voor oefeningen 9 t/m 11
+
+
+\section{Wiskunde}
+\def\placetarget{\hypertarget{wiskunde}{}}
 
 \importslide{beginners_NL}{math-1.tex}
 
@@ -169,11 +207,22 @@
 
 % slide met voorbeeldcode ALIGN op scherm houden. Oefeningen tot 18:55
 
+\section{Oefeningen}
+\def\placetarget{\hypertarget{oefeningen3}{}}
+
+\begin{frame}
+	\frametitle{Oefeningen}
+	
+	\centering
+\end{frame}
+
+\section{Afsluiting}
+\def\placetarget{\hypertarget{afsluiting}{}}
 
 \begin{frame}
 	\frametitle{Afsluiting}
 	
-	De volgde cususavond is dinsdag 3 oktober en donderdag.
+	De volgende cursusavond is dinsdag 3 oktober en donderdag.
 \end{frame}
 \import{../../slides/thomas/Eerstejaars-2023}{afsluiting-1.tex}
 	
