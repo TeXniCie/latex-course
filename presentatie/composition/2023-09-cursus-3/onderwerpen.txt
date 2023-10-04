@@ -1,0 +1,10 @@
+newcommand
+adjustbox
+hyperref
+    bookmarksnumbered
+    inclusief url
+korte titels in TOC
+mathtools (mathlarger)
+setcounter
+Ctrl+/
+afbeeldingen in apart mapje
