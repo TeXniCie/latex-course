@@ -1,0 +1,36 @@
+\begin{frame}[fragile]{Lijsten}
+
+Zoals met elke environment begin je met een \mintinline{latex}{\begin} commando en eindig je met een \mintinline{latex}{\end} commando. Vooraan elke item gebruikje
+het commando \mintinline{latex}{\item}. In het geval van de descriptive envirmonmnent gebruik je vierkante haken om een label toe te kennen aan elke item: \mintinline{latex}{\item[label]}
+
+\begin{tcolorbox}[title={Voorbeelden}, size=small]
+\begin{tabular}{m{3cm} | m{3cm} | m{3cm}}
+Itemized list & Enumerated list & Descriptive list\\
+\hline
+\begin{minted}{latex}
+\begin{itemize}
+\item Hanneke 
+\item Thomas
+\item Vincent
+\end{itemize}
+\end{minted}
+&
+\begin{minted}{latex}
+\begin{enumerate}
+\item Amsterdam
+\item Rotterdam
+\item Den Haag
+\item Utrecht
+\end{enumerate}
+\end{minted}
+&
+\begin{minted}{latex}
+\begin{description}
+\item[Apple] Computer bedrijf
+\item[Facebook] Sociale media bedrijf
+\item[Microsoft] Software bedrijf
+\end{description}
+\end{minted}
+\end{tabular}
+\end{tcolorbox}
+\end{frame}

@@ -1,0 +1,37 @@
+\begin{frame}[fragile]{Lijsten}
+
+Er zijn list environments in latex.
+
+
+\begin{description}
+	\item[enumerate]  Wordt gebruikt voor informatie dat een volgorde heeft:
+	\item[itemize] Wordt gebruikt voor informatie datgeen volgorde heeft:
+	\item[description] Wordt gebrukt voor informatie met een label en een beschrijving
+\end{description}
+	\begin{tcolorbox}[width=13cm, title={Voorbeelden}, size=small]
+	\begin{tabular}{m{3cm}| m{3cm} | m{5cm}}
+		\textbf{Enumerated list} & \textbf{Itemized list} & \textbf{Descriptive list}\\
+		\hline
+		Grootste steden van Nederland &Leden van de TeXniCie &   Tech bedrijven\\
+		\hline
+		\begin{enumerate}[label=\arabic*)]
+			\item Amsterdam 
+			\item Rotterdam
+			\item Den Haag
+			\item Utrecht
+		\end{enumerate}
+		&
+		\begin{itemize}[label=\textbullet]
+			\item Hanneke 
+			\item Thomas
+			\item Vincent
+		\end{itemize}
+		& 
+		\begin{description}
+		\item[Apple] Computer bedrijf
+		\item[Facebook] Social media bedrijf
+		\item[Microsoft] Software bedrijf
+		\end{description}
+	\end{tabular}
+	\end{tcolorbox}
+\end{frame}

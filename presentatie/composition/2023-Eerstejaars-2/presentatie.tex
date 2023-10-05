@@ -1,0 +1,68 @@
+\documentclass[allauthors,dutch]{../../cursuspresentatie}
+
+\copyrightTim
+
+\def\importslide#1#2{%
+	\import{../../slides/tim/#1}{#2}
+}
+
+\title{\LaTeX{}-cursus Week 2}
+\author{\TeX niCie}
+\date{5 oktober 2023}
+
+% Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
+% fris ingeladen
+\csname endofdump\endcsname
+
+\usepackage{minted} %kan later in de .cls file hierboven
+\usepackage{xcolor}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
+\usepackage{tcolorbox}
+% \usepackage{}
+\definecolor{darkgreen}{rgb}{0.2,0.7,0.11}
+\makeatletter
+\patchcmd{\@thm}{\thm@headfont{\scshape}}{\thm@headfont{\scshape\bfseries}}{}{}
+\patchcmd{\@thm}{\thm@notefont{\fontseries\mddefault\upshape}}{}{}{}
+\makeatother
+\newtheorem{mylemma}[]{Lemma}
+\begin{document}
+\import{../../slides/tim/beginners}{welcome.tex}
+\begin{frame}
+	\frametitle{Agenda}
+
+	\begin{tabular}{p{6cm} p{7cm}}
+	\begin{itemize}
+		\item Week 1 (26/28 september)
+	\begin{itemize}[label=\textbullet]
+		\item Introductie tot LaTeX en Overleaf
+		\item LaTeX documentstructuur
+		\item Tekst
+		\item Wiskunde
+	\end{itemize}
+		\item \textcolor{blue}{Week 2} (3/5 oktober)
+	\begin{itemize}[label=\textbullet]
+		\item Referenties
+		\item Afbeeldingen
+		\item Extra wiskunde
+	\end{itemize}
+	\end{itemize}
+		&
+	\begin{itemize}
+		\item Week 3 (10/12 oktober)
+			\begin{itemize}[label=\textbullet]
+			\item tabellen
+			\item \textbackslash newcommand
+			\item \textbackslash DeclareMathOperator
+			\item bibliografie
+    			\item Commutatieve diagrammen
+		\end{itemize}
+	\item Week 4 (17 oktober)
+		\begin{itemize}
+			\item Installatie Visual Studio
+			\item Vragenuurtje
+		\end{itemize}
+	\end{itemize}
+	\end{tabular}
+\end{frame}
+\import{../../slides/thomas}{references-1.tex}
+\end{document}
