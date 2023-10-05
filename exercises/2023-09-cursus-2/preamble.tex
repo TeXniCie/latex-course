@@ -105,7 +105,17 @@
 
 \makeatother
 
-\declaretheorem[style=uprightIndentedNoNewline,name={\ensuremath{\square} Oefening}]{exercise} % If you want your theorems to be counted per section instead of subsection, then just remove the sub from the numberwithin
+% \global\def\thecheckbox{
+%     \begin{Form}
+%     \CheckBox[checkboxsymbol=\ding{53}]{}
+%     \end{Form}
+% }
+
+% \declaretheorem[style=uprightIndentedNoNewline,name={\thecheckbox{} Oefening}]{exercise}
+
+\declaretheorem[style=uprightIndentedNoNewline,name={\ensuremath{\square} Oefening}]{exercise}
+
+
 \declaretheorem[style=uprightIndented,sibling=exercise,name=Oefening]{exerciseS}
 
 \declaretheorem[style=slantedIndented,sibling=exercise]{exerciseSlanted}

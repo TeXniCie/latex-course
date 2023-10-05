@@ -1,5 +1,5 @@
-Copyright (c) 2021-2022 Vincent Kuhlmann
-Copyright (c) 2022 Tim Weijers
-Copyright (c) 2022 Hanneke Schroten
-Copyright (c) 2022 Thomas van Maaren
+Copyright (c) 2021-2023 Vincent Kuhlmann
+Copyright (c) 2022-2023 Tim Weijers
+Copyright (c) 2022-2023 Hanneke Schroten
+Copyright (c) 2022-2023 Thomas van Maaren
 
