@@ -183,6 +183,10 @@
 \importslide{internals}{internals-blank-lines-in-math.tex}
 \importslide{text}{text-quotes.tex}
 
+\setDetail{10}
+\importslide{text}{text-lists.tex}
+\setDetail{20}
+
 \importslide{document}{document-margins.tex}
 \importslide{document}{document-toc.tex}
 % \importslide{document}{document-hyperref.tex}
@@ -232,10 +236,13 @@
             \lang,Formula,Formule,& Code\\
             \midrule
             % $ \sum_{i=0}^{\infty} $ & \mintinline{tex}{$ \sum_{i=0}^{\infty} $}\\
-            \showformula{$ \sum_{i=0}^{\infty} $}{\\sum_\{i=0\}^\{\\infty\}}\\
-            \showformula{$ \lim_{x\to\pi}\sin(x) $}{\\lim_\{x\\to\\pi\}\\sin(x)}\\
+            % \showformula{$ \sum_{i=0}^{\infty} $}{\\sum_\{i=0\}^\{\\infty\}}\\
+            $ \sum_{i=0}^{\infty} $ & \hll|$ \\sum|\hll|_\{i=0\}^\{\\infty\} $|\\
+            % \showformula{$ \lim_{x\to\pi}\sin(x) $}{\\lim_\{x\\to\\pi\}\\sin(x)}\\
+            $ \lim_{x\to\pi}\sin(x) $ & \hll|$ \\lim|\hll|_\{x\\to\\pi\}\\sin(x) $|\\
             \showformula{$ \od{f(x)}{x} $}{\\dod\{f(x)\}\{x\}}\\
-            \showformula{$ \int_{a}^{b}f(x)\dif x $}{\\int_\{a\}^\{b\}f(x)\\dif x}\\
+            % \showformula{$ \int_{a}^{b}f(x)\dif x $}{\\int_\{a\}^\{b\}f(x)\\dif x}\\
+            $ \int_{a}^{b}f(x)\dif x $ & \hll|$ \\int|\hll|_\{a\}^\{b\}f(x)\\dif x $|\\
             % \showformula{$ \alpha,\beta,\gamma $}{\\alpha,\\beta,\\gamma}\\
             % \showformula{$ \epsilon,\varepsilon $}{\\epsilon,\\varepsilon}\\
             % \showformula{$ \phi,\varphi $}{\\phi,\\varphi}\\
@@ -265,7 +272,7 @@
             &
             \hll|$ \\left.|
             \adjustbox{left=10pt,set height=10pt,raise={-2pt},bgcolor=black!10!white}{}
-            \hll~\\right| $~\\
+            \hll~\\right~\hll~| $~\\
             \bottomrule
         \end{tabularx}%
 
