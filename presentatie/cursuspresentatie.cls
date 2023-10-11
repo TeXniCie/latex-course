@@ -170,6 +170,10 @@
 
 \definecolor{themepurple}{RGB}{95, 31, 199}
 
+% \definecolor{themegreen}{RGB}{31, 199, 31}
+% \definecolor{themegreen}{RGB}{25, 159, 25}
+\definecolor{themegreen}{RGB}{32, 131, 32}
+
 \definecolor{darkmodebackground}{RGB}{30, 30, 30}
 % \definecolor{darkmodeforeground}{RGB}{219, 221, 170}
 \definecolor{darkmodeforeground}{RGB}{212, 212, 212}
@@ -344,10 +348,48 @@
 
         \colorlet{underlineColor}{blue}
     }
+    \def\themeGreen{
+        \setbeamercolor*{structure}{fg=themegreen,bg=themegreen}
+
+        \ifbool{darktheme}{
+            % BEGIN Based on https://tex.stackexchange.com/questions/57477/beamer-dark-theme
+            % by https://tex.stackexchange.com/users/188576/j-xu
+            \setbeamercolor{frametitle}{fg=darkmodeforeground}
+            \setbeamercolor{background canvas}{bg=darkmodebackground}
+            \setbeamercolor{normal text}{fg=darkmodeforeground}
+            \setbeamercolor{structure}{fg=themegreen!50!green}
+            % END Based on
+        }{}
+
+        \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.bg!40!green}
+        \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.bg!60!green}%,bg=red9}
+        \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.bg!90!green}%,bg=red1}
+        \setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+        \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+        
+        \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.bg!10}
+        \setbeamercolor*{palette sidebar secondary}{fg=white}
+        \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.bg!50}
+        \setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+        \setbeamercolor*{titlelike}{use=structure,fg=structure.fg}
+
+        \setbeamercolor*{separation line}{}
+        \setbeamercolor*{fine separation line}{}
+
+        \colorlet{navigationTileOutline}{themegreen!40!green}
+        \colorlet{exerciseTileOutline}{themegreen!20!green}
+        \colorlet{exerciseTileBackground}{themegreen!80!green}
+
+        \colorlet{underlineColor}{blue}
+        \colorlet{navigationUnderlineColor}{yellow!80!blue}
+    }
 
     % \themeRed
     % \themeRedTwo
-    \themePurple
+    % \themePurple
+    \themeGreen
 
     \mode
     <all>
