@@ -1,0 +1,21 @@
+\begin{frame}[fragile=singleslide]
+	\frametitle{Beamer}
+	\mintinline{latex}{\pause}: Alles hierna komt in de volgende slide
+	\mintinline{latex}{\uncover<a-b>} Deze zie je van de slide a tot en met b vanaf de huidige slide
+	\begin{minted}{latex}
+		\begin{frame}
+			\color{blue} a 
+			\pause \color{orange} b 
+			\uncover<4->{\color{red} c}
+			\uncover<3-4>{\color{green} d}
+			\uncover<5>{\color{purple} e}
+		\end{frame}
+	\end{minted}
+\end{frame}
+\begin{frame}
+	\color{blue} a 
+	\pause \color{orange} b 
+	\uncover<4->{\color{red} c}
+	\uncover<3-4>{\color{green} d}
+	\uncover<5>{\color{purple} e}
+\end{frame}

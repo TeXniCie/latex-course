@@ -1,0 +1,39 @@
+\begin{frame}[fragile=singleslide]
+	\frametitle{Beamer}
+	\begin{itemize}[label=\adjustbox{valign=m}{\usebeamercolor[fg]{structure} $\blacktriangleright $}]
+		\item Start je document met \mintinline{latex}{\documentclass{beamer}}
+		\item Je document is opgesplitst in frames
+	\end{itemize}
+	\begin{minted}{latex}
+		\documentclass{beamer}
+		\begin{document}
+			\begin{frame}
+				De eerste slide
+			\end{frame}
+			\begin{frame}
+				De tweede slide
+			\end{frame}
+		\end{document}
+	\end{minted}
+\end{frame}
+\begin{frame}[fragile=singleslide]
+	\frametitle{Beamer}
+	In normale latex documenten wordt het commando
+	\mintinline{latex}{\maketitle}. In beamer wordt \mintinline{latex}{\titlepage} gebruikt.
+	\begin{minted}{latex}
+		\documentclasss{beamer}
+		\title{\latex scriptiecursus}
+		\institute{TeXniCie}
+		\date{25 maart 2024}
+		\begin{document}
+			\frame{\titlepage}
+			\begin{frame}
+				De tweede slide
+			\end{frame}
+		\end{document}
+	\end{minted}
+\end{frame}
+\frame{\titlepage}
+\begin{frame}
+	De tweede slide
+\end{frame}
