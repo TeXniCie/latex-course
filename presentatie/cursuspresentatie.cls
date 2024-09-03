@@ -25,6 +25,7 @@
 
 \newbool{english}
 \newbool{aestheme}
+\newbool{uucolors}
 \newbool{ishandout}
 \newbool{darktheme}
 
@@ -71,10 +72,11 @@
 \ProcessOptionsX<cursuspresentatie>
 \ProcessOptionsX
 
-\acrnDefName\copyrightThomas{Thomas van Maaren}{2022-2023}
-\acrnDefName\copyrightHanneke{Hanneke Schroten}{2022-2023}
-\acrnDefName\copyrightTim{Tim Weijers}{2022-2023}
-\acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021-2023}
+\acrnDefName\copyrightThomas{Thomas van Maaren}{2022--2024}
+\acrnDefName\copyrightHanneke{Hanneke Schroten}{2022--2024}
+\acrnDefName\copyrightTim{Tim Weijers}{2022-2024}
+\acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021--2024}
+\acrnDefName\copyrightJesse{Jesse Straat}{2024--2024}
 
 % Detail 5: rehearsal
 % Detail 10: crash course
@@ -179,7 +181,7 @@
 \definecolor{darkmodeforeground}{RGB}{212, 212, 212}
 
 \ifbool{aestheme}{
-    \usetheme{aes2}
+    \usetheme{aeskwadraat}
 
     \usecolortheme{rose}
     %\useinnertheme[shadow]{rounded}

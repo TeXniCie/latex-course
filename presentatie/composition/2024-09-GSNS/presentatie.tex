@@ -1,16 +1,24 @@
 %% !TeX program = pdflatex
 
+% Makes theme yellow and adds UU logo
+\PassOptionsToPackage{uu}{beamerthemeaeskwadraat}
+
 \documentclass[
     english,
     everyoneauthor=true,
-    %darktheme,
+    aes,
     defaultSlideCollection=vincent,
     % handout
 ]{../../cursuspresentatie}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
 
 \usepackage{minted}
 
-\input{custom_header.tex}
+% Custom header not compatible with aeskwadraat theme
+%\input{custom_header.tex}
+
+% Must set underlineColor when aeskwadraat theme is used
+\colorlet{underlineColor}{blue}
 
 \copyrightThomas
 \copyrightVincent
@@ -21,6 +29,10 @@
 \date{4 September 2024}
 
 \begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
 
 \def\placetarget{\hypertarget{introduction}{}}
 \section{Introduction}
@@ -39,28 +51,23 @@
 
 \begin{frame}
     \frametitle{\lang,Schedule,Agenda,}
-    
-    \begin{itemize}[label=\textbullet]
-        \item Text document
-        \item $ \langle $\lang,Exercises,Oefeningen,$ \rangle $
-        \item Formulas
-        \item Figures
-        \item $ \langle $\lang,Exercises,Oefeningen,$ \rangle $
-        \item Lists and Tables
-        \item Finishing notes
-    \end{itemize}
+    \tableofcontents
 \end{frame}
 
 \section{Text document}\label{sec:textdocument}
 \def\placetarget{\hypertarget{textdocument}{}}
 
+\begin{nologo}
 \importslide{tim/beginners}{overleaf-1.tex}
+\end{nologo}
 \importslide{tim/beginners}{overleaf-2.tex}
 
 \importslide{vincent/internals}{command-syntax-beginners.tex}
 \importslide{vincent/document}{document-parts-overleaf.tex}
 
+\begin{nologo}
 \importslide{vincent/internals}{internals-usepackage.tex}
+\end{nologo}
 
 \importslide{vincent/text}{text-syntax-1.tex}
 
@@ -71,13 +78,17 @@
 \importslide{vincent/text}{text-effects.tex}
 \importslide{vincent/text}{text-lists.tex}
 
+\begin{nologo}
 \importslide{vincent/document}{document-margins.tex}
+\end{nologo}
 \importslide{vincent/document}{document-sections.tex}
+\begin{nologo}
 \importslide{vincent/document}{document-toc.tex}
+\end{nologo}
 
 \setDetail{20}
 
-\section{Exercises}
+\subsection{Exercises}
 \def\placetarget{\hypertarget{exercises1}{}}
 
 \begin{frame}
@@ -100,9 +111,13 @@
 
 \section{Formulas}
 \def\placetarget{\hypertarget{formulas}{}}
+\begin{nologo}
 \importslide{tim/beginners}{math-1.tex}
+\end{nologo}
 \importslide{tim/beginners}{math-2.tex}
+\begin{nologo}
 \importslide{tim/beginners}{math-3.tex}
+\end{nologo}
 \importslide{tim/beginners}{math-4.tex}
 \importslide{tim/beginners}{math-5.tex}
 
@@ -120,7 +135,7 @@
 
 
 
-\section{Exercises}
+\subsection{Exercises}
 \def\placetarget{\hypertarget{exercises2}{}}
 
 \begin{frame}
@@ -137,17 +152,16 @@
 \section{Lists and Tables}
 \def\placetarget{\hypertarget{tables}{}}
 
+\begin{nologo}
 \importslide{thomas/GSNS-2023-02-GSNS}{lists.tex}
 \importslide{thomas/GSNS-2023-02-GSNS}{lists-2.tex}
 %\importslide{thomas/GSNS-2023-02-GSNS}{nested-lists.tex}
 \importslide{thomas/GSNS-2023-02-GSNS}{tables.tex}
 \importslide{thomas/GSNS-2023-02-GSNS}{tables-2.tex}
 \importslide{thomas/GSNS-2023-02-GSNS}{tables-3.tex}
-\begin{frame}
-    Lists and Tables
-\end{frame}
+\end{nologo}
 
-\section{Finishing notes}
+\section{Conclusion}
 \def\placetarget{\hypertarget{finishingnotes}{}}
 
 \begin{frame}
