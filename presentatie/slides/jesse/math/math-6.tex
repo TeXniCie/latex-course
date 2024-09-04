@@ -1,0 +1,17 @@
+\copyrightJesse
+
+\begin{frame}[fragile]{Display math}
+    Alternative display math environments:
+    \begingroup
+    \renewcommand\tabularxcolumn[1]{m{#1}}
+    \begin{tabularx}{\textwidth}{lp{0.3\textwidth}X}\hline
+        Environment & Use & Example\\\hline
+        \texttt{align} & Several aligned lines (use \&) & \parbox{0.4\textwidth}{\vspace{-\baselineskip}
+        {\small\begin{align} f(x) &= x^2 + 2x + 1\\
+            &= (x+1)^2.\end{align}}\vspace{-\baselineskip}}\vspace{-\baselineskip}\\
+        \texttt{multline} & Single equation spread over several lines & ~\vspace{-\baselineskip}{\small\begin{multline}f(x) = x^2+2x+1\\=(x+1)^2.\end{multline}}\vspace{-\baselineskip}\\
+        \texttt{equation} & Single centered equation & ~\vspace{-\baselineskip}{\small\begin{equation}f(x) = x^2+2x+1=(x+1)^2.\end{equation}}\vspace{-\baselineskip}\\
+        \texttt{gather} & Several centered equations & ~\vspace{-\baselineskip}{\small\begin{gather} f(x) = x^2+2x+1\\=(x+1)^2.\end{gather}}\vspace{-\baselineskip}\\\hline
+    \end{tabularx}
+    \endgroup
+\end{frame}
