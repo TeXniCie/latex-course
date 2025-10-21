@@ -1,0 +1,67 @@
+\documentclass{beamer}
+%Language
+\usepackage[dutch]{babel} % use dutch hyphenation etc.
+%math stuff
+\usepackage{amssymb,amsmath,amsthm,dsfont,mathrsfs}
+
+\usetheme{Warsaw}
+
+
+\usepackage{listings}
+
+% Set slide numbers
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{hyperref}
+%Document information
+\title{\TeX niCie presentation} 
+\author[Jagna Hendriks]{Jagna Hendriks}
+\date{\today}
+
+\begin{document}
+	\begin{frame}{Tekstopmaak}
+		\begin{tabular}{c p{3cm} c c p{3cm}}
+			Resultaat & Code & & Resultaat & Code \\
+			\hline
+			\textbf{Tekst} & Tekst & & {\tiny Tekst} & Tekst \\
+			\textit{Tekst} & tekst & & {\small Tekst} & Tekst \\
+			\textsc{Tekst} & tekst & & {\large Tekst} & Tekst \\
+			\underline{Tekst} & tekst & & {\huge Tekst} & Tekst \\
+			\hline
+			$\mathbf{Tekst}$ & ... & & & \\
+			$\mathbb{T}$ & ... & & & \\
+			$\mathcal{T}$ & ... & & & \\
+			$\mathfrak{T}$ & ... & & & \\
+			$\boldsymbol{\alpha}$ & ... & & &\\
+		\end{tabular}
+	\end{frame}
+	
+	\begin{frame}{Packages}
+		Packages staan in de \textbf{preamble} van een document om meer commando's in het document te kunnen gebruiken. 
+		Handige packages zijn onderanderen:
+		\begin{itemize}
+			\item Voor wiskunde: amssymb, amsmath, amsthm, mathrsfs
+			\item Voor taal: babel, inputenc, fontenc
+			\item Voor afbeeldingen: graphicx, float
+			\item Voor lijsten: enumitem
+			\item Voor linkjes: hyperref, cleveref
+			\item Voor layout: geometry, fancyhdr
+			\item Voor zelf afbeeldingen maken: tikz
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Zelf oplossingen vinden}
+		\LaTeX biedt veel opties, wat zowel handig als frustrerend kan zijn. Daarom is het belangrijk om te leren zoeken naar wat je wil bereiken in je document. 
+		
+		Het helpt om duidelijke zoekopdrachten te hebben, zoals bijvoorbeeld 'tabellen maken latex', 'citing in latex', 'error ... latex'. 
+		
+		Handige websites om te bezoeken:
+		\begin{itemize}
+			\item \url{https://tex.stackexchange.com/}
+			\item \url{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}
+			\item \url{https://nl.wikibooks.org/wiki/LaTeX/Wiskundige_formules}
+		\end{itemize}
+	\end{frame}
+	
+
+\end{document}
