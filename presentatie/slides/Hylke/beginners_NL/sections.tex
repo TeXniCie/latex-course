@@ -1,0 +1,29 @@
+\copyrightTim
+
+\begin{frame}[fragile]{Sections}
+Het commando \mintinline{tex}{\section{...}} maakt een heading (titel, kop, tussenkopje). Deze headings worden automatisch genummerd.
+Hierbij typ je bij de ... dus je titel. 
+\pause
+\newline
+Je kan met \mintinline{tex}{\subsection{...}} en \mintinline{tex}{\subsubsection{...}} onderkopjes maken.
+\pause
+\newline
+Wil je geen nummering in je kopjes, gebruik dan \mintinline{tex}{\paragraph{}}.
+\pause
+\newline
+voorbeeld
+\begin{minted}[highlightlines={3,6}, fontsize=\small]{tex}
+\documentclass[a4paper]{article}
+\begin{document}
+\section{pakkende titel}
+Het bedenken van een titel kan erg ingewikkeld zijn,
+het moet een samenvatting zijn van wat er in de tekst wordt gezegd.
+\subsection{subtitel, ook pakkend}
+Hiervoor kan het fijn zijn om subtitels te gebruiken, hiermee kan je 
+aangeven waar specifieke stukken van de tekst over gaan
+\end{document}
+\end{minted}
+
+
+probeer dit zelf uit in overleaf\par
+\end{frame}
