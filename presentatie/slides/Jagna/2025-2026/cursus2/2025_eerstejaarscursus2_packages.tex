@@ -1,7 +1,17 @@
+\begin{frame}{Packages (Inleiding)}
+	We gaan een aantal packages bespreken die handig zijn om te kennen en te gebruiken. Een paar hiervan  zijn al besproken. De overigen zullen we bespreken.
+	\begin{itemize}[label=\bullet]
+		\item Handige packages
+		\item Korte bespreking van enumitem
+		\item Korte bespreking van hyperref en cleveref
+		\item Probeer het zelf eens!
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Packages}
 	Packages staan in de \textbf{preamble} van een document om meer commando's in het document te kunnen gebruiken. 
 	Handige packages zijn onderanderen:
-	\begin{itemize}
+	\begin{itemize}[label=\bullet]
 		\item Voor wiskunde: amssymb, amsmath, amsthm, mathrsfs
 		\item Voor taal: babel, inputenc, fontenc
 		\item Voor afbeeldingen: graphicx, float, tikz
@@ -9,4 +19,90 @@
 		\item Voor linkjes: hyperref, cleveref
 		\item Voor layout: geometry, fancyhdr
 	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile, t]{Enumitem}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\begin{minted}{tex}
+				Een genummerde lijst kan gemaakt worden met
+				\begin{enumerate}[label=\arabic]
+					\item pen
+					\item papier
+					\item laptop
+				\end{enumerate}
+				en een ongenummerde lijst met
+				\begin{itemize}[label=\bullet]
+					\item lunch
+					\item waterfles
+				\end{itemize}
+			\end{minted}
+			\par
+		\end{column}
+		
+		\begin{column}{0.46\textwidth}
+			\vspace{1mm}
+			\cmfontblock{ \small
+				
+				\noindent
+				Een genummerde lijst kan gemaakt worden met
+				\begin{enumerate}[label=\arabic]
+					\item pen
+					\item papier
+					\item laptop
+				\end{enumerate}
+				en een ongenummerde lijst met
+				\begin{itemize}[label=\bullet]
+					\item lunch
+					\item waterfles
+				\end{itemize}
+			}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile, t]{Hyperref en cleveref}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\begin{minted}{tex}
+				Stel dat ik wil terug refereren naar 
+				\begin{align}\label{eq: cirkel}
+					x^2 + y^2 = a
+				\end{align}
+				dan kan ik nu gemakkelijk terug 
+				refereren naar een formule 
+				van de cirkel met \cref{eq: cirkel}.
+				In plaats hiervan kan je ook \ref{eq: cirkel} gebruiken.
+				Dit kan je ook doen voor figuren, sections en meer.
+			\end{minted}
+			\par
+		\end{column}
+		
+		\begin{column}{0.46\textwidth}
+			\vspace{1mm}
+			\cmfontblock{ \small
+				
+				\noindent
+				Stel dat ik wil terug refereren naar 
+				\begin{align}\label{eq: cirkel2}
+					x^2 + y^2 = a
+				\end{align}
+				dan kan ik nu gemakkelijk terug 
+				refereren naar een formule 
+				van de cirkel met \cref{eq: cirkel2}.
+				In plaats hiervan kan je ook \ref{eq: cirkel2} gebruiken.
+				Dit kan je ook doen voor figuren, sections en meer.
+			}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Probeer het zelf}
+	Probeer zelf eens: 
+	\begin{enumerate}[label=\roman]
+		\item een genummerde lijst te maken,
+		\item een ongenummerde lijst te maken,
+		\item een label te geven aan een section, figuur, stelling of iets anders,
+		\item als je een label hebt, probeer er nu naar te refereren.
+	\end{enumerate}
 \end{frame}
