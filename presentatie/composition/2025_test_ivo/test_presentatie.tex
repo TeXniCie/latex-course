@@ -1,0 +1,61 @@
+\documentclass[allauthors,dutch]{../../cursuspresentatie}
+
+\usefonttheme{professionalfonts} % reset math mode font to default
+\def\importslide#1#2{%
+	\import{../../slides/ivo/#1}{#2}
+}
+
+\def\importslidej#1#2{%
+	\import{../../slides/Jagna/2025-2026/#1}{#2}
+}
+
+\newcommand{\cmfontblock}[1]{%
+  {\rmfamily\selectfont #1}%
+}
+
+\title{\LaTeX{}-cursus Week 1}
+\author{\TeX niCie}
+\date{26/28 september 2022}
+
+% Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
+% fris ingeladen
+\csname endofdump\endcsname
+
+\usepackage{xcolor}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
+\usepackage{tcolorbox}
+% \usepackage{}
+\definecolor{darkgreen}{rgb}{0.2,0.7,0.11}
+\makeatletter
+\patchcmd{\@thm}{\thm@headfont{\scshape}}{\thm@headfont{\scshape\bfseries}}{}{}
+\patchcmd{\@thm}{\thm@notefont{\fontseries\mddefault\upshape}}{}{}{}
+\makeatother
+\newtheorem{mylemma}[]{Lemma}
+\begin{document}
+
+\section{Math mode}
+%\importslide{beginners}{welcome.tex}
+%\importslide{beginners}{contents.tex}
+
+\importslide{2025-eerstejaars_cursus_1}{Enter_math_mode.tex}
+\importslide{2025-eerstejaars_cursus_1}{Math_mode_simpele_symbolen.tex}
+\importslide{2025-eerstejaars_cursus_1}{Math_mode_packages.tex}
+\importslide{2025-eerstejaars_cursus_1}{Math_mode_symbolen_met_argumenten.tex}
+\importslide{2025-eerstejaars_cursus_1}{Math_mode_display}
+\importslide{2025-eerstejaars_cursus_1}{Math_mode_display_numbered_equation}
+
+\importslidej{cursus2}{2025_eerstejaarscursus2_packages.tex}
+\importslidej{cursus2}{2025_eerstejaarscursus2_tekstopmaak.tex}
+\importslidej{cursus2}{2025_eerstejaarscursus2_zoekopdrachten.tex}
+
+\section{Afsluiting}
+\begin{frame}
+	\frametitle{Afsluiting}
+	
+	De volgde cususavond is ...
+\end{frame}
+%\import{../../slides/thomas/Eerstejaars-2023}{afsluiting-1.tex}
+	
+%\import{../../slides/misc/}{misc-license.tex}
+
+\end{document}
