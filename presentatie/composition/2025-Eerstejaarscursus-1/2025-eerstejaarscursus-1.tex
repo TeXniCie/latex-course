@@ -1,5 +1,8 @@
 \documentclass[allauthors,dutch]{../../cursuspresentatie}
 
+
+\input{custom_header.tex}
+
 \usefonttheme{professionalfonts} % reset math mode font to default
 \def\importslidei#1#2{%
 	\import{../../slides/ivo/#1}{#2}
@@ -34,7 +37,9 @@
 
 \begin{document}
 
-\section{Introductie}
+\section{Eerste document}
+\def\placetarget{\hypertarget{eerste_document}{}}
+
 % slides van Hylke:
 \importslideh{beginners_NL}{welcome.tex}
 \importslideh{beginners_NL}{overleaf-1.tex}
@@ -48,6 +53,9 @@
 \importslideh{beginners_NL}{simpledoc-3.tex}
 \importslideh{beginners_NL}{simpledoc-2.tex}
 
+\section{LaTeX commands}
+\def\placetarget{\hypertarget{commands}{}}
+
 \importslideh{beginners_NL}{commands-1.tex}
 \importslideh{beginners_NL}{commands-2.tex}
 \importslideh{beginners_NL}{commands-3.tex}
@@ -58,6 +66,7 @@
 
 % slides van Ivo
 \section{Math mode}
+\def\placetarget{\hypertarget{math_mode}{}}
 
 \importslidei{2025-eerstejaars_cursus_1}{Enter_math_mode.tex}
 \importslidei{2025-eerstejaars_cursus_1}{Math_mode_packages.tex}
@@ -67,12 +76,15 @@
 \importslidei{2025-eerstejaars_cursus_1}{Math_mode_display_numbered_equation.tex}
 
 \section{Plaatjes}
+\def\placetarget{\hypertarget{plaatjes}{}}
+
+\importslidei{2025-eerstejaars_cursus_1}{Plaatjes_alle_slides.tex}
 
 \section{Afsluiting}
 \begin{frame}
 	\frametitle{Afsluiting}
 	
-	De volgde cususavond is ...
+	De volgde cususavond is 17 november 15:00, Ruppert B
 \end{frame}
 %\import{../../slides/thomas/Eerstejaars-2023}{afsluiting-1.tex}
 	
