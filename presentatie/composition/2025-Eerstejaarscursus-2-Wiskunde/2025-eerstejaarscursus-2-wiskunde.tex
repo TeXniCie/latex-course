@@ -1,0 +1,95 @@
+\documentclass[allauthors,dutch]{../../cursuspresentatie}
+
+\input{custom_header.tex}
+
+\usefonttheme{professionalfonts} % reset math mode font to default
+\def\importslidei#1#2{%
+	\import{../../slides/ivo/#1}{#2}
+}
+
+\def\importslideh#1#2{%
+	\import{../../slides/Hylke/#1}{#2}
+}
+
+\def\importslidej#1#2{%
+	\import{../../slides/Jagna/2025-2026/#1}{#2}
+}
+
+\def\importslidey#1#2{%
+	\import{../../slides/yoram/#1}{#2}
+}
+
+\newcommand{\cmfontblock}[1]{%
+  {\rmfamily\selectfont #1}%
+}
+
+\title{\LaTeX{}-cursus Week 1}
+\author{\TeX niCie}
+\date{12 november 2025}
+
+% Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
+% fris ingeladen
+\csname endofdump\endcsname
+
+\usepackage{xcolor}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
+\usepackage{tcolorbox}
+% \usepackage{}
+\definecolor{darkgreen}{rgb}{0.2,0.7,0.11}
+%\makeatletter
+%\patchcmd{\@thm}{\thm@headfont{\scshape}}{\thm@headfont{\scshape\bfseries}}{}{}
+%\patchcmd{\@thm}{\thm@notefont{\fontseries\mddefault\upshape}}{}{}{}
+%\makeatother
+%\newtheorem{mylemma}[]{Lemma}
+
+\begin{document}
+
+
+% slides van Yoram
+\section{Newcommand}
+\def\placetarget{\hypertarget{newcommand}{}}
+
+\importslidey{2025-eerstejaars_cursus_2}{newcommand00.tex}
+\importslidey{2025-eerstejaars_cursus_2}{newcommand01.tex}
+\importslidey{2025-eerstejaars_cursus_2}{newcommand02.tex}
+\importslidey{2025-eerstejaars_cursus_2}{newcommand03.tex}
+\importslidey{2025-eerstejaars_cursus_2}{newcommand04.tex}
+\importslidey{2025-eerstejaars_cursus_2}{newcommand05.tex}
+\importslidey{2025-eerstejaars_cursus_2}{newcommand06.tex}
+
+\section{Comments}
+\def\placetarget{\hypertarget{comments}{}}
+
+\importslidey{2025-eerstejaars_cursus_2}{comments00.tex}
+\importslidey{2025-eerstejaars_cursus_2}{comments01.tex}
+\importslidey{2025-eerstejaars_cursus_2}{comments02.tex}
+
+\section{Theorem environment}
+\def\placetarget{\hypertarget{theorem_environment}{}}
+% Was niet nodig voor natuurkunde?
+\importslidey{2025-eerstejaars_cursus_2}{theorems00.tex}
+\importslidey{2025-eerstejaars_cursus_2}{theorems01.tex}
+\importslidey{2025-eerstejaars_cursus_2}{theorems02.tex}
+\importslidey{2025-eerstejaars_cursus_2}{theorems03.tex}
+\importslidey{2025-eerstejaars_cursus_2}{theorems04.tex}
+\importslidey{2025-eerstejaars_cursus_2}{theorems05.tex}
+
+\section{Packages}
+\def\placetarget{\hypertarget{packages}{}}
+\importslidej{cursus2}{2025_eerstejaarscursus2_packages.tex}
+
+\section{Tekstopmaak}
+\def\placetarget{\hypertarget{tekstopmaak}{}}
+\importslidej{cursus2}{2025_eerstejaarscursus2_tekstopmaak.tex}
+\importslidej{cursus2}{2025_eerstejaarscursus2_zoekopdrachten.tex}
+
+\section{Afsluiting}
+\begin{frame}
+	\frametitle{Afsluiting}
+	...
+\end{frame}
+%\import{../../slides/thomas/Eerstejaars-2023}{afsluiting-1.tex}
+	
+%\import{../../slides/misc/}{misc-license.tex}
+
+\end{document}
