@@ -1,0 +1,28 @@
+\fboxsep0.5pt %make colorboxes smaller with this
+\begin{frame}[fragile]{Stellingen en Bewijzen (Nummering)}
+    Vaak heb je dat je zowel lemma's als stellingen in je bestand hebt. \pause
+
+    Standaard hebben deze verschillende nummering zodat je 
+    Stelling 1 en Lemma 1 krijgt. \pause 
+
+    Meestal wil je dat de nummering doorloopt, dus je wil Lemma 1, Stelling 2, etc. 
+    Om dit te doen gebruiken we:
+    \begin{minted}{tex}
+        \newtheorem{stelling}{Stelling}
+        \newtheorem{lemma}|\colorbox{cyan!40!white}{[stelling]}|{Lemma}
+    \end{minted}
+    Nu loopt de teller van `Lemma' mee met die van Stelling. 
+\end{frame}
+
+\begin{frame}[fragile]{Stellingen en Bewijzen (Nummering)}
+    Je kunt ook je stellingen meenummeren met je hoofdstukken. 
+    \pause
+    Je doet dit met:
+    \begin{minted}{tex}
+        \newtheorem{stelling}{Stelling}|\colorbox{cyan!40!white}{[section]}|
+        \newtheorem{lemma}[stelling]{Lemma}
+    \end{minted}
+    Kijk goed waar de \texttt{[...]} staat!
+    \pause
+    Nu krijg je in \texttt{section 1} bijvoorbeeld Stelling 1.1, Lemma 1.2, etc. 
+\end{frame}

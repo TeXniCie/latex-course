@@ -1,0 +1,48 @@
+\begin{frame}[fragile]{Eigen Commando's}
+    Je kunt je \textbf{eigen commando's} aanmaken om veel typwerk te voorkomen. Je doet dit als volgt:
+    \begin{minted}{tex}
+        \newcommand{\naam}{wat je wil dat je commando doet}
+    \end{minted}
+    \pause 
+    Je zet \mintinline{tex}|\newcommand| meestal \emph{voor} je \mintinline{tex}{\begin{document}}:
+    \begin{minted}[linenos, highlightlines={2,4}]{tex}
+        \documentclass[a4paper]{article}
+        \newcommand{\mbbR}{\mathbb{R}}
+        \begin{document} 
+        We kunnen nu ons nieuwe commando aanroepen: $x \in \mbbR$. 
+        Dit is sneller dan $x \in \mathbb{R}$
+        \end{document}
+    \end{minted}
+    \newcommand{\mbbR}{\mathbb{R}}
+    \pause
+    \begin{tcolorbox}[boxrule=0.5pt, colback=white]
+        We kunnen nu ons nieuwe commando aanroepen: $x \in \mbbR$. 
+        Dit is sneller dan $x \in \mathbb{R}$
+    \end{tcolorbox}
+\end{frame}
+
+
+%% Dit vind ie stom voor een of andere reden, sad
+
+% \begin{frame}[fragile=singleslide]{Eigen Commando's}
+%     Je kunt je eigen commando's aanmaken om veel typwerk te voorkomen.
+%     \begin{columns}
+%         \begin{column}{0.4\textwidth}
+%             \begin{minted}[linenos, highlightlines={2,4}]{tex}
+%                 \documentclass[a4paper]{article}
+%                 \newcommand{\mbbR}{\mathbb{R}}
+%                 \begin{document} 
+%                 We kunnen nu ons nieuwe commando aanroepen: $x \in \mbbR$. 
+%                 Dit is sneller dan $x \in \mathbb{R}$
+%                 \end{document}
+%             \end{minted}
+%         \end{column} 
+%         \newcommand{\mbbR}{\mathbb{R}}
+%         \begin{column}{0.4\textwidth}
+%             \begin{tcolorbox}[boxrule=0.5pt, colback=white]
+%                 We kunnen nu ons nieuwe commando aanroepen: $x \in \mbbR$. 
+%                 Dit is sneller dan $x \in \mathbb{R}$
+%             \end{tcolorbox}
+%         \end{column}
+%     \end{columns}
+% \end{frame}

@@ -1,0 +1,17 @@
+\begin{frame}[fragile]{Eigen Commando's}
+    Voor een commando met \textbf{meerdere argumenten} veranderen we de 
+    \mintinline{tex}{[1]} naar bijvoorbeeld \mintinline{tex}{[2]}:
+    \begin{minted}[highlightlines={2,4}, linenos]{tex}
+        \documentclass[a4paper]{article}
+        \newcommand{\der}[2]{\frac{d #1}{d #2}}
+        \begin{document}
+        De afgeleide van $f$ is $\der{f}{x}$
+        \end{document}
+    \end{minted}
+    \pause
+    Dit geeft:
+    \newcommand{\der}[2]{\frac{d #1}{d #2}}
+    \begin{tcolorbox}[boxrule=0.5pt, colback=white]
+        De afgeleide van $f$ is $\der{f}{x}$
+    \end{tcolorbox}
+\end{frame}

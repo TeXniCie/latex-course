@@ -1,0 +1,20 @@
+\begin{frame}[fragile]{Eigen Commando's (operatoren)}
+Sommige functies, zoals $\sin(\,\cdot\,)$ zijn -- in tegenstelling tot normale letters in 
+mathmode -- rechtgedrukt. Als je ook een commando wil maken voor iets wat rechtgedrukt moet 
+staan, dan kan je dat doen met de \mintinline{tex}{\operatorname{}} command. 
+\pause
+\begin{minted}[highlightlines={2,4}, linenos]{tex}
+    \documentclass[a4paper]{article}
+    \newcommand{\Li}{\operatorname{Li}}
+    \begin{document}
+    De `logarithmic integral function' $\Li$ is definieerd als 
+    $\displaystyle \Li(x)  = \int_0^1 \frac{dt}{\log(t)}$. 
+    \end{document}
+\end{minted}
+\pause
+\newcommand{\Li}{\operatorname{Li}}
+\begin{tcolorbox}[boxrule=0.5pt, colback=white]
+    De `logarithmic integral function' $\Li$ is definieerd 
+    als ${\displaystyle\Li(x)  := \int_0^1 \frac{dt}{\log(t)}}$. 
+\end{tcolorbox}
+\end{frame}

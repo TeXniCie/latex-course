@@ -1,0 +1,24 @@
+\begin{frame}[fragile]{Eigen Commando's}
+    Je kunt ook je eigen commando's maken die nog een \textbf{input} nodig hebben. 
+    Je doet dit met \mintinline{tex}{\newcommand{\naam}[1]{wat je wil dat het doet}}. 
+    Bijvoorbeeld
+    \begin{minted}[autogobble]{tex}
+        \newcommand{\bb}[1]{\mathbb{#1}}
+    \end{minted}
+    \pause
+    Let op dat je hier één argument \emph{moet} invoeren!
+    \pause
+    \newcommand{\bb}[1]{\mathbb{#1}}
+    Dus bijvoorbeeld:
+    \begin{minted}{tex}
+        \documentclass[a4paper]{article}
+        \newcommand{\bb}[1]{\mathbb{#1}}
+        \begin{document}
+        De reeële getallen zijn $\bb{R}$, de breuken zijn $\bb{Q}$. 
+        \end{document}
+    \end{minted}
+    \pause
+    \begin{tcolorbox}[boxrule=0.5pt, colback=white]
+        De reeële getallen zijn $\bb{R}$, de breuken zijn $\bb{Q}$. 
+    \end{tcolorbox}
+\end{frame}

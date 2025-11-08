@@ -1,0 +1,39 @@
+\begin{frame}[fragile]{Stellingen en Bewijzen}
+    In veel documenten zitten speciale omgevingen zoals stellingen, lemma's, bewijzen, opmerkingen 
+    enzovoort. Deze omgevingen zijn \emph{niet} standaard gedefinieerd in \LaTeX. 
+    \pause 
+    Om deze omgevingen te krijgen heb je de \texttt{amsthm} package nodig. 
+    Zet dus in je preamble \mintinline{tex}{\usepackage{amsthm}}. 
+    \pause 
+    Vervolgens kun een omgeving aanmaken:
+    \begin{minted}{tex}
+        \newtheorem{stelling}{Stelling}
+    \end{minted}
+    \pause
+    \begin{itemize}[label=\textbullet]
+        \item Het eerste argument \texttt{stelling} is de naam van je omgeving. 
+        \pause
+        \item Het tweede argument \texttt{Stelling} is de naam die vetgedrukt in je document zal 
+            komen te staan als je de omgeving aanroept. 
+    \end{itemize}
+    \pause 
+    Je roept je nieuwe omgeving aan met \mintinline{tex}{\begin{stelling}} ... \mintinline{tex}{\end{stelling}}.  
+\end{frame}
+
+\begin{frame}[fragile]{Stellingen en Bewijzen}
+    Bijvoorbeeld:
+    \begin{minted}[highlightlines={3,5,6,7}]{tex}
+        \documentclass[a4paper]{article}
+        \usepackage{amsthm}
+        \newtheorem{stelling}{Stelling}
+        \begin{document}
+        \begin{stelling}
+            Dit is mijn stelling.
+        \end{stelling}
+        \end{document}
+    \end{minted}
+    geeft:
+    \begin{tcolorbox}[boxrule=0.5pt, colback=white]        
+    \includegraphics[width=0.3\textwidth]{Standalones/theorems_standalone.pdf}
+    \end{tcolorbox}
+\end{frame}
