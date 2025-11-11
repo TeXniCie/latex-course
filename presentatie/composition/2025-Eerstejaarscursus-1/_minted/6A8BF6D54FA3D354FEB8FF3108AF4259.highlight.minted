@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+Hier is een plaatje van een eekhoorn
+gecentreerd:
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[h]
+    \PYG{k}{\PYGZbs{}centering}
+    \PYG{k}{\PYGZbs{}includegraphics}\PYG{n+na}{[width=0.5\PYGZbs{}linewidth]}
+    \PYG{n+nb}{\PYGZob{}}Running squirrel.jpeg\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}Eekhoorn\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:placeholder\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}lipsum}\PYG{n+na}{[1]}
+\end{MintedVerbatim}

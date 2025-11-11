@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}maketitle}
+\PYG{k}{\PYGZbs{}section}\PYG{n+nb}{\PYGZob{}}Introductie\PYG{n+nb}{\PYGZcb{}}
+Hier is een plaatje van een eekhoorn:
+
+\PYG{k}{\PYGZbs{}includegraphics}\PYG{n+na}{[height= 4 cm]}
+\PYG{n+nb}{\PYGZob{}}Running squirrel.jpeg\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

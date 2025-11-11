@@ -1,0 +1,24 @@
+\begin{frame}{Plaatjes}
+    \begin{center}
+        \includegraphics[height= 0.85\textheight]{images/limitatie_h_2.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile, t]{Plaatjes}
+    \begin{minted}[highlightlines={1,9}]{tex}
+\usepackage{float}
+\begin{document}
+\maketitle
+\section{Introductie}
+Hier is een plaatje van een eekhoorn gecentreerd:
+
+\lipsum[1-2]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Running squirrel.jpeg}
+    \caption{Eekhoorn}
+    \label{fig:placeholder}
+\end{figure}
+    \end{minted}
+\end{frame}

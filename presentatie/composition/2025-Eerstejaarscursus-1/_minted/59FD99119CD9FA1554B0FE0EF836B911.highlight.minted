@@ -1,0 +1,11 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+na}{[a4paper, 12pt]}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}title}\PYG{n+nb}{\PYGZob{}}hoe maak ik een titel\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}author}\PYG{n+nb}{\PYGZob{}}Hylke Hoogeveen\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}date}\PYG{n+nb}{\PYGZob{}}12 November\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}maketitle}
+Zoals je ziet vertel je in de preamble wat de titel en dergelijke van het document is,
+het command \PYG{k}{\PYGZbs{}mintinline}\PYG{n+nb}{\PYGZob{}}tex\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}maketitle}\PYG{n+nb}{\PYGZcb{}} moet echter in het body omdat het een deel van de tekst maakt
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
