@@ -1,9 +1,10 @@
 \begin{frame}{Packages (Inleiding)}
 	We gaan een aantal packages bespreken die handig zijn om te kennen en te gebruiken. Een paar hiervan  zijn al besproken. De overigen zullen we bespreken.
-	\begin{itemize}[label=\bullet]
+	\begin{itemize}[label=\textbullet]
 		\item Handige packages
 		\item Korte bespreking van enumitem
 		\item Korte bespreking van hyperref en cleveref
+		%    \item Korte bespreking van geometry
 		\item Probeer het zelf eens!
 	\end{itemize}
 \end{frame}
@@ -11,28 +12,29 @@
 \begin{frame}{Packages}
 	Packages staan in de \textbf{preamble} van een document om meer commando's in het document te kunnen gebruiken. 
 	Handige packages zijn onderanderen:
-	\begin{itemize}[label=\bullet]
-		\item Voor wiskunde: amssymb, amsmath, amsthm, mathrsfs
-		\item Voor taal: babel, inputenc, fontenc
-		\item Voor afbeeldingen: graphicx, float, tikz
-		\item Voor lijsten: enumitem
-		\item Voor linkjes: hyperref, cleveref
-		\item Voor layout: geometry, fancyhdr
+	\begin{itemize}[label=\textbullet]
+		\item \textbf{Voor wiskunde:} amssymb, amsmath, amsthm, mathrsfs
+		\item \textbf{Voor taal:} babel, inputenc, fontenc
+		\item \textbf{Voor afbeeldingen:} graphicx, float, tikz
+		\item \textbf{Voor lijsten:} enumitem
+		\item \textbf{Voor linkjes:} hyperref, cleveref
+		\item \textbf{Voor layout:} geometry, fancyhdr
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile, t]{Enumitem}
 	\begin{columns}[t]
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.6\textwidth}
 			\begin{minted}{tex}
-				Een genummerde lijst kan gemaakt worden met
-				\begin{enumerate}[label=\arabic]
+				Een genummerde lijst kan 
+				gemaakt worden met
+				\begin{enumerate}[label=\arabic*.]
 					\item pen
 					\item papier
 					\item laptop
 				\end{enumerate}
 				en een ongenummerde lijst met
-				\begin{itemize}[label=\bullet]
+				\begin{itemize}[label=\textbullet]
 					\item lunch
 					\item waterfles
 				\end{itemize}
@@ -40,30 +42,65 @@
 			\par
 		\end{column}
 		
-		\begin{column}{0.46\textwidth}
+		\begin{column}{0.36\textwidth}
 			\vspace{1mm}
-			\cmfontblock{ \small
+			\cmfontblock{\small
 				
 				\noindent
 				Een genummerde lijst kan gemaakt worden met
-				\begin{enumerate}[label=\arabic]
+				\begin{enumerate}[label=\arabic*.]
 					\item pen
 					\item papier
 					\item laptop
 				\end{enumerate}
 				en een ongenummerde lijst met
-				\begin{itemize}[label=\bullet]
+				\begin{itemize}[label=\textbullet]
 					\item lunch
 					\item waterfles
 				\end{itemize}
 			}
 		\end{column}
+	\end{columns} 
+\end{frame}
+
+\begin{frame}[fragile, t]{Enumitem (short labels)}
+	\begin{columns}[t]
+		\begin{column}{0.6\textwidth}
+			\begin{minted}{tex}
+				Een genummerde lijst kan 
+				gemaakt worden met
+				\begin{enumerate}[label=1.]
+					\item pen
+					\item papier
+					\item laptop
+				\end{enumerate}
+			\end{minted}
+			\par
+		\end{column}
+		
+		\begin{column}{0.36\textwidth}
+			\vspace{1mm}
+			\cmfontblock{ \small
+				
+				\noindent
+				Een genummerde lijst kan gemaakt worden met
+				\begin{enumerate}[1.]
+					\item pen
+					\item papier
+					\item laptop
+				\end{enumerate}
+			}
+		\end{column}
 	\end{columns}
+	\vspace{1cm}
+	Hiervoor moet je enumitem als volgt in de preamble zetten: \begin{verbatim}
+		\usepackage[shortlabels]{enumitem}
+	\end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile, t]{Hyperref en cleveref}
 	\begin{columns}[t]
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.6\textwidth}
 			\begin{minted}{tex}
 				Stel dat ik wil terug refereren naar 
 				\begin{align}\label{eq: cirkel}
@@ -72,13 +109,15 @@
 				dan kan ik nu gemakkelijk terug 
 				refereren naar een formule 
 				van de cirkel met \cref{eq: cirkel}.
-				In plaats hiervan kan je ook \ref{eq: cirkel} gebruiken.
-				Dit kan je ook doen voor figuren, sections en meer.
+				In plaats hiervan kan je
+				ook \ref{eq: cirkel} gebruiken.
+				Dit kan je ook doen 
+				voor figuren, sections en meer.
 			\end{minted}
 			\par
 		\end{column}
 		
-		\begin{column}{0.46\textwidth}
+		\begin{column}{0.36\textwidth}
 			\vspace{1mm}
 			\cmfontblock{ \small
 				
@@ -97,12 +136,43 @@
 	\end{columns}
 \end{frame}
 
+%\begin{frame}{Geometry}
+%    Met de geometry package kan je onder anderen de marges van je document aanpassen.
+%    Dit kan je bijvoorbeeld op de volgende manier doen:
+%    \begin{verbatim}
+	%        \usepackage[hmargin=3cm,vmargin=2cm]{geometry}
+	%    \end{verbatim}
+%    Het volgende is een andere manier om de geometry package te gebruiken:
+%    \begin{verbatim}
+	%        \usepackage{geometry}
+	%        \geometry{
+		%        a4paper,
+		%        total={170mm,257mm},
+		%        left=20mm,
+		%        top=20mm,
+		%        }
+	%    \end{verbatim}
+%\end{frame}
+
+%\begin{frame}{Geometry}
+%    Met de geometry package kan je onder anderen de marges van je document aanpassen. Dit kan je bijvoorbeeld op de volgende manier doen: 
+%    \begin{minted}{tex}
+	%        \usepackage[hmargin=3cm,vmargin=2cm]{geometry}
+	%    \end{minted}
+%    Het volgende is een andere manier om de geometry package te gebruiken:
+%    \begin{minted}{tex}
+	%        \usepackage{geometry}
+	%        \geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+	%    \end{minted}
+%\end{frame}
+
 \begin{frame}{Probeer het zelf}
 	Probeer zelf eens: 
-	\begin{enumerate}[label=\roman]
+	\begin{enumerate}[label=\roman*.]
 		\item een genummerde lijst te maken,
 		\item een ongenummerde lijst te maken,
 		\item een label te geven aan een section, figuur, stelling of iets anders,
-		\item als je een label hebt, probeer er nu naar te refereren.
+		\item als je een label hebt, probeer er nu naar te refereren,
+		%    \item pas de marges van je document aan.
 	\end{enumerate}
 \end{frame}
