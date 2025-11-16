@@ -427,8 +427,9 @@
 \RequirePackage{marvosym}
 \RequirePackage[style=numeric]{biblatex}
 \RequirePackage{textcomp}
-\RequirePackage{enumitem}
+\RequirePackage[shortlabels]{enumitem}
 \RequirePackage{hyperref}
+\RequirePackage{cleveref}
 \RequirePackage{xkeyval}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{textgreek}
