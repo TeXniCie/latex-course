@@ -1,10 +1,1 @@
 vspace en noindent & "vuile trucjes"
-
-voor wiskunde:
-plaatjes?
-
-Plaatje: 
-
-\begin{center}
-$4x = 6$
-\end{center}
