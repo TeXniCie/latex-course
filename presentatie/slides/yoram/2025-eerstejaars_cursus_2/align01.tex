@@ -1,0 +1,29 @@
+\begin{frame}[fragile]{Laatste dingetjes}
+Als je het nummertje bij de vergelijking niet wil, dan gebruik je de 
+\mininline{tex}{align*}-omgeving:
+\begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+    \begin{minted}{tex}
+    \begin{align*}
+        f(x) & = (x+1)(x-1) - (x+1)^2 \\
+        & = (x^2 -1) - (x^2 + 2x + 1) \\
+        & = -2x - 2
+    \end{align*}
+    \end{minted}
+    \par
+\end{column}
+
+\begin{column}{0.46\textwidth}
+    \vspace{1mm}
+    \cmfontblock{ \small
+
+    \noindent
+    \begin{align*}
+        f(x) & = (x+1)(x-1) - (x+1)^2 \\
+        & = (x^2 -1) - (x^2 + 2x + 1) \\
+        & = -2x - 2
+    \end{align*}
+    }
+\end{column}
+\end{columns}
+\end{frame}

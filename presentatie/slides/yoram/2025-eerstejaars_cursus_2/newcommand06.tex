@@ -1,11 +1,14 @@
 \begin{frame}[fragile]{Oefening}
-    Maak een commando zodat \mintinline{tex}{\gem{x}{w}} het volgende weergeeft:
+    Maak een commando zodat \mintinline{tex}{\t(A)} het volgende 
+    weergeeft\footnote{$\operatorname{Tr}$ is een notatie voor het \emph{spoor} van een matrix}:
     \begin{align*}
-        \operatorname{Gem}^y{(x)}
+        \operatorname{Tr}(A)
     \end{align*}
-    Let op, $\operatorname{Gem}$ is \emph{rechtgedrukt}!
+    Let op, \mintinline{tex}{\t} is standaard al gedefinieerd! Bovendien is Tr \emph{rechtgedrukt}!
     \pause 
     \begin{tcolorbox}[colback=white, colframe=green!70!black,title={Antwoord}]
-        \mintinline{tex}{\newcommand{\gem}[1]{\operatorname{Gem}^{#2}(#1)}}
+        \mintinline{tex}{\renewcommand{\t}{\operatorname{Tr}}}
+
+        \t(A)
     \end{tcolorbox}
 \end{frame}

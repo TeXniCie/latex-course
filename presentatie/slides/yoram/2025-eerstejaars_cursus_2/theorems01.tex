@@ -7,11 +7,11 @@
     \pause 
     Vervolgens kun een omgeving aanmaken:
     \begin{minted}{tex}
-        \newtheorem{stelling}{Stelling}
+        \newtheorem{stl}{Stelling}
     \end{minted}
     \pause
     \begin{itemize}[label=\textbullet]
-        \item Het eerste argument \texttt{stelling} is de naam van je omgeving. 
+        \item Het eerste argument \texttt{stl} is de naam van je omgeving. 
         \pause
         \item Het tweede argument \texttt{Stelling} is de naam die vetgedrukt in je document zal 
             komen te staan als je de omgeving aanroept. 
@@ -25,11 +25,11 @@
     \begin{minted}[highlightlines={3,5,6,7}]{tex}
         \documentclass[a4paper]{article}
         \usepackage{amsthm}
-        \newtheorem{stelling}{Stelling}
+        \newtheorem{stl}{Stelling}
         \begin{document}
-        \begin{stelling}
+        \begin{stl}
             Dit is mijn stelling.
-        \end{stelling}
+        \end{stl}
         \end{document}
     \end{minted}
     geeft:

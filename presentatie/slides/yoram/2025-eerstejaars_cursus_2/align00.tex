@@ -1,0 +1,31 @@
+\begin{frame}[fragile]{Laatste dingetjes} %shoutout ivo voor het stelen van de slides (basically)
+Bij berekeningen wil je vaak vergelijkingen onder elkaar zetten. Je doet dit 
+met de \mintedinline{tex}{align} omgeving van \texttt{amsmath}-package. 
+\begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+    \begin{minted}{tex}
+    Zo zet je het onder elkaar
+    \begin{align}
+        f(x) & = (x+1)(x-1) - (x+1)^2 \\
+        & = (x^2 -1) - (x^2 + 2x + 1) \\
+        & = -2x - 2
+    \end{align}
+    \end{minted}
+    \par
+\end{column}
+
+\begin{column}{0.46\textwidth}
+    \vspace{1mm}
+    \cmfontblock{ \small
+
+    \noindent
+   Zo zet je het onder elkaar
+    \begin{align}
+        f(x) & = (x+1)(x-1) - (x+1)^2 \\
+        & = (x^2 -1) - (x^2 + 2x + 1) \\
+        & = -2x - 2
+    \end{align}
+    }
+\end{column}
+\end{columns}
+\end{frame}

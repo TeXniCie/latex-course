@@ -1,5 +1,6 @@
 \begin{frame}[fragile]{Stellingen en Bewijzen (Opmaak)}
     Er zijn 3 standaard `vormen' voor een omgeving:
+    \pause
     \begin{itemize}[label={\textbullet}]
         \item \texttt{plain}: schuingedrukte tekst, extra ruimte om de omgeving heen 
             (vaak gebruikt in stellingen, lemmas, proposities)
@@ -11,10 +12,10 @@
             (vaak gebruikt in opmerkingen, samenvattnigen, conclusies)
     \end{itemize}
     \pause 
-    Je maakt een omgeving in deze stijl door:
+    Je zet een omgeving in een van deze stijlden door:
     \begin{minted}{tex}
         \theoremstyle{plain}
-        \newtheorem{stelling}{Stelling}
+        \newtheorem{stl}{Stelling}
     \end{minted}
 \end{frame}
 
@@ -22,12 +23,12 @@
     Om dus een aantal omgevingen goed te zetten, zowel in nummering als in stijl:
     \begin{minted}[highlightlines={1,6,10}]{tex}
         \theoremstye{plain}
-        \newtheorem{stelling}{Stelling}[section]
-        \newtheorem{lemma}[stelling]{Lemma}
-        \newtheorem{propositie}[stelling]{Propositie}
+        \newtheorem{stl}{Stelling}[section]
+        \newtheorem{lem}[stelling]{Lemma}
+        \newtheorem{prop}[stelling]{Propositie}
         | \pause |
         \theoremstyle{definition}
-        \newtheorem{definitie}[stelling]{Definitie}
+        \newtheorem{def}[stelling]{Definitie}
         \newtheorem{voorb}[stellin]{Voorbeeld}
         | \pause |
         \theoremstyle{remark}
