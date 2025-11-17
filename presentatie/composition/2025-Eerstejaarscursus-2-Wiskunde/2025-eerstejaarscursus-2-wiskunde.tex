@@ -23,9 +23,9 @@
   {\rmfamily\selectfont #1}%
 }
 
-\title{\LaTeX{}-cursus Week 1}
+\title{\LaTeX{}-cursus 2}
 \author{\TeX niCie}
-\date{12 november 2025}
+\date{18 november 2025}
 
 % Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
 % fris ingeladen
@@ -44,6 +44,12 @@
 
 \begin{document}
 
+\importslideh{beginners_NL}{welcome.tex}
+
+\section{Korte herhaling}
+\def\placetarget{\hypertarget{herhaling}{}}
+
+\importslidei{2025-eerstejaars_cursus_1}{Math_mode_display.tex}
 
 % slides van Yoram
 \section{Newcommand}
@@ -83,13 +89,20 @@
 \importslidej{cursus2}{2025_eerstejaarscursus2_tekstopmaak.tex}
 \importslidej{cursus2}{2025_eerstejaarscursus2_zoekopdrachten.tex}
 
+\section{Laatste dingetjes}
+\def\placetarget{\hypertarget{laatste}{}}
+\importslidey{2025-eerstejaars_cursus_2}{laatste_dingetjes.tex}
+\importslidey{2025-eerstejaars_cursus_2}{align00.tex}
+\importslidey{2025-eerstejaars_cursus_2}{align01.tex}
+\importslidey{2025-eerstejaars_cursus_2}{matrix.tex}
+
 \section{Afsluiting}
 \begin{frame}
 	\frametitle{Afsluiting}
-	...
-\end{frame}
-%\import{../../slides/thomas/Eerstejaars-2023}{afsluiting-1.tex}
+	Leuk dat jullie er waren!
 	
-%\import{../../slides/misc/}{misc-license.tex}
+	Voor vragen zijn wij bereikbaar op 
+	\href{mailto:texnicie@a-eskwadraat.nl}{texnicie@a-eskwadraat.nl}
+\end{frame}
 
 \end{document}
