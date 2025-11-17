@@ -3,16 +3,16 @@ Sommige functies, zoals $\sin(\,\cdot\,)$ zijn -- in tegenstelling tot normale l
 mathmode -- rechtgedrukt. Als je ook een commando wil maken voor iets wat rechtgedrukt moet 
 staan, dan kan je dat doen met de \mintinline{tex}{\operatorname{}} command. 
 \pause
-\begin{minted}[linenos]{tex}
+\begin{minted}[linenos,highlightlines={2}]{tex}
     \documentclass[a4paper]{article}
-    \newcommand{\Sp}{\operatorname{Span}}
+    \newcommand{\curl}{\operatorname{curl}}
     \begin{document}
-    De span noteren we als $\Sp(\vec{v_1},...,\vec{v_n})$. 
+    De curl van $\mathbf{v}$ noteren we als \curl{\mathbf{v}}
     \end{document}
 \end{minted}
 \pause
-\newcommand{\Sp}{\operatorname{Span}}
+\newcommand{\curl}{\operatorname{curl}}
 \begin{tcolorbox}[boxrule=0.5pt, colback=white]
-    De span noteren we als $\Sp(\mathbf{v_1},...,\mathbf{v_n})$. 
+    De curl van $\mathbf{v}$ noteren we als \curl{\mathbf{v}}
 \end{tcolorbox}
 \end{frame}
