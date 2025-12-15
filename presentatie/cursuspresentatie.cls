@@ -77,6 +77,10 @@
 \acrnDefName\copyrightVincent{Vincent Kuhlmann}{2021--2024}
 \acrnDefName\copyrightJesse{Jesse Straat}{2024--2024}
 
+\acrnDefName\copyrightHylke{Hylke Hoogeveen}{2025--2025}
+\acrnDefName\copyrightJagna{Jagna Hendriks}{2025--2025}
+\acrnDefName\copyrightYoram{Yoram Veltmaat}{2025--2025}
+\acrnDefName\copyrightIvo{Ivo Huisman}{2025--2025}
 % Detail 5: rehearsal
 % Detail 10: crash course
 % Detail 20: default
