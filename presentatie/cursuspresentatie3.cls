@@ -105,10 +105,10 @@
 \acrnDefName\copyrightJesse{Jesse Straat}{2024--2024}
 
 % Current TeXniCie
-\acrnDefName\copyrightHylke{Hylke Hoogeveen}{2025--2025}
-\acrnDefName\copyrightJagna{Jagna Hendriks}{2025--2025}
-\acrnDefName\copyrightYoram{Yoram Veltmaat}{2025--2025}
-\acrnDefName\copyrightIvo{Ivo Huisman}{2025--2025}
+\acrnDefName\copyrightHylke{Hylke Hoogeveen}{2025--2026}
+\acrnDefName\copyrightJagna{Jagna Hendriks}{2025--2026}
+\acrnDefName\copyrightYoram{Yoram Veltmaat}{2025--2026}
+\acrnDefName\copyrightIvo{Ivo Huisman}{2025--2026}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % - - - - - - - - - - - - - - - - - Beamer class settings - - - - - - - - - - - - - - - - - - - - - %
