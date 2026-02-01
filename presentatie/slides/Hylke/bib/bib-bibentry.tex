@@ -1,0 +1,100 @@
+
+\updatehighlight{
+    name=accentB,
+    add={@book,@article}
+}
+
+\begin{saveblock}{codebox}
+	\begin{minted}{bib}
+		@book{babington,
+			author = {Peter Babington},
+			title = {Some work},
+			publisher = {Publisher},
+			year = 1993,
+			volume = 4,
+			series = 10,
+			address = {The address},
+			edition = 3,
+			month = 7,
+			note = {An optional note},
+			isbn = {3257227892}
+		}
+	\end{minted}
+\end{saveblock}
+
+\begin{saveblock}{codeboxB}
+	\begin{minted}{bib}
+		@article{adams,
+			author  = {Peter Adams and Hugh Adamsson},
+			title   = {Title},
+			journal = {Journal},
+			year    = 1993,
+			number  = 2,
+			pages   = {201-213},
+			month   = 7,
+			note    = {My note}, 
+			volume  = 4
+		}
+	\end{minted}
+\end{saveblock}
+
+
+
+
+\begin{saveblock}{codeboxD}
+	\begin{minted}{bib}
+		@article{adams,
+			author  = "Peter Adams and Hugh Adamsson",
+			title   = "Title",
+			journal = "Journal",
+			year    = 1993,
+			number  = 2,
+			pages   = "201-213",
+			month   = 7,
+			note    = "My note", 
+			volume  = 4
+		}
+	\end{minted}
+\end{saveblock}
+
+
+\begin{saveblock}{codeboxE}
+	\begin{minted}{bib}
+		@book{babington,
+			author = {Peter Babington},
+			title = {Some work},
+			publisher = {Publisher},
+			year = 1993,
+			volume = 4,
+			series = 10,
+			address = {The address},
+			edition = 3,
+			month = 7,
+			note = {An optional note},
+			isbn = {3257227892}
+		}
+	\end{minted}
+\end{saveblock}
+
+\begin{frame}{Bibliografie bibfile}
+	\useblock{codebox}
+\end{frame}
+
+\begin{frame}{Bibliografie bibfile}
+	\useblock{codeboxB}
+\end{frame}
+
+
+\begin{frame}{Bibliografie bibfile}
+	\useblock{codeboxD}
+\end{frame}
+
+
+\begin{frame}{Bibliografie bibfile}
+	niet te vergeten
+	\begin{itemize}
+		\item het eerste argument is waar je naar verwijst \mintinline{tex}|\cite{babington}|
+		\item scheid de argumenten met komma's
+	\end{itemize}
+	\useblock{codeboxE}
+\end{frame}

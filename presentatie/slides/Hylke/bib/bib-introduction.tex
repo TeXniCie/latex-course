@@ -1,0 +1,17 @@
+\begin{saveblock}{codeboxC}
+	\begin{minted}{tex}
+		\usepackage{biblatex}
+		\addbibresource{blablabla.bib}
+	\end{minted}
+\end{saveblock}
+
+\begin{frame}{Bibliografie}
+\begin{itemize}[label=\textbullet]
+    \item Je bewaart de gegevens van je bronnen in een apparte bibfile, bijvoorbeeld blablabla.bib
+    \item In de preamble roep je dit bibfile aan
+    \useblock{codeboxC}
+    \item Vervolgens kan je met \mintinline{tex}|\cite{bron}| naar je bibliografie citeren
+    \item Let op: je moet zelf de refererentielijst in je document zetten met \mintinline{tex}|\printbibliografy|
+\end{itemize}
+
+\end{frame}
