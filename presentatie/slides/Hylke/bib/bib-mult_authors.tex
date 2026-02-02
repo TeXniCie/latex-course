@@ -1,0 +1,55 @@
+
+\begin{saveblock}{codebox}%
+	\begin{minted}{bib}
+		author = {A. Smith and B. Doe and E. Dropper and F. Laker}
+	\end{minted}
+\end{saveblock}
+
+
+
+\begin{frame}{Bibfile-meerdere auteurs}
+	
+	In je \mintinline{tex}|.bib|-bestand, scheid auteurs met \mintinline{tex}|and|:
+	\useblock{codebox}
+	Zo kan \mintinline{tex}|biblatex| controleren hoeveel auteurs het toont.\\ \pause
+	Dit is belangrijk voor het command \mintinline{tex}|\textcite{source}|:
+	\begin{itemize}[label=\textbullet]
+		\item \mintinline{tex}|\usepackage{biblatex}| geeft Smith et all \pause
+		\item \mintinline{tex}|\usepackage[maxcitenames=5]{biblatex}| geeft Smith, Doe, Dropper and Laker \pause
+		\item \mintinline{tex}|\usepackage[maxcitenames=3, mincitenames=2]{biblatex}| geeft Smith, Doe et all \pause
+	\end{itemize}
+	maxbibnames en minbibnames doen hetzelfde voor je literatuurlijst
+
+
+	%Voorbeeld: Peter Adams et al.	
+\end{frame}
+
+\begin{saveblock}{codebox}%
+	\begin{minted}{bib}
+		@article{Smith1994,
+			author = {A. Smith and B. Doe and E. Dropper},
+			title = {Titel},
+			journal = {Opt. Lett.},
+			year = 1994,
+			volume = 19,
+			number = 11,
+			pages = {780-782}
+		}
+	\end{minted}
+\end{saveblock}
+
+
+\begin{saveblock}{codeboxB}%
+	\begin{minted}{bib}
+		@article{Smith1994,
+			author = {A. Smith and B. Doe and E. Dropper},
+			title = {Titel},
+			journal = {Opt. Lett.},
+			year = 1994,
+			volume = 19,
+			number = 11,
+			pages = {780-782}
+		}
+	\end{minted}
+\end{saveblock}
+

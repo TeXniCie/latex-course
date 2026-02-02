@@ -1,0 +1,76 @@
+\documentclass{cursuspresentatie}
+
+
+\begin{document}
+%\input{bib/bib-ref_cmds.tex}
+%\input{bib/bib-printbibliography}
+
+\begin{frame}{Bibliografie}
+    We gaan de volgende onderwerpen langs
+    \begin{itemize}[label=\textbullet]
+        \item introductie
+        \item bibfile
+        \item citeren 
+        \item referentielijst
+    \end{itemize}
+\end{frame}
+
+
+\input{bib/bib-introduction}
+
+
+\input{bib/bib-structure}
+
+
+%\input{bib/bib-structure-bibtex}
+%willen we natbib noemen? Nee
+
+\input{bib/bib-bibentry}
+%laat zien hoe het bibliografie bestand in mekaar zit
+
+\input{bib/bib-specialchars}
+%extra feitjes over de bibliografie 
+
+\begin{frame}{Bibfile-bronvermelding overnemen}
+    \centering
+    De \texttt{.bib} code hoef je bijna nooit zelf te schrijven!
+
+    \bigskip
+    \raggedright
+    \begin{itemize}[label=\textbullet]
+        \item Op meeste wetenschappelijke websites voor artikels en boeken heb je
+    een `export citation' functie. Kies hierbij voor type BibTeX.
+
+        \item Of gebruik een citation manager of browser extension die je hiermee
+    helpt. 
+    \item chatgpt weet hier ook wel raad mee
+    \end{itemize}
+    
+    % Finding bib code from article sites
+\end{frame}
+
+\input{bib/bib-mult_authors}
+%willen we al deze informatie vertellen, dan ga ik het beter uitleggen
+
+\input{bib/bib-style}
+%laat de stijlen zien, loop even door de preamble van de template
+
+\input{bib/bib-citecommands.tex}
+%laat verschillende commando's zijn waarmee je kan citeren
+
+\input{bib/bib-cite}
+%laat de verschillende citeerstijlen zien
+
+%\input{bib/bib-backend} %wat is dit? Verplaatst naar opmerkingen
+
+% \begin{frame}
+%     BibTeX+natbib instead of Biber+biblatex
+% \end{frame}
+
+
+\input{bib/bib-sort}
+
+
+\input{bib/bib-misc}
+
+\end{document}
