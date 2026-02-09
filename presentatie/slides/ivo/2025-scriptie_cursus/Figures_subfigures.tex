@@ -1,0 +1,42 @@
+\begin{frame}[fragile, t]{Subfigures}
+    \begin{columns}
+        \begin{column}{0.6\linewidth}
+            \begin{minted}{tex}
+                \begin{figure}[h]
+                \centering
+                \begin{subfigure}[b]{0.45\linewidth}
+                  \includegraphics[width=\linewidth]{...}
+                  \caption{Wizard}
+                  \label{fig:wizard}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.45\linewidth}
+                  \includegraphics[width=\linewidth]{...}
+                  \caption{Knight}
+                  \label{fig:knight}
+                \end{subfigure} 
+                \caption{Two different squirrels}
+                \end{figure}
+            \end{minted}
+
+        \end{column}
+
+        \begin{column}{0.4\linewidth}
+        \cmfontblock{
+            \begin{figure}[h]
+                    \centering
+                    \begin{subfigure}[b]{0.45\linewidth}
+                        \includegraphics[width= \linewidth]{images/Squirrel_wizard.JPG}
+                        \caption{Wizard}
+                        \label{fig:wizard}
+                    \end{subfigure}
+                    \begin{subfigure}[b]{0.45\linewidth}
+                        \includegraphics[width= \linewidth]{images/Squirrel_knight_fog.jpeg}
+                        \caption{Knight}
+                        \label{fig:knight}
+                    \end{subfigure} 
+                    \caption{Two different squirrels}
+            \end{figure}
+        }
+        \end{column}
+    \end{columns}
+\end{frame}

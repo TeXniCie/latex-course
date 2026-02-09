@@ -1,0 +1,61 @@
+\setbeamertemplate{headline}
+{%
+    \placetarget
+    \let\placetarget\relax
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+        \color{fg!80!bg}
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{bibliografie}{\customhead{1}{Bibliografie}}%
+
+        }
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{referenties}{\customhead{2}{Referenties}}%
+        }%
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{figures}{\customhead{3}{Figure environment}}%
+        }%
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{presentatie}{\customhead{4}{Beamer presentatie}}%
+        }%
+        \hfil    
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 0pt 3pt 0pt},margin={10pt 0pt 0pt 0pt}
+        }{
+            \hyperlink{afsluiting}{\customhead{5}{Afsluiting}}%
+        }
+        \hspace{5pt}
+        Slides staan op texnicie.nl
+        \hfil
+        \vskip4pt
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
+}

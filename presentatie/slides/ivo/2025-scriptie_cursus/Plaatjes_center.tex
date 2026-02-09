@@ -1,0 +1,30 @@
+\begin{frame}[fragile, t]{Plaatje gecentreerd}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+        \begin{minted}{tex}
+        \begin{document}
+        \maketitle
+        \section{Introductie}
+        Hier is een plaatje van een eekhoorn
+        gecentreerd:
+
+        \begin{center}
+        \includegraphics[height= 4 cm]
+        {Running squirrel.jpeg}
+        \end{center}
+
+        \lipsum[1-2]
+        \end{document}
+        \end{minted}
+        \vfill
+        \end{column}
+
+        \begin{column}{0.4\textwidth}
+            \vspace{-1cm}
+            \begin{center}
+            \fbox{\includegraphics[height=0.85\textheight]{images/gecentreerd.pdf}}
+            \end{center}
+            \vfill
+        \end{column}
+    \end{columns}
+\end{frame}
