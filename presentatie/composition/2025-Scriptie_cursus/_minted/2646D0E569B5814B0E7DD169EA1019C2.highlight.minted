@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nc}{@article}\PYG{p}{\PYGZob{}}\PYG{n+nl}{Einstein1905}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{author}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}A. Einstein\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{title}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZob{}\PYGZbs{}\PYGZdq{}U\PYGZcb{}ber die von der}
+\PYG{l+s}{		molekularkinetischen Theorie der W\PYGZob{}\PYGZbs{}\PYGZdq{}a\PYGZcb{}rme}
+\PYG{l+s}{		geforderte Bewegung von in ruhenden}
+\PYG{l+s}{		Fl\PYGZob{}\PYGZbs{}\PYGZdq{}u\PYGZcb{}ssigkeiten suspendierten Teilchen\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{journal}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Annalen der Physik\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{year}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}1905\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{volume}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}322\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{number}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}8\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{pages}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}549\PYGZhy{}560\PYGZdq{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

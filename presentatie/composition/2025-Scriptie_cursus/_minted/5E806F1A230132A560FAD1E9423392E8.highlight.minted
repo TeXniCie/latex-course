@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}includegraphics}[width= 0.9\PYG{k}{\PYGZbs{}linewidth}, height = 5cm,
+keepaspectratio]\PYG{n+nb}{\PYGZob{}}squirrel.jpg\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

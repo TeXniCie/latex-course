@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}title}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}LaTeX}\PYG{n+nb}{\PYGZob{}}\PYG{n+nb}{\PYGZcb{}} scriptiecursus\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}author}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}TeX} niCie\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}date}\PYG{n+nb}{\PYGZob{}}10 februari 2026\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}frame}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}titlepage}\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}
+    Tweede slide
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

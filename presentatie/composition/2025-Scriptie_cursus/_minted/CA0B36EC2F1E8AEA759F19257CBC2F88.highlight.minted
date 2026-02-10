@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nc}{@article}\PYG{p}{\PYGZob{}}\PYG{n+nl}{adams}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{author}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZob{}Peter Adams and Hugh Adamsson\PYGZcb{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{title}\PYG{+w}{   }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZob{}Title\PYGZcb{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{journal}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZob{}Journal\PYGZcb{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{year}\PYG{+w}{    }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{1993}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{number}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{2}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{pages}\PYG{+w}{   }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZob{}201\PYGZhy{}213\PYGZcb{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{month}\PYG{+w}{   }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{7}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{note}\PYG{+w}{    }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZob{}My note\PYGZcb{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n+na}{volume}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m}{4}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

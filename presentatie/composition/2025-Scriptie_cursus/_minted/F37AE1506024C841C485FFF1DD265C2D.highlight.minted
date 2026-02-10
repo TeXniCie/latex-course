@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+nb}{\PYGZob{}}beamer\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}
+    Dit is slide 1
+    \PYG{l+s+sb}{\PYGZbs{}[}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}sum}\PYG{n+nb}{\PYGZus{}}\PYG{n+nb}{\PYGZob{}}\PYG{n+nb}{n}\PYG{o}{=}\PYG{l+m}{1}\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZca{}}\PYG{n+nv}{\PYGZbs{}infty}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}frac}\PYG{n+nb}{\PYGZob{}}\PYG{l+m}{1}\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}\PYG{n+nb}{n}\PYG{n+nb}{\PYGZca{}}\PYG{l+m}{2}\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{ }\PYG{o}{=}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}frac}\PYG{n+nb}{\PYGZob{}}\PYG{n+nv}{\PYGZbs{}pi}\PYG{n+nb}{\PYGZca{}}\PYG{l+m}{2}\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}\PYG{l+m}{6}\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{ }\PYG{l+s}{\PYGZbs{}]}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}Dit is een titel\PYG{n+nb}{\PYGZcb{}}
+    Deze slide heeft een titel
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

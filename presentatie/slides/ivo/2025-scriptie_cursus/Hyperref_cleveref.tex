@@ -1,0 +1,39 @@
+\begin{frame}[fragile, t]{Hyperref en cleveref}
+	\begin{columns}[t]
+		\begin{column}{0.6\textwidth}
+			\begin{minted}{tex}
+				Stel dat ik wil terug refereren naar 
+				\begin{align}\label{eq: cirkel}
+					x^2 + y^2 = a
+				\end{align}
+				dan kan ik nu gemakkelijk terug 
+				refereren naar een formule 
+				van de cirkel met \cref{eq: cirkel}.
+				In plaats hiervan kan je
+				ook \ref{eq: cirkel} gebruiken.
+				Dit kan je ook doen 
+				voor figuren, sections en meer.
+			\end{minted}
+			\par
+		\end{column}
+		
+		\begin{column}{0.36\textwidth}
+			\vspace{1mm}
+			\cmfontblock{ \small
+				
+				\noindent
+				Stel dat ik wil terug refereren naar 
+				\begin{align}\label{eq: cirkel2}
+					x^2 + y^2 = a
+				\end{align}
+				dan kan ik nu gemakkelijk terug 
+				refereren naar een formule 
+				van de cirkel met \cref{eq: cirkel2}.
+				In plaats hiervan kan je ook \ref{eq: cirkel2} gebruiken.
+				Dit kan je ook doen voor figuren, sections en meer.
+			}
+		\end{column}
+	\end{columns}
+	\vspace{0.5cm}
+	Pas op: eerst hyperref in je preamble introduceren en daarna cleveref!
+\end{frame}

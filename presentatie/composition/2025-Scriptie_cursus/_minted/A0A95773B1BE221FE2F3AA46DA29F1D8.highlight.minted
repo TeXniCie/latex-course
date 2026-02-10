@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+Stel dat ik wil terug refereren naar
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}align\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}eq: cirkel\PYG{n+nb}{\PYGZcb{}}
+	x\PYG{n+nb}{\PYGZca{}}2 + y\PYG{n+nb}{\PYGZca{}}2 = a
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}align\PYG{n+nb}{\PYGZcb{}}
+dan kan ik nu gemakkelijk terug
+refereren naar een formule
+van de cirkel met \PYG{k}{\PYGZbs{}cref}\PYG{n+nb}{\PYGZob{}}eq: cirkel\PYG{n+nb}{\PYGZcb{}}.
+In plaats hiervan kan je
+ook \PYG{k}{\PYGZbs{}ref}\PYG{n+nb}{\PYGZob{}}eq: cirkel\PYG{n+nb}{\PYGZcb{}} gebruiken.
+Dit kan je ook doen
+voor figuren, sections en meer.
+\end{MintedVerbatim}

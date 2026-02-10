@@ -1,0 +1,3 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}DeclareLanguageMapping}\PYG{n+nb}{\PYGZob{}}english\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}english\PYGZhy{}apa\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
