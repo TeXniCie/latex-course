@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}usepackage}\PYG{n+nb}{\PYGZob{}}biblatex\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}addbibresource}\PYG{n+nb}{\PYGZob{}}blablabla.bib\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

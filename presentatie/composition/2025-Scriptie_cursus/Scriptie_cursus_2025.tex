@@ -1,0 +1,85 @@
+\documentclass[allauthors,dutch]{../../cursuspresentatie}
+
+\input{custom_header.tex}
+
+\usefonttheme{professionalfonts} % reset math mode font to default
+\def\importslidei#1#2{%
+	\import{../../slides/ivo/#1}{#2}
+}
+
+\def\importslideh#1#2{%
+	\import{../../slides/Hylke/#1}{#2}
+}
+
+\newcommand{\cmfontblock}[1]{%
+  {\rmfamily\selectfont #1}%
+}
+
+\title{\LaTeX{} scriptiecursus}
+\author{\TeX niCie}
+\date{10 februari 2026}
+
+% Als je het bestand dumpt naar een format, worden packages hierna niet meegedumpt maar elke keer
+% fris ingeladen
+\csname endofdump\endcsname
+
+\usepackage{xcolor}
+\setminted[tex]{fontsize=\small, autogobble=true, linenos=true, frame=single, escapeinside=||}
+\usepackage{tcolorbox}
+% \usepackage{}
+%\definecolor{darkgreen}{rgb}{0.2,0.7,0.11}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\importslidei{2025-scriptie_cursus}{Inhoudsopgave.tex}
+
+\section{Template}
+\def\placetarget{\hypertarget{template}{}}
+\importslidei{2025-scriptie_cursus}{Scriptie_template_uitleggen.tex}
+
+\section{Bibliografie}
+\def\placetarget{\hypertarget{bibliografie}{}}
+\importslideh{bib}{bib-introduction.tex}
+\importslideh{bib}{bib-structure.tex}
+\importslideh{bib}{bib-bibentry.tex}
+\importslideh{bib}{bib-specialchars.tex}
+\importslideh{bib}{bib-bibfilestelen.tex}
+\importslideh{bib}{bib-mult_authors.tex}
+
+\section{Referenties}
+\def\placetarget{\hypertarget{referenties}{}}
+\importslideh{bib}{bib-style.tex}
+\importslideh{bib}{bib-citecommands.tex}
+\importslideh{bib}{bib-cite.tex}
+\importslideh{bib}{bib-sort.tex}
+\importslideh{bib}{bib-misc.tex}
+\importslidei{2025-scriptie_cursus}{Hyperref_cleveref.tex}
+
+% Figures 
+\section{Figures}
+\def\placetarget{\hypertarget{figures}{}}
+\importslidei{2025-eerstejaars_cursus_1}{Plaatjes_center.tex}
+\importslidei{2025-scriptie_cursus}{Figures_simple_figure.tex}
+\importslidei{2025-scriptie_cursus}{Figures_placement.tex}
+\importslidei{2025-scriptie_cursus}{Figures_dimensies.tex}
+\importslidei{2025-scriptie_cursus}{Figures_subfigures.tex}
+
+% Beamer presentation
+\section{Presentatie}
+\def\placetarget{\hypertarget{presentatie}{}}
+\importslidei{2025-scriptie_cursus}{Beamer_presentation.tex}
+\importslidei{2025-scriptie_cursus}{Beamer_titlepage.tex}
+\importslidei{2025-scriptie_cursus}{Beamer_pause.tex}
+\importslidei{2025-scriptie_cursus}{Beamer_theme.tex}
+
+\section{Afsluiting}
+\def\placetarget{\hypertarget{afsluiting}{}}
+\importslide{vincent/misc}{misc-contact.tex}
+
+\section{License}
+\import{../../slides/misc/}{misc-license.tex}
+
+\end{document}

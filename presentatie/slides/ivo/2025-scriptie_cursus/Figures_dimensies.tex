@@ -1,0 +1,13 @@
+\begin{frame}[fragile]{Figure dimensies}
+    \begin{itemize}[label = {\usebeamercolor[fg]{structure}\textbullet}, itemsep = 8mm] 
+        \item Voor hele regelbreedte: \\
+        \mintinline{tex}{\includegraphics[width= \linewidth]{squirrel.jpg}}
+        \mintinline{tex}{\includegraphics[width= \textwidth]{squirrel.jpg}}
+
+        \item Maximaal \(90\) \% van de regelbreedte en maximaal 5 cm hoog: 
+        \begin{minted}{tex}
+            \includegraphics[width= 0.9\linewidth, height = 5cm, 
+            keepaspectratio]{squirrel.jpg}
+        \end{minted}
+    \end{itemize}
+\end{frame}

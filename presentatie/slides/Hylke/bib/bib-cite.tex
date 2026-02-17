@@ -2,12 +2,12 @@
 \newbox\sizetestbox
 \savebox\sizetestbox{\mintinline{tex}|\cite{mysource}| en \mintinline{tex}|\parencite{mysource}|}
 
-\newlength\columnfakewidth
+
 \setlength\columnfakewidth{\wd\sizetestbox}
 %\setlength\columnfakewidth{\dimexpr\columnfakewidth + 1em\relax}
 
 %\newcommand\firstpart[1]{\atleastwidth[5cm]{#1}}
-\newcommand\firstpart[1]{\atleastwidth[\columnfakewidth]{#1}}
+
 
 \begin{frame}{Citeren-handige trucs}
 	Variaties in gebruik:

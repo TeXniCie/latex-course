@@ -1,0 +1,16 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[h]
+\PYG{k}{\PYGZbs{}centering}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}subfigure\PYG{n+nb}{\PYGZcb{}}[b]\PYG{n+nb}{\PYGZob{}}0.45\PYG{k}{\PYGZbs{}linewidth}\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}includegraphics}\PYG{n+na}{[width=\PYGZbs{}linewidth]}\PYG{n+nb}{\PYGZob{}}...\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}Wizard\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:wizard\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}subfigure\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}subfigure\PYG{n+nb}{\PYGZcb{}}[b]\PYG{n+nb}{\PYGZob{}}0.45\PYG{k}{\PYGZbs{}linewidth}\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}includegraphics}\PYG{n+na}{[width=\PYGZbs{}linewidth]}\PYG{n+nb}{\PYGZob{}}...\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}Knight\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:knight\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}subfigure\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}Two different squirrels\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

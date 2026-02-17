@@ -1,0 +1,3 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}cites}\PYG{n+na}{[8]}\PYG{n+nb}{\PYGZob{}}mysource\PYG{n+nb}{\PYGZcb{}}[see ch. 3 of][]\PYG{n+nb}{\PYGZob{}}othsource\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

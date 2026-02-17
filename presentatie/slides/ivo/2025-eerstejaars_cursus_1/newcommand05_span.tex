@@ -1,0 +1,28 @@
+\begin{frame}[fragile]{Eigen Commando's (operatoren)}
+
+Sommige functies, zoals $\sin(\,\cdot\,)$ zijn -- in tegenstelling tot normale letters in 
+
+mathmode -- rechtgedrukt. Als je ook een commando wil maken voor iets wat rechtgedrukt moet 
+
+staan, dan kan je dat doen met de \mintinline{tex}{\operatorname{}} command. 
+
+\pause
+
+\begin{minted}[linenos]{tex}
+    \documentclass[a4paper]{article}
+    \newcommand{\Sp}{\operatorname{Span}}
+    \begin{document}
+    De span noteren we als $\Sp(\vec{v_1},...,\vec{v_n})$. 
+    \end{document}
+\end{minted}
+\pause
+
+\newcommand{\Sp}{\operatorname{Span}}
+
+\begin{tcolorbox}[boxrule=0.5pt, colback=white]
+
+    De span noteren we als $\Sp(\mathbf{v_1},...,\mathbf{v_n})$. 
+
+\end{tcolorbox}
+
+\end{frame}

@@ -1,0 +1,12 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+In Figuur \PYG{k}{\PYGZbs{}ref}\PYG{n+nb}{\PYGZob{}}fig:squirrel\PYG{n+nb}{\PYGZcb{}} zie
+je een eekhoorn:
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[h]
+    \PYG{k}{\PYGZbs{}centering}
+    \PYG{k}{\PYGZbs{}includegraphics}\PYG{n+na}{[height=2cm]}
+    \PYG{n+nb}{\PYGZob{}}squirrel.jpeg\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}Het beste dier.
+    Foto door Felix Rehm\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:squirrel\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
