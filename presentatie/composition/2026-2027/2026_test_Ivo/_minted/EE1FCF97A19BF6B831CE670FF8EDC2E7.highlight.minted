@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+De functie \PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{f: }\PYG{n+nv}{\PYGZbs{}mathbb}\PYG{n+nb}{\PYGZob{}}\PYG{n+nb}{R}\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}to}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}mathbb}\PYG{n+nb}{\PYGZob{}}\PYG{n+nb}{R}\PYG{n+nb}{\PYGZcb{}}\PYG{l+s}{\PYGZdl{}},
+gegeven door \PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{f}\PYG{o}{(}\PYG{n+nb}{x}\PYG{o}{)}\PYG{n+nb}{ }\PYG{o}{=}\PYG{n+nb}{ x}\PYG{l+s}{\PYGZdl{}}, is de identiteit.
+\end{MintedVerbatim}

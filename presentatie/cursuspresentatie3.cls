@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % - - - - - - - - - - - - - - - - - Class settings  - - - - - - - - - - - - - - - - - - - - - - - - %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{../../acrn}                   % Package needed for the everyoneauthor setting
+\RequirePackage{../../../acrn}                   % Package needed for the everyoneauthor setting
 \RequirePackage{etoolbox}               % Package needed for the booleans here
 % Language Bool
 \newbool{english}
@@ -65,6 +65,7 @@
 
 \RequirePackage{multicol}                                   % For multiple columns
 
+\RequirePackage{soul}                                       % Letter spacing, underlining, highlighting
 \RequirePackage{marvosym}                                   % Symbols
 \RequirePackage{fancyvrb}                                   % Better verbatim environments
 \RequirePackage{minted}                                     % For literal text with highlighting for LaTeX 
@@ -227,3 +228,19 @@
         \let\currSlideImportName\relax
     }
 }
+
+% \setulcolor{underlineColor}
+% \setstcolor{underlineColor}
+
+
+\def\customhead#1#2{%
+    \ifnum\value{section}=#1\relax
+        \textcolor{fg!100!bg}{%
+            \setul{1pt}{0.5pt}\setulcolor{navigationUnderlineColor}\ul{#2}%
+        }%
+    \else
+        #2%
+    \fi
+}
+
+\let\placetarget\relax

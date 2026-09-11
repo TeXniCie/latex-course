@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+Een genummerde lijst kan
+gemaakt worden met
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}[1.]
+	\PYG{k}{\PYGZbs{}item} pen
+	\PYG{k}{\PYGZbs{}item} papier
+	\PYG{k}{\PYGZbs{}item} laptop
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
