@@ -1,0 +1,52 @@
+\def\acrnCopyrightline#1#2#3{%
+	\item Copyright (c) #2 \textbf{#1}\relax
+}
+
+\acrnPrepare
+
+\resetul
+
+\begin{frame}
+	\frametitle{Licentie}
+
+	\begin{center}
+		\setulcolor{red}
+		\ul{Contributors}\medskip
+
+		\adjustbox{scale=0.8,set depth={0.4\textheight}}{%
+			%\adjustbox{scale=0.8,set depth={0.4\textheight}}{%
+			\begin{varwidth}{25em}%
+				\ttfamily
+				\begin{list}{}{
+					\setlength{\leftmargin}{20pt}
+					\itemindent-\leftmargin
+					\setlength{\itemsep}{0pt}
+					\setlength{\parskip}{0pt}
+				}
+					\copyrightlines
+					% 	\item Copyright (c) 2022 Tim Weijers
+					% 	\item Copyright (c) 2021-2022 Vincent Kuhlmann
+					% 	\item Copyright (c) 2022 Hanneke Schroten
+					% 	\item Copyright (c) 2022 Thomas van Maaren
+				\end{list}
+			\end{varwidth}%
+		}
+	\end{center}
+
+	\begin{center}
+		\tiny
+		% Door bij te dragen aan de presentatie, stel je je broncode beschikbaar
+		% aan de \TeX niCie onder MIT licentie.\bigskip
+
+		De \TeX niCie licenseert deze PDF aan het publiek onder
+
+		\smallskip
+
+		\textbf{Creative Commons CC BY-NC-ND 4.0}
+
+		\medskip
+
+		Als je slide-inhoud in een andere presentatie wil gebruiken, moet je de
+		\TeX niCie eerst om een andere licentie vragen.
+	\end{center}
+\end{frame}
