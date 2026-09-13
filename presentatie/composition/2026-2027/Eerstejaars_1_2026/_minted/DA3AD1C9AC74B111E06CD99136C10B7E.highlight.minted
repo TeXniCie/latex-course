@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+na}{[a4paper]}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}section}\PYG{n+nb}{\PYGZob{}}pakkende titel\PYG{n+nb}{\PYGZcb{}}
+Het bedenken van een titel kan erg ingewikkeld zijn.
+\PYG{k}{\PYGZbs{}subsection}\PYG{n+nb}{\PYGZob{}}subtitel, ook pakkend\PYG{n+nb}{\PYGZcb{}}
+Hiervoor kan het fijn zijn om subtitels te gebruiken.
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
