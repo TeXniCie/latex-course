@@ -1,0 +1,26 @@
+\copyrightVincent
+\copyrightTim
+
+\begin{frame}[fragile]{Whitespace}
+    \setlength\atleastlength{15em}
+    \newmintinline[cc]{latex}{}
+    \begin{noindentlist}
+        \item<+-> \atleastwidth[\atleastlength]{
+            \mintinline[showspaces]{tex}{a || || || b}}a b
+
+        \item<+-> \atleastwidth[\atleastlength]{
+                \mintinline[showspaces]{tex}{a\ \ \ \ b}}a\ \ \ \ b
+
+        \item<+-> \atleastwidth[\atleastlength]{
+            \mintinline[showspaces]{tex}{a\quad b}}a\quad b
+
+        \item<+-> \atleastwidth[\atleastlength]{
+            \mintinline[showspaces]{tex}{a\hspace{2cm}b}}a\hspace{2cm}b
+        
+        \item<+-> \atleastwidth[\atleastlength]{
+            \mintinline[showspaces]{tex}{\LaTeX is cool!}}\LaTeX is cool!
+     
+        \item<+-> \atleastwidth[\atleastlength]{
+            \mintinline[showspaces]{tex}{\LaTeX{} is cool!}}\LaTeX{} is cool!
+    \end{noindentlist}
+\end{frame}

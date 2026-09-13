@@ -1,0 +1,95 @@
+
+\begin{saveblock}{codebox}
+	\begin{minted}{bib}
+		@book{babington,
+			author = {Peter Babington},
+			title = {Some work},
+			publisher = {Publisher},
+			year = 1993,
+			volume = 4,
+			series = 10,
+			address = {The address},
+			edition = 3,
+			month = 7,
+			note = {An optional note},
+			isbn = {3257227892}
+		}
+	\end{minted}
+\end{saveblock}
+
+\begin{saveblock}{codeboxB}
+	\begin{minted}{bib}
+		@article{adams,
+			author  = {Peter Adams and Hugh Adamsson},
+			title   = {Title},
+			journal = {Journal},
+			year    = 1993,
+			number  = 2,
+			pages   = {201-213},
+			month   = 7,
+			note    = {My note}, 
+			volume  = 4
+		}
+	\end{minted}
+\end{saveblock}
+
+
+
+
+\begin{saveblock}{codeboxD}
+	\begin{minted}{bib}
+		@article{adams,
+			author  = "Peter Adams and Hugh Adamsson",
+			title   = "Title",
+			journal = "Journal",
+			year    = 1993,
+			number  = 2,
+			pages   = "201-213",
+			month   = 7,
+			note    = "My note", 
+			volume  = 4
+		}
+	\end{minted}
+\end{saveblock}
+
+
+\begin{saveblock}{codeboxE}
+	\begin{minted}{bib}
+		@book{babington,
+			author = {Peter Babington},
+			title = {Some work},
+			publisher = {Publisher},
+			year = 1993,
+			volume = 4,
+			series = 10,
+			address = {The address},
+			edition = 3,
+			month = 7,
+			note = {An optional note},
+			isbn = {3257227892}
+		}
+	\end{minted}
+\end{saveblock}
+
+\begin{frame}{Bibfile-voorbeeld}
+	\useblock{codebox}
+\end{frame}
+
+\begin{frame}{Bibfile-voorbeeld}
+	\useblock{codeboxB}
+\end{frame}
+
+
+\begin{frame}{Bibfile-voorbeeld}
+	\useblock{codeboxD}
+\end{frame}
+
+
+\begin{frame}{Bibfile-voorbeeld}
+	\textbf{Niet te vergeten!}
+	\begin{itemize}[label=\textbullet]
+		\item het eerste argument is waar je naar verwijst \mintinline{tex}|\cite{adams}|\pause
+		\item scheid de argumenten met \textbf{komma's!!!}
+	\end{itemize}
+	\useblock{codeboxB}
+\end{frame}
