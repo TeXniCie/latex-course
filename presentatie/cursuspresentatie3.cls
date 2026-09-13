@@ -55,6 +55,7 @@
 \RequirePackage{graphicx}                                   % For Images
 \RequirePackage[shortlabels]{enumitem}                      % For lists
 \RequirePackage{tabularx}                                   % For tables, automatically stretching columns
+\RequirePackage{booktabs}                                   % Adds table rules
 \RequirePackage{pbox}                                       % Add line breaks in table
 
 \PassOptionsToPackage{usenames,dvipsnames}{xcolor}          % Enables predefined color names
@@ -88,7 +89,6 @@
 %\RequirePackage{textgreek}                                  % Greek letters in textmode
 %\RequirePackage{yfonts}                                     % German letters
 %\RequirePackage[version=4]{mhchem}                          % Chemistry symbols
-%\RequirePackage{booktabs}                                   % Adds table rules
 %\RequirePackage{soul}                                       % Letter spacing, underlining, highlighting
 %\RequirePackage{environ}                                    % Allows for defining new environments 
 %\RequirePackage[utf8]{inputenc}                             % UTF-8 input (legacy)
