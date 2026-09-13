@@ -1,0 +1,31 @@
+\def\extraslistsep{\hspace{0.5em}\textcolor{red!80!black}{\vrule width 1pt height 0.6\baselineskip\relax}\hspace{0.5em}}
+\def\es#1{\adjustbox{scale=0.8}{#1}}
+
+\begin{frame}[fragile]{Wiskunde - symbolen met argumenten}
+	\renewcommand{\arraystretch}{1.5}%
+	\begin{tabularx}{0.4\textwidth}{ll}
+		\toprule
+		Formule & Code\\
+		\midrule
+		$ a^b $ & \mintinline{latex}{$ a^b $}\\
+		$ a_b $ & \mintinline{latex}{$ a_b $} \\
+		$ a^{3 \pi} $ & \mintinline{latex}{$ a^{3 \pi} $} \\
+		$ a^3 \pi $ & \mintinline{latex}{$ a^3 \pi $} \\
+		$ \mathcal{P} $ & \mintinline{latex}{$ \mathcal{P} $} \\
+		$ \frac{12}{y} $  & \mintinline{latex}{$\frac{12}{y}$}\\
+		\bottomrule
+	\end{tabularx}%
+	\begin{tabularx}{0.6\textwidth}{ll}
+		\toprule
+		Formule & Code\\
+		\midrule
+		$ \frac{\partial}{\partial x} $ & \mintinline{latex}{$ \frac{\partial}{\partial x} $} \\
+		$ \sum_{i=1}^{n}a_i $ & \mintinline{latex}{$ \sum_{i=1}^{n}a_i $}\\
+		$ \int_{0}^{\infty} x^{-2} dx $  & \mintinline{latex}{$ \int_{0}^{\infty} x^{-2} dx $}\\
+		$ \mathbb{R}, \mathbb{Z} $ & \mintinline{latex}{$ \mathbb{R}, \mathbb{Z} $} \\
+		$ \sqrt{2}, \sqrt[10]{2} $  & \mintinline{latex}{$ \sqrt{2}, \sqrt[10]{2} $} \\
+		$ \bigcup_{n \in X} A_n $ & \mintinline{latex}{$ \bigcup_{n \in X} A_n $} \\
+		\bottomrule
+	\end{tabularx}%
+	\par\addvspace{0.5\baselineskip}
+\end{frame}
