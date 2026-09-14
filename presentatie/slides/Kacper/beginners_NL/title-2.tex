@@ -1,0 +1,17 @@
+\copyrightTim
+
+\begin{frame}[fragile]{Title, author and date}
+    \begin{minted}[fontsize=\small,autogobble, highlightlines={2,3,4, 6}]{tex}
+        \documentclass[a4paper, 12pt]{article}
+        \title{Hoe maak ik een titel?}
+        \author{Kacper Paraszczuk}
+        \date{14 september}
+        \begin{document}
+        \maketitle
+        Zoals je ziet vertel je in de preamble wat de \\
+        "title", "author" en "date" van het document is, \\
+        de command \mintinline{tex}{\maketitle} moet echter in de body, \\
+        omdat het een deel van de tekst maakt.
+        \end{document}
+    \end{minted}
+\end{frame}
