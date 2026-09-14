@@ -1,26 +1,26 @@
 \copyrightTim
 
 \begin{frame}[fragile]{Title, author and date}
-    We beginnen met het artikel een titel gegeven. 
+    We beginnen met het geven van een titel aan het artikel.
     \pause
     \newline
-    We gebruiken drie commando's om een \textbf{title}, \textbf{author} en \textbf{date} in te stellen.
+    We gebruiken drie commando's om een \textbf{titel}, een \textbf{schrijver} en een \textbf{datum} in te stellen.
     Deze commando's staan in de \textbf{preamble}.
-\pause
-\newline
-    Het commando \mintinline{tex}{\maketitle} staat in de 
-    \textbf{body} van het document en bepaalt de positie van de titel. 
-\pause
-\newline
+    \pause
+    \newline
+    Het commando \mintinline{tex}{\maketitle} staat in de
+    \textbf{body} van het document en bepaalt de positie van de titel.
+    \pause
+    \newline
     \begin{minted}[fontsize=\small,autogobble, highlightlines={2,3,4, 6}]{tex}
         \documentclass[a4paper, 12pt]{article}
-        \title{hoe maak ik een titel}
-        \author{Hylke Hoogeveen}
-        \date{12 November}
+        \title{Hoe maak ik een titel?}
+        \author{Kacper Paraszczuk}
+        \date{14 september}
         \begin{document}
         \maketitle
-        Zoals je ziet vertel je in de preamble wat de titel en dergelijke van het document is, 
-        het command \mintinline{tex}{\maketitle} moet echter in het body omdat het een deel van de tekst maakt
+        Zoals je ziet vertel je in de preamble wat de "title", "author" en "date" van het document is, 
+        de command \mintinline{tex}{\maketitle} moet echter in de body omdat het een deel van de tekst maakt.
         \end{document}
     \end{minted}
 \end{frame}
