@@ -110,6 +110,7 @@
 \acrnDefName\copyrightJagna{Jagna Hendriks}{2025--2026}
 \acrnDefName\copyrightYoram{Yoram Veltmaat}{2025--2026}
 \acrnDefName\copyrightIvo{Ivo Huisman}{2025--2026}
+\acrnDefName\copyrightKacper{Kacper Paraszczuk}{2026--2026}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % - - - - - - - - - - - - - - - - - Beamer class settings - - - - - - - - - - - - - - - - - - - - - %
