@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+Een ander wiskunde display is
+is met align:
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}align\PYG{n+nb}{\PYGZcb{}}
+    f(x) \PYG{n+nb}{\PYGZam{}} = (x+1)(x\PYGZhy{}1) \PYGZhy{} (x+1)\PYG{n+nb}{\PYGZca{}}2 \PYG{k}{\PYGZbs{}\PYGZbs{}}
+    \PYG{n+nb}{\PYGZam{}} = (x\PYG{n+nb}{\PYGZca{}}2 \PYGZhy{}1) \PYGZhy{} (x\PYG{n+nb}{\PYGZca{}}2 + 2x + 1) \PYG{k}{\PYGZbs{}\PYGZbs{}}
+    \PYG{n+nb}{\PYGZam{}} = \PYGZhy{}2x \PYGZhy{} 2
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}align\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

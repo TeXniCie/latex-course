@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}pmatrix\PYG{n+nb}{\PYGZcb{}}
+    a \PYG{n+nb}{\PYGZam{}} b \PYG{n+nb}{\PYGZam{}} c \PYG{k}{\PYGZbs{}\PYGZbs{}}
+    d \PYG{n+nb}{\PYGZam{}} e \PYG{n+nb}{\PYGZam{}} f \PYG{k}{\PYGZbs{}\PYGZbs{}}
+    g \PYG{n+nb}{\PYGZam{}} h \PYG{n+nb}{\PYGZam{}} i
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}pmatrix\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
