@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+Een genummerde lijst kan
+gemaakt worden met
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}[label=\PYG{k}{\PYGZbs{}arabic}\PYG{k}{*}.]
+	\PYG{k}{\PYGZbs{}item} pen
+	\PYG{k}{\PYGZbs{}item} papier
+	\PYG{k}{\PYGZbs{}item} laptop
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}
+en een ongenummerde lijst met
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}itemize\PYG{n+nb}{\PYGZcb{}}[label=\PYG{k}{\PYGZbs{}textbullet}]
+	\PYG{k}{\PYGZbs{}item} lunch
+	\PYG{k}{\PYGZbs{}item} waterfles
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}itemize\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c}{\PYGZpc{} File: document.tex}
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+na}{[a4paper]}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}usepackage}\PYG{n+nb}{\PYGZob{}}biblatex\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}addbibresource}\PYG{n+nb}{\PYGZob{}}bibfile.bib\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+	This has been shown.
+	\PYG{k}{\PYGZbs{}cite}\PYG{n+nb}{\PYGZob{}}babington\PYG{n+nb}{\PYGZcb{}}
+
+	\PYG{k}{\PYGZbs{}printbibliography}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

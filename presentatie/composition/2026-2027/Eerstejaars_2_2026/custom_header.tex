@@ -1,0 +1,69 @@
+
+\setbeamertemplate{headline}
+{%
+    \placetarget
+    \let\placetarget\relax
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip2pt
+        \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+        \color{fg!80!bg}
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{
+            \hyperlink{herhaling}{\customhead{1}{Korte herhaling}}
+        }%
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+            \hyperlink{newcommand}{\customhead{2}{Newcommand}}
+        }
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{comments}{\customhead{3}{Comments}}
+        }%
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{theorem_environment}{\customhead{4}{Theorem environment}}
+        }%
+        \hfil
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+            % rndcorners={3pt 0pt 3pt 0pt}
+        }{%
+            \hyperlink{packages}{\customhead{5}{Packages}}
+        }%
+        \hfil  
+        \adjustbox{
+            set depth=2pt,
+            padding={5pt 5pt 5pt 5pt},
+            rndframe={color=navigationTileOutline,width=1pt}{3pt 3pt 3pt 3pt},margin={10pt 0pt 0pt 0pt}
+        }{%
+
+            \hyperlink{biblio}{\customhead{6}{Bibliografie}}%
+        }%
+        \hfil
+        \vskip4pt
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}%
+    \end{beamercolorbox}%
+}

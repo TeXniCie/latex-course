@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+na}{[a4paper]}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+Hier is tekst die wel weergegeven wordt.
+\PYG{c}{\PYGZpc{} Deze tekst wordt niet weergegeven.}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
