@@ -1,45 +1,38 @@
-
-\begin{saveblock}{codebox}
-	\begin{minted}{bib}
-		% File: bibfile.bib
-		@article {...
-			...
-		}
-	
-		@book {...
-			...
-		}
-		...
-	\end{minted}
-\end{saveblock}
-
-\begin{saveblock}{codeboxB}
-	\begin{minted}{tex}
-		% File: document.tex
-		\documentclass[a4paper]{article}
-		\usepackage{biblatex}
-		\addbibresource{bibfile.bib}
-		
-		\begin{document}
-			This has been shown.
-			\cite{babington}
-
-			\printbibliography
-		\end{document}
-	\end{minted}
-\end{saveblock}
-
-\begin{frame}{Introductie-voorbeeld}
+\begin{frame}[fragile]{Introductie-voorbeeld}
 	% Je hebt dus twee bestanden, die er minimaal zo uitzien.
 	% (voor biblatex met backend biber)
-	
-	\bigskip\medskip
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\useblock{codebox}
+	%\bigskip\medskip
+	\begin{columns}[T]
+		\begin{column}{0.38\linewidth}
+			\begin{minted}[frame=single]{bib}
+				% File: bibfile.bib
+				@article {...
+					...
+				}
+
+				@book {...
+					...
+				}
+				...
+
+				|\newline|
+			\end{minted}
 		\end{column}%
-		\begin{column}{0.6\textwidth}
-			\useblock{codeboxB}
+		
+		\begin{column}{0.6\linewidth}
+			\begin{minted}{tex}
+				% File: document.tex
+				\documentclass[a4paper]{article}
+				\usepackage{biblatex}
+				\addbibresource{bibfile.bib}
+				
+				\begin{document}
+					This has been shown.
+					\cite{babington}
+
+					\printbibliography
+				\end{document}
+			\end{minted}
 		\end{column}
 	\end{columns}
 \end{frame}
