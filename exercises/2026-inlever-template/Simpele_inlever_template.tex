@@ -1,0 +1,88 @@
+\documentclass[a4paper]{article}
+
+% - - - - - - -  - - - - - Packages - - - - - - - - - - - - 
+\usepackage{amsmath}
+\usepackage{amsfonts}                       % Add mathematical symbols and functionality
+\usepackage{amssymb}
+\usepackage[margin=2.2cm]{geometry}         % Change margins
+\usepackage[shortlabels]{enumitem}          % Enumerate things
+\usepackage{graphicx}                       % Enables pictures 
+
+%\usepackage[english]{babel}
+\usepackage[dutch]{babel}                   % Language settings
+
+\usepackage{float}                          % Force pictures in right place
+\usepackage{braket}                         % Make braket notation and sets
+
+% - - - - - - -  - - - - - Newcommands - - - - - - - - - - - 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\id}{\mathrm{id}}
+
+\newcommand{\norm}[1]{ \left\| #1 \right\| }
+
+\newcommand{\pointsvector}{\overrightarrow{AB}}
+
+
+\title{Inlever template}
+\author{\TeX niCie}
+
+
+\begin{document}
+
+\maketitle
+
+Dit is een template voor een inleveropgave. 
+Laten we beginnen met opgave 1. 
+Dat kan bijvoorbeeld op deze manier: 
+
+\begin{enumerate}[1.]
+    \item Dit is opgave 1. Opgave 1 een een aantal deelopgaven. 
+    Daarom zullen we nu beginnnen met opgave a.
+    \begin{enumerate}[a)]
+        \item Dit is opgave a. 
+        \item Dit is opgave b.
+    \end{enumerate}
+
+    \item In de preamble van dit document zijn een aantal nieuwe 
+    commands gedefinieerd, zoals $\N$ en $\Z$. 
+    We hebben ook een command gemaakt voor de norm, 
+    dit command heeft een argument. 
+    Je kunt het op deze manier gebruiken: $\norm{x}$.
+    Dit werkt ook voor grotere vergelijkingen:
+    \[ \norm{\sum_{n=0}^N \frac{(-1)^nf_n}{n^2 + 7}}_{\infty} \leq 
+    \sum_{n=0}^N \norm{\frac{(-1)^nf_n}{n^2 + 7}}_{\infty}.  \]
+    Hier zijn een aantal opgaven met commands: 
+    \begin{enumerate}[(a)]
+        \item Voeg zelf commands toe om $\mathbb{R}$
+            en $\mathbb{C}$ korter te schrijven.
+        \item Maak een command om $\frac{\mathrm{d}}{\mathrm{d}x}$ 
+            korter te schrijven.
+        \item In de preamble staat een command $\pointsvector$, dit is nu een vector 
+            vanaf $A$ naar $B$. 
+            Pas dit aan zodat je zelf de punten kunt geven 
+            wanneer je het command aanroept (geef dit command een argument).
+    \end{enumerate}
+
+    % Dit is een comment 
+    % Deze tekst zal niet in je pdf-document verschijnen
+
+    \item We hebben een aantal packages toegevoegd aan
+    aan deze template, bijvoorbeeld de enumitem package, 
+    We hebben deze nodig om voor het nummeren van de opgaves. 
+    We hebben ook de optie ``shortlabels'' toegevoegd. 
+    Hierdoor begrijpt de package dingen als ``[(i)]'' zoals hier:
+    \begin{enumerate}[(i)]
+        \item We hebben ook een aantal andere packages toegevoegd. 
+        \item Voor de natuurkundigen zal de braket package handig worden. 
+            Dit voegt notatie zoals $\bra{\phi}$ en $\ket{\psi}$ toe. 
+            Voor wiskundigen is deze package ook handig, want het voegt 
+            de command $\set{1,2,3}$ toe. 
+        \item We hebben ook de package geometry toegevoegd. 
+            Dit kun je gebruiken om de marges aan te passen. 
+    \end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
