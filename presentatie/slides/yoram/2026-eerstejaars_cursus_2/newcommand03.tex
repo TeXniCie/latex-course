@@ -1,0 +1,18 @@
+\begin{frame}[fragile]{Eigen Commando's}
+    Voor een commando met \textbf{meerdere argumenten} veranderen we de 
+    \mintinline{tex}{[1]} naar bijvoorbeeld \mintinline{tex}{[2]}:
+    \begin{minted}[linenos, highlightlines = {3}]{tex}
+        \documentclass[a4paper]{article}
+        \usepackage{amssymb}
+        \newcommand{\set}[2]{ \{ {#1} \mid {#2} \} }
+        \begin{document}
+        De positieve getallen zijn $\set{x}{x>0}$.
+        \end{document}
+    \end{minted} 
+    \renewcommand{\set}[2]{ \{ {#1} \mid {#2} \} }
+    \pause
+    Dit geeft:
+    \begin{tcolorbox}[boxrule=0.5pt, colback=white]
+        De positieve getallen zijn $\set{x}{x>0}$.
+    \end{tcolorbox}
+\end{frame}

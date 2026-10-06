@@ -1,0 +1,18 @@
+\begin{frame}[fragile]{Eigen Commando's (operatoren)}
+Sommige functies, zoals $\sin(\,\cdot\,)$ zijn -- in tegenstelling tot normale letters in 
+mathmode -- rechtgedrukt. Als je ook een commando wil maken voor iets wat rechtgedrukt moet 
+staan, dan kan je dat doen met de \mintinline{tex}{\operatorname{}} command. 
+\pause
+\begin{minted}[linenos,highlightlines={2}]{tex}
+    \documentclass[a4paper]{article}
+    \newcommand{\re}{\operatorname{Re}}
+    \begin{document}
+    $\re(a+bi) = a$
+    \end{document}
+\end{minted}
+\pause
+\newcommand{\re}{\operatorname{Re}}
+\begin{tcolorbox}[boxrule=0.5pt, colback=white]
+    $\re(a+bi) = a$
+\end{tcolorbox}
+\end{frame}

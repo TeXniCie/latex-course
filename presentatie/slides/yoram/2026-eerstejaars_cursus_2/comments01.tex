@@ -1,0 +1,16 @@
+\begin{frame}[fragile]{Comments (Hoe Maak Je Comments?)}
+    In \LaTeX{} kun je -- net als in andere programmeertalen -- comments maken binnen je code. 
+    \begin{itemize}[label={\textbullet}]
+        \item Je maakt van een regel een comment door een \%-teken aan het begin van de regel te zetten. 
+        \item In Overleaf kun je ook \;\mintinline[bgcolor={gray!60!white}]{tex}{Ctrl + ?} \; typen.
+    \end{itemize}
+    \LaTeX{} negeert \emph{alles} op de regel die een comment is. 
+    \pause
+    \begin{minted}{tex}
+        \documentclass[a4paper]{article}
+        \begin{document}
+        Hier is tekst die wel weergegeven wordt. 
+        % Deze tekst wordt niet weergegeven. 
+        \end{document}
+    \end{minted}
+\end{frame}

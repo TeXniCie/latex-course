@@ -1,0 +1,17 @@
+\begin{frame}[fragile]{Eigen Commando's}
+    Soms is een commando al gedefinieerd. 
+    Je kunt het commando dan `\textbf{herschrijven}', mits het niet al te belangrijk is. 
+    Een voorbeeld is \mintinline{tex}{\P}. Als je probeert om dit te definiëren:
+    \begin{minted}[autogobble]{tex}
+        \newcommand{\P}{\mathbb{P}}
+    \end{minted}
+    dan krijg je een foutmelding
+    \begin{tcolorbox}[boxrule = 0.5pt, colback=red!25!white]
+        Command \mintinline{tex}{\P} already defined
+    \end{tcolorbox}
+    \pause
+    Om het commando te herschrijven:
+    \begin{minted}[autogobble]{tex}
+        \renewcommand{\P}{\mathbb{P}}
+    \end{minted}
+\end{frame}

@@ -1,0 +1,17 @@
+\begin{frame}[fragile]{Oefening}
+
+Het commando \mintinline{tex}{\vec} zorgt normaal voor een pijltje: 
+$\vec{v}$. 
+Een andere manier om een vector weer te geven is door het vetgedrukt
+te maken. Dit doe je met \mintinline{tex}{\mathbf}. 
+
+Herdefinieer het commando \mintinline{tex}{\vec} zodat \mintinline{tex}
+| $\vec{v}$ |
+resulteert in $\mathbf{v}$.  
+
+\pause 
+
+\begin{tcolorbox}[colback=white, colframe=green!70!black,title={Antwoord}]
+    \mintinline{tex}{\renewcommand{\vec}{\mathbf}}
+\end{tcolorbox}
+\end{frame}
