@@ -1,3 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{k}{\PYGZbs{}newcommand}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}bb}\PYG{n+nb}{\PYGZcb{}}[1]\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}mathbb}\PYG{n+nb}{\PYGZob{}}\PYGZsh{}1\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZcb{}}
-\end{MintedVerbatim}

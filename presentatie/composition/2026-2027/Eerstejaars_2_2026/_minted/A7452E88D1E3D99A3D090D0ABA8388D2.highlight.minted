@@ -1,4 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{k}{\PYGZbs{}newtheorem}\PYG{n+nb}{\PYGZob{}}stelling\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}Stelling\PYG{n+nb}{\PYGZcb{}}\PYG{esc}{\colorbox{cyan!40!white}{[section]}}
-\PYG{k}{\PYGZbs{}newtheorem}\PYG{n+nb}{\PYGZob{}}lemma\PYG{n+nb}{\PYGZcb{}}[stelling]\PYG{n+nb}{\PYGZob{}}Lemma\PYG{n+nb}{\PYGZcb{}}
-\end{MintedVerbatim}

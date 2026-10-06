@@ -1,8 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{k}{\PYGZbs{}documentclass}\PYG{n+na}{[a4paper]}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
-\PYG{k}{\PYGZbs{}newcommand}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}R}\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}mathbb}\PYG{n+nb}{\PYGZob{}}R\PYG{n+nb}{\PYGZcb{}}\PYG{n+nb}{\PYGZcb{}}
-\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
-We kunnen nu ons nieuwe commando aanroepen: \PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{x }\PYG{n+nv}{\PYGZbs{}in}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}R}\PYG{l+s}{\PYGZdl{}}.
-Dit is sneller dan \PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{x }\PYG{n+nv}{\PYGZbs{}in}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}mathbb}\PYG{n+nb}{\PYGZob{}}\PYG{n+nb}{R}\PYG{n+nb}{\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}
-\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
-\end{MintedVerbatim}

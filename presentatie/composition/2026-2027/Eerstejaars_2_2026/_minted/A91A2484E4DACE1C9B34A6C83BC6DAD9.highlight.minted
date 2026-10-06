@@ -1,3 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{c}{author = \PYGZob{}A. Smith and B. Doe and E. Dropper and F. Laker\PYGZcb{}}
-\end{MintedVerbatim}
